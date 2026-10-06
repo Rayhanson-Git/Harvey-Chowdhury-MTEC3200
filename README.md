@@ -8,11 +8,38 @@ This repository is the course workspace for MTEC 3200. It is organized to hold w
 
 The current project direction is LeaveBy, a lightweight planner for the transition between a workout and a fixed class or work commitment.
 
+## Run the app
+
+The Next.js starter uses React, TypeScript, Tailwind CSS, and the App Router.
+Use Node.js 20.9 or newer. From the repository root:
+
+```bash
+npm ci
+npm run dev
+```
+
+Open `http://localhost:3000`, or use **Open in Browser** for port 3000 in Codespaces.
+The current page is the framework starter, not the completed LeaveBy interface.
+
+- `app/page.tsx`: starter home page
+- `app/layout.tsx`: shared page layout
+- `app/globals.css`: global styles and Tailwind
+- `npm run build`: production build check
+- `npm run start`: serve the production build
+- `npm run lint`: lint the source
+
+See [PRD.md](PRD.md) for the LeaveBy requirements and [templates/](templates/) for the Class 6 instructor templates.
+
 ## Repository Structure
 
 ```text
 .
 ├── README.md
+├── PRD.md
+├── app/
+├── public/
+├── templates/
+├── package.json
 ├── research/
 ├── interviews/
 ├── Design/
@@ -146,8 +173,8 @@ Project 2 is a required pair project and requires both partners to work in a sha
 
 **Repository foundation:** Ready  
 **Assignment files:** Research and interview files present; MVP and digital wireframes prepared  
-**Current course stage:** Preparing for Class 6  
-**Build/deployment:** Planned for the class build; Vercel connection available  
+**Current course stage:** Class 6 — Next.js starter setup  
+**Build/deployment:** Next.js starter added; deployment pending  
 **Submission:** Pending review and commit
 
 
