@@ -6,7 +6,7 @@
 
 This repository is the course workspace for MTEC 3200. It is organized to hold weekly deliverables, Project 1 research/design/build files, and course submission materials as they are completed.
 
-No assignment content is pre-filled here. Files should be added only when they are actually completed or supplied.
+The current project direction is LeaveBy, a lightweight planner for the transition between a workout and a fixed class or work commitment.
 
 ## Repository Structure
 
@@ -15,10 +15,9 @@ No assignment content is pre-filled here. Files should be added only when they a
 ├── README.md
 ├── research/
 ├── interviews/
-├── design/
-├── specs/
-├── presentation/
-└── .gitignore
+├── Design/
+├── Specs/
+└── Presentation/
 ```
 
 ### research/
@@ -47,7 +46,7 @@ Class 2 and Class 3 require **3–5 interviews** saved as Markdown files in an `
 
 At least half of the interviewees should be outside the immediate friend group.
 
-### design/
+### Design/
 
 For design documentation created later in Project 1.
 
@@ -59,11 +58,11 @@ Expected materials include:
 
 Figma files can remain in Figma and be linked from the relevant documentation when needed.
 
-### specs/
+### Specs/
 
 For the functional specification and other written build specifications required later in Project 1.
 
-### presentation/
+### Presentation/
 
 For Project 1 presentation materials when they are created.
 
@@ -110,6 +109,15 @@ Current weekly work:
 - Read Chapters 1–3 of *Don't Make Me Think*.
 - Arrive at the next class with a chosen direction ready for design work.
 
+### Class 5 — MVP & Wireframes
+
+- [MVP definition](Specs/MVP.md)
+- [Wireframe flow and notes](Design/README.md)
+- [Three-screen rough sketches](Design/LeaveBy_Rough_Sketches.pdf)
+- [Clean wireframe reference](Design/LeaveBy_Wireframes.pdf)
+
+The MVP and digital wireframes follow the transition-planner direction selected in the Class 4 synthesis. The assigned Figma beginner tutorial is complete, as confirmed by Harvey. Paper-wireframe format and the approved commit remain to be confirmed.
+
 ## Project 1 — Everyday Tool
 
 Project 1 is a solo project. The repository will eventually contain:
@@ -137,5 +145,12 @@ Project 2 is a required pair project and requires both partners to work in a sha
 ## Current Status
 
 **Repository foundation:** Ready  
-**Assignment files:** Add only as completed or supplied  
-**Current course stage:** Class 4 completed; preparing for Class 5
+**Assignment files:** Research and interview files present; MVP and digital wireframes prepared  
+**Current course stage:** Preparing for Class 6  
+**Build/deployment:** Planned for the class build; Vercel connection available  
+**Submission:** Pending review and commit
+
+
+## Workflow Collaboration
+
+**Donna (OpenClaw)** is the designated AI workflow assistant for automation, file management, repository management, proofreading, approved submission handling, and automated website deployments when needed. Submission and deployment actions remain subject to Harvey’s approval.
