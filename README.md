@@ -57,6 +57,8 @@ See [PRD.md](PRD.md) for the LeaveBy requirements and [templates/](templates/) f
 
 For research and synthesis work from Project 1.
 
+Start with the [research index](research/README.md) for the existing observations, interview script, three interview records, synthesis, HMW question, and links to design/specifications. The index also identifies research deliverables that remain incomplete.
+
 Files expected by the course as work is completed include:
 
 - `routine_audit.md` or the saved routine-audit artifact
