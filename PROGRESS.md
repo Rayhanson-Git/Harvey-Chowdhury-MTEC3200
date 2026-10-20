@@ -1,6 +1,6 @@
 # LeaveBy progress
 
-Updated October 19, 2026 (America/New_York).
+Updated October 20, 2026 (America/New_York).
 
 | Step | Status | Evidence / next action |
 | --- | --- | --- |
@@ -75,3 +75,13 @@ The earlier access blockers above are historical and resolved. Peer feedback, re
 - Subsequent HTTPS checks via ordinary Python urllib (default TLS validation) and the Vercel fetch connector both returned HTTP 200 with the LeaveBy page and strict-transport-security: max-age=63072000.
 - The ordinary HTTPS request did not supply a Vercel bypass link or login cookie, providing HTTP-level anonymous access evidence. This does not establish full hosted browser interaction testing.
 - Canonical link: https://leaveby.rayhanson.tech. The HTTP endpoint returned 308 with Location: https://leaveby.rayhanson.tech/. HTTPS and redirect checks pass; certificate validity does not establish whole-application security.
+
+## Guided verification — October 20, 2026
+
+Harvey reported four deployed-app checks as passed: the reference calculation; editing with all inputs preserved and a 75-minute commute; blank-commute validation followed by successful correction; and midnight crossing with dates distinguished. No peer testing is inferred. The proposed past-commitment browser check was not confirmed.
+
+The assistant fetched the live app over HTTPS and received HTTP 200 with LeaveBy's form and HSTS. This connector can use an authentication bypass, so this request alone does not verify anonymous access.
+
+The current GitHub calculation/validation source was executed in the orchestration JavaScript runtime after removing TypeScript-only declarations and annotations. Seven groups passed: reference times, edited commute/source preservation, midnight times/dates, zero durations, past-stop flag, invalid/excessive durations, and invalid/expired commitments. This was not a rerun of npm test, TypeScript, lint, production build or browser interaction. The local execution environment was unavailable; the America/New_York daylight-saving case was not rerun.
+
+See [the updated checklist](docs/manual-check.md) for the remaining hosted browser checks and peer feedback. Step 5 remains in progress. Research artifacts, reflective process documentation and presentation/defense preparation remain open as listed in the release audit.
