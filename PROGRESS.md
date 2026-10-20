@@ -85,3 +85,11 @@ The assistant fetched the live app over HTTPS and received HTTP 200 with LeaveBy
 The current GitHub calculation/validation source was executed in the orchestration JavaScript runtime after removing TypeScript-only declarations and annotations. Seven groups passed: reference times, edited commute/source preservation, midnight times/dates, zero durations, past-stop flag, invalid/excessive durations, and invalid/expired commitments. This was not a rerun of npm test, TypeScript, lint, production build or browser interaction. The local execution environment was unavailable; the America/New_York daylight-saving case was not rerun.
 
 See [the updated checklist](docs/manual-check.md) for the remaining hosted browser checks and peer feedback. Step 5 remains in progress. Research artifacts, reflective process documentation and presentation/defense preparation remain open as listed in the release audit.
+
+## Research organization — October 20, 2026
+
+Added [research/README.md](research/README.md) as an index of the existing observations, problem statement, interview questions, Chris/David/Selina interview records, and synthesis sections. Linked the existing HMW question, brainstorming, chosen direction, design notes, MVP and PRD. The course README now links this index.
+
+The index identifies coverage and remaining research documentation; it does not add new interview answers, personas, affinity-map findings or student reflection. Original research and interview files remain unchanged. Research-plan, affinity-map, persona and explicit insight/POV gaps remain open. Peer feedback remains on hold at Harvey's request.
+
+Verification: checked linked repository paths against the current main tree and section targets against synthesis.md; read back the three documentation files after writing. No application code changed.
