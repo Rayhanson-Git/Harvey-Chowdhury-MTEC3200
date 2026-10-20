@@ -1,3 +1,5 @@
+// Source: shadcn/ui, MIT license. Local cn import adapted for this project.
+// https://github.com/shadcn-ui/ui/blob/main/apps/v4/registry/new-york-v4/ui/button.tsx
 import * as React from "react"
 import { cva, type VariantProps } from "class-variance-authority"
 import { cn } from "@/lib/utils"

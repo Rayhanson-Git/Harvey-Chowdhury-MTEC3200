@@ -2,7 +2,7 @@
 
 Harvey Chowdhury · MTEC 3200 · Project 1
 
-Open [the rough pencil-style sketches](LeaveBy_Rough_Sketches.pdf) or [their PNG](LeaveBy_Rough_Sketches.png).
+Open [the rough pencil-style sketches](LeaveBy_Rough_Sketches.png). The rough-sketch PDF is intentionally omitted; the PNG is the available reference.
 
 For the clean layout reference, open [the three-screen sheet](LeaveBy_Wireframes.pdf) or [the image preview](LeaveBy_Wireframes.png).
 

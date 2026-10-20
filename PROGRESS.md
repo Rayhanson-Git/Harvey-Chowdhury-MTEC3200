@@ -8,7 +8,7 @@ Updated October 19, 2026 (America/New_York).
 | 2. Run the starter | Completed | Assistant check passed; Harvey subsequently supplied a Codespaces screenshot showing LeaveBy loaded. |
 | 3. Project setup | Completed | AGENTS.md, two project skills, shadcn manual configuration and component inventory added; lint, TypeScript, production build and both skill validators passed. |
 | 4. Build first screen | Completed | First screen loaded in Harvey’s Codespace, confirmed by screenshot October 19. No completed interaction or peer test is inferred. |
-| 5. Complete and test flow | In progress | Core calculation/result/edit flow implemented and automated checks passed; manual interaction review, peer testing and Vercel deployment remain. |
+| 5. Complete and test flow | In progress | Core calculation/result/edit flow implemented and automated checks passed; Harvey confirmed the core browser flow; remaining manual edge-case checks, peer testing and Vercel deployment remain. |
 
 ## Course source check
 
@@ -44,3 +44,9 @@ Lint, TypeScript, production build, both skill validators and diff checks passed
 - Production build/TypeScript and lint passed. Automated checks do not establish browser interactions or peer testing.
 - Vercel inspection: the connected account returned no matching repository project, no project matching mtec3200 and no teams. No deployment was created or claimed.
 - Manual checklist: [docs/manual-check.md](docs/manual-check.md). Existing preview-service limitation still prevents internal browser QA.
+
+## Pre-deployment audit — October 19
+
+See [docs/release-audit.md](docs/release-audit.md) for case-by-case results and source cross-checks. Harvey supplied a screenshot of correct results and reported the edit/recalculate check working. The repository passed a fresh locked install, tests, lint and production build. Attribution comments, sketch references and native dark controls were corrected. Production npm audit is clean; full audit retains the unpatched braces development-tool chain advisory.
+
+Deployment was authorized but remains blocked: Vercel returned no projects/teams and its account endpoint returned 404 User not found. No deployment or DNS changes occurred. Prototype build readiness does not establish final course submission readiness; the audit lists missing research/process/presentation evidence.

@@ -140,10 +140,10 @@ Current weekly work:
 
 - [MVP definition](Specs/MVP.md)
 - [Wireframe flow and notes](Design/README.md)
-- [Three-screen rough sketches](Design/LeaveBy_Rough_Sketches.pdf)
+- [Three-screen rough sketches](Design/LeaveBy_Rough_Sketches.png)
 - [Clean wireframe reference](Design/LeaveBy_Wireframes.pdf)
 
-The MVP and digital wireframes follow the transition-planner direction selected in the Class 4 synthesis. The assigned Figma beginner tutorial is complete, as confirmed by Harvey. Paper-wireframe format and the approved commit remain to be confirmed.
+The MVP and digital wireframes follow the transition-planner direction selected in the Class 4 synthesis. The assigned Figma beginner tutorial is complete, as confirmed by Harvey. The rough-sketch PNG is available; the omitted rough-sketch PDF is intentional. No missing PDF is treated as a build blocker.
 
 ## Project 1 — Everyday Tool
 
@@ -189,3 +189,5 @@ Read `AGENTS.md` and `PRD.md` before making changes. Track completed steps and c
 The three states from `Design/LeaveBy_Wireframes.png` are implemented. Follow [the manual checklist](docs/manual-check.md) before peer testing and deployment. Class 7 on October 20 covers MVP scoping, peer feedback, deployment and reflection; see `PROGRESS.md` for source links.
 
 Run `npm test` to check the calculation and validation acceptance cases.
+
+See [the pre-deployment audit](docs/release-audit.md) for verified checks, course gaps and the deployment blocker.

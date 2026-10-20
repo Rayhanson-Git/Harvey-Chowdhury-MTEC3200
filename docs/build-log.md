@@ -18,3 +18,10 @@ This records observed assistant activity, not a student-authored reflection or e
 - Validation: eight acceptance tests, lint and production build/TypeScript passed. Browser interaction review and peer feedback are not claimed.
 - Deployment inspection: connected Vercel account returned no matching project or teams; deployment remains pending.
 - Student review: prior screenshot establishes that the first screen loaded in Codespaces. It does not establish testing of the new flow or comprehension of the calculation code.
+
+## October 19, 2026 — repository and course audit
+
+- Request: audit the whole repository and updated Notion before deploying; advise on domain/subdomain versus open-source options.
+- Cross-checked course overview, syllabus, Project 1 and Classes 1–7; inspected application, tracked course materials and links, targeted secret patterns, assets, installation, tests and dependency advisories.
+- Fixed source attribution comments, native control color scheme, missing-PDF references and the template source link. Preserved original research/templates and the intentionally omitted PDF.
+- Results and limits are in release-audit.md. No student research or reflections were invented. Deployment is authorized but blocked by Vercel account lookup failure; no hosting or DNS mutation occurred.

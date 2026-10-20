@@ -1,3 +1,4 @@
+// Source: Next.js create-next-app scaffold; adapted for LeaveBy. https://nextjs.org/docs/app
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";

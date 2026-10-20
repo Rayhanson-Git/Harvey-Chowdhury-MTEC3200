@@ -6,4 +6,4 @@ Instructor templates transcribed from the screenshots supplied on October 6, 202
 - `AGENTS-template.md` — template for project-specific agent instructions.
 - `build-screen/SKILL.md` — template for the screen-building workflow.
 
-Source: [Class 6: Building with AI](https://app.notion.com/p/5923d2939d2f83058aa2817c11045cad).
+Source: [Class 6: Building with AI](https://app.notion.com/p/9713d2939d2f825c9ee28126d1031619).
