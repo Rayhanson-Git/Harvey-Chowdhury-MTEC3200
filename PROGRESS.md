@@ -8,7 +8,7 @@ Updated October 19, 2026 (America/New_York).
 | 2. Run the starter | Completed | Assistant check passed; Harvey subsequently supplied a Codespaces screenshot showing LeaveBy loaded. |
 | 3. Project setup | Completed | AGENTS.md, two project skills, shadcn manual configuration and component inventory added; lint, TypeScript, production build and both skill validators passed. |
 | 4. Build first screen | Completed | First screen loaded in Harvey’s Codespace, confirmed by screenshot October 19. No completed interaction or peer test is inferred. |
-| 5. Complete and test flow | In progress | Core calculation/result/edit flow implemented and automated checks passed; Harvey confirmed the core browser flow; remaining manual edge-case checks, peer testing and Vercel deployment remain. |
+| 5. Complete and test flow | In progress | Core calculation/result/edit flow implemented and automated checks passed; Harvey confirmed the core browser flow; remaining manual edge-case checks and peer testing remain; deployment and custom-domain HTTPS are verified below. |
 
 ## Course source check
 
@@ -66,3 +66,12 @@ The connection and GitHub integration are now working. The authorized deployment
 - Default project protection remains enabled. Custom-domain/DNS changes and signed-out access verification remain pending. No claim of peer testing is made.
 
 The earlier access blockers above are historical and resolved. Peer feedback, remaining manual cases and final course evidence still need completion.
+
+## Custom-domain HTTPS — October 19, 2026
+
+- Harvey connected leaveby.rayhanson.tech; Vercel reports verified domain and correct CNAME, misconfigured=false.
+- Investigated a browser security warning. HTTPS initially failed; no certificate was returned in the team's certificate list, while HTTP initially served the page without upgrade.
+- Requested a certificate scoped only to leaveby.rayhanson.tech. Vercel issued cert_WfM5a1P0ZIykhJzeUGOaYcZi with autoRenew=true.
+- Subsequent HTTPS checks via ordinary Python urllib (default TLS validation) and the Vercel fetch connector both returned HTTP 200 with the LeaveBy page and strict-transport-security: max-age=63072000.
+- The ordinary HTTPS request did not supply a Vercel bypass link or login cookie, providing HTTP-level anonymous access evidence. This does not establish full hosted browser interaction testing.
+- Canonical link: https://leaveby.rayhanson.tech. The HTTP endpoint returned 308 with Location: https://leaveby.rayhanson.tech/. HTTPS and redirect checks pass; certificate validity does not establish whole-application security.

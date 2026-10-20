@@ -32,3 +32,12 @@ This records observed assistant activity, not a student-authored reflection or e
 - Created/reused project leaveby in the verified Rayhanson team; deployed audited main commit ca1783897df844561d2dedf56eaaafca7d33119a.
 - Deployment dpl_AFcg2HsEdxZYUhFdiHXVV9jaPSHT reached READY in production. Vercel fetch returned HTTP 200 and the LeaveBy form at https://leaveby-mu.vercel.app.
 - Default protection was preserved. Anonymous access, custom domain, full hosted interaction testing and peer tests remain unverified/pending.
+
+## October 19, 2026 — custom-domain HTTPS repair
+
+- Request: investigate the browser's unsecured-site warning after connecting the domain.
+- Checked Vercel domain/DNS state, HTTP/HTTPS behavior and certificate inventory. Correct DNS was present, but HTTPS requests failed and no certificate was returned.
+- Issued the exact-host certificate with automatic renewal; rechecked HTTPS successfully with normal TLS validation and through Vercel's fetch connector. Both returned the app page and HSTS.
+- Updated the canonical README link. No Cloudflare zone records, nameservers or unrelated hostnames were changed.
+
+- Plain HTTP subsequently returned 308 redirecting to the same host over HTTPS.

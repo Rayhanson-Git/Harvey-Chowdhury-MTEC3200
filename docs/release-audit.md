@@ -94,3 +94,7 @@ The connected account and GitHub integration have been repaired, and the Rayhans
 - [Class 5](https://app.notion.com/p/2323d2939d2f8389be2e81baaf1a61c5)
 - [Class 6](https://app.notion.com/p/9713d2939d2f825c9ee28126d1031619)
 - [Class 7](https://app.notion.com/p/9073d2939d2f83498e9301afecd07211)
+
+## Post-audit custom-domain update
+
+Harvey connected leaveby.rayhanson.tech. On October 19, the domain's CNAME and Vercel ownership/configuration checks passed. HTTPS initially failed and the certificate inventory was empty; issuing an exact-host auto-renewing certificate resolved the observed failure. Normal HTTPS access returned 200 and the LeaveBy page with HSTS max-age=63072000. A separate plain-HTTP request returned 308 redirecting to HTTPS. The HTTPS request used default TLS validation and no supplied bypass cookie/link. These transport checks supersede the earlier pending domain/access status. Full browser, peer and coursework checks remain as previously listed.

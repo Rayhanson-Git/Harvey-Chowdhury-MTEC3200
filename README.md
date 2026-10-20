@@ -10,9 +10,9 @@ The current project direction is LeaveBy, a lightweight planner for the transiti
 
 ## Live app
 
-[Open LeaveBy](https://leaveby-mu.vercel.app) · [Vercel dashboard](https://vercel.com/rayhanson/leaveby)
+[Open LeaveBy](https://leaveby.rayhanson.tech) · [Vercel dashboard](https://vercel.com/rayhanson/leaveby)
 
-Production build is deployed. Custom-domain configuration and signed-out access verification are pending.
+Production build is deployed at https://leaveby.rayhanson.tech with a domain-specific auto-renewing certificate. HTTPS returned 200 with the app page and HSTS. Remaining peer/course checks are tracked in PROGRESS.md.
 
 ## Run the app
 
@@ -180,7 +180,7 @@ Project 2 is a required pair project and requires both partners to work in a sha
 **Repository foundation:** Ready  
 **Assignment files:** Research and interview files present; MVP and digital wireframes prepared  
 **Current course stage:** Step 5 — core flow ready for manual testing
-**Build/deployment:** Production deployment READY; custom domain and peer testing pending
+**Build/deployment:** Production deployment READY; custom-domain HTTPS verified; peer testing pending
 **Submission:** Not confirmed
 
 
