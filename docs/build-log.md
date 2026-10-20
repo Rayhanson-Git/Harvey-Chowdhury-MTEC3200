@@ -25,3 +25,10 @@ This records observed assistant activity, not a student-authored reflection or e
 - Cross-checked course overview, syllabus, Project 1 and Classes 1–7; inspected application, tracked course materials and links, targeted secret patterns, assets, installation, tests and dependency advisories.
 - Fixed source attribution comments, native control color scheme, missing-PDF references and the template source link. Preserved original research/templates and the intentionally omitted PDF.
 - Results and limits are in release-audit.md. No student research or reflections were invented. Deployment is authorized but blocked by Vercel account lookup failure; no hosting or DNS mutation occurred.
+
+## October 19, 2026 — deployment
+
+- Continued the authorized deployment after Vercel connection and GitHub integration were repaired.
+- Created/reused project leaveby in the verified Rayhanson team; deployed audited main commit ca1783897df844561d2dedf56eaaafca7d33119a.
+- Deployment dpl_AFcg2HsEdxZYUhFdiHXVV9jaPSHT reached READY in production. Vercel fetch returned HTTP 200 and the LeaveBy form at https://leaveby-mu.vercel.app.
+- Default protection was preserved. Anonymous access, custom domain, full hosted interaction testing and peer tests remain unverified/pending.

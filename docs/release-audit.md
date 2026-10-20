@@ -8,7 +8,7 @@ Audited October 19, 2026 (America/New_York). Baseline remote commit: `028d0bab70
 
 **Course submission:** Needs revision / evidence completion. The functioning app is only one part of Project 1. Missing research/design/process/presentation evidence is listed below and was not invented.
 
-**Deployment:** Blocked. Vercel lists no accessible projects or teams; `GET /v2/user` returns `404 not_found: User not found`. No project was created, no deployment was requested, and no domain/DNS change was made.
+**Deployment update:** Initial access blockers were resolved after this audit. Project `leaveby` was created in team Rayhanson and deployment `dpl_AFcg2HsEdxZYUhFdiHXVV9jaPSHT` reached READY from the audited commit `ca1783897df844561d2dedf56eaaafca7d33119a`. Live URL: https://leaveby-mu.vercel.app. Vercel fetch returned 200 with the app page; this authenticated-capable fetch does not verify anonymous access. No custom-domain/DNS changes were made. Historical findings below describe the pre-deployment audit state.
 
 ## Sources and coverage
 
@@ -80,7 +80,7 @@ Recommended setup: a separate Vercel project linked to `Rayhanson-Git/Harvey-Cho
 
 A subdomain gives the app an independent address while allowing a portfolio project entry to link to it. Hosting, domain naming and open-source licensing are independent decisions. Keeping the current public course repository does not require licensing all research/interview materials as open source. Leave licensing unchanged unless Harvey chooses it explicitly.
 
-Before deployment can proceed, repair the connected Vercel account and identify the intended team/project scope. Deployment is already authorized by Harvey; no additional conversational deployment approval is needed after this access blocker is resolved. Custom-domain/DNS changes await selection of the actual hostname and verified domain access.
+The connected account and GitHub integration have been repaired, and the Rayhanson team scope was verified before deployment. Deployment authorization came from Harvey’s explicit request. Custom-domain/DNS changes still await selection of the actual hostname and verified domain access.
 
 ## Course source index
 

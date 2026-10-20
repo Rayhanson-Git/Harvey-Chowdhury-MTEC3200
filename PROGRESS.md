@@ -50,3 +50,19 @@ Lint, TypeScript, production build, both skill validators and diff checks passed
 See [docs/release-audit.md](docs/release-audit.md) for case-by-case results and source cross-checks. Harvey supplied a screenshot of correct results and reported the edit/recalculate check working. The repository passed a fresh locked install, tests, lint and production build. Attribution comments, sketch references and native dark controls were corrected. Production npm audit is clean; full audit retains the unpatched braces development-tool chain advisory.
 
 Deployment was authorized but remains blocked: Vercel returned no projects/teams and its account endpoint returned 404 User not found. No deployment or DNS changes occurred. Prototype build readiness does not establish final course submission readiness; the audit lists missing research/process/presentation evidence.
+
+## Vercel deployment — October 19, 2026
+
+The connection and GitHub integration are now working. The authorized deployment succeeded:
+
+- Team: Rayhanson (`team_McLOi8RvhigiilQftObY7ZJ9`)
+- Project: leaveby (`prj_m7qKsy2AQxw9JO5BvFQQks6DRD9m`)
+- Production branch: main
+- Verified source commit: ca1783897df844561d2dedf56eaaafca7d33119a
+- Deployment: dpl_AFcg2HsEdxZYUhFdiHXVV9jaPSHT; READY
+- Live alias: https://leaveby-mu.vercel.app
+- HTTP verification: Vercel fetch returned 200 with LeaveBy's form. This connector can use authentication bypass, so it does not establish anonymous public access.
+- Runtime error/fatal log query returned no matching records; this static page does not necessarily emit runtime function logs.
+- Default project protection remains enabled. Custom-domain/DNS changes and signed-out access verification remain pending. No claim of peer testing is made.
+
+The earlier access blockers above are historical and resolved. Peer feedback, remaining manual cases and final course evidence still need completion.

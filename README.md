@@ -8,6 +8,12 @@ This repository is the course workspace for MTEC 3200. It is organized to hold w
 
 The current project direction is LeaveBy, a lightweight planner for the transition between a workout and a fixed class or work commitment.
 
+## Live app
+
+[Open LeaveBy](https://leaveby-mu.vercel.app) · [Vercel dashboard](https://vercel.com/rayhanson/leaveby)
+
+Production build is deployed. Custom-domain configuration and signed-out access verification are pending.
+
 ## Run the app
 
 The Next.js starter uses React, TypeScript, Tailwind CSS, and the App Router.
@@ -174,7 +180,7 @@ Project 2 is a required pair project and requires both partners to work in a sha
 **Repository foundation:** Ready  
 **Assignment files:** Research and interview files present; MVP and digital wireframes prepared  
 **Current course stage:** Step 5 — core flow ready for manual testing
-**Build/deployment:** Core flow built and checked; deployment pending
+**Build/deployment:** Production deployment READY; custom domain and peer testing pending
 **Submission:** Not confirmed
 
 
