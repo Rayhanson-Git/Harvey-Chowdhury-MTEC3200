@@ -93,3 +93,11 @@ Added [research/README.md](research/README.md) as an index of the existing obser
 The index identifies coverage and remaining research documentation; it does not add new interview answers, personas, affinity-map findings or student reflection. Original research and interview files remain unchanged. Research-plan, affinity-map, persona and explicit insight/POV gaps remain open. Peer feedback remains on hold at Harvey's request.
 
 Verification: checked linked repository paths against the current main tree and section targets against synthesis.md; read back the three documentation files after writing. No application code changed.
+
+## Affinity map draft — October 20, 2026
+
+Added [research/affinity_map.md](research/affinity_map.md): 20 paraphrased observation cards from the existing Chris, David and Selina interview answers, grouped into five themes. Each card links to its interview and identifies the source question. Interpretations are labeled for review, David's contrasting experience is retained, and the deadline-pressure cluster is identified as based on Selina's account.
+
+The document explicitly dates this as an assistant-assisted retrospective analysis after the prototype build. Harvey has not yet confirmed the grouping or interpretations. Updated the research index to link the draft and replace its absent-artifact status with review pending. Original interview records remain unchanged; no new participants or outcomes were added.
+
+Verification: checked 20 unique card IDs, source questions and links against the three current interview records; read back the map, research index and progress update. Insight statements, persona, explicit POV and remaining research-plan evidence still require completion/review. Peer feedback remains on hold.
