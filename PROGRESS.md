@@ -5,10 +5,10 @@ Updated October 19, 2026 (America/New_York).
 | Step | Status | Evidence / next action |
 | --- | --- | --- |
 | 1. Next.js foundation | Completed | Starter commit 137cf62; TypeScript and Tailwind installed. |
-| 2. Run the starter | Completed (assistant check) | Previous session recorded HTTP 200 and starter content. Harvey's Codespace/browser check is not confirmed. |
+| 2. Run the starter | Completed | Assistant check passed; Harvey subsequently supplied a Codespaces screenshot showing LeaveBy loaded. |
 | 3. Project setup | Completed | AGENTS.md, two project skills, shadcn manual configuration and component inventory added; lint, TypeScript, production build and both skill validators passed. |
-| 4. Build first screen | Ready for manual review | Entry form built from the first wireframe, with five fields, library components and inline validation. Button checks inputs; timing results remain step 5. |
-| 5. Complete and test flow | Not started | Calculation, results, editing, validation, peer testing and Vercel deployment remain. |
+| 4. Build first screen | Completed | First screen loaded in Harvey’s Codespace, confirmed by screenshot October 19. No completed interaction or peer test is inferred. |
+| 5. Complete and test flow | In progress | Core calculation/result/edit flow implemented and automated checks passed; manual interaction review, peer testing and Vercel deployment remain. |
 
 ## Course source check
 
@@ -33,3 +33,14 @@ Lint, TypeScript, production build, both skill validators and diff checks passed
 - Browser QA could not run: the managed preview supervisor supplies `--host` and `--strictPort`, which Next.js does not accept. No app configuration was changed to compensate.
 - Calculate times currently validates and acknowledges the inputs. It does not calculate action times or navigate to a result yet. No persistence or deployment was added.
 - Next action: Harvey compares this screen with Design/LeaveBy_Wireframes.png, then step 5 connects calculations, results and editing.
+
+## Step 5 — core flow
+
+- Added validated timestamp calculations: commitment minus buffer gives arrival; minus commute gives departure; minus preparation gives workout stop.
+- Results show the stop first, departure, duration breakdown, arrival and commitment. Dates appear when an action falls on a different day.
+- Edit plan preserves all five inputs; Recalculate revalidates against the current time. Invalid edits stay in the form. Past workout stops show the PRD warning while retaining results.
+- Keyboard focus moves to the result heading, editing heading or first invalid input. Focus callbacks stay stable while typing.
+- Eight reproducible acceptance tests cover the reference example, edited commute, midnight crossing, zero durations, past-stop warning, invalid durations, invalid/expired commitments and a nonexistent daylight-saving local time. Run `npm test`.
+- Production build/TypeScript and lint passed. Automated checks do not establish browser interactions or peer testing.
+- Vercel inspection: the connected account returned no matching repository project, no project matching mtec3200 and no teams. No deployment was created or claimed.
+- Manual checklist: [docs/manual-check.md](docs/manual-check.md). Existing preview-service limitation still prevents internal browser QA.

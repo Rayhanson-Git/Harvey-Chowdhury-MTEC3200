@@ -41,10 +41,38 @@ export function validatePlanInput(input: PlanInput, now = new Date()): PlanError
 
   if (Object.keys(errors).length === 0) {
     const total = durationFields.reduce((sum, field) => sum + Number(input[field]), 0);
-    // Guard date arithmetic before the result screen is added.
+    // Guard the full calculation against dates outside JavaScript's range.
     if (!Number.isSafeInteger(total) || !Number.isFinite(new Date(commitment.getTime() - total * 60_000).getTime())) {
       for (const field of durationFields) errors[field] = "This duration is too large. Enter fewer minutes.";
     }
   }
   return errors;
+}
+
+export type TransitionPlan = {
+  commitment: Date;
+  arrival: Date;
+  leave: Date;
+  stop: Date;
+  preparation: number;
+  commute: number;
+  buffer: number;
+  stopHasPassed: boolean;
+};
+
+export function calculatePlan(input: PlanInput, now = new Date()):
+  | { ok: false; errors: PlanErrors }
+  | { ok: true; plan: TransitionPlan } {
+  const errors = validatePlanInput(input, now);
+  if (Object.keys(errors).length > 0) return { ok: false, errors };
+
+  const commitment = new Date(`${input.date}T${input.time}`);
+  const preparation = Number(input.preparation);
+  const commute = Number(input.commute);
+  const buffer = Number(input.buffer);
+  // Subtract elapsed minutes from full timestamps so midnight is handled naturally.
+  const arrival = new Date(commitment.getTime() - buffer * 60_000);
+  const leave = new Date(arrival.getTime() - commute * 60_000);
+  const stop = new Date(leave.getTime() - preparation * 60_000);
+  return { ok: true, plan: { commitment, arrival, leave, stop, preparation, commute, buffer, stopHasPassed: stop <= now } };
 }

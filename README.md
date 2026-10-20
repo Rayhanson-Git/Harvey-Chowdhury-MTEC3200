@@ -19,7 +19,7 @@ npm run dev
 ```
 
 Open `http://localhost:3000`, or use **Open in Browser** for port 3000 in Codespaces.
-The home page is LeaveBy’s first entry screen. It validates the fields; calculated results and editing are the next build step.
+The home page supports entering a plan, calculating action times, viewing results, and editing/recalculating. Values stay in memory until reload.
 
 - `app/page.tsx`: entry-screen layout
 - `app/layout.tsx`: shared page layout
@@ -173,8 +173,8 @@ Project 2 is a required pair project and requires both partners to work in a sha
 
 **Repository foundation:** Ready  
 **Assignment files:** Research and interview files present; MVP and digital wireframes prepared  
-**Current course stage:** Step 4 — first entry screen ready for manual review
-**Build/deployment:** Entry screen built and checked; deployment pending
+**Current course stage:** Step 5 — core flow ready for manual testing
+**Build/deployment:** Core flow built and checked; deployment pending
 **Submission:** Not confirmed
 
 
@@ -186,4 +186,6 @@ Project 2 is a required pair project and requires both partners to work in a sha
 
 Read `AGENTS.md` and `PRD.md` before making changes. Track completed steps and checks in `PROGRESS.md`; component inventory is in `docs/components.md`. Project skills live in `.github/skills/`.
 
-The entry screen from `Design/LeaveBy_Wireframes.png` is ready for manual review. The next build task is calculation, results and editing. Class 7 on October 20 covers MVP scoping, peer feedback, deployment and reflection; see `PROGRESS.md` for source links.
+The three states from `Design/LeaveBy_Wireframes.png` are implemented. Follow [the manual checklist](docs/manual-check.md) before peer testing and deployment. Class 7 on October 20 covers MVP scoping, peer feedback, deployment and reflection; see `PROGRESS.md` for source links.
+
+Run `npm test` to check the calculation and validation acceptance cases.
