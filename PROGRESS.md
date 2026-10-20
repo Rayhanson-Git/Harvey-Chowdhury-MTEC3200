@@ -101,3 +101,11 @@ Added [research/affinity_map.md](research/affinity_map.md): 20 paraphrased obser
 The document explicitly dates this as an assistant-assisted retrospective analysis after the prototype build. Harvey has not yet confirmed the grouping or interpretations. Updated the research index to link the draft and replace its absent-artifact status with review pending. Original interview records remain unchanged; no new participants or outcomes were added.
 
 Verification: checked 20 unique card IDs, source questions and links against the three current interview records; read back the map, research index and progress update. Insight statements, persona, explicit POV and remaining research-plan evidence still require completion/review. Peer feedback remains on hold.
+
+## Insight statements draft — October 20, 2026
+
+Added [research/insight_statements.md](research/insight_statements.md) with five retrospective interpretations covering delay across stages, commute predictability/buffer, routine trade-offs, existing stopping/preparation strategies and perceived deadline pressure. Each links to affinity cards and interview answers, distinguishes evidence from design implications, and records limits. The fifth is labeled as a candidate based only on Selina's account; David's contrasting experience remains explicit.
+
+Checked the grouping and statements against the recorded source answers. Harvey's review is pending for both the map and insights; no student approval, app effectiveness or peer feedback is inferred. The research index now links the insights and records this status.
+
+Verification: reviewed source/card references and read back the three documentation files after writing. Original interviews, synthesis and application code remain unchanged. Persona, explicit POV, remaining research-plan evidence, reflection/prompting log, presentation/defense and peer feedback remain open.
