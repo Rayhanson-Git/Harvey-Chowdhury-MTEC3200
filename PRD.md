@@ -53,11 +53,11 @@ They need to answer: “When should I stop working out, and when should I leave?
 - **Vercel (required):** host and share the working app for review and testing.
 - **React and TypeScript:** reusable form/result components and typed plan data.
 - **Tailwind CSS:** responsive styling consistent with the wireframes.
-- **Component library:** selection remains open; use the chosen library consistently.
+- **Component library:** shadcn/ui, configured in step 3; add components as each screen is built.
 - **Local date/time calculations and form validation:** calculate milestones and explain invalid inputs.
 - **Git and GitHub:** save working checkpoints and maintain project documentation.
 
-No API, API key, database, authentication, or cloud storage is needed for this MVP. The current repository has research and design files but no application package manifest or source code yet; the stack above is planned, not reported as installed.
+No API, API key, database, authentication, or cloud storage is needed for this MVP. The Next.js starter is installed at the repository root. Step 3 adds the component-library configuration and supporting dependencies; LeaveBy screens are still pending.
 
 Proposed first-build data behavior: retain one plan in browser memory while moving between the form and results. Reloading starts a new plan. Saving routines across visits remains outside the MVP. Only the commitment date/time and three duration estimates are required; result times are derived.
 
@@ -153,11 +153,11 @@ Supporting project materials:
 - [Chris interview record](interviews/Chris_2026-09-19.md)
 - [David interview record](interviews/David_2026-09-19.md)
 - [Selina interview record](interviews/Selina_2026-09-19.md)
-- [Class 6 in Notion](https://app.notion.com/p/5923d2939d2f83058aa2817c11045cad)
+- [Class 6 in Notion](https://app.notion.com/p/9713d2939d2f825c9ee28126d1031619)
 
 ## Open questions
 
-- Which component library should the first build use?
+- Component-library decision: use shadcn/ui for the first build.
 - Is session-only data sufficient for the first version? This is the proposed behavior; saved routines remain outside scope.
 - Can users estimate preparation and commute durations well enough for a useful plan?
 - Do users clearly distinguish **Stop workout** from **Leave by**, and does the chosen buffer help them plan earlier?

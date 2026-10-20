@@ -1,0 +1,4 @@
+interface:
+  display_name: "Verify LeaveBy plan"
+  short_description: "Check LeaveBy timing, validation and editing flows"
+  default_prompt: "Verify the LeaveBy plan logic against PRD.md and report actual findings."
