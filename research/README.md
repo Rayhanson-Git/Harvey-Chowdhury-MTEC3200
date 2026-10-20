@@ -10,6 +10,7 @@ Organized October 20, 2026. This index links existing repository materials and i
 | Problem framing | [Problem statement](problem_statement.md) | Initial gym-to-class friction and the assumption to test. |
 | Interview preparation | [Interview questions](interview_questions.md) | Research focus, interview questions, and follow-up prompts. This is the existing interview script; a duplicate file is unnecessary. |
 | Data collection | [Chris](../interviews/Chris_2026-09-19.md), [David](../interviews/David_2026-09-19.md), [Selina](../interviews/Selina_2026-09-19.md) | Three dated records, each with context, answers, and individual synthesis. Each record labels the participant as outside the immediate friend group. |
+| Affinity grouping | [Affinity map](affinity_map.md) | Retrospective draft with 22 source-linked observation cards in five clusters; awaiting Harvey's review. |
 | Cross-interview synthesis | [Class 4 synthesis](synthesis.md#interview-synthesis) | Existing comparison across the three interviews. |
 | Problem after synthesis | [Real Problem](synthesis.md#real-problem) | Existing refined problem statement. |
 | Design question | [How Might We](synthesis.md#how-might-we) | Existing HMW question. |
@@ -36,7 +37,7 @@ The records remain in their original files so their answers and interpretation c
 | --- | --- | --- |
 | Research plan | The interview questions include a research focus; What / How / Why includes uncertainties. | A standalone plan is not present. Link an existing plan if available, or label any later reconstruction with its actual date. |
 | Routine audit / self-log | What / How / Why contains routine observations. | The original routine-audit artifact is not in this repository; locate the existing artifact if available. |
-| Affinity map | Individual interview observations and cross-interview synthesis exist. | A documented affinity map is not present. |
+| Affinity map | [Retrospective draft](affinity_map.md) groups 22 observation cards into five clusters with source links. | Harvey reviews the paraphrases, groupings and interpretations; the map is not yet marked reviewed. |
 | Insight statements | Observations and synthesis prose exist. | Clearly identified, evidence-linked insight statements need review/completion. |
 | Persona | No persona artifact found. | Supply a research-grounded persona without invented participant details. |
 | Point-of-view statement | The synthesis includes a Real Problem section. | A separately identified POV statement is not present; review whether existing wording meets the instructor's requested format. |
