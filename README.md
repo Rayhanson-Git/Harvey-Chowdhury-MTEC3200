@@ -19,9 +19,9 @@ npm run dev
 ```
 
 Open `http://localhost:3000`, or use **Open in Browser** for port 3000 in Codespaces.
-The current page is the framework starter, not the completed LeaveBy interface.
+The home page is LeaveBy’s first entry screen. It validates the fields; calculated results and editing are the next build step.
 
-- `app/page.tsx`: starter home page
+- `app/page.tsx`: entry-screen layout
 - `app/layout.tsx`: shared page layout
 - `app/globals.css`: global styles and Tailwind
 - `npm run build`: production build check
@@ -173,8 +173,8 @@ Project 2 is a required pair project and requires both partners to work in a sha
 
 **Repository foundation:** Ready  
 **Assignment files:** Research and interview files present; MVP and digital wireframes prepared  
-**Current course stage:** Step 3 — project instructions, skills and component-library setup
-**Build/deployment:** Next.js starter added; deployment pending  
+**Current course stage:** Step 4 — first entry screen ready for manual review
+**Build/deployment:** Entry screen built and checked; deployment pending
 **Submission:** Not confirmed
 
 
@@ -186,4 +186,4 @@ Project 2 is a required pair project and requires both partners to work in a sha
 
 Read `AGENTS.md` and `PRD.md` before making changes. Track completed steps and checks in `PROGRESS.md`; component inventory is in `docs/components.md`. Project skills live in `.github/skills/`.
 
-The next build task is the entry screen from `Design/LeaveBy_Wireframes.png`. The current home page remains the starter. Class 7 on October 20 covers MVP scoping, peer feedback, deployment and reflection; see `PROGRESS.md` for source links.
+The entry screen from `Design/LeaveBy_Wireframes.png` is ready for manual review. The next build task is calculation, results and editing. Class 7 on October 20 covers MVP scoping, peer feedback, deployment and reflection; see `PROGRESS.md` for source links.

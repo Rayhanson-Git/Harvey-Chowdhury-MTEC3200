@@ -57,7 +57,7 @@ They need to answer: “When should I stop working out, and when should I leave?
 - **Local date/time calculations and form validation:** calculate milestones and explain invalid inputs.
 - **Git and GitHub:** save working checkpoints and maintain project documentation.
 
-No API, API key, database, authentication, or cloud storage is needed for this MVP. The Next.js starter is installed at the repository root. Step 3 adds the component-library configuration and supporting dependencies; LeaveBy screens are still pending.
+No API, API key, database, authentication, or cloud storage is needed for this MVP. The Next.js starter is installed at the repository root. Step 3 adds the component-library configuration and supporting dependencies; The entry screen now exists with input validation; calculated results and editing remain pending.
 
 Proposed first-build data behavior: retain one plan in browser memory while moving between the form and results. Reloading starts a new plan. Saving routines across visits remains outside the MVP. Only the commitment date/time and three duration estimates are required; result times are derived.
 
