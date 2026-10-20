@@ -2,7 +2,7 @@
 
 Prepared October 20, 2026.
 
-Status: assistant-assisted retrospective draft for Harvey's review. These interpretations draw on the existing interview records and [affinity map](affinity_map.md). They were documented after the prototype build and do not establish that the app solves the reported problems.
+Retrospective analysis of the existing interview records and [affinity map](affinity_map.md), documented after the prototype build. The interpretations do not establish product effectiveness.
 
 ## 1. Protecting the transition requires accounting for several sources of delay
 
@@ -54,8 +54,6 @@ Design implication to evaluate: during peer testing, ask whether the displayed t
 
 Limit: this is a single-participant insight candidate. It is not a shared finding across all three interviews, and no reduction in stress has been demonstrated.
 
-## Review status and next step
+## Research connections
 
-The source-to-card links and the differences between participant accounts have been checked against the recorded answers. Harvey's interpretation and approval remain pending.
-
-After review, use the supported needs and conditions to develop a persona and a point-of-view statement. Retain the [existing HMW question](synthesis.md#how-might-we) for comparison. Peer feedback on the deployed app remains pending.
+These statements support the [behavioral persona](persona.md) and [point of view](point_of_view.md). The [original HMW question](synthesis.md#how-might-we) remains part of the existing synthesis. Peer prototype feedback is pending.

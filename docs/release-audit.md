@@ -1,5 +1,7 @@
 # LeaveBy pre-deployment audit
 
+Historical audit from October 19. For the current state, use [verification](verification.md) and the [submission checklist](submission-checklist.md). Research artifacts, Figma wireframes and presentation materials added October 20 supersede the earlier absent-file findings.
+
 Audited October 19, 2026 (America/New_York). Baseline remote commit: `028d0bab70217422730a124b03e35416d464382c`.
 
 ## Decision

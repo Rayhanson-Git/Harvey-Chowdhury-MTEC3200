@@ -1,47 +1,22 @@
 # LeaveBy research index
 
-Organized October 20, 2026. This index links existing repository materials and identifies where their content can be found. Organization does not establish completion of missing deliverables.
+Updated October 20, 2026. The original interview records are dated September 19. The method summary and separate affinity, insight, persona and POV artifacts were documented retrospectively on October 20.
 
-## Reading order
+| Stage | Material |
+| --- | --- |
+| Routine and problem | [Routine observations](routine_audit.md), [What / How / Why](what_how_why.md), [problem statement](problem_statement.md) |
+| Research method | [Research plan](research_plan.md) |
+| Interview preparation | [Interview questions](interview_questions.md) |
+| Raw interview records | [Chris](../interviews/Chris_2026-09-19.md), [David](../interviews/David_2026-09-19.md), [Selina](../interviews/Selina_2026-09-19.md) |
+| Grouped observations | [Affinity map](affinity_map.md): 20 cards in five clusters |
+| Insights | [Five insight statements](insight_statements.md), including a single-participant candidate |
+| User model | [Behavioral persona](persona.md) |
+| Framing | [POV and How Might We](point_of_view.md) |
+| Original synthesis and direction | [Class 4 synthesis](synthesis.md) |
+| Design and specification | [Wireframe flow](../Design/README.md), [rationale](../Design/rationale.md), [MVP](../Specs/MVP.md), [PRD](../PRD.md) |
 
-| Stage | Existing material | What is already recorded |
-| --- | --- | --- |
-| Initial observations | [What / How / Why](what_how_why.md) | Routine observations, candidate transition problem, and questions to investigate. |
-| Problem framing | [Problem statement](problem_statement.md) | Initial gym-to-class friction and the assumption to test. |
-| Interview preparation | [Interview questions](interview_questions.md) | Research focus, interview questions, and follow-up prompts. This is the existing interview script; a duplicate file is unnecessary. |
-| Data collection | [Chris](../interviews/Chris_2026-09-19.md), [David](../interviews/David_2026-09-19.md), [Selina](../interviews/Selina_2026-09-19.md) | Three dated records, each with context, answers, and individual synthesis. Each record labels the participant as outside the immediate friend group. |
-| Affinity grouping | [Affinity map](affinity_map.md) | Retrospective draft with 20 source-linked observation cards in five clusters; awaiting Harvey's review. |
-| Insight statements | [Insight statements](insight_statements.md) | Five retrospective draft interpretations linked to observation cards and interview sources; awaiting Harvey's review. |
-| Cross-interview synthesis | [Class 4 synthesis](synthesis.md#interview-synthesis) | Existing comparison across the three interviews. |
-| Problem after synthesis | [Real Problem](synthesis.md#real-problem) | Existing refined problem statement. |
-| Design question | [How Might We](synthesis.md#how-might-we) | Existing HMW question. |
-| Exploration and selection | [Brainstorming](synthesis.md#brainstorming), [Idea Selection](synthesis.md#idea-selection), [Chosen Direction](synthesis.md#chosen-direction) | Existing ideas and selected transition-planner direction. |
-| Design and specification | [Design notes](../Design/README.md), [MVP](../Specs/MVP.md), [PRD](../PRD.md) | Existing design flow, wireframes, scope, and implementation requirements. |
+Each interview includes context, answers, strongest observations, supporting/challenging evidence and a follow-up question. Each record identifies the participant as outside the immediate friend group.
 
-## Interview record structure
+The separate analysis preserves David's contrasting experience and the limited basis of the mental-pressure finding. It does not establish population prevalence or product effectiveness. The persona is a composite rather than a new interview participant.
 
-Each interview file already separates:
-
-- Participant context and recorded date.
-- Answers.
-- Strongest observations.
-- Evidence or wording worth keeping.
-- What supports the current problem statement.
-- What challenges or changes it.
-- A follow-up question.
-
-The records remain in their original files so their answers and interpretation can be reviewed together.
-
-## Remaining research documentation
-
-| Deliverable | Current repository coverage | Remaining action |
-| --- | --- | --- |
-| Research plan | The interview questions include a research focus; What / How / Why includes uncertainties. | A standalone plan is not present. Link an existing plan if available, or label any later reconstruction with its actual date. |
-| Routine audit / self-log | What / How / Why contains routine observations. | The original routine-audit artifact is not in this repository; locate the existing artifact if available. |
-| Affinity map | [Retrospective draft](affinity_map.md) groups 20 observation cards into five clusters with source links. | Harvey reviews the paraphrases, groupings and interpretations; the map is not yet marked reviewed. |
-| Insight statements | [Draft insight statements](insight_statements.md) link five interpretations to source cards and interviews, with design implications and limits. | Harvey reviews the interpretations; the fifth is explicitly a single-participant candidate. |
-| Persona | No persona artifact found. | Supply a research-grounded persona without invented participant details. |
-| Point-of-view statement | The synthesis includes a Real Problem section. | A separately identified POV statement is not present; review whether existing wording meets the instructor's requested format. |
-| How Might We | A question is present in synthesis.md. | Already linked above; review alongside the eventual POV. |
-
-This is a navigation and coverage index, not newly collected research or a claim that missing artifacts were completed earlier. Peer usability feedback is separate from these research interviews.
+The [submission checklist](../docs/submission-checklist.md) records current course coverage. [Peer prototype feedback](../docs/peer-feedback.md) remains separate and pending.

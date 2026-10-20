@@ -6,6 +6,10 @@ Open [the rough pencil-style sketches](LeaveBy_Rough_Sketches.png). The rough-sk
 
 For the clean layout reference, open [the three-screen sheet](LeaveBy_Wireframes.pdf) or [the image preview](LeaveBy_Wireframes.png).
 
+Editable version: [Figma wireframes](https://www.figma.com/design/o5HfqhQTqwBFK8nFTEWvx2), converted October 20, 2026 from the original three-state reference.
+
+See [design rationale](rationale.md) for Norman concepts and implementation decisions.
+
 ## Main flow
 
 1. **Plan the transition:** enter the next commitment date/time, preparation, commute, and buffer. Select **Calculate times**.

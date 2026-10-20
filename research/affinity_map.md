@@ -2,7 +2,7 @@
 
 Prepared October 20, 2026 from the three interview records dated September 19, 2026.
 
-Status: assistant-assisted retrospective grouping; awaiting Harvey's review. This map documents an analysis made after the prototype was built. It does not imply that this grouping existed before development.
+Retrospective grouping documented after the prototype build. Observations link to the original recorded answers.
 
 ## Method and sources
 
@@ -22,7 +22,7 @@ Each card below contains one paraphrased observation from the recorded answers. 
 | S1 | Equipment waits in a crowded gym push the schedule back. | [Selina](../interviews/Selina_2026-09-19.md#answers): causes of delays |
 | S2 | Showering and getting ready can take around ten minutes longer when busy. | [Selina](../interviews/Selina_2026-09-19.md#answers): time after the workout |
 
-Interpretation to review: delays occur at different stages and can accumulate. Estimating only workout duration misses part of the transition.
+Interpretation: delays occur at different stages and can accumulate. Estimating only workout duration misses part of the transition.
 
 ## Cluster 2 — Commute predictability and buffer change the experience
 
@@ -33,7 +33,7 @@ Interpretation to review: delays occur at different stages and can accumulate. E
 | D3 | David reports roughly twenty to thirty minutes of buffer. | [David](../interviews/David_2026-09-19.md#answers): normal buffer |
 | D4 | David describes unexpected slowdowns rather than insufficient time on most days. | [David](../interviews/David_2026-09-19.md#answers): biggest problem |
 
-Interpretation to review: the same gym-before-class pattern is not equally stressful for everyone. David is a contrasting case; these records do not establish a universally sufficient buffer or isolate commute length as the sole cause.
+Interpretation: the same gym-before-class pattern is not equally stressful for everyone. David is a contrasting case; these records do not establish a universally sufficient buffer or isolate commute length as the sole cause.
 
 ## Cluster 3 — People sacrifice workout or preparation activities to protect commitments
 
@@ -43,7 +43,7 @@ Interpretation to review: the same gym-before-class pattern is not equally stres
 | D5 | David stops the workout rather than arriving late to class. | [David](../interviews/David_2026-09-19.md#answers): workout running late |
 | S3 | Selina reduces sets or skips an exercise when behind. | [Selina](../interviews/Selina_2026-09-19.md#answers): response to being behind |
 
-Interpretation to review: a fixed next commitment creates trade-offs within the workout and transition. These accounts describe existing behavior, not proof that LeaveBy improves it.
+Interpretation: a fixed next commitment creates trade-offs within the workout and transition. These accounts describe existing behavior, not proof that LeaveBy improves it.
 
 ## Cluster 4 — Existing workarounds create boundaries and reduce preparation effort
 
@@ -55,7 +55,7 @@ Interpretation to review: a fixed next commitment creates trade-offs within the 
 | S4 | Selina keeps a separate gym bag stocked with needed items. | [Selina](../interviews/Selina_2026-09-19.md#answers): advance preparation |
 | S5 | Selina sets an alarm about thirty minutes before departure as a signal to stop starting new exercises. | [Selina](../interviews/Selina_2026-09-19.md#answers): what helps |
 
-Interpretation to review: time boundaries and preparation routines are already used. A displayed stop time is related to these workarounds, but the interviews do not establish demand for a specific app or notification feature.
+Interpretation: time boundaries and preparation routines are already used. A displayed stop time is related to these workarounds, but the interviews do not establish demand for a specific app or notification feature.
 
 ## Cluster 5 — The upcoming deadline affects attention and perceived pressure
 
@@ -65,14 +65,10 @@ Interpretation to review: time boundaries and preparation routines are already u
 | S7 | Selina distinguishes a tight gym-to-work window from a lack of free time across the whole day. | [Selina](../interviews/Selina_2026-09-19.md#answers): enough free time overall |
 | S8 | Selina can feel rushed by the upcoming commitment even when enough time remains. | [Selina](../interviews/Selina_2026-09-19.md#answers): other important routine details |
 
-Interpretation to review: perceived deadline pressure may matter alongside actual delays. This cluster is specific to Selina's recorded account; it should not be presented as a shared finding from all three participants.
+Interpretation: perceived deadline pressure may matter alongside actual delays. This cluster is specific to Selina's recorded account; it should not be presented as a shared finding from all three participants.
 
-## Review and next use
+## Scope of the analysis
 
-- Check each paraphrase against its linked answer.
-- Review whether the five groupings match Harvey's understanding of the interviews.
-- Preserve David's contrasting account and the single-participant basis of Cluster 5.
-- Use reviewed cards as evidence for insight statements, a persona and a POV; those artifacts remain separate work.
-- Compare with [the earlier synthesis](synthesis.md) without rewriting the original record of that work.
+The source material is three recorded interviews. Interpretations preserve David's contrasting account and identify Selina as the sole basis for Cluster 5. These accounts do not establish population prevalence or product effectiveness.
 
-The source material is three recorded interviews, not direct observation or a representative survey. No new interviews, usability outcomes or participant details were added. Peer feedback on the deployed app remains separate and pending.
+See the [insight statements](insight_statements.md), [persona](persona.md), [POV](point_of_view.md), and the [original synthesis](synthesis.md).
