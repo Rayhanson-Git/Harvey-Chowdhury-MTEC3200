@@ -19,3 +19,23 @@ The automatic installer could not reach ui.shadcn.com in this environment. Manua
 
 - `components/plan-result.tsx`: workout stop, departure, breakdown, arrival, commitment and Edit plan; reuses Button.
 - `lib/plan-input.ts`: validation and calculation shared by initial submission and recalculation.
+
+## JimBro implementation
+
+The original form/result components remain unchanged and are served at `/leaveby`. JimBro at `/` reuses the existing shadcn/ui Button and Input; no UI package was added. Native labeled select/radio/checkbox controls cover simple choices; semantic sections, lists and tables cover presentation.
+
+| File in `components/jimbro/` | Elements and purpose |
+| --- | --- |
+| `workout-app.tsx` | Shared application shell, section navigation, save errors and foreground alert banner |
+| `section-card.tsx` | Semantic section, heading and responsive panel |
+| `schedule-editor.tsx` | Labeled date/time/duration Inputs, day label, DST occurrence radios, timezone reconfirmation and save Button |
+| `workout-logger.tsx` | Search Input, category/unit selects, exercise buttons, set-entry Inputs and edit/remove controls |
+| `session-countdown.tsx` | Sticky deadline label/countdown, overdue text and expanded-plan Button |
+| `session-actions.tsx` | Phase status, actual-action confirmations and inline finish/cancel confirmation |
+| `workout-history.tsx` | Workout/day totals, month/label filters, dated session list and correction view |
+| `body-weight-tracker.tsx` | Dated positive measurements, explicit units, converted comparison and original-unit table |
+| `use-workout-store.ts` | Shared persistence/reload controller, visible clock, cross-tab updates and optional user-enabled audio |
+
+The clock remains outside live regions; phase/status changes are announced. Inputs remain mounted while changing sections so ordinary navigation does not discard a draft. Runtime, browser and accessibility evidence is tracked separately in [implementation verification](jimbro/IMPLEMENTATION.md).
+
+JimBro release layout: SessionCountdown occupies a dedicated sticky desktop column above the session controls; narrow screens retain a sticky countdown with focus scroll clearance. The workout logger stays in the other column. Existing shadcn Button/Input are reused; no application dependency was added.

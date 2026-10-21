@@ -12,16 +12,31 @@ This block is written and re-added by `next dev` — verify at `node_modules/nex
 
 Read this file before every task.
 
+## Current authorization — JimBro completion and release
+
+The user explicitly authorized: “Complete it, finish it, commit it to git hub and deploy.” Finish and verify the JimBro v1 implementation, fix discovered issues, commit and push on `revamp/foundation`, and deploy JimBro. Preserve main, the original coursework and all existing work. Restoring locked dependencies and temporary verification tooling is authorized as necessary; do not add application dependencies without need. The Milestone 1 restrictions below are historical and do not block this explicit expansion. Keep the seven v1 foundation records intact; record current implementation, actual checks and deployment evidence separately. Continue through verification and release without stopping after each screen. Accounts, cloud sync and background push remain deferred.
+
+## JimBro branch scope — completed Milestone 1
+
+- Work on `revamp/foundation`. Preserve `main` and the original coursework.
+- Verified starting commit: `4af9f2bc004bb1a0f1d8649991bf41cea649e90c`.
+- Read this file and the entire root `PRD.md` before work. Root `PRD.md` remains the original LeaveBy specification; do not rewrite it as JimBro.
+- JimBro planning lives in [`docs/jimbro/v1/`](docs/jimbro/v1/README.md). Read its PRD, architecture decisions and acceptance checklist before future JimBro work. These documents describe a target, not implemented behavior.
+- Milestone 1 allows inventory, preservation, requirements, architecture, acceptance criteria, branch instructions, progress updates and existing verification only. Do not implement features, install dependencies (including shadcn/ui), commit, push or deploy in this milestone. This restriction overrides broader workflow suggestions below and in the original PRD.
+- Keep research, interviews, designs, instructor templates, presentation assets, attribution and historical verification intact. Use the baseline manifest to verify preservation. Only `AGENTS.md` and `PROGRESS.md` are approved updates to existing tracked files in this milestone.
+- At the Milestone 1 baseline, data remained one in-memory LeaveBy plan. Persistent sessions, IndexedDB, a docked countdown and foreground alerts are target decisions in the frozen v1 plan. Existing uncommitted implementation is recorded separately; it has not shipped.
+- Inspect staged, unstaged and untracked changes before edits; preserve existing work. Record actual command results and blockers separately from historical passes in `PROGRESS.md` and the versioned verification record.
+
 ## About This Project
 
-LeaveBy works backward from a fixed commitment to show when to stop a workout and leave. See `PRD.md` for full details.
+JimBro combines LeaveBy scheduling and logging after completed sets. `/` is JimBro; `/leaveby` preserves the original planner. Read `docs/jimbro/v1/PRD.md` for the target and `docs/jimbro/IMPLEMENTATION.md` for actual implementation/verification. Root `PRD.md` remains the historical LeaveBy course specification.
 
 ## Stack
 
 - Next.js (App Router), React
 - Tailwind CSS
 - shadcn/ui (new-york, neutral; manually configured)
-- Data: one plan in React memory; no database or persistence
+- Data: JimBro uses native IndexedDB for one active session and local history. The original LeaveBy route retains its in-memory behavior.
 - APIs: none
 
 ## Commands
@@ -29,6 +44,9 @@ LeaveBy works backward from a fixed commitment to show when to stop a workout an
 - Run: `npm run dev`
 - Build: `npm run build`
 - Lint: `npm run lint`
+- Existing acceptance tests: `npm test`
+- JimBro core runtime tests: `npm run test:jimbro` (Node 22.18+)
+- Native browser storage fixture: `node tests/serve-storage.mjs` on isolated `http://127.0.0.1:4876`
 
 ## Code Style
 

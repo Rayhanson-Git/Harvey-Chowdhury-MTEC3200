@@ -1,0 +1,301 @@
+{
+  "recorded_at": "2026-10-21 UTC",
+  "scope": "Explicitly authorized completion, GitHub commit/push and production deployment on revamp/foundation; preserve main/coursework",
+  "branch": "revamp/foundation",
+  "local_main": "1dee74521095cfbd7c8e1498c070860bb79a29eb",
+  "sandbox": {
+    "provider": "Vercel",
+    "session": "sbx_rRZsmj6v9az8cpV9CX4HOOMwCAoN",
+    "status": "stopped after verification",
+    "public_app_ports": []
+  },
+  "environment": {
+    "node": "24.21.0",
+    "npm": "11.19.0",
+    "next": "16.4",
+    "playwright": "1.64.1",
+    "chromium": "156.0.8078.4",
+    "axe": "4.14.0"
+  },
+  "results": {
+    "existing_tests": {
+      "passed": 8,
+      "failed": 0
+    },
+    "core_tests": {
+      "passed": 18,
+      "failed": 0
+    },
+    "lint_exit": 0,
+    "typecheck_exit": 0,
+    "build_exit": 0,
+    "browser": {
+      "passed": 27,
+      "failed": 0,
+      "exit": 0,
+      "native_cases_nested": 18
+    },
+    "axe_violations": 0
+  },
+  "source_fingerprint": {
+    "algorithm": "sha256 of sorted path UTF-8 + NUL + raw file bytes + NUL, repeated",
+    "sha256": "45ece9fa489304c1eb21bcf1852c609138d6498a5c7fb8d7671308ed8943a171",
+    "matches_sandbox": true,
+    "files": [
+      {
+        "path": "app/favicon.ico",
+        "sha256": "c28fdd2a4f31e2dc64f653962286da5c82a4cdfc518b242d32812c624e9a19a4",
+        "bytes": 15086
+      },
+      {
+        "path": "app/globals.css",
+        "sha256": "1e741b79c9a3ec67a9a2fdf80702bfc81d3a5a7b225eef13d847878c0b479361",
+        "bytes": 2541
+      },
+      {
+        "path": "app/layout.tsx",
+        "sha256": "4c592e2a0d3b2a047b5b4c2ee7b82e38a3b78cb5bd54e220aadc360def01d0be",
+        "bytes": 837
+      },
+      {
+        "path": "app/leaveby/page.tsx",
+        "sha256": "e072dfe422b43782caa943cbdc4124b98f21be6d4f893fb36926bb3e220ab6bd",
+        "bytes": 702
+      },
+      {
+        "path": "app/page.tsx",
+        "sha256": "8a963c0ae249e1173efbabc454498314e8550a4dae732796fdba8dc982b47f70",
+        "bytes": 293
+      },
+      {
+        "path": "components.json",
+        "sha256": "060762649713523e82b4a1cf131fba79ab250407a109d7ae7dc045ff482ae36d",
+        "bytes": 427
+      },
+      {
+        "path": "components/jimbro/body-weight-tracker.tsx",
+        "sha256": "ea13ee3b780d35748dd6a95393df46ed64f9347876fb3e41e8d77e672ca92fd6",
+        "bytes": 4029
+      },
+      {
+        "path": "components/jimbro/schedule-editor.tsx",
+        "sha256": "a14ad48b03a19b39d3d46794aac2cbebcd0e24d3f0c45d3c1ff6d7453c332b51",
+        "bytes": 6320
+      },
+      {
+        "path": "components/jimbro/section-card.tsx",
+        "sha256": "6f0ebaaa4d9069f096d2150fa90d2eac9bf80b4d985b68f21027c41445c7628f",
+        "bytes": 480
+      },
+      {
+        "path": "components/jimbro/session-actions.tsx",
+        "sha256": "307082a37fba86aff9ac2e72e3caa771df84906ad1f1194178fe869b7fcce376",
+        "bytes": 2821
+      },
+      {
+        "path": "components/jimbro/session-countdown.tsx",
+        "sha256": "dd722cbb3a5d6900faf1a1e4e352194d38e6109399dc57c3d7e98368a27b0b53",
+        "bytes": 1546
+      },
+      {
+        "path": "components/jimbro/use-workout-store.ts",
+        "sha256": "06f2714c8fd216a2552f4b4876f2b36b929fa7143ebd4ba90e67135d8c40b61a",
+        "bytes": 5819
+      },
+      {
+        "path": "components/jimbro/workout-app.tsx",
+        "sha256": "a2f4e9a94bf6ff28fd161cc476547008e13d845d7f4f867f164263d7d1068c8a",
+        "bytes": 7469
+      },
+      {
+        "path": "components/jimbro/workout-history.tsx",
+        "sha256": "4925f8d3bc4f83533a8728ed6a27ee01547412c6390b1237eb0e419abce1f5c2",
+        "bytes": 3097
+      },
+      {
+        "path": "components/jimbro/workout-logger.tsx",
+        "sha256": "fabb4af19222e1c47f32f124a0270cb2ba79c3a01b52c018ce847ca9ea6bdc3f",
+        "bytes": 7768
+      },
+      {
+        "path": "components/plan-field.tsx",
+        "sha256": "0150bd883107b9e1fd6cbd97abb7ea9235da2c2cb5e8aae596ef0915f4dd7618",
+        "bytes": 684
+      },
+      {
+        "path": "components/plan-form.tsx",
+        "sha256": "93545d00c0a7dce6e7c503cab8fd2365c5a276ce45406758a22a9c24bf3938d6",
+        "bytes": 2881
+      },
+      {
+        "path": "components/plan-result.tsx",
+        "sha256": "4897ddc8ee4a6230ba946fa7928db564e273b4241d72f8787ebb43c1114e89e6",
+        "bytes": 2801
+      },
+      {
+        "path": "components/ui/button.tsx",
+        "sha256": "ea3555ef884ccbb2ac2e639319535d1665a98c30869e8f8a085d3cba9228ac28",
+        "bytes": 2557
+      },
+      {
+        "path": "components/ui/input.tsx",
+        "sha256": "0360562e6475d298c8cb7c1e8cfdf16e61a66cf89cfc2210f3672ebb6332cbe1",
+        "bytes": 1126
+      },
+      {
+        "path": "eslint.config.mjs",
+        "sha256": "8bc672d29748bba0890d9450a149bee8bf90a1ec71eeebbf9f42c57fbd9fd583",
+        "bytes": 631
+      },
+      {
+        "path": "lib/jimbro/catalog.ts",
+        "sha256": "baa468fe2cd77b1b2c0cc027a6d7d92939f3cfe3775c6983bb10d0bafc8cd23d",
+        "bytes": 1781
+      },
+      {
+        "path": "lib/jimbro/schedule.ts",
+        "sha256": "5e3a1360c60d30d5fba40b327675a066eb3a6f5c1933510c7795b9069e061f0a",
+        "bytes": 6694
+      },
+      {
+        "path": "lib/jimbro/session.ts",
+        "sha256": "03690d1efc90736ae40d37dd240ca2f1117f4110ee0dd3c9b349fc89ec31e721",
+        "bytes": 4062
+      },
+      {
+        "path": "lib/jimbro/storage.ts",
+        "sha256": "59d74ba28c68c56f04e5112f4aa187ea2fb56039bd023b223c963867273ada63",
+        "bytes": 7207
+      },
+      {
+        "path": "lib/jimbro/types.ts",
+        "sha256": "88b0125568ed7bba3acade28058f7e9c8619d797809b87ac1595f0c8ade7a3fe",
+        "bytes": 1127
+      },
+      {
+        "path": "lib/plan-input.ts",
+        "sha256": "b605d00afc8e201697d423de73123148127e6af5c6290b57af2dbec479b4f9bf",
+        "bytes": 3139
+      },
+      {
+        "path": "lib/utils.ts",
+        "sha256": "e8929212eb0dcb61ca97f942227f5429b071d588e0d3aa604a2fe8077a5d7757",
+        "bytes": 281
+      },
+      {
+        "path": "next.config.ts",
+        "sha256": "aae492c254bcd7616ddadef559dcf7900fcf77e260c8c9e33fe3c578e091bf74",
+        "bytes": 465
+      },
+      {
+        "path": "package-lock.json",
+        "sha256": "489875597c02b84b1049c826999dd94f7764d1f89b44959e71e3384c6ee0807d",
+        "bytes": 302946
+      },
+      {
+        "path": "package.json",
+        "sha256": "bbd065d1846decfa4e8b997b22cec7479b61f4f1926312e8198a1257b31de409",
+        "bytes": 993
+      },
+      {
+        "path": "public/file.svg",
+        "sha256": "2b67812c325c199a02536cdbeea0c593a72f707d323b72ee3e08dbab06753bd4",
+        "bytes": 391
+      },
+      {
+        "path": "public/globe.svg",
+        "sha256": "b614b9bf183925957661ac851498fe1d8029fd43a62fbfed86f9e2624a57e7cf",
+        "bytes": 1035
+      },
+      {
+        "path": "public/next.svg",
+        "sha256": "55995dfad6ecb4945a1e856ddca03c5e16aa5bf13fd21b4df6a74ae79357bcfc",
+        "bytes": 1375
+      },
+      {
+        "path": "public/vercel.svg",
+        "sha256": "f081337b2fee635b455b63275406a3e7f39d6a014e25ad90dab5a67e62a12ac4",
+        "bytes": 128
+      },
+      {
+        "path": "public/window.svg",
+        "sha256": "644768c4aaeb4767bce293344eeb0c125fb804a94d801440424072202d85e3a1",
+        "bytes": 385
+      },
+      {
+        "path": "tests/jimbro-browser.mjs",
+        "sha256": "6f00a998a57db38a184a5e37fb036695ce0a1fb45a6e9fff109cef9daa56d10e",
+        "bytes": 22828
+      },
+      {
+        "path": "tests/jimbro.test.mjs",
+        "sha256": "25419663182a1369ebd26961439a1687f41d3696d5f42cbd39bb39e25753e51b",
+        "bytes": 8134
+      },
+      {
+        "path": "tests/plan.test.mjs",
+        "sha256": "d9ff2225492db7779f3a460d4bcfbed50b5026f544f859970722d459b701d99b",
+        "bytes": 2817
+      },
+      {
+        "path": "tests/serve-storage.mjs",
+        "sha256": "dccb06ab9dc010fdd9543cce3f1302d35f77c63686799d6e269d9839b5fe150a",
+        "bytes": 1388
+      },
+      {
+        "path": "tests/storage-browser.html",
+        "sha256": "31886052c6f30568b1030389f8e28766300b09c21c4afd6e4e6e84943955f915",
+        "bytes": 9517
+      },
+      {
+        "path": "tsconfig.json",
+        "sha256": "8e5ab1124da0a486663bda84527e7d84cbb843bd340f8f4e1f2505db25f34d26",
+        "bytes": 773
+      }
+    ]
+  },
+  "preservation": {
+    "baseline_paths": 77,
+    "unchanged": 70,
+    "missing": [],
+    "changed_baseline_paths": [
+      "AGENTS.md",
+      "PROGRESS.md",
+      "README.md",
+      "app/page.tsx",
+      "docs/components.md",
+      "package.json",
+      "tsconfig.json"
+    ],
+    "lockfile_unchanged": true,
+    "original_entry_copy_identical": true,
+    "index_unstaged": true,
+    "remote_main": "4af9f2bc004bb1a0f1d8649991bf41cea649e90c"
+  },
+  "remaining_observations": [
+    "Human physical-device/screen-reader/audible-output evaluation",
+    "Human peer usability study",
+    "Real OS suspension/background delivery is not guaranteed"
+  ],
+  "release_state": "Published source, production READY, live browser verification passed",
+  "source_base_commit": "4af9f2bc004bb1a0f1d8649991bf41cea649e90c",
+  "publication_at_verification_snapshot": {
+    "committed": false,
+    "pushed": false,
+    "deployed": false
+  },
+  "release": {
+    "source_commit": "bfa7c562aacafdb925540642dffc8be372ef0569",
+    "branch": "revamp/foundation",
+    "deployment_id": "dpl_D54XwUhqEQzn3tGrg4s82SMrhMXa",
+    "project_id": "prj_5dLMR9qmoPZn1H4YtQ5zO1c708IF",
+    "url": "https://jimbro-rayhanson.vercel.app",
+    "state": "READY",
+    "target": "production",
+    "live_browser_passed": 27,
+    "live_browser_failed": 0,
+    "live_runner_exit": 0,
+    "local_live_reports_identical": true,
+    "runtime_error_fatal_logs": 0
+  }
+}
