@@ -84,3 +84,7 @@ Peer feedback remains pending at Harvey's request. The prepared presentation and
 Earlier build/audit observations remain dated records in [build-log.md](docs/build-log.md), [prompting-log.md](docs/prompting-log.md) and [release-audit.md](docs/release-audit.md). Current verification supersedes the earlier deployment and browser-access blockers.
 
 [Project 1](https://app.notion.com/p/09d3d2939d2f82168b7b010f3bd35894), [Class 5](https://app.notion.com/p/2323d2939d2f8389be2e81baaf1a61c5), [Class 7](https://app.notion.com/p/9073d2939d2f83498e9301afecd07211).
+
+## October 21, 2026 — complete JimBro web release implementation
+
+Current user brief authorizes full web implementation and verified Vercel release. Inspected live main 4271e846, clean checkout, existing project jimbro and verified domain. Work is on release/jimbro-web; main and unrelated hosting remain preserved. Implemented editable presets/custom routines and session snapshots, open mode, rest/elapsed controls, calendar/detail editing/repeat, real comparable progress, validated backup import/export, preferences, original layered SVG Jim, 248-phrase local catalog/selector/controller, and finished metadata. Frozen v1 planning/course records remain historical. Current architecture, evidence, peer-test and native-readiness documents are linked in README. Exact fresh checks and release identity are in docs/jimbro/WEB-VERIFICATION.md and WEB-RELEASE.md; no human peer or physical-device tests are claimed.

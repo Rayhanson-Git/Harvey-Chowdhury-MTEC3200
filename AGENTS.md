@@ -12,6 +12,10 @@ This block is written and re-added by `next dev` — verify at `node_modules/nex
 
 Read this file before every task.
 
+## Current task — complete web release (October 21, 2026)
+
+The user supplied the complete JimBro web implementation brief and authorized ordinary implementation, tests, commit, preview and production deployment to the existing jimbro project. Working branch: `release/jimbro-web`, based on current main `4271e846`. Preserve frozen v1 documents, original coursework and unrelated sites. Use `docs/jimbro/HANDOFF.md`, `WEB-ARCHITECTURE.md`, `WEB-VERIFICATION.md` and `WEB-RELEASE.md` for current evidence; earlier instructions below are historical scope records. Do not present implemented and verified as interchangeable. The existing LeaveBy project also follows main, so release JimBro from the tested branch to its intended Vercel project without changing main or LeaveBy production. Never downgrade IndexedDB v2 to v1 or clear newer records to enable old code.
+
 ## Current authorization — JimBro completion and release
 
 The user explicitly authorized: “Complete it, finish it, commit it to git hub and deploy.” Finish and verify the JimBro v1 implementation, fix discovered issues, commit and push on `revamp/foundation`, and deploy JimBro. Preserve main, the original coursework and all existing work. Restoring locked dependencies and temporary verification tooling is authorized as necessary; do not add application dependencies without need. The Milestone 1 restrictions below are historical and do not block this explicit expansion. Keep the seven v1 foundation records intact; record current implementation, actual checks and deployment evidence separately. Continue through verification and release without stopping after each screen. Accounts, cloud sync and background push remain deferred.

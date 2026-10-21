@@ -3,6 +3,8 @@
 
 :root {
   color-scheme: light dark;
+  --font-geist-sans: Arial, Helvetica, sans-serif;
+  --font-geist-mono: ui-monospace, SFMono-Regular, monospace;
   --background: #ffffff;
   --foreground: #171717;
 }
@@ -93,4 +95,13 @@ body {
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
+}
+
+/* JimBro product tokens; the original LeaveBy palette remains available. */
+@theme inline {
+  --color-jim-background: #0c0d0f;
+  --color-jim-panel: #111215;
+  --color-jim-raised: #17181b;
+  --color-jim-crimson: #e11d48;
+  --color-jim-positive: #c1e88b;
 }

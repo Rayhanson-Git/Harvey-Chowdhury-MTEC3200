@@ -2,7 +2,8 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  // Allow only the supervised local QA origin in the managed development runtime.
+  allowedDevOrigins: ['terminal.local'],
   cacheComponents: true,
   partialPrefetching: true,
   turbopack: {

@@ -1,12 +1,31 @@
-# JimBro — unified workout companion
+# JimBro — time well lifted
 
-**[Open JimBro](https://jimbro-rayhanson.vercel.app)** · [Release verification](docs/jimbro/RELEASE.md)
+[Open JimBro](https://jimbro.rayhanson.tech) · [Animation gallery](https://jimbro.rayhanson.tech/jim-gallery) · [Current release record](docs/jimbro/WEB-RELEASE.md)
 
-On `revamp/foundation`, `/` now contains JimBro: a shared workout session with scheduling, logging, a docked countdown, local IndexedDB storage, phase guidance, history and body-weight records. The original LeaveBy screen is preserved at `/leaveby`.
+Plan your available training time, choose or edit a routine, log completed work, review your progress and protect your departure time. This local-first web release combines LeaveBy with the GymLog logging concept. It includes seven editable starters, custom routines, independent rest/elapsed timers, interruption recovery, calendar/history editing and repeat, comparable progress charts, JSON import/export, and original animated Jim with 248 contextual local phrases.
 
-Read [implementation and actual verification](docs/jimbro/IMPLEMENTATION.md). The unified app is deployed from `revamp/foundation`. Existing tests (8), core tests (18), production browser checks (27) and native storage cases (18, nested in the browser suite) pass; lint, TypeScript and production build pass. Original coursework and main are preserved. Accounts, cloud sync and background push remain deferred.
+## Run and verify
 
-The following LeaveBy documentation describes the original course baseline, including its historical verification. It does not report fresh JimBro build or browser results. Original specification and coursework remain intact.
+Node 24 recommended. `npm ci`, then `npm run dev`. No API key, account, paid service or backend is required.
+
+```sh
+npm test
+npm run test:jimbro
+npm run test:web
+npm run lint
+npm run build
+npx tsc --noEmit
+```
+
+Read [architecture/data and migration](docs/jimbro/WEB-ARCHITECTURE.md), [design system](docs/jimbro/DESIGN-SYSTEM.md), [Jim source/provenance](docs/jimbro/JIM-ART.md), [phrase content](docs/jimbro/PHRASES.md), [actual verification](docs/jimbro/WEB-VERIFICATION.md), [handoff](docs/jimbro/HANDOFF.md), [peer-test script](docs/jimbro/PEER-TEST.md) and [future native evaluation](docs/jimbro/NATIVE-READINESS.md).
+
+## Data and timing limits
+
+Data lives on this device/browser and origin. Clearing site data can remove it. Export JSON from Settings for your own backup; another device will not synchronize automatically. v1 IndexedDB records migrate in place to v2; no cross-origin GymLog migration is claimed. Keep the app visible for alerts. Background, lock-screen and closed-app delivery, offline launch and a trusted server clock are not guaranteed. Sound and notifications require understandable user actions. A deadline never marks a workout completed or records departure.
+
+Routes: `/` and `/today`, `/workout`, `/history` (session detail via `?session=ID`), `/progress`, `/settings`, `/jim-gallery`; original planner preserved at `/leaveby`. Native apps, accounts/sync, payments, nutrition, social features, wearable integration and runtime AI remain deferred.
+
+The documents below preserve the historical course submission; their older release/verification claims describe that baseline rather than the current web release.
 
 # LeaveBy — original coursework
 MTEC 3200 · Product Design & Prototyping · Fall 2026

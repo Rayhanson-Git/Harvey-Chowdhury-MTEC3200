@@ -39,3 +39,7 @@ The original form/result components remain unchanged and are served at `/leaveby
 The clock remains outside live regions; phase/status changes are announced. Inputs remain mounted while changing sections so ordinary navigation does not discard a draft. Runtime, browser and accessibility evidence is tracked separately in [implementation verification](jimbro/IMPLEMENTATION.md).
 
 JimBro release layout: SessionCountdown occupies a dedicated sticky desktop column above the session controls; narrow screens retain a sticky countdown with focus scroll clearance. The workout logger stays in the other column. Existing shadcn Button/Input are reused; no application dependency was added.
+
+## JimBro complete web release
+
+Retained shadcn/ui Button and Input; no new application dependency or shadcn component added. Product components: SectionCard, AppDialog (native modal semantics/focus), RoutineLibrary/editor/preview, ActivePlan, WorkoutLogger, TimerDock, HistoryPanel, ProgressPanel/DataChart, SettingsPanel, JimCharacter/JimGallery. Shared appearance is documented in `docs/jimbro/DESIGN-SYSTEM.md`. Data, phrase and mascot controllers remain separate from the UI.
