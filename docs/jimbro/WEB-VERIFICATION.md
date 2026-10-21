@@ -65,3 +65,9 @@ Exact application source `a6d646eeaf4f4c2e1af7cf525774eee226f3bb5a`. Final previ
 Production browser output recorded no page/console/HTTP errors; six axe scans reported zero violations, with incomplete/manual-review qualifications retained in report artifacts. The final preview suite also passed its six scans. No browser-profile user data or real workout history was used. Synthetic records remain isolated to disposable contexts.
 
 Reports and sample images are available in the run's `jimbro-production-verification-1` artifact until October 28, 2026; the actual command result extracts and summary are preserved permanently here. Production deployment and alias/source identity were independently checked through Vercel, and the separate LeaveBy deployment/main SHA were unchanged. See WEB-RELEASE.md for exact identities.
+
+## Recovered-host completion
+
+The host reconnected and the canonical release branch was fast-forwarded to c13e755 after preserving the local release draft and preview evidence in Git stash 8259227fb31deb33a159a2a03fb03f958d7d1007. All 78 application fingerprints match the deployed source. Fresh local plan/core/web tests passed 8/18/22 and lint passed. The initial standalone type check failed on duplicate ignored `.next/types/routes.d 2.ts` output. The old cache was preserved outside the checkout; clean `npm run build && npx tsc --noEmit` then passed. No tracked application file changed.
+
+The actual production URL freshly passed 20 Chromium journeys, six axe scans with no reported violations, and the 120-frame/144-transition mascot suite. No page/console/application HTTP errors were recorded. No old verification processes/listeners remained on 3100–3103. Durable reports and clean-build output: `evidence/2026-10-21-recovery/`. Physical-device, assistive-technology, audible/OS and peer limitations above remain unchanged.

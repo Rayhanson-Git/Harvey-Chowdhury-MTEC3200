@@ -1,0 +1,21 @@
+PASS new-user planner, inline invalid input and honest empty states
+PASS custom routine create, reorder, replace, edit sets/reps/rest and reuse
+PASS custom rename, duplicate and delete confirmation preserve original
+PASS plan → routine adaptation → one persistent scheduled workout
+PASS saved set, correction, units, notes and confirmation before removal
+PASS reload and second tab retain same workout; failed writes preserve draft
+PASS rest/elapsed pauses do not change deadlines; warning, cutoff and departure survive reload
+PASS early finish retains sets, closes reminders only with confirmation
+PASS history detail correction and chart recomputation use real saved work
+PASS history repeat and previous comparable reuse never auto-completes a set
+PASS optional bodyweight entry converts units and persists into backups
+PASS preferences, notification denial and actual download/upload backup round-trip
+PASS malformed, incompatible and conflicting file imports leave data unchanged
+PASS direct routes, metadata assets and preserved LeaveBy
+PASS responsive routes, keyboard dialog focus and automated accessibility
+PASS every preset previews and starts its own immutable snapshot
+PASS direct saved-session link, deliberate deletion and progress recomputation
+PASS browser scheduling: edits preview, midnight, zero boundaries and DST choices
+PASS storage unavailable offers honest recovery without false save
+PASS active plan controls, rest controls, typed measures and repeated finish
+{"engine":"chromium","passed":20,"errors":[]}

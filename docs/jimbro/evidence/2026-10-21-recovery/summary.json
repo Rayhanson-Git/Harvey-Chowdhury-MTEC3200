@@ -1,0 +1,31 @@
+{
+  "applicationSource": "a6d646eeaf4f4c2e1af7cf525774eee226f3bb5a",
+  "synchronizedHead": "c13e755ae1dc1dcf25b81155127ce0fa0ef5a98a",
+  "production": "https://jimbro.rayhanson.tech",
+  "productionDeployment": "dpl_GsG16BR7FNsTNkELNZjuAx4gcg2T",
+  "preservedDraftStash": "8259227fb31deb33a159a2a03fb03f958d7d1007",
+  "runtimeFilesMatched": 78,
+  "domainTests": {
+    "plan": 8,
+    "core": 18,
+    "web": 22
+  },
+  "lint": "passed",
+  "build": "passed",
+  "typescript": "passed after clean generated-cache rebuild",
+  "initialTypecheckFailure": "Duplicate LayoutProps in ignored .next/types/routes.d 2.ts; old generated cache preserved outside checkout before rebuilding",
+  "productionJourneys": 20,
+  "axeScans": 6,
+  "reportedViolations": 0,
+  "consoleNetworkErrors": [],
+  "mascotFrames": 120,
+  "mascotTransitions": 144,
+  "browserFinishedAt": "2026-10-21T19:31:38.608Z",
+  "oldVerificationServers": "No listeners on 3100\u20133103; no previous Next/QA processes found",
+  "remaining": [
+    "Physical iPhone/Android software keyboards and safe areas",
+    "VoiceOver/TalkBack output",
+    "Human audible/OS notification and suspension/lock observations",
+    "Real peer usability"
+  ]
+}

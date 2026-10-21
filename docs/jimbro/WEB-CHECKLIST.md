@@ -11,7 +11,7 @@ This run starts at release branch `a02322b` (production application `1af1c647`).
 | Independent motion; explicit/system reduced motion | Implemented | Verified: real animation tracks; both motion overrides suppress them |
 | Compact, mobile, desktop, enlarged Jim | Implemented | Verified: 48/96/240/600px rendered inspection |
 | Wordmark/lockup/app mark/light/dark/mono sources | Implemented | Verified: deterministic generated SVG family, visual review |
-| Favicon/home-screen/social derivatives and integration | Implemented | Verified: compiled routes/assets, manifest and icon integration; hosted smoke follows release |
+| Favicon/home-screen/social derivatives and integration | Implemented | Verified: compiled and hosted routes/assets, manifest and icon integration |
 | Calculation, midnight, DST gap/repeated time, timezone | Implemented | Verified: domain tests and midnight/zero/DST browser cases in all three engines |
 | Schedule edit consequences, absolute recovery, rest/elapsed independence | Implemented | Verified: current browser journey and core domain tests |
 | Warning/cutoff/preparation/departure, denied notifications | Implemented | Verified: browser clock progression; mocked denial fallback (not OS dialog) |
@@ -37,4 +37,4 @@ This run starts at release branch `a02322b` (production application `1af1c647`).
 
 No unresolved reproduced product defect may be labeled Verified. The final verification and release records identify tested source, commands, browser engines, artifacts and remaining manual limitations.
 
-Final authority: fail-fast cloud run 39656940318 on source a6d646e passed all 48 domain tests, lint, build, type checks, 20 final-preview and 20 production journeys plus 120 joint samples/144 transitions. Initial exact-24 catalog test failure is preserved and corrected; it is not counted as a pass. Local checkout resynchronization and task-runner cleanup are Blocked by the disconnected host, while GitHub/Vercel contain the final release. Physical-device, assistive-technology and human peer rows remain Blocked rather than silently marked Verified.
+Final authority: fail-fast cloud run 39656940318 on source a6d646e passed all 48 domain tests, lint, build, type checks, 20 final-preview and 20 production journeys plus 120 joint samples/144 transitions. Initial exact-24 catalog test failure is preserved and corrected; it is not counted as a pass. Local checkout resynchronization and old-runner checks are Verified after host recovery; fresh production acceptance passed 20/20 and mascot sampling 120/144. Preserved drafts and recovery evidence are documented in HANDOFF.md. Physical-device, assistive-technology and human peer rows remain Blocked rather than silently marked Verified.
