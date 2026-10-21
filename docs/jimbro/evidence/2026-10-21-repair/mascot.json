@@ -1,0 +1,2757 @@
+{
+  "base": "http://127.0.0.1:3101",
+  "poses": [
+    {
+      "pose": "idle",
+      "frames": [
+        {
+          "time": 0,
+          "joints": [
+            {
+              "side": "left",
+              "shoulderGap": 0,
+              "elbowGap": 0,
+              "insideTorso": true
+            },
+            {
+              "side": "right",
+              "shoulderGap": 0,
+              "elbowGap": 0,
+              "insideTorso": true
+            }
+          ],
+          "majorComponents": 1,
+          "tracks": [
+            "jim-breathe",
+            "jim-blink"
+          ]
+        },
+        {
+          "time": 150,
+          "joints": [
+            {
+              "side": "left",
+              "shoulderGap": 0,
+              "elbowGap": 0,
+              "insideTorso": true
+            },
+            {
+              "side": "right",
+              "shoulderGap": 0,
+              "elbowGap": 0,
+              "insideTorso": true
+            }
+          ],
+          "majorComponents": 1,
+          "tracks": [
+            "jim-breathe",
+            "jim-blink"
+          ]
+        },
+        {
+          "time": 300,
+          "joints": [
+            {
+              "side": "left",
+              "shoulderGap": 0,
+              "elbowGap": 0,
+              "insideTorso": true
+            },
+            {
+              "side": "right",
+              "shoulderGap": 0,
+              "elbowGap": 0,
+              "insideTorso": true
+            }
+          ],
+          "majorComponents": 1,
+          "tracks": [
+            "jim-breathe",
+            "jim-blink"
+          ]
+        },
+        {
+          "time": 425,
+          "joints": [
+            {
+              "side": "left",
+              "shoulderGap": 0,
+              "elbowGap": 0,
+              "insideTorso": true
+            },
+            {
+              "side": "right",
+              "shoulderGap": 0,
+              "elbowGap": 0,
+              "insideTorso": true
+            }
+          ],
+          "majorComponents": 1,
+          "tracks": [
+            "jim-breathe",
+            "jim-blink"
+          ]
+        },
+        {
+          "time": 600,
+          "joints": [
+            {
+              "side": "left",
+              "shoulderGap": 0,
+              "elbowGap": 0,
+              "insideTorso": true
+            },
+            {
+              "side": "right",
+              "shoulderGap": 0,
+              "elbowGap": 0,
+              "insideTorso": true
+            }
+          ],
+          "majorComponents": 1,
+          "tracks": [
+            "jim-breathe",
+            "jim-blink"
+          ]
+        },
+        {
+          "time": 850,
+          "joints": [
+            {
+              "side": "left",
+              "shoulderGap": 0,
+              "elbowGap": 0,
+              "insideTorso": true
+            },
+            {
+              "side": "right",
+              "shoulderGap": 0,
+              "elbowGap": 0,
+              "insideTorso": true
+            }
+          ],
+          "majorComponents": 1,
+          "tracks": [
+            "jim-breathe",
+            "jim-blink"
+          ]
+        },
+        {
+          "time": 1200,
+          "joints": [
+            {
+              "side": "left",
+              "shoulderGap": 0,
+              "elbowGap": 0,
+              "insideTorso": true
+            },
+            {
+              "side": "right",
+              "shoulderGap": 0,
+              "elbowGap": 0,
+              "insideTorso": true
+            }
+          ],
+          "majorComponents": 1,
+          "tracks": [
+            "jim-breathe",
+            "jim-blink"
+          ]
+        },
+        {
+          "time": 2400,
+          "joints": [
+            {
+              "side": "left",
+              "shoulderGap": 0,
+              "elbowGap": 0,
+              "insideTorso": true
+            },
+            {
+              "side": "right",
+              "shoulderGap": 0,
+              "elbowGap": 0,
+              "insideTorso": true
+            }
+          ],
+          "majorComponents": 1,
+          "tracks": [
+            "jim-breathe",
+            "jim-blink"
+          ]
+        },
+        {
+          "time": 3450,
+          "joints": [
+            {
+              "side": "left",
+              "shoulderGap": 0,
+              "elbowGap": 0,
+              "insideTorso": true
+            },
+            {
+              "side": "right",
+              "shoulderGap": 0,
+              "elbowGap": 0,
+              "insideTorso": true
+            }
+          ],
+          "majorComponents": 1,
+          "tracks": [
+            "jim-breathe",
+            "jim-blink"
+          ]
+        },
+        {
+          "time": 4600,
+          "joints": [
+            {
+              "side": "left",
+              "shoulderGap": 0,
+              "elbowGap": 0,
+              "insideTorso": true
+            },
+            {
+              "side": "right",
+              "shoulderGap": 0,
+              "elbowGap": 0,
+              "insideTorso": true
+            }
+          ],
+          "majorComponents": 1,
+          "tracks": [
+            "jim-breathe",
+            "jim-blink"
+          ]
+        }
+      ]
+    },
+    {
+      "pose": "greeting",
+      "frames": [
+        {
+          "time": 0,
+          "joints": [
+            {
+              "side": "left",
+              "shoulderGap": 0,
+              "elbowGap": 0,
+              "insideTorso": true
+            },
+            {
+              "side": "right",
+              "shoulderGap": 0,
+              "elbowGap": 0,
+              "insideTorso": true
+            }
+          ],
+          "majorComponents": 1,
+          "tracks": [
+            "jim-breathe",
+            "jim-wave",
+            "jim-blink"
+          ]
+        },
+        {
+          "time": 150,
+          "joints": [
+            {
+              "side": "left",
+              "shoulderGap": 0,
+              "elbowGap": 0,
+              "insideTorso": true
+            },
+            {
+              "side": "right",
+              "shoulderGap": 0,
+              "elbowGap": 0,
+              "insideTorso": true
+            }
+          ],
+          "majorComponents": 1,
+          "tracks": [
+            "jim-breathe",
+            "jim-wave",
+            "jim-blink"
+          ]
+        },
+        {
+          "time": 300,
+          "joints": [
+            {
+              "side": "left",
+              "shoulderGap": 0,
+              "elbowGap": 0,
+              "insideTorso": true
+            },
+            {
+              "side": "right",
+              "shoulderGap": 0,
+              "elbowGap": 0,
+              "insideTorso": true
+            }
+          ],
+          "majorComponents": 1,
+          "tracks": [
+            "jim-breathe",
+            "jim-wave",
+            "jim-blink"
+          ]
+        },
+        {
+          "time": 425,
+          "joints": [
+            {
+              "side": "left",
+              "shoulderGap": 0,
+              "elbowGap": 0,
+              "insideTorso": true
+            },
+            {
+              "side": "right",
+              "shoulderGap": 0,
+              "elbowGap": 0,
+              "insideTorso": true
+            }
+          ],
+          "majorComponents": 1,
+          "tracks": [
+            "jim-breathe",
+            "jim-wave",
+            "jim-blink"
+          ]
+        },
+        {
+          "time": 600,
+          "joints": [
+            {
+              "side": "left",
+              "shoulderGap": 0,
+              "elbowGap": 0,
+              "insideTorso": true
+            },
+            {
+              "side": "right",
+              "shoulderGap": 0,
+              "elbowGap": 0,
+              "insideTorso": true
+            }
+          ],
+          "majorComponents": 1,
+          "tracks": [
+            "jim-breathe",
+            "jim-wave",
+            "jim-blink"
+          ]
+        },
+        {
+          "time": 850,
+          "joints": [
+            {
+              "side": "left",
+              "shoulderGap": 0,
+              "elbowGap": 0,
+              "insideTorso": true
+            },
+            {
+              "side": "right",
+              "shoulderGap": 0,
+              "elbowGap": 0,
+              "insideTorso": true
+            }
+          ],
+          "majorComponents": 1,
+          "tracks": [
+            "jim-breathe",
+            "jim-wave",
+            "jim-blink"
+          ]
+        },
+        {
+          "time": 1200,
+          "joints": [
+            {
+              "side": "left",
+              "shoulderGap": 0,
+              "elbowGap": 0,
+              "insideTorso": true
+            },
+            {
+              "side": "right",
+              "shoulderGap": 0,
+              "elbowGap": 0,
+              "insideTorso": true
+            }
+          ],
+          "majorComponents": 1,
+          "tracks": [
+            "jim-breathe",
+            "jim-wave",
+            "jim-blink"
+          ]
+        },
+        {
+          "time": 2400,
+          "joints": [
+            {
+              "side": "left",
+              "shoulderGap": 0,
+              "elbowGap": 0,
+              "insideTorso": true
+            },
+            {
+              "side": "right",
+              "shoulderGap": 0,
+              "elbowGap": 0,
+              "insideTorso": true
+            }
+          ],
+          "majorComponents": 1,
+          "tracks": [
+            "jim-breathe",
+            "jim-blink"
+          ]
+        },
+        {
+          "time": 3450,
+          "joints": [
+            {
+              "side": "left",
+              "shoulderGap": 0,
+              "elbowGap": 0,
+              "insideTorso": true
+            },
+            {
+              "side": "right",
+              "shoulderGap": 0,
+              "elbowGap": 0,
+              "insideTorso": true
+            }
+          ],
+          "majorComponents": 1,
+          "tracks": [
+            "jim-breathe",
+            "jim-blink"
+          ]
+        },
+        {
+          "time": 4600,
+          "joints": [
+            {
+              "side": "left",
+              "shoulderGap": 0,
+              "elbowGap": 0,
+              "insideTorso": true
+            },
+            {
+              "side": "right",
+              "shoulderGap": 0,
+              "elbowGap": 0,
+              "insideTorso": true
+            }
+          ],
+          "majorComponents": 1,
+          "tracks": [
+            "jim-breathe",
+            "jim-blink"
+          ]
+        }
+      ]
+    },
+    {
+      "pose": "ready",
+      "frames": [
+        {
+          "time": 0,
+          "joints": [
+            {
+              "side": "left",
+              "shoulderGap": 0,
+              "elbowGap": 0,
+              "insideTorso": true
+            },
+            {
+              "side": "right",
+              "shoulderGap": 0,
+              "elbowGap": 0,
+              "insideTorso": true
+            }
+          ],
+          "majorComponents": 1,
+          "tracks": [
+            "jim-breathe",
+            "jim-flex",
+            "jim-blink"
+          ]
+        },
+        {
+          "time": 150,
+          "joints": [
+            {
+              "side": "left",
+              "shoulderGap": 0,
+              "elbowGap": 0,
+              "insideTorso": true
+            },
+            {
+              "side": "right",
+              "shoulderGap": 0,
+              "elbowGap": 0,
+              "insideTorso": true
+            }
+          ],
+          "majorComponents": 1,
+          "tracks": [
+            "jim-breathe",
+            "jim-flex",
+            "jim-blink"
+          ]
+        },
+        {
+          "time": 300,
+          "joints": [
+            {
+              "side": "left",
+              "shoulderGap": 0,
+              "elbowGap": 0,
+              "insideTorso": true
+            },
+            {
+              "side": "right",
+              "shoulderGap": 0,
+              "elbowGap": 0,
+              "insideTorso": true
+            }
+          ],
+          "majorComponents": 1,
+          "tracks": [
+            "jim-breathe",
+            "jim-flex",
+            "jim-blink"
+          ]
+        },
+        {
+          "time": 425,
+          "joints": [
+            {
+              "side": "left",
+              "shoulderGap": 0,
+              "elbowGap": 0,
+              "insideTorso": true
+            },
+            {
+              "side": "right",
+              "shoulderGap": 0,
+              "elbowGap": 0,
+              "insideTorso": true
+            }
+          ],
+          "majorComponents": 1,
+          "tracks": [
+            "jim-breathe",
+            "jim-flex",
+            "jim-blink"
+          ]
+        },
+        {
+          "time": 600,
+          "joints": [
+            {
+              "side": "left",
+              "shoulderGap": 0,
+              "elbowGap": 0,
+              "insideTorso": true
+            },
+            {
+              "side": "right",
+              "shoulderGap": 0,
+              "elbowGap": 0,
+              "insideTorso": true
+            }
+          ],
+          "majorComponents": 1,
+          "tracks": [
+            "jim-breathe",
+            "jim-flex",
+            "jim-blink"
+          ]
+        },
+        {
+          "time": 850,
+          "joints": [
+            {
+              "side": "left",
+              "shoulderGap": 0,
+              "elbowGap": 0,
+              "insideTorso": true
+            },
+            {
+              "side": "right",
+              "shoulderGap": 0,
+              "elbowGap": 0,
+              "insideTorso": true
+            }
+          ],
+          "majorComponents": 1,
+          "tracks": [
+            "jim-breathe",
+            "jim-flex",
+            "jim-blink"
+          ]
+        },
+        {
+          "time": 1200,
+          "joints": [
+            {
+              "side": "left",
+              "shoulderGap": 0,
+              "elbowGap": 0,
+              "insideTorso": true
+            },
+            {
+              "side": "right",
+              "shoulderGap": 0,
+              "elbowGap": 0,
+              "insideTorso": true
+            }
+          ],
+          "majorComponents": 1,
+          "tracks": [
+            "jim-breathe",
+            "jim-flex",
+            "jim-blink"
+          ]
+        },
+        {
+          "time": 2400,
+          "joints": [
+            {
+              "side": "left",
+              "shoulderGap": 0,
+              "elbowGap": 0,
+              "insideTorso": true
+            },
+            {
+              "side": "right",
+              "shoulderGap": 0,
+              "elbowGap": 0,
+              "insideTorso": true
+            }
+          ],
+          "majorComponents": 1,
+          "tracks": [
+            "jim-breathe",
+            "jim-blink"
+          ]
+        },
+        {
+          "time": 3450,
+          "joints": [
+            {
+              "side": "left",
+              "shoulderGap": 0,
+              "elbowGap": 0,
+              "insideTorso": true
+            },
+            {
+              "side": "right",
+              "shoulderGap": 0,
+              "elbowGap": 0,
+              "insideTorso": true
+            }
+          ],
+          "majorComponents": 1,
+          "tracks": [
+            "jim-breathe",
+            "jim-blink"
+          ]
+        },
+        {
+          "time": 4600,
+          "joints": [
+            {
+              "side": "left",
+              "shoulderGap": 0,
+              "elbowGap": 0,
+              "insideTorso": true
+            },
+            {
+              "side": "right",
+              "shoulderGap": 0,
+              "elbowGap": 0,
+              "insideTorso": true
+            }
+          ],
+          "majorComponents": 1,
+          "tracks": [
+            "jim-breathe",
+            "jim-blink"
+          ]
+        }
+      ]
+    },
+    {
+      "pose": "set",
+      "frames": [
+        {
+          "time": 0,
+          "joints": [
+            {
+              "side": "left",
+              "shoulderGap": 0,
+              "elbowGap": 0,
+              "insideTorso": true
+            },
+            {
+              "side": "right",
+              "shoulderGap": 0,
+              "elbowGap": 0,
+              "insideTorso": true
+            }
+          ],
+          "majorComponents": 1,
+          "tracks": [
+            "jim-breathe",
+            "jim-blink"
+          ]
+        },
+        {
+          "time": 150,
+          "joints": [
+            {
+              "side": "left",
+              "shoulderGap": 0,
+              "elbowGap": 0,
+              "insideTorso": true
+            },
+            {
+              "side": "right",
+              "shoulderGap": 0,
+              "elbowGap": 0,
+              "insideTorso": true
+            }
+          ],
+          "majorComponents": 1,
+          "tracks": [
+            "jim-breathe",
+            "jim-blink"
+          ]
+        },
+        {
+          "time": 300,
+          "joints": [
+            {
+              "side": "left",
+              "shoulderGap": 0,
+              "elbowGap": 0,
+              "insideTorso": true
+            },
+            {
+              "side": "right",
+              "shoulderGap": 0,
+              "elbowGap": 0,
+              "insideTorso": true
+            }
+          ],
+          "majorComponents": 1,
+          "tracks": [
+            "jim-breathe",
+            "jim-blink"
+          ]
+        },
+        {
+          "time": 425,
+          "joints": [
+            {
+              "side": "left",
+              "shoulderGap": 0,
+              "elbowGap": 0,
+              "insideTorso": true
+            },
+            {
+              "side": "right",
+              "shoulderGap": 0,
+              "elbowGap": 0,
+              "insideTorso": true
+            }
+          ],
+          "majorComponents": 1,
+          "tracks": [
+            "jim-breathe",
+            "jim-blink"
+          ]
+        },
+        {
+          "time": 600,
+          "joints": [
+            {
+              "side": "left",
+              "shoulderGap": 0,
+              "elbowGap": 0,
+              "insideTorso": true
+            },
+            {
+              "side": "right",
+              "shoulderGap": 0,
+              "elbowGap": 0,
+              "insideTorso": true
+            }
+          ],
+          "majorComponents": 1,
+          "tracks": [
+            "jim-breathe",
+            "jim-blink"
+          ]
+        },
+        {
+          "time": 850,
+          "joints": [
+            {
+              "side": "left",
+              "shoulderGap": 0,
+              "elbowGap": 0,
+              "insideTorso": true
+            },
+            {
+              "side": "right",
+              "shoulderGap": 0,
+              "elbowGap": 0,
+              "insideTorso": true
+            }
+          ],
+          "majorComponents": 1,
+          "tracks": [
+            "jim-breathe",
+            "jim-blink"
+          ]
+        },
+        {
+          "time": 1200,
+          "joints": [
+            {
+              "side": "left",
+              "shoulderGap": 0,
+              "elbowGap": 0,
+              "insideTorso": true
+            },
+            {
+              "side": "right",
+              "shoulderGap": 0,
+              "elbowGap": 0,
+              "insideTorso": true
+            }
+          ],
+          "majorComponents": 1,
+          "tracks": [
+            "jim-breathe",
+            "jim-blink"
+          ]
+        },
+        {
+          "time": 2400,
+          "joints": [
+            {
+              "side": "left",
+              "shoulderGap": 0,
+              "elbowGap": 0,
+              "insideTorso": true
+            },
+            {
+              "side": "right",
+              "shoulderGap": 0,
+              "elbowGap": 0,
+              "insideTorso": true
+            }
+          ],
+          "majorComponents": 1,
+          "tracks": [
+            "jim-breathe",
+            "jim-blink"
+          ]
+        },
+        {
+          "time": 3450,
+          "joints": [
+            {
+              "side": "left",
+              "shoulderGap": 0,
+              "elbowGap": 0,
+              "insideTorso": true
+            },
+            {
+              "side": "right",
+              "shoulderGap": 0,
+              "elbowGap": 0,
+              "insideTorso": true
+            }
+          ],
+          "majorComponents": 1,
+          "tracks": [
+            "jim-breathe",
+            "jim-blink"
+          ]
+        },
+        {
+          "time": 4600,
+          "joints": [
+            {
+              "side": "left",
+              "shoulderGap": 0,
+              "elbowGap": 0,
+              "insideTorso": true
+            },
+            {
+              "side": "right",
+              "shoulderGap": 0,
+              "elbowGap": 0,
+              "insideTorso": true
+            }
+          ],
+          "majorComponents": 1,
+          "tracks": [
+            "jim-breathe",
+            "jim-blink"
+          ]
+        }
+      ]
+    },
+    {
+      "pose": "rest",
+      "frames": [
+        {
+          "time": 0,
+          "joints": [
+            {
+              "side": "left",
+              "shoulderGap": 0,
+              "elbowGap": 0,
+              "insideTorso": true
+            },
+            {
+              "side": "right",
+              "shoulderGap": 0,
+              "elbowGap": 0,
+              "insideTorso": true
+            }
+          ],
+          "majorComponents": 1,
+          "tracks": [
+            "jim-breathe",
+            "jim-blink",
+            "jim-exhale"
+          ]
+        },
+        {
+          "time": 150,
+          "joints": [
+            {
+              "side": "left",
+              "shoulderGap": 0,
+              "elbowGap": 0,
+              "insideTorso": true
+            },
+            {
+              "side": "right",
+              "shoulderGap": 0,
+              "elbowGap": 0,
+              "insideTorso": true
+            }
+          ],
+          "majorComponents": 1,
+          "tracks": [
+            "jim-breathe",
+            "jim-blink",
+            "jim-exhale"
+          ]
+        },
+        {
+          "time": 300,
+          "joints": [
+            {
+              "side": "left",
+              "shoulderGap": 0,
+              "elbowGap": 0,
+              "insideTorso": true
+            },
+            {
+              "side": "right",
+              "shoulderGap": 0,
+              "elbowGap": 0,
+              "insideTorso": true
+            }
+          ],
+          "majorComponents": 1,
+          "tracks": [
+            "jim-breathe",
+            "jim-blink",
+            "jim-exhale"
+          ]
+        },
+        {
+          "time": 425,
+          "joints": [
+            {
+              "side": "left",
+              "shoulderGap": 0,
+              "elbowGap": 0,
+              "insideTorso": true
+            },
+            {
+              "side": "right",
+              "shoulderGap": 0,
+              "elbowGap": 0,
+              "insideTorso": true
+            }
+          ],
+          "majorComponents": 1,
+          "tracks": [
+            "jim-breathe",
+            "jim-blink",
+            "jim-exhale"
+          ]
+        },
+        {
+          "time": 600,
+          "joints": [
+            {
+              "side": "left",
+              "shoulderGap": 0,
+              "elbowGap": 0,
+              "insideTorso": true
+            },
+            {
+              "side": "right",
+              "shoulderGap": 0,
+              "elbowGap": 0,
+              "insideTorso": true
+            }
+          ],
+          "majorComponents": 1,
+          "tracks": [
+            "jim-breathe",
+            "jim-blink",
+            "jim-exhale"
+          ]
+        },
+        {
+          "time": 850,
+          "joints": [
+            {
+              "side": "left",
+              "shoulderGap": 0,
+              "elbowGap": 0,
+              "insideTorso": true
+            },
+            {
+              "side": "right",
+              "shoulderGap": 0,
+              "elbowGap": 0,
+              "insideTorso": true
+            }
+          ],
+          "majorComponents": 1,
+          "tracks": [
+            "jim-breathe",
+            "jim-blink",
+            "jim-exhale"
+          ]
+        },
+        {
+          "time": 1200,
+          "joints": [
+            {
+              "side": "left",
+              "shoulderGap": 0,
+              "elbowGap": 0,
+              "insideTorso": true
+            },
+            {
+              "side": "right",
+              "shoulderGap": 0,
+              "elbowGap": 0,
+              "insideTorso": true
+            }
+          ],
+          "majorComponents": 1,
+          "tracks": [
+            "jim-breathe",
+            "jim-blink",
+            "jim-exhale"
+          ]
+        },
+        {
+          "time": 2400,
+          "joints": [
+            {
+              "side": "left",
+              "shoulderGap": 0,
+              "elbowGap": 0,
+              "insideTorso": true
+            },
+            {
+              "side": "right",
+              "shoulderGap": 0,
+              "elbowGap": 0,
+              "insideTorso": true
+            }
+          ],
+          "majorComponents": 1,
+          "tracks": [
+            "jim-breathe",
+            "jim-blink",
+            "jim-exhale"
+          ]
+        },
+        {
+          "time": 3450,
+          "joints": [
+            {
+              "side": "left",
+              "shoulderGap": 0,
+              "elbowGap": 0,
+              "insideTorso": true
+            },
+            {
+              "side": "right",
+              "shoulderGap": 0,
+              "elbowGap": 0,
+              "insideTorso": true
+            }
+          ],
+          "majorComponents": 1,
+          "tracks": [
+            "jim-breathe",
+            "jim-blink",
+            "jim-exhale"
+          ]
+        },
+        {
+          "time": 4600,
+          "joints": [
+            {
+              "side": "left",
+              "shoulderGap": 0,
+              "elbowGap": 0,
+              "insideTorso": true
+            },
+            {
+              "side": "right",
+              "shoulderGap": 0,
+              "elbowGap": 0,
+              "insideTorso": true
+            }
+          ],
+          "majorComponents": 1,
+          "tracks": [
+            "jim-breathe",
+            "jim-blink",
+            "jim-exhale"
+          ]
+        }
+      ]
+    },
+    {
+      "pose": "progress",
+      "frames": [
+        {
+          "time": 0,
+          "joints": [
+            {
+              "side": "left",
+              "shoulderGap": 0,
+              "elbowGap": 0,
+              "insideTorso": true
+            },
+            {
+              "side": "right",
+              "shoulderGap": 0,
+              "elbowGap": 0,
+              "insideTorso": true
+            }
+          ],
+          "majorComponents": 1,
+          "tracks": [
+            "jim-spark",
+            "jim-breathe",
+            "jim-blink"
+          ]
+        },
+        {
+          "time": 150,
+          "joints": [
+            {
+              "side": "left",
+              "shoulderGap": 0,
+              "elbowGap": 0,
+              "insideTorso": true
+            },
+            {
+              "side": "right",
+              "shoulderGap": 0,
+              "elbowGap": 0,
+              "insideTorso": true
+            }
+          ],
+          "majorComponents": 1,
+          "tracks": [
+            "jim-spark",
+            "jim-breathe",
+            "jim-blink"
+          ]
+        },
+        {
+          "time": 300,
+          "joints": [
+            {
+              "side": "left",
+              "shoulderGap": 0,
+              "elbowGap": 0,
+              "insideTorso": true
+            },
+            {
+              "side": "right",
+              "shoulderGap": 0,
+              "elbowGap": 0,
+              "insideTorso": true
+            }
+          ],
+          "majorComponents": 1,
+          "tracks": [
+            "jim-spark",
+            "jim-breathe",
+            "jim-blink"
+          ]
+        },
+        {
+          "time": 425,
+          "joints": [
+            {
+              "side": "left",
+              "shoulderGap": 0,
+              "elbowGap": 0,
+              "insideTorso": true
+            },
+            {
+              "side": "right",
+              "shoulderGap": 0,
+              "elbowGap": 0,
+              "insideTorso": true
+            }
+          ],
+          "majorComponents": 1,
+          "tracks": [
+            "jim-spark",
+            "jim-breathe",
+            "jim-blink"
+          ]
+        },
+        {
+          "time": 600,
+          "joints": [
+            {
+              "side": "left",
+              "shoulderGap": 0,
+              "elbowGap": 0,
+              "insideTorso": true
+            },
+            {
+              "side": "right",
+              "shoulderGap": 0,
+              "elbowGap": 0,
+              "insideTorso": true
+            }
+          ],
+          "majorComponents": 1,
+          "tracks": [
+            "jim-spark",
+            "jim-breathe",
+            "jim-blink"
+          ]
+        },
+        {
+          "time": 850,
+          "joints": [
+            {
+              "side": "left",
+              "shoulderGap": 0,
+              "elbowGap": 0,
+              "insideTorso": true
+            },
+            {
+              "side": "right",
+              "shoulderGap": 0,
+              "elbowGap": 0,
+              "insideTorso": true
+            }
+          ],
+          "majorComponents": 1,
+          "tracks": [
+            "jim-spark",
+            "jim-breathe",
+            "jim-blink"
+          ]
+        },
+        {
+          "time": 1200,
+          "joints": [
+            {
+              "side": "left",
+              "shoulderGap": 0,
+              "elbowGap": 0,
+              "insideTorso": true
+            },
+            {
+              "side": "right",
+              "shoulderGap": 0,
+              "elbowGap": 0,
+              "insideTorso": true
+            }
+          ],
+          "majorComponents": 1,
+          "tracks": [
+            "jim-spark",
+            "jim-breathe",
+            "jim-blink"
+          ]
+        },
+        {
+          "time": 2400,
+          "joints": [
+            {
+              "side": "left",
+              "shoulderGap": 0,
+              "elbowGap": 0,
+              "insideTorso": true
+            },
+            {
+              "side": "right",
+              "shoulderGap": 0,
+              "elbowGap": 0,
+              "insideTorso": true
+            }
+          ],
+          "majorComponents": 1,
+          "tracks": [
+            "jim-spark",
+            "jim-breathe",
+            "jim-blink"
+          ]
+        },
+        {
+          "time": 3450,
+          "joints": [
+            {
+              "side": "left",
+              "shoulderGap": 0,
+              "elbowGap": 0,
+              "insideTorso": true
+            },
+            {
+              "side": "right",
+              "shoulderGap": 0,
+              "elbowGap": 0,
+              "insideTorso": true
+            }
+          ],
+          "majorComponents": 1,
+          "tracks": [
+            "jim-breathe",
+            "jim-blink"
+          ]
+        },
+        {
+          "time": 4600,
+          "joints": [
+            {
+              "side": "left",
+              "shoulderGap": 0,
+              "elbowGap": 0,
+              "insideTorso": true
+            },
+            {
+              "side": "right",
+              "shoulderGap": 0,
+              "elbowGap": 0,
+              "insideTorso": true
+            }
+          ],
+          "majorComponents": 1,
+          "tracks": [
+            "jim-breathe",
+            "jim-blink"
+          ]
+        }
+      ]
+    },
+    {
+      "pose": "warning",
+      "frames": [
+        {
+          "time": 0,
+          "joints": [
+            {
+              "side": "left",
+              "shoulderGap": 0,
+              "elbowGap": 0,
+              "insideTorso": true
+            },
+            {
+              "side": "right",
+              "shoulderGap": 0,
+              "elbowGap": 0,
+              "insideTorso": true
+            }
+          ],
+          "majorComponents": 1,
+          "tracks": [
+            "jim-breathe",
+            "jim-blink",
+            "jim-glance",
+            "jim-clock"
+          ]
+        },
+        {
+          "time": 150,
+          "joints": [
+            {
+              "side": "left",
+              "shoulderGap": 0,
+              "elbowGap": 0,
+              "insideTorso": true
+            },
+            {
+              "side": "right",
+              "shoulderGap": 0,
+              "elbowGap": 0,
+              "insideTorso": true
+            }
+          ],
+          "majorComponents": 1,
+          "tracks": [
+            "jim-breathe",
+            "jim-blink",
+            "jim-glance",
+            "jim-clock"
+          ]
+        },
+        {
+          "time": 300,
+          "joints": [
+            {
+              "side": "left",
+              "shoulderGap": 0,
+              "elbowGap": 0,
+              "insideTorso": true
+            },
+            {
+              "side": "right",
+              "shoulderGap": 0,
+              "elbowGap": 0,
+              "insideTorso": true
+            }
+          ],
+          "majorComponents": 1,
+          "tracks": [
+            "jim-breathe",
+            "jim-blink",
+            "jim-glance",
+            "jim-clock"
+          ]
+        },
+        {
+          "time": 425,
+          "joints": [
+            {
+              "side": "left",
+              "shoulderGap": 0,
+              "elbowGap": 0,
+              "insideTorso": true
+            },
+            {
+              "side": "right",
+              "shoulderGap": 0,
+              "elbowGap": 0,
+              "insideTorso": true
+            }
+          ],
+          "majorComponents": 1,
+          "tracks": [
+            "jim-breathe",
+            "jim-blink",
+            "jim-glance",
+            "jim-clock"
+          ]
+        },
+        {
+          "time": 600,
+          "joints": [
+            {
+              "side": "left",
+              "shoulderGap": 0,
+              "elbowGap": 0,
+              "insideTorso": true
+            },
+            {
+              "side": "right",
+              "shoulderGap": 0,
+              "elbowGap": 0,
+              "insideTorso": true
+            }
+          ],
+          "majorComponents": 1,
+          "tracks": [
+            "jim-breathe",
+            "jim-blink",
+            "jim-glance",
+            "jim-clock"
+          ]
+        },
+        {
+          "time": 850,
+          "joints": [
+            {
+              "side": "left",
+              "shoulderGap": 0,
+              "elbowGap": 0,
+              "insideTorso": true
+            },
+            {
+              "side": "right",
+              "shoulderGap": 0,
+              "elbowGap": 0,
+              "insideTorso": true
+            }
+          ],
+          "majorComponents": 1,
+          "tracks": [
+            "jim-breathe",
+            "jim-blink",
+            "jim-glance",
+            "jim-clock"
+          ]
+        },
+        {
+          "time": 1200,
+          "joints": [
+            {
+              "side": "left",
+              "shoulderGap": 0,
+              "elbowGap": 0,
+              "insideTorso": true
+            },
+            {
+              "side": "right",
+              "shoulderGap": 0,
+              "elbowGap": 0,
+              "insideTorso": true
+            }
+          ],
+          "majorComponents": 1,
+          "tracks": [
+            "jim-breathe",
+            "jim-blink",
+            "jim-glance",
+            "jim-clock"
+          ]
+        },
+        {
+          "time": 2400,
+          "joints": [
+            {
+              "side": "left",
+              "shoulderGap": 0,
+              "elbowGap": 0,
+              "insideTorso": true
+            },
+            {
+              "side": "right",
+              "shoulderGap": 0,
+              "elbowGap": 0,
+              "insideTorso": true
+            }
+          ],
+          "majorComponents": 1,
+          "tracks": [
+            "jim-breathe",
+            "jim-blink",
+            "jim-glance",
+            "jim-clock"
+          ]
+        },
+        {
+          "time": 3450,
+          "joints": [
+            {
+              "side": "left",
+              "shoulderGap": 0,
+              "elbowGap": 0,
+              "insideTorso": true
+            },
+            {
+              "side": "right",
+              "shoulderGap": 0,
+              "elbowGap": 0,
+              "insideTorso": true
+            }
+          ],
+          "majorComponents": 1,
+          "tracks": [
+            "jim-breathe",
+            "jim-blink",
+            "jim-glance",
+            "jim-clock"
+          ]
+        },
+        {
+          "time": 4600,
+          "joints": [
+            {
+              "side": "left",
+              "shoulderGap": 0,
+              "elbowGap": 0,
+              "insideTorso": true
+            },
+            {
+              "side": "right",
+              "shoulderGap": 0,
+              "elbowGap": 0,
+              "insideTorso": true
+            }
+          ],
+          "majorComponents": 1,
+          "tracks": [
+            "jim-breathe",
+            "jim-blink",
+            "jim-clock"
+          ]
+        }
+      ]
+    },
+    {
+      "pose": "preparation",
+      "frames": [
+        {
+          "time": 0,
+          "joints": [
+            {
+              "side": "left",
+              "shoulderGap": 0,
+              "elbowGap": 0,
+              "insideTorso": true
+            },
+            {
+              "side": "right",
+              "shoulderGap": 0,
+              "elbowGap": 0,
+              "insideTorso": true
+            }
+          ],
+          "majorComponents": 1,
+          "tracks": [
+            "jim-breathe",
+            "jim-blink"
+          ]
+        },
+        {
+          "time": 150,
+          "joints": [
+            {
+              "side": "left",
+              "shoulderGap": 0,
+              "elbowGap": 0,
+              "insideTorso": true
+            },
+            {
+              "side": "right",
+              "shoulderGap": 0,
+              "elbowGap": 0,
+              "insideTorso": true
+            }
+          ],
+          "majorComponents": 1,
+          "tracks": [
+            "jim-breathe",
+            "jim-blink"
+          ]
+        },
+        {
+          "time": 300,
+          "joints": [
+            {
+              "side": "left",
+              "shoulderGap": 0,
+              "elbowGap": 0,
+              "insideTorso": true
+            },
+            {
+              "side": "right",
+              "shoulderGap": 0,
+              "elbowGap": 0,
+              "insideTorso": true
+            }
+          ],
+          "majorComponents": 1,
+          "tracks": [
+            "jim-breathe",
+            "jim-blink"
+          ]
+        },
+        {
+          "time": 425,
+          "joints": [
+            {
+              "side": "left",
+              "shoulderGap": 0,
+              "elbowGap": 0,
+              "insideTorso": true
+            },
+            {
+              "side": "right",
+              "shoulderGap": 0,
+              "elbowGap": 0,
+              "insideTorso": true
+            }
+          ],
+          "majorComponents": 1,
+          "tracks": [
+            "jim-breathe",
+            "jim-blink"
+          ]
+        },
+        {
+          "time": 600,
+          "joints": [
+            {
+              "side": "left",
+              "shoulderGap": 0,
+              "elbowGap": 0,
+              "insideTorso": true
+            },
+            {
+              "side": "right",
+              "shoulderGap": 0,
+              "elbowGap": 0,
+              "insideTorso": true
+            }
+          ],
+          "majorComponents": 1,
+          "tracks": [
+            "jim-breathe",
+            "jim-blink"
+          ]
+        },
+        {
+          "time": 850,
+          "joints": [
+            {
+              "side": "left",
+              "shoulderGap": 0,
+              "elbowGap": 0,
+              "insideTorso": true
+            },
+            {
+              "side": "right",
+              "shoulderGap": 0,
+              "elbowGap": 0,
+              "insideTorso": true
+            }
+          ],
+          "majorComponents": 1,
+          "tracks": [
+            "jim-breathe",
+            "jim-blink"
+          ]
+        },
+        {
+          "time": 1200,
+          "joints": [
+            {
+              "side": "left",
+              "shoulderGap": 0,
+              "elbowGap": 0,
+              "insideTorso": true
+            },
+            {
+              "side": "right",
+              "shoulderGap": 0,
+              "elbowGap": 0,
+              "insideTorso": true
+            }
+          ],
+          "majorComponents": 1,
+          "tracks": [
+            "jim-breathe",
+            "jim-blink"
+          ]
+        },
+        {
+          "time": 2400,
+          "joints": [
+            {
+              "side": "left",
+              "shoulderGap": 0,
+              "elbowGap": 0,
+              "insideTorso": true
+            },
+            {
+              "side": "right",
+              "shoulderGap": 0,
+              "elbowGap": 0,
+              "insideTorso": true
+            }
+          ],
+          "majorComponents": 1,
+          "tracks": [
+            "jim-breathe",
+            "jim-blink"
+          ]
+        },
+        {
+          "time": 3450,
+          "joints": [
+            {
+              "side": "left",
+              "shoulderGap": 0,
+              "elbowGap": 0,
+              "insideTorso": true
+            },
+            {
+              "side": "right",
+              "shoulderGap": 0,
+              "elbowGap": 0,
+              "insideTorso": true
+            }
+          ],
+          "majorComponents": 1,
+          "tracks": [
+            "jim-breathe",
+            "jim-blink"
+          ]
+        },
+        {
+          "time": 4600,
+          "joints": [
+            {
+              "side": "left",
+              "shoulderGap": 0,
+              "elbowGap": 0,
+              "insideTorso": true
+            },
+            {
+              "side": "right",
+              "shoulderGap": 0,
+              "elbowGap": 0,
+              "insideTorso": true
+            }
+          ],
+          "majorComponents": 1,
+          "tracks": [
+            "jim-breathe",
+            "jim-blink"
+          ]
+        }
+      ]
+    },
+    {
+      "pose": "departure",
+      "frames": [
+        {
+          "time": 0,
+          "joints": [
+            {
+              "side": "left",
+              "shoulderGap": 0,
+              "elbowGap": 0,
+              "insideTorso": true
+            },
+            {
+              "side": "right",
+              "shoulderGap": 0,
+              "elbowGap": 0,
+              "insideTorso": true
+            }
+          ],
+          "majorComponents": 1,
+          "tracks": [
+            "jim-breathe",
+            "jim-blink"
+          ]
+        },
+        {
+          "time": 150,
+          "joints": [
+            {
+              "side": "left",
+              "shoulderGap": 0,
+              "elbowGap": 0,
+              "insideTorso": true
+            },
+            {
+              "side": "right",
+              "shoulderGap": 0,
+              "elbowGap": 0,
+              "insideTorso": true
+            }
+          ],
+          "majorComponents": 1,
+          "tracks": [
+            "jim-breathe",
+            "jim-blink"
+          ]
+        },
+        {
+          "time": 300,
+          "joints": [
+            {
+              "side": "left",
+              "shoulderGap": 0,
+              "elbowGap": 0,
+              "insideTorso": true
+            },
+            {
+              "side": "right",
+              "shoulderGap": 0,
+              "elbowGap": 0,
+              "insideTorso": true
+            }
+          ],
+          "majorComponents": 1,
+          "tracks": [
+            "jim-breathe",
+            "jim-blink"
+          ]
+        },
+        {
+          "time": 425,
+          "joints": [
+            {
+              "side": "left",
+              "shoulderGap": 0,
+              "elbowGap": 0,
+              "insideTorso": true
+            },
+            {
+              "side": "right",
+              "shoulderGap": 0,
+              "elbowGap": 0,
+              "insideTorso": true
+            }
+          ],
+          "majorComponents": 1,
+          "tracks": [
+            "jim-breathe",
+            "jim-blink"
+          ]
+        },
+        {
+          "time": 600,
+          "joints": [
+            {
+              "side": "left",
+              "shoulderGap": 0,
+              "elbowGap": 0,
+              "insideTorso": true
+            },
+            {
+              "side": "right",
+              "shoulderGap": 0,
+              "elbowGap": 0,
+              "insideTorso": true
+            }
+          ],
+          "majorComponents": 1,
+          "tracks": [
+            "jim-breathe",
+            "jim-blink"
+          ]
+        },
+        {
+          "time": 850,
+          "joints": [
+            {
+              "side": "left",
+              "shoulderGap": 0,
+              "elbowGap": 0,
+              "insideTorso": true
+            },
+            {
+              "side": "right",
+              "shoulderGap": 0,
+              "elbowGap": 0,
+              "insideTorso": true
+            }
+          ],
+          "majorComponents": 1,
+          "tracks": [
+            "jim-breathe",
+            "jim-blink"
+          ]
+        },
+        {
+          "time": 1200,
+          "joints": [
+            {
+              "side": "left",
+              "shoulderGap": 0,
+              "elbowGap": 0,
+              "insideTorso": true
+            },
+            {
+              "side": "right",
+              "shoulderGap": 0,
+              "elbowGap": 0,
+              "insideTorso": true
+            }
+          ],
+          "majorComponents": 1,
+          "tracks": [
+            "jim-breathe",
+            "jim-blink"
+          ]
+        },
+        {
+          "time": 2400,
+          "joints": [
+            {
+              "side": "left",
+              "shoulderGap": 0,
+              "elbowGap": 0,
+              "insideTorso": true
+            },
+            {
+              "side": "right",
+              "shoulderGap": 0,
+              "elbowGap": 0,
+              "insideTorso": true
+            }
+          ],
+          "majorComponents": 1,
+          "tracks": [
+            "jim-breathe",
+            "jim-blink"
+          ]
+        },
+        {
+          "time": 3450,
+          "joints": [
+            {
+              "side": "left",
+              "shoulderGap": 0,
+              "elbowGap": 0,
+              "insideTorso": true
+            },
+            {
+              "side": "right",
+              "shoulderGap": 0,
+              "elbowGap": 0,
+              "insideTorso": true
+            }
+          ],
+          "majorComponents": 1,
+          "tracks": [
+            "jim-breathe",
+            "jim-blink"
+          ]
+        },
+        {
+          "time": 4600,
+          "joints": [
+            {
+              "side": "left",
+              "shoulderGap": 0,
+              "elbowGap": 0,
+              "insideTorso": true
+            },
+            {
+              "side": "right",
+              "shoulderGap": 0,
+              "elbowGap": 0,
+              "insideTorso": true
+            }
+          ],
+          "majorComponents": 1,
+          "tracks": [
+            "jim-breathe",
+            "jim-blink"
+          ]
+        }
+      ]
+    },
+    {
+      "pose": "complete",
+      "frames": [
+        {
+          "time": 0,
+          "joints": [
+            {
+              "side": "left",
+              "shoulderGap": 0,
+              "elbowGap": 0,
+              "insideTorso": true
+            },
+            {
+              "side": "right",
+              "shoulderGap": 0,
+              "elbowGap": 0,
+              "insideTorso": true
+            }
+          ],
+          "majorComponents": 1,
+          "tracks": [
+            "jim-blink"
+          ]
+        },
+        {
+          "time": 150,
+          "joints": [
+            {
+              "side": "left",
+              "shoulderGap": 0,
+              "elbowGap": 0,
+              "insideTorso": true
+            },
+            {
+              "side": "right",
+              "shoulderGap": 0,
+              "elbowGap": 0,
+              "insideTorso": true
+            }
+          ],
+          "majorComponents": 1,
+          "tracks": [
+            "jim-blink"
+          ]
+        },
+        {
+          "time": 300,
+          "joints": [
+            {
+              "side": "left",
+              "shoulderGap": 0,
+              "elbowGap": 0,
+              "insideTorso": true
+            },
+            {
+              "side": "right",
+              "shoulderGap": 0,
+              "elbowGap": 0,
+              "insideTorso": true
+            }
+          ],
+          "majorComponents": 1,
+          "tracks": [
+            "jim-blink"
+          ]
+        },
+        {
+          "time": 425,
+          "joints": [
+            {
+              "side": "left",
+              "shoulderGap": 0,
+              "elbowGap": 0,
+              "insideTorso": true
+            },
+            {
+              "side": "right",
+              "shoulderGap": 0,
+              "elbowGap": 0,
+              "insideTorso": true
+            }
+          ],
+          "majorComponents": 1,
+          "tracks": [
+            "jim-blink"
+          ]
+        },
+        {
+          "time": 600,
+          "joints": [
+            {
+              "side": "left",
+              "shoulderGap": 0,
+              "elbowGap": 0,
+              "insideTorso": true
+            },
+            {
+              "side": "right",
+              "shoulderGap": 0,
+              "elbowGap": 0,
+              "insideTorso": true
+            }
+          ],
+          "majorComponents": 1,
+          "tracks": [
+            "jim-blink"
+          ]
+        },
+        {
+          "time": 850,
+          "joints": [
+            {
+              "side": "left",
+              "shoulderGap": 0,
+              "elbowGap": 0,
+              "insideTorso": true
+            },
+            {
+              "side": "right",
+              "shoulderGap": 0,
+              "elbowGap": 0,
+              "insideTorso": true
+            }
+          ],
+          "majorComponents": 1,
+          "tracks": [
+            "jim-blink"
+          ]
+        },
+        {
+          "time": 1200,
+          "joints": [
+            {
+              "side": "left",
+              "shoulderGap": 0,
+              "elbowGap": 0,
+              "insideTorso": true
+            },
+            {
+              "side": "right",
+              "shoulderGap": 0,
+              "elbowGap": 0,
+              "insideTorso": true
+            }
+          ],
+          "majorComponents": 1,
+          "tracks": [
+            "jim-blink"
+          ]
+        },
+        {
+          "time": 2400,
+          "joints": [
+            {
+              "side": "left",
+              "shoulderGap": 0,
+              "elbowGap": 0,
+              "insideTorso": true
+            },
+            {
+              "side": "right",
+              "shoulderGap": 0,
+              "elbowGap": 0,
+              "insideTorso": true
+            }
+          ],
+          "majorComponents": 1,
+          "tracks": [
+            "jim-blink"
+          ]
+        },
+        {
+          "time": 3450,
+          "joints": [
+            {
+              "side": "left",
+              "shoulderGap": 0,
+              "elbowGap": 0,
+              "insideTorso": true
+            },
+            {
+              "side": "right",
+              "shoulderGap": 0,
+              "elbowGap": 0,
+              "insideTorso": true
+            }
+          ],
+          "majorComponents": 1,
+          "tracks": [
+            "jim-blink"
+          ]
+        },
+        {
+          "time": 4600,
+          "joints": [
+            {
+              "side": "left",
+              "shoulderGap": 0,
+              "elbowGap": 0,
+              "insideTorso": true
+            },
+            {
+              "side": "right",
+              "shoulderGap": 0,
+              "elbowGap": 0,
+              "insideTorso": true
+            }
+          ],
+          "majorComponents": 1,
+          "tracks": [
+            "jim-blink"
+          ]
+        }
+      ]
+    },
+    {
+      "pose": "recovery",
+      "frames": [
+        {
+          "time": 0,
+          "joints": [
+            {
+              "side": "left",
+              "shoulderGap": 0,
+              "elbowGap": 0,
+              "insideTorso": true
+            },
+            {
+              "side": "right",
+              "shoulderGap": 0,
+              "elbowGap": 0,
+              "insideTorso": true
+            }
+          ],
+          "majorComponents": 1,
+          "tracks": [
+            "jim-breathe",
+            "jim-blink"
+          ]
+        },
+        {
+          "time": 150,
+          "joints": [
+            {
+              "side": "left",
+              "shoulderGap": 0,
+              "elbowGap": 0,
+              "insideTorso": true
+            },
+            {
+              "side": "right",
+              "shoulderGap": 0,
+              "elbowGap": 0,
+              "insideTorso": true
+            }
+          ],
+          "majorComponents": 1,
+          "tracks": [
+            "jim-breathe",
+            "jim-blink"
+          ]
+        },
+        {
+          "time": 300,
+          "joints": [
+            {
+              "side": "left",
+              "shoulderGap": 0,
+              "elbowGap": 0,
+              "insideTorso": true
+            },
+            {
+              "side": "right",
+              "shoulderGap": 0,
+              "elbowGap": 0,
+              "insideTorso": true
+            }
+          ],
+          "majorComponents": 1,
+          "tracks": [
+            "jim-breathe",
+            "jim-blink"
+          ]
+        },
+        {
+          "time": 425,
+          "joints": [
+            {
+              "side": "left",
+              "shoulderGap": 0,
+              "elbowGap": 0,
+              "insideTorso": true
+            },
+            {
+              "side": "right",
+              "shoulderGap": 0,
+              "elbowGap": 0,
+              "insideTorso": true
+            }
+          ],
+          "majorComponents": 1,
+          "tracks": [
+            "jim-breathe",
+            "jim-blink"
+          ]
+        },
+        {
+          "time": 600,
+          "joints": [
+            {
+              "side": "left",
+              "shoulderGap": 0,
+              "elbowGap": 0,
+              "insideTorso": true
+            },
+            {
+              "side": "right",
+              "shoulderGap": 0,
+              "elbowGap": 0,
+              "insideTorso": true
+            }
+          ],
+          "majorComponents": 1,
+          "tracks": [
+            "jim-breathe",
+            "jim-blink"
+          ]
+        },
+        {
+          "time": 850,
+          "joints": [
+            {
+              "side": "left",
+              "shoulderGap": 0,
+              "elbowGap": 0,
+              "insideTorso": true
+            },
+            {
+              "side": "right",
+              "shoulderGap": 0,
+              "elbowGap": 0,
+              "insideTorso": true
+            }
+          ],
+          "majorComponents": 1,
+          "tracks": [
+            "jim-breathe",
+            "jim-blink"
+          ]
+        },
+        {
+          "time": 1200,
+          "joints": [
+            {
+              "side": "left",
+              "shoulderGap": 0,
+              "elbowGap": 0,
+              "insideTorso": true
+            },
+            {
+              "side": "right",
+              "shoulderGap": 0,
+              "elbowGap": 0,
+              "insideTorso": true
+            }
+          ],
+          "majorComponents": 1,
+          "tracks": [
+            "jim-breathe",
+            "jim-blink"
+          ]
+        },
+        {
+          "time": 2400,
+          "joints": [
+            {
+              "side": "left",
+              "shoulderGap": 0,
+              "elbowGap": 0,
+              "insideTorso": true
+            },
+            {
+              "side": "right",
+              "shoulderGap": 0,
+              "elbowGap": 0,
+              "insideTorso": true
+            }
+          ],
+          "majorComponents": 1,
+          "tracks": [
+            "jim-breathe",
+            "jim-blink"
+          ]
+        },
+        {
+          "time": 3450,
+          "joints": [
+            {
+              "side": "left",
+              "shoulderGap": 0,
+              "elbowGap": 0,
+              "insideTorso": true
+            },
+            {
+              "side": "right",
+              "shoulderGap": 0,
+              "elbowGap": 0,
+              "insideTorso": true
+            }
+          ],
+          "majorComponents": 1,
+          "tracks": [
+            "jim-breathe",
+            "jim-blink"
+          ]
+        },
+        {
+          "time": 4600,
+          "joints": [
+            {
+              "side": "left",
+              "shoulderGap": 0,
+              "elbowGap": 0,
+              "insideTorso": true
+            },
+            {
+              "side": "right",
+              "shoulderGap": 0,
+              "elbowGap": 0,
+              "insideTorso": true
+            }
+          ],
+          "majorComponents": 1,
+          "tracks": [
+            "jim-breathe",
+            "jim-blink"
+          ]
+        }
+      ]
+    },
+    {
+      "pose": "error",
+      "frames": [
+        {
+          "time": 0,
+          "joints": [
+            {
+              "side": "left",
+              "shoulderGap": 0,
+              "elbowGap": 0,
+              "insideTorso": true
+            },
+            {
+              "side": "right",
+              "shoulderGap": 0,
+              "elbowGap": 0,
+              "insideTorso": true
+            }
+          ],
+          "majorComponents": 1,
+          "tracks": [
+            "jim-breathe",
+            "jim-blink"
+          ]
+        },
+        {
+          "time": 150,
+          "joints": [
+            {
+              "side": "left",
+              "shoulderGap": 0,
+              "elbowGap": 0,
+              "insideTorso": true
+            },
+            {
+              "side": "right",
+              "shoulderGap": 0,
+              "elbowGap": 0,
+              "insideTorso": true
+            }
+          ],
+          "majorComponents": 1,
+          "tracks": [
+            "jim-breathe",
+            "jim-blink"
+          ]
+        },
+        {
+          "time": 300,
+          "joints": [
+            {
+              "side": "left",
+              "shoulderGap": 0,
+              "elbowGap": 0,
+              "insideTorso": true
+            },
+            {
+              "side": "right",
+              "shoulderGap": 0,
+              "elbowGap": 0,
+              "insideTorso": true
+            }
+          ],
+          "majorComponents": 1,
+          "tracks": [
+            "jim-breathe",
+            "jim-blink"
+          ]
+        },
+        {
+          "time": 425,
+          "joints": [
+            {
+              "side": "left",
+              "shoulderGap": 0,
+              "elbowGap": 0,
+              "insideTorso": true
+            },
+            {
+              "side": "right",
+              "shoulderGap": 0,
+              "elbowGap": 0,
+              "insideTorso": true
+            }
+          ],
+          "majorComponents": 1,
+          "tracks": [
+            "jim-breathe",
+            "jim-blink"
+          ]
+        },
+        {
+          "time": 600,
+          "joints": [
+            {
+              "side": "left",
+              "shoulderGap": 0,
+              "elbowGap": 0,
+              "insideTorso": true
+            },
+            {
+              "side": "right",
+              "shoulderGap": 0,
+              "elbowGap": 0,
+              "insideTorso": true
+            }
+          ],
+          "majorComponents": 1,
+          "tracks": [
+            "jim-breathe",
+            "jim-blink"
+          ]
+        },
+        {
+          "time": 850,
+          "joints": [
+            {
+              "side": "left",
+              "shoulderGap": 0,
+              "elbowGap": 0,
+              "insideTorso": true
+            },
+            {
+              "side": "right",
+              "shoulderGap": 0,
+              "elbowGap": 0,
+              "insideTorso": true
+            }
+          ],
+          "majorComponents": 1,
+          "tracks": [
+            "jim-breathe",
+            "jim-blink"
+          ]
+        },
+        {
+          "time": 1200,
+          "joints": [
+            {
+              "side": "left",
+              "shoulderGap": 0,
+              "elbowGap": 0,
+              "insideTorso": true
+            },
+            {
+              "side": "right",
+              "shoulderGap": 0,
+              "elbowGap": 0,
+              "insideTorso": true
+            }
+          ],
+          "majorComponents": 1,
+          "tracks": [
+            "jim-breathe",
+            "jim-blink"
+          ]
+        },
+        {
+          "time": 2400,
+          "joints": [
+            {
+              "side": "left",
+              "shoulderGap": 0,
+              "elbowGap": 0,
+              "insideTorso": true
+            },
+            {
+              "side": "right",
+              "shoulderGap": 0,
+              "elbowGap": 0,
+              "insideTorso": true
+            }
+          ],
+          "majorComponents": 1,
+          "tracks": [
+            "jim-breathe",
+            "jim-blink"
+          ]
+        },
+        {
+          "time": 3450,
+          "joints": [
+            {
+              "side": "left",
+              "shoulderGap": 0,
+              "elbowGap": 0,
+              "insideTorso": true
+            },
+            {
+              "side": "right",
+              "shoulderGap": 0,
+              "elbowGap": 0,
+              "insideTorso": true
+            }
+          ],
+          "majorComponents": 1,
+          "tracks": [
+            "jim-breathe",
+            "jim-blink"
+          ]
+        },
+        {
+          "time": 4600,
+          "joints": [
+            {
+              "side": "left",
+              "shoulderGap": 0,
+              "elbowGap": 0,
+              "insideTorso": true
+            },
+            {
+              "side": "right",
+              "shoulderGap": 0,
+              "elbowGap": 0,
+              "insideTorso": true
+            }
+          ],
+          "majorComponents": 1,
+          "tracks": [
+            "jim-breathe",
+            "jim-blink"
+          ]
+        }
+      ]
+    }
+  ],
+  "transitions": 144,
+  "sizes": [
+    48,
+    96,
+    240,
+    600
+  ],
+  "errors": [],
+  "motionOff": true,
+  "systemReducedMotion": true,
+  "simulatedHiddenPage": true
+}

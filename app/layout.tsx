@@ -7,7 +7,14 @@ export const metadata: Metadata = {
   description:
     "Know your workout window. Log your training. See your progress. Leave on time.",
   metadataBase: new URL("https://jimbro.rayhanson.tech"),
-  icons: { icon: "/icon.svg", apple: "/apple-touch-icon.png" },
+  icons: {
+    icon: [
+      { url: "/icon.svg", type: "image/svg+xml" },
+      { url: "/favicon.ico", sizes: "16x16 32x32 48x48" },
+    ],
+    apple: "/apple-touch-icon.png",
+  },
+  manifest: "/manifest.webmanifest",
   openGraph: {
     title: "JimBro — Time well lifted",
     description: "One workout. The rest of your day.",

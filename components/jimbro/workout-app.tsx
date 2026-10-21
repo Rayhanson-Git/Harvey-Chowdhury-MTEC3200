@@ -220,7 +220,18 @@ export function WorkoutApp({ initialView = "today" }: { initialView?: View }) {
             ? "Your effort, in perspective."
             : "Make JimBro yours.";
   return (
-    <main className="min-h-screen bg-jim-background font-sans text-[#f4f3ef] [color-scheme:dark] [&_button]:focus-visible:outline-2 [&_button]:focus-visible:outline-offset-4 [&_button]:focus-visible:outline-lime-200 [&_input]:scroll-mt-28 [&_input]:focus-visible:outline-lime-200 [&_select]:focus-visible:outline-lime-200">
+    <main
+      onClickCapture={(event) => {
+        // WebKit does not focus pointer-clicked buttons by default. Capture the
+        // invoking control before a modal mounts so focus can return to it.
+        const trigger = (event.target as Element).closest<HTMLButtonElement>(
+          "button",
+        );
+        if (trigger && !trigger.disabled)
+          trigger.focus({ preventScroll: true });
+      }}
+      className="min-h-screen bg-jim-background font-sans text-[#f4f3ef] [color-scheme:dark] [&_button]:focus-visible:outline-2 [&_button]:focus-visible:outline-offset-4 [&_button]:focus-visible:outline-lime-200 [&_input]:scroll-mt-28 [&_input]:focus-visible:outline-lime-200 [&_select]:focus-visible:outline-lime-200"
+    >
       <a
         href="#main-content"
         className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-50 focus:bg-black focus:p-4"
@@ -230,13 +241,19 @@ export function WorkoutApp({ initialView = "today" }: { initialView?: View }) {
       <div className="mx-auto max-w-[1440px] md:grid md:grid-cols-[180px_minmax(0,1fr)] lg:grid-cols-[220px_minmax(0,1fr)]">
         <aside className="border-b border-white/10 bg-[#101114] px-4 py-4 md:sticky md:top-0 md:h-screen md:border-r md:border-b-0 md:px-6 md:py-10">
           <Link
+            prefetch={false}
             href="/"
             className="flex items-center gap-2 text-2xl font-black tracking-tighter"
           >
-            <span className="rounded-xl bg-rose-600 p-2">
-              <Dumbbell size={20} />
-            </span>
-            JimBro<span className="text-rose-400">.</span>
+            {/* The shared vector lockup contains the canonical compact Jim mark. */}
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/brand/lockup-dark.svg"
+              alt="JimBro"
+              width="160"
+              height="33"
+              className="h-auto w-40"
+            />
           </Link>
           <p className="mt-3 hidden text-[10px] uppercase tracking-[.2em] text-neutral-400 md:block">
             Time well lifted
@@ -264,6 +281,7 @@ export function WorkoutApp({ initialView = "today" }: { initialView?: View }) {
               The rest of your day.
             </p>
             <Link
+              prefetch={false}
               href="/leaveby"
               className="mt-4 inline-flex min-h-11 items-center gap-1 underline"
             >
@@ -756,6 +774,7 @@ export function WorkoutApp({ initialView = "today" }: { initialView?: View }) {
           <footer className="mt-10 flex flex-wrap justify-between gap-3 border-t border-white/10 pt-5 text-[11px] leading-6 text-neutral-400">
             <p>Saved on this browser · Export in Settings for backup.</p>
             <Link
+              prefetch={false}
               href="/leaveby"
               className="inline-flex min-h-11 items-center underline"
             >

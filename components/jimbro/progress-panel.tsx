@@ -225,7 +225,11 @@ export function ProgressPanel({
         ) : null}
         <DataChart
           rows={series}
-          label="Highest recorded measure per session"
+          label={
+            kind === "assisted"
+              ? "Lowest recorded assistance per session at matching reps"
+              : "Highest recorded measure per session"
+          }
           unit={
             kind === "bodyweight"
               ? "Reps"

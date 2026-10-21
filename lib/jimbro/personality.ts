@@ -29,6 +29,7 @@ export function selectPhrase(
   memory: PhraseMemory,
   now: number,
   random = Math.random,
+  catalog: typeof phraseCatalog = phraseCatalog,
 ) {
   if (memory.events.includes(eventId)) return { memory, text: null, id: null };
   const next = structuredClone(memory);
@@ -39,7 +40,7 @@ export function selectPhrase(
   if (!urgent && now - next.lastAt < 12000)
     return { memory: next, text: null, id: null };
   const rank = ["quiet", "encouraging", "playful", "unhinged"];
-  const pool = phraseCatalog.filter(
+  const pool = catalog.filter(
     (p) =>
       p.event === event &&
       rank.indexOf(p.tone) <= rank.indexOf(context.tone) &&

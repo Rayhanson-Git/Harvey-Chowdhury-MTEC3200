@@ -1,0 +1,145 @@
+{
+  "base": "http://127.0.0.1:3103",
+  "startedAt": "2026-10-21T18:31:54.893Z",
+  "checks": [
+    {
+      "name": "new-user planner, inline invalid input and honest empty states",
+      "status": "Verified"
+    },
+    {
+      "name": "custom routine create, reorder, replace, edit sets/reps/rest and reuse",
+      "status": "Verified"
+    },
+    {
+      "name": "custom rename, duplicate and delete confirmation preserve original",
+      "status": "Verified"
+    },
+    {
+      "name": "plan → routine adaptation → one persistent scheduled workout",
+      "status": "Verified"
+    },
+    {
+      "name": "saved set, correction, units, notes and confirmation before removal",
+      "status": "Verified"
+    },
+    {
+      "name": "reload and second tab retain same workout; failed writes preserve draft",
+      "status": "Verified"
+    },
+    {
+      "name": "rest/elapsed pauses do not change deadlines; warning, cutoff and departure survive reload",
+      "status": "Verified"
+    },
+    {
+      "name": "early finish retains sets, closes reminders only with confirmation",
+      "status": "Verified"
+    },
+    {
+      "name": "history detail correction and chart recomputation use real saved work",
+      "status": "Verified"
+    },
+    {
+      "name": "history repeat and previous comparable reuse never auto-completes a set",
+      "status": "Verified"
+    },
+    {
+      "name": "optional bodyweight entry converts units and persists into backups",
+      "status": "Verified"
+    },
+    {
+      "name": "preferences, notification denial and actual download/upload backup round-trip",
+      "status": "Verified"
+    },
+    {
+      "name": "malformed, incompatible and conflicting file imports leave data unchanged",
+      "status": "Verified"
+    },
+    {
+      "name": "direct routes, metadata assets and preserved LeaveBy",
+      "status": "Verified"
+    },
+    {
+      "name": "responsive routes, keyboard dialog focus and automated accessibility",
+      "status": "Verified"
+    },
+    {
+      "name": "every preset previews and starts its own immutable snapshot",
+      "status": "Verified"
+    },
+    {
+      "name": "direct saved-session link, deliberate deletion and progress recomputation",
+      "status": "Verified"
+    },
+    {
+      "name": "browser scheduling: edits preview, midnight, zero boundaries and DST choices",
+      "status": "Verified"
+    },
+    {
+      "name": "storage unavailable offers honest recovery without false save",
+      "status": "Verified"
+    },
+    {
+      "name": "active plan controls, rest controls, typed measures and repeated finish",
+      "status": "Verified"
+    }
+  ],
+  "accessibility": [
+    {
+      "name": "planner",
+      "violations": [],
+      "incomplete": []
+    },
+    {
+      "name": "active workout",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "aria-prohibited-attr",
+          "nodes": 1
+        },
+        {
+          "id": "color-contrast",
+          "nodes": 16
+        }
+      ]
+    },
+    {
+      "name": "saved progress",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "nodes": 4
+        }
+      ]
+    },
+    {
+      "name": "settings",
+      "violations": [],
+      "incomplete": []
+    },
+    {
+      "name": "workout chooser",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "nodes": 1
+        }
+      ]
+    },
+    {
+      "name": "progress after deletion",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "nodes": 8
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "finishedAt": "2026-10-21T18:32:09.912Z",
+  "engine": "chromium"
+}

@@ -1,0 +1,185 @@
+{
+  "chromium": {
+    "journeys": 20,
+    "axeScans": 6,
+    "violations": 0,
+    "incomplete": [
+      {
+        "name": "planner",
+        "violations": [],
+        "incomplete": []
+      },
+      {
+        "name": "active workout",
+        "violations": [],
+        "incomplete": [
+          {
+            "id": "aria-prohibited-attr",
+            "nodes": 1
+          },
+          {
+            "id": "color-contrast",
+            "nodes": 16
+          }
+        ]
+      },
+      {
+        "name": "saved progress",
+        "violations": [],
+        "incomplete": [
+          {
+            "id": "color-contrast",
+            "nodes": 4
+          }
+        ]
+      },
+      {
+        "name": "settings",
+        "violations": [],
+        "incomplete": []
+      },
+      {
+        "name": "workout chooser",
+        "violations": [],
+        "incomplete": [
+          {
+            "id": "color-contrast",
+            "nodes": 1
+          }
+        ]
+      },
+      {
+        "name": "progress after deletion",
+        "violations": [],
+        "incomplete": [
+          {
+            "id": "color-contrast",
+            "nodes": 8
+          }
+        ]
+      }
+    ]
+  },
+  "firefox": {
+    "journeys": 20,
+    "axeScans": 6,
+    "violations": 0,
+    "incomplete": [
+      {
+        "name": "planner",
+        "violations": [],
+        "incomplete": []
+      },
+      {
+        "name": "active workout",
+        "violations": [],
+        "incomplete": [
+          {
+            "id": "aria-prohibited-attr",
+            "nodes": 1
+          },
+          {
+            "id": "color-contrast",
+            "nodes": 16
+          }
+        ]
+      },
+      {
+        "name": "saved progress",
+        "violations": [],
+        "incomplete": [
+          {
+            "id": "color-contrast",
+            "nodes": 4
+          }
+        ]
+      },
+      {
+        "name": "settings",
+        "violations": [],
+        "incomplete": []
+      },
+      {
+        "name": "workout chooser",
+        "violations": [],
+        "incomplete": [
+          {
+            "id": "color-contrast",
+            "nodes": 1
+          }
+        ]
+      },
+      {
+        "name": "progress after deletion",
+        "violations": [],
+        "incomplete": [
+          {
+            "id": "color-contrast",
+            "nodes": 8
+          }
+        ]
+      }
+    ]
+  },
+  "webkit": {
+    "journeys": 20,
+    "axeScans": 6,
+    "violations": 0,
+    "incomplete": [
+      {
+        "name": "planner",
+        "violations": [],
+        "incomplete": []
+      },
+      {
+        "name": "active workout",
+        "violations": [],
+        "incomplete": [
+          {
+            "id": "aria-prohibited-attr",
+            "nodes": 1
+          },
+          {
+            "id": "color-contrast",
+            "nodes": 16
+          }
+        ]
+      },
+      {
+        "name": "saved progress",
+        "violations": [],
+        "incomplete": [
+          {
+            "id": "color-contrast",
+            "nodes": 4
+          }
+        ]
+      },
+      {
+        "name": "settings",
+        "violations": [],
+        "incomplete": []
+      },
+      {
+        "name": "workout chooser",
+        "violations": [],
+        "incomplete": [
+          {
+            "id": "color-contrast",
+            "nodes": 1
+          }
+        ]
+      },
+      {
+        "name": "progress after deletion",
+        "violations": [],
+        "incomplete": [
+          {
+            "id": "color-contrast",
+            "nodes": 8
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -218,6 +218,7 @@ export function SettingsPanel({
                 if (file.size > 15000000)
                   throw new Error("Backup is too large (15 MB maximum).");
                 const value = validateBackup(JSON.parse(await file.text()));
+                setMode("merge");
                 setBackup(value);
               } catch (reason) {
                 setError(
@@ -231,7 +232,7 @@ export function SettingsPanel({
           />
         </label>
         <p role="alert" className="text-sm text-rose-300">
-          {error}
+          {backup ? "" : error}
         </p>
         <p role="status" className="text-sm text-lime-200">
           {message}
@@ -270,11 +271,26 @@ export function SettingsPanel({
               ? "This replaces all current workout records, routines and preferences. Export a backup first."
               : "Competing active sessions block the entire import; finish your current workout first. No duplicate IDs are added."}
           </p>
+          {error ? (
+            <p role="alert" className="mb-4 text-sm text-rose-300">
+              {error}
+            </p>
+          ) : null}
           <Button
             className={buttonStyle}
             disabled={busy}
             onClick={async () => {
-              if (await run(() => importBackup(backup, mode))) {
+              setError("");
+              if (
+                await run(async () => {
+                  try {
+                    await importBackup(backup, mode);
+                  } catch (reason) {
+                    setError((reason as Error).message);
+                    throw reason;
+                  }
+                })
+              ) {
                 setBackup(null);
                 setMessage("Import committed successfully. Records are ready.");
               }

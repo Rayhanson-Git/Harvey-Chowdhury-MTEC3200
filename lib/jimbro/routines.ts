@@ -27,11 +27,12 @@ export function planned(
     reps,
     rest,
     kind:
-      e.equipment === "Body weight" ||
+      e.kind ||
+      (e.equipment === "Body weight" ||
       e.equipment === "Pull-up bar" ||
       e.equipment === "Parallel bars"
         ? "bodyweight"
-        : "external",
+        : "external"),
   };
 }
 const definitions: [string, string, string[], number, number][] = [
@@ -179,11 +180,18 @@ export function personalBest(set: CompletedSet, history: Session[]) {
     )
   );
 }
-export function previousSet(id: string, history: Session[], activeId?: string) {
+export function previousSet(
+  id: string,
+  history: Session[],
+  activeId?: string,
+  kind?: CompletedSet["kind"],
+) {
   return history
     .filter((s) => s.id !== activeId && s.status !== "cancelled")
     .flatMap((s) => s.sets)
-    .filter((s) => s.exerciseId === id)
+    .filter(
+      (s) => s.exerciseId === id && (!kind || (s.kind || "external") === kind),
+    )
     .sort((a, b) => b.completedAt - a.completedAt)[0];
 }
 export function routineFromSession(s: Session): Routine {

@@ -1,21 +1,38 @@
-# Complete web brief — implementation and verification checklist
+# Repair and release acceptance ledger — October 21, 2026
 
-| Area | Implementation | Evidence / remaining verification |
+This run starts at release branch `a02322b` (production application `1af1c647`). Historical passes are not counted as fresh evidence. Status vocabulary: Implemented = source exists; Verified = checked in this run; Defective = reproduced unresolved fault; Blocked = exact unavailable prerequisite; Explicitly deferred = outside the authorized web scope.
+
+| Acceptance area | Implementation status | Verification status / current evidence |
 |---|---|---|
-| A real repo/current branch/current Vercel target/baseline | Implemented | GitHub main 4271e846; clean start; jimbro and domain verified; baseline 8+18 tests/lint/build |
-| Planner dates/zones/DST/calculation/edit preview | Implemented | Existing 18 core tests plus browser planner/edit/missed-cutoff/departure checks |
-| Presets/preview/duration mismatch/custom/edit/duplicate/reorder | Implemented | Seven presets; browser custom creation/reorder/sets/save/reuse; snapshot domain test; duplicate controls implemented, not separately UI-exercised |
-| Completed sets/types/notes/corrections/previous/repeat | Implemented | UI save/correction/reload/history edit; typed-set and comparable-PR tests; previous/repeat code present, further peer clarity pending |
-| Dock/deadline/rest/elapsed/early finish/recovery | Implemented | UI persistent dock, real rest recovery and early finish; boundary/rest/elapsed unit coverage; native recovery tests |
-| History/calendar/detail/edit/delete | Implemented | Browser list/calendar/detail/edit; delete safeguard implemented; actual delete UI not exercised on stored user work |
-| Progress/date filters/comparable values/tables/bodyweight | Implemented | Real record edit changed volume to 192; domain recomputation tests; bodyweight data entry retained and converted |
-| Schema v2/v1 migration/concurrency/failures | Implemented | Native-browser fixture 15/15; quota abort/stale write/concurrent starts tested |
-| JSON export/import/preview/merge/replace | Implemented | Native-browser valid/invalid/duplicate/conflict/rollback cases; file chooser/download UI round-trip unverified |
-| Original Jim/source/aligned SVG/optimized icon/share art | Implemented | Canonical SVG + layered React rig; actual desktop/mobile visual inspection and gallery |
-| Actual animations/state priority/dedup/cooldowns | Implemented | Twelve rendered states; 12 distinct named animation tracks observed running; motion-off has zero tracks; priority/dedup domain tests |
-| Local contextual phrase bank/tone/flirtation/repetition | Implemented | 248 phrases; all 100 supplied seeds; truth-filter/exhaustion/recent/cooldown tests; settings UI save verified |
-| Loading/empty/error/recovery/mobile/keyboard/dialogs | Implemented | Browser desktop and 320/768 viewport frames; native dialog focus/Escape; no overflow on inspected logger; screen-reader/physical keyboard testing pending |
-| App title/icons/social metadata | Implemented | Built routes, local PNG/SVG/ICO assets; production interface and twelve mascot assets rendered |
-| Documentation/provenance/handoff/native readiness/peer script | Implemented | README and docs/jimbro current WEB-* records; real peer results pending |
-| F preview and production on intended project | Released | Source 1af1c647, production dpl_3jdY4N82GAeYj4rrMiCrmcZVM9vz READY; browser save/reload/finish/progress and direct-route smoke passed |
-| Native/accounts/cloud/payments/social/nutrition/wearables/runtime AI | Explicitly deferred | No native framework, new backend or paid application dependency added |
+| Correct repo, release branch, production project/domain | Implemented | Verified: remote and Vercel source identity inspected |
+| Original main, coursework and separate LeaveBy preservation | Implemented | Verified: original route, PRD, coursework directories and frozen v1 files unchanged from a02322b |
+| Jim shoulder/elbow hierarchy and wrist attachment | Implemented | Verified: explicit joint matrices + silhouette connectivity at 120 rendered samples |
+| All twelve poses, motion sampling, multi-instance IDs | Implemented | Verified: twelve states, ten frames each, 144 pose changes, unique IDs |
+| Independent motion; explicit/system reduced motion | Implemented | Verified: real animation tracks; both motion overrides suppress them |
+| Compact, mobile, desktop, enlarged Jim | Implemented | Verified: 48/96/240/600px rendered inspection |
+| Wordmark/lockup/app mark/light/dark/mono sources | Implemented | Verified: deterministic generated SVG family, visual review |
+| Favicon/home-screen/social derivatives and integration | Implemented | Verified: compiled routes/assets, manifest and icon integration; hosted smoke follows release |
+| Calculation, midnight, DST gap/repeated time, timezone | Implemented | Verified: domain tests and midnight/zero/DST browser cases in all three engines |
+| Schedule edit consequences, absolute recovery, rest/elapsed independence | Implemented | Verified: current browser journey and core domain tests |
+| Warning/cutoff/preparation/departure, denied notifications | Implemented | Verified: browser clock progression; mocked denial fallback (not OS dialog) |
+| Seven preset previews and starts | Implemented | Verified: every preset preview/start snapshot in all three engines |
+| Routine create/rename/duplicate/edit/replace/reorder/reuse | Implemented | Verified: current browser CRUD and start snapshot |
+| Active-plan add/replace/reorder; set kinds, units, correction, notes | Implemented | Verified: current browser logging and domain measure checks |
+| Comparable previous values without automatic completion | Implemented | Verified: external/timed browser behavior; new regression |
+| Saved set removal confirmation; early finish; no duplicate session | Implemented | Verified: current UI confirmation/early-finish/reload and storage concurrency |
+| Calendar/history/details/direct links/repeat/delete | Implemented | Verified: calendar, detail link, correction, repeat, confirmed deletion and recomputation browser journeys |
+| Progress/volume/comparability/chart recomputation | Implemented | Verified: current domain tests and UI correction; new bodyweight/assistance regression |
+| Atomic writes, versioned v1→v2 migration, stale tab conflicts | Implemented | Verified: 15 native Chromium IndexedDB checks |
+| Storage unavailability/quota/retry | Implemented | Verified: native failures plus unavailable-storage UI and quota/retry in all three engines |
+| JSON download/file-input restore, record/preference equality | Implemented | Verified: real UI round-trip in disposable Chromium profile |
+| Merge duplicates, replacement confirmation, invalid/conflicting imports | Implemented | Verified: native cases plus actual file chooser/download round-trip, conflict/invalid-file protection and policy confirmation in all three engines |
+| Local phrases/truth/tone/flirt/cooldown/dedup/exhaustion | Implemented | Verified: domain catalog and selection tests; bounded history |
+| Optional Jim/motion/quiet settings and hidden-page cleanup | Implemented | Verified: preferences and overrides, simulated document-hidden cleanup and phrase tests |
+| Routes, responsive screens, keyboard focus/dialogs, axe | Implemented | Verified: 320/390/768/1440 widths, dialog keyboard/focus, six axe scans × three engines; incomplete/manual nodes retained |
+| Preview URL test and exact-source production release | Implemented | Local gates Verified; preview/production deployment pending |
+| Physical phones, real software keyboards, screen-reader output | Implemented | Blocked: physical device/assistive-technology test session unavailable |
+| OS permission prompts, audible output, locked/background delivery | Implemented | Blocked: no human OS/device session; foreground behavior only; background guarantee explicitly excluded |
+| Human peer usability | Implemented script | Blocked: real participants unavailable; no fabricated feedback |
+| Native app/accounts/cloud/payments/social/nutrition/wearables/runtime AI | Explicitly deferred | Explicitly deferred by product scope |
+
+No unresolved reproduced product defect may be labeled Verified. The final verification and release records identify tested source, commands, browser engines, artifacts and remaining manual limitations.

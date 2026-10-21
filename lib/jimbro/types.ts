@@ -70,6 +70,8 @@ export type Exercise = {
   name: string;
   category: string;
   equipment: string;
+  aliases?: string[];
+  kind?: SetKind;
   source: string;
 };
 

@@ -17,6 +17,8 @@ npm run build
 npx tsc --noEmit
 ```
 
+Brand sources and integrated variants: [asset inventory](docs/jimbro/BRAND-ASSETS.md). Regenerate with `npm run build:brand`. Browser acceptance and animation sampling use `npm run test:browser` / `npm run test:mascot` with Playwright and axe installed in an isolated QA directory; see the verification record for exact commands and current results.
+
 Read [architecture/data and migration](docs/jimbro/WEB-ARCHITECTURE.md), [design system](docs/jimbro/DESIGN-SYSTEM.md), [Jim source/provenance](docs/jimbro/JIM-ART.md), [phrase content](docs/jimbro/PHRASES.md), [actual verification](docs/jimbro/WEB-VERIFICATION.md), [handoff](docs/jimbro/HANDOFF.md), [peer-test script](docs/jimbro/PEER-TEST.md) and [future native evaluation](docs/jimbro/NATIVE-READINESS.md).
 
 ## Data and timing limits

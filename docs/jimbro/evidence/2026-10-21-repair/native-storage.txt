@@ -1,0 +1,13 @@
+PASS new v2 database loads with default preferences
+PASS two independent concurrent starts serialize to one active ID
+PASS completed set commits and survives a fresh connection
+PASS stale revision rejects without duplicate work
+PASS routine and preferences persist
+PASS alert claims are atomic across connections
+PASS phrase events persist and deduplicate
+PASS invalid replacement validates before touching records
+PASS merge keeps existing IDs without duplication
+PASS competing active import rolls back entirely
+PASS failed transaction preserves old sets and revision
+PASS simulated write failure never resolves success
+PASS valid full replacement restores sessions routines and preferences atomically

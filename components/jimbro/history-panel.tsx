@@ -232,10 +232,11 @@ export function HistoryPanel({
               maxLength={4000}
               className={`${inputStyle} mt-2 min-h-24 w-full rounded-xl border p-3`}
               onBlur={(e) => {
-                if (e.target.value !== (detail.notes || ""))
+                const value = e.currentTarget.value;
+                if (value !== (detail.notes || ""))
                   void change(detail.id, detail.revision, (s) => ({
                     ...s,
-                    notes: e.target.value,
+                    notes: value,
                   }));
               }}
             />

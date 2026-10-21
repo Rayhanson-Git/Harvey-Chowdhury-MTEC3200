@@ -1,3 +1,4 @@
+// Historical schema-v1 suite. Current v2 acceptance: tests/release-browser.mjs.
 // Run against a production build with disposable browser contexts, never a live account.
 // Playwright/axe are verification tools installed outside the application dependency tree.
 import { createRequire } from "node:module";

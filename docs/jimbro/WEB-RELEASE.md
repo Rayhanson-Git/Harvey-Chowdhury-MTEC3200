@@ -1,29 +1,15 @@
-# JimBro complete web release — October 21, 2026
+# JimBro repair release — October 21, 2026
 
-## Target
-Existing Vercel project `jimbro` (`prj_5dLMR9qmoPZn1H4YtQ5zO1c708IF`), team Rayhanson (`team_McLOi8RvhigiilQftObY7ZJ9`), custom domain https://jimbro.rayhanson.tech. Implementation branch `release/jimbro-web`, based on main `4271e846`. Production release details are appended after actual deployment.
+Target: existing Rayhanson team `team_McLOi8RvhigiilQftObY7ZJ9`, project `jimbro` / `prj_5dLMR9qmoPZn1H4YtQ5zO1c708IF`, domain https://jimbro.rayhanson.tech. Repository `Rayhanson-Git/Harvey-Chowdhury-MTEC3200`, release branch `release/jimbro-web`. Starting release head `a02322b`; original production application `1af1c647`. Main remains `4271e8465b131a368610bb02c79b896377dadaa5`. Branch listing reported no protected release branch; no protection or deployment configuration was changed.
 
-## Changes
-Unified Today/Workout/History/Progress/Settings experience, seven editable templates and custom routines, immutable session plans, real set logging/correction, rest/elapsed pause and deadline dock, interrupted-session recovery, finish/early-finish, calendar/details/repeat, actual comparable charts and bodyweight trend, versioned JSON export/import and preferences. Original Jim is a layered SVG with twelve poses, independent runtime animation tracks, priorities and optional local banter. Catalog contains 248 lines including the supplied 100. Metadata/icon/social artwork and documentation finished. Original `/leaveby`, frozen v1 records, instructor templates/research/interviews/designs/presentation and unrelated hosting retained.
+Current release contains the joint-rig repair, production brand package, asynchronous active-plan selection repair, comparable-record/progress corrections, safer backup import and deletion, and cross-browser modal focus fixes. Full details and limitations: WEB-VERIFICATION.md. Initial release records are archived under `history/`.
 
-## Checks
-Fresh original tests 8/8, existing JimBro tests 18/18, expanded domain tests 18/18, native IndexedDB fixture 15/15. Expanded build and TypeScript pass. Browser flow and animation findings are in [WEB-VERIFICATION.md](WEB-VERIFICATION.md); final build/lint, preview and production smoke identity are recorded below when completed.
+## Release gates
 
-## Release/rollback policy
-Git integration is shared with a separate LeaveBy project, so keep main unchanged and deploy the explicitly selected tested release branch only to JimBro. Do not change unrelated projects/domains or deployment protection. No new environment variables, paid services, backend, account or application dependencies. Rollback must retain IndexedDB version 2 and compatible readers; the old v1 binary cannot open a v2 database. Prefer a forward-compatible patch, export before recovery, and never delete the newer store to enable older code. Vercel can retain prior deployment artifacts, but code-only rollback to v1 is not data-compatible.
+Fresh 8+18+22 domain tests, clean lint/type checks, production build, isolated native storage and sampled animation checks. Final compiled source passed 20/20 browser journeys in Chromium, Firefox and WebKit (60 total), with six zero-violation axe scans per engine and no recorded console/HTTP errors. Preview/production identities remain pending until observed.
 
-## Remaining observations
-Real peer usability, physical mobile keyboard/touch, actual screen-reader/audible-output and OS notification/background behavior remain unverified. The peer script and native-readiness note are provided. Browser-local storage is not a backup or sync service; closed/locked/background alarms and offline launch are not guaranteed. No native development started.
+## Rollback and durability
 
-## Verified source and preview
+Database remains v2; no repair migration or destructive reset is introduced. Never deploy the old v1 reader against newer data, delete/recreate IndexedDB, or rewrite snapshots to force compatibility. Prefer a forward patch on this branch retaining current v2 validation, new catalog IDs and comparable measure semantics. Before any recovery operation, export a version-2 backup from the affected origin. Test restore in a disposable profile. A UI rollback must keep the current storage adapter/catalog and prove export/import and new-session reads; a Vercel artifact alone is not proof of schema compatibility.
 
-Final application source: GitHub `1af1c6475c8045b82d4ff314f45647d7505e42d7`, branch `release/jimbro-web`, tree `aa10db9f94b6b513236f6e1d4dce0cb2601c0d49`. Local tested tree is identical. Command-line push lacked credentials, so the connected GitHub app created the identical tree and commits; no credentials were copied. Original main stays `4271e8465b131a368610bb02c79b896377dadaa5`. Final lint, production build, standalone TypeScript and diff checks passed.
-
-Final preview `dpl_EgaHX9ZcxFqvBqVpGzo42Rw5xJ5T` reached READY at https://jimbro-2dnnlsgyh-rayhanson.vercel.app/. The named “Choose your open workout” dialog was browser-verified there. The prior identical application core was smoke-tested at https://jimbro-rnn7ivcml-rayhanson.vercel.app/ for set save, reload, finish and real progress (80 kg·reps).
-
-## Verified production release
-Production URL: https://jimbro.rayhanson.tech/
-
-Deployment `dpl_3jdY4N82GAeYj4rrMiCrmcZVM9vz` is READY with target production, exact application commit `1af1c6475c8045b82d4ff314f45647d7505e42d7`. Immutable host: https://jimbro-k1c4yf78t-rayhanson.vercel.app. Domain alias is attached without alias errors. Main and the separate LeaveBy deployment were not changed. Documentation-only commits after this source do not change the deployed application.
-
-Actual production-browser smoke in a disposable profile: start an empty workout without deadline; save 8 reps at 12 kg; reload and recover set/rest; finish; Progress shows one session and 96 kg·reps. Direct History, Settings, all twelve gallery poses and preserved `/leaveby` load. Final preview verified the accessible workout-choice dialog name. Physical devices and real peer/screen-reader tests remain pending. Backup domain/native transactions pass, but file chooser/download UI round-trip is not claimed.
+The separate LeaveBy deployment and main are preserved. Deploy only this selected source to the existing JimBro project; no new domains, unrelated project changes, paid service, runtime backend or native app. Preview is tested before production, then production is smoke-tested again. Final deployment/source evidence follows below.

@@ -1,42 +1,55 @@
-# Web release verification — October 21, 2026
+# JimBro repair verification — October 21, 2026
 
-This file records this implementation task. Earlier QA reports remain historical and are not counted as fresh passes.
+Current repair starts from release branch `a02322bba563513c23770ed8d9b7441c03e8693e`, whose application source `1af1c647` was serving production. Original source and actual deployed Vercel project/domain were verified before edits. Prior release records are preserved under `history/2026-10-21-initial-*`; their pending checks are historical, not this run's status.
 
-## Actual results so far
+## Product story and data boundaries
 
-- Baseline: original calculation tests 8/8; original JimBro tests 18/18; lint; production build passed.
-- Expanded domain suite `npm run test:web`: 18/18. Covers snapshots, migration function, units, rest/elapsed, open mode, PR eligibility, typed measures, progress recomputation, date policy, backup validation, preference validation, phrase pools/filters/exhaustion/cooldown/dedup and priority.
-- Real Chromium IndexedDB fixture: 15/15. Isolated database `jimbro-qa-release`, not the app database. Covers first open, concurrent starts, committed set recovery, stale revision, routine/preferences, atomic alerts, persistent phrase dedup, invalid import safety, merge duplicate policy, competing-active rollback, failed domain write, injected quota failure, valid replacement, native v1→v2 upgrade and rest/pause recovery.
-- UI: future schedule → full-body preview/start; completed set save and automatic rest; mid-session reload retained set, deadline and running rest; correction; early finish retained work/reminders; explicit closure; calendar/history/detail; historical correction changed volume from 176 to 192 kg·reps; save session as routine; create custom two-exercise routine, reorder/change sets/save/reuse; unscheduled mode; hide/motion/tone preferences.
-- Desktop screenshots inspected for planner and gallery. Actual browser viewport frames at 320 and 768 CSS pixels reported no horizontal overflow and zero unlabeled inputs on the logger. The responsive harness also inspected all twelve SVG states. These are browser frames, not physical devices.
-- All 12 production poses rendered. Browser animation inspector observed running breathe/blink/wave/flex/nod/thumb/exhale/spark/glance/clock/point/cheer tracks. Disabling motion produced zero running tracks in all 12 poses.
-- Production build/type checks passed for expanded routes before final UI refinements; the final release rerun is recorded in WEB-RELEASE.md.
+Plan commitment → preview time/routine → start → log/correct completed sets → reload the same active record → finish early or normally → review/edit/delete history and derive progress. Alternate open-workout mode has no deadline. Browser UI writes through the existing transactional IndexedDB v2 adapter; there is no workout API, cloud account or remote persistence. UI success is evaluated after transaction commit. All browser QA uses synthetic records and disposable contexts; no real user's history is read, changed or uploaded.
 
-## Reproduce
+## Repaired findings
 
-`npm ci` (Node 24 recommended), `npm test`, `npm run test:jimbro`, `npm run test:web`, `npm run lint`, `npm run build`, `npx tsc --noEmit`. For native browser storage checks, run `node tests/prepare-native-qa.mjs`; open `/qa-native/index.html` in the local preview, run checks, then remove generated `public/qa-native`. Copy `tests/responsive-browser.html` temporarily to `public/qa-layout.html` for responsive/animation inspection; remove it before release. The tests intentionally use disposable data.
+- Actual production ready pose: `fill-box` transform origin displaced the left shoulder by 34.22 CSS pixels in the 200px gallery. View-box shoulder and elbow anchors, overlap and wrist-attached hand repair all poses. Pointing now rotates instead of translating away from its elbow. Runtime, editable master and share derivatives agree.
+- Active-plan add/replace read a controlled select's value inside a later IndexedDB callback. Capture the selected ID immediately; browser tests cover add/reorder/replace.
+- Previous-performance lookup mixed external, assisted, bodyweight, timed and distance measures. It now filters the selected measure before showing/reusing values.
+- Bodyweight progress incorrectly retained the external-load repetition filter; assisted progress now reports the lowest assistance at matching reps, clearly labeled.
+- Backup import retained a previously selected Replace policy on later files. Fresh files default to Merge; destructive replacement still requires explicit selection and confirmation. Failed imports explain the error inside the modal.
+- Saved-set removal now requires a named confirmation.
+- Long modal Tab order could pass outside the dialog, and unmount lost trigger focus. Explicit wrapping/cleanup restores focus. JimBro captures pointer-button focus before mounting dialogs because WebKit does not do so by default.
+- Disabled unnecessary root/LeaveBy link prefetches after WebKit reported canceled background fetch errors under rapid navigation. Final console-clean cross-browser runs include the correction.
+- Consistent original path-based wordmarks, lockups, mono marks, icon family, multi-size favicon, manifest and share assets replace the generic navigation badge. No application dependencies added.
 
-## Findings repaired
+## Current automated checks
 
-HTTP preview’s secure-context-only randomUUID failed: use getRandomValues-based record IDs. Schedule preview time now comes from the shared clock rather than render-time Date.now calls. kg/lb input changes convert values. Mobile dock is sticky above the logger. Mobile navigation displays all five destinations without horizontal scrolling. Open workouts do not present their compatibility sentinel as a real schedule. Local system fonts remove network font dependencies. The preview supervisor’s host flags are adapted to Next’s documented CLI.
+Commands and detailed results are retained in `evidence/2026-10-21-repair/`.
 
-## Verification limits
+| Check | Current outcome |
+|---|---|
+| `npm test` | 8/8 |
+| `npm run test:jimbro` | 18/18 |
+| `npm run test:web` | 22/22; comparable measures, singleton/empty phrase pools and library scope regressions included |
+| `npm run lint` | Passed, zero warnings |
+| `npx tsc --noEmit` | Passed |
+| `npm run build` | Passed; all product routes and manifest prerender |
+| Native Chromium IndexedDB fixture | 15/15: upgrade, atomic starts/alerts, conflicts, rollback, quota, import and recovery |
+| `npm run test:mascot` | 12 poses × 10 times = 120 frames; 144 discrete state changes; joint matrices/torso containment/alpha connectivity; 48/96/240/600px |
+| Motion overrides | Explicit off, OS reduced-motion emulation and simulated document hiding suppress decorative tracks |
+| Full compiled browser suite | 20/20 on final compiled production source in each of Chromium, Firefox and WebKit; no recorded console/HTTP errors |
+| Hosted preview and production | Exact identities/results recorded in WEB-RELEASE.md after deployment |
 
-Physical iPhone/Android, actual mobile software keyboard, screen-reader output, OS reduced-motion emulation, permission-denial OS dialog, audible output and peer usability have not been exercised in this task. System reduced-motion CSS is implemented, while the explicit motion switch is browser-verified. JSON import validation/transaction paths are native-browser tested; file chooser/download round-trip UI verification is still pending. Axe results and their incomplete/manual flags are recorded below. No guaranteed background alarm/offline launch is claimed.
+Native fixture: `node tests/prepare-native-qa.mjs`, open `/qa-native/index.html`, run isolated checks. Generated `public/qa-native` is removed before production build. No fixture is deployed. Existing schema remains v2; original v1 data migrates in place.
 
-Additional browser recovery check: edited an active open workout into a future commitment whose cutoff had already passed. The preparation banner appeared without finishing the workout. Editing travel so departure was already passed produced “Time to leave” and the leave-by alert while preserving the same active routine. This uses deliberately extreme estimates as isolated missed-phase fixtures, not a recommended plan.
+Browser tools are external QA tooling, not runtime dependencies. Reproduce with Playwright and `@axe-core/playwright` in an isolated directory, then `JIMBRO_QA_MODULES=/absolute/qa-dir JIMBRO_URL=https://target npm run test:browser`. Select Firefox/WebKit with `JIMBRO_ENGINE=firefox|webkit`. `JIMBRO_EVIDENCE=/absolute/path` selects output. `npm run test:mascot` uses the same target/tool directory. The retained old `tests/jimbro-browser.mjs` is explicitly labeled historical schema v1.
 
-Accessibility: fresh-style workout axe scan reported zero violations (WCAG 2A/2AA/2.1AA tags); `aria-prohibited-attr` and some contrast checks remained marked incomplete/manual review by axe. This is not accessibility certification. The initial stale-style contrast failures were reproduced before restarting the dev compiler; the production CSS contained the correct token utilities.
-Settings axe scan: zero violations and zero incomplete checks on the inspected desktop screen. Fresh automated tests remain 8 original + 18 existing core + 18 expanded domain cases; generated third-party axe code is temporary and excluded from final source/lint/deployment.
-Progress axe scan: zero violations; color-contrast had incomplete/manual-review nodes. Three inspected screens therefore have zero reported automated violations, not a claim of full accessibility. Generated QA pages and the temporary axe bundle were moved out of public/ before final build; only reproducible test source is retained.
+## Backup UI evidence and policy
 
-Hosted preview smoke: GitHub source b6c0703 (tree dcb6eef717b18a609869f3e658d3600b21c55854) reached READY at https://jimbro-rnn7ivcml-rayhanson.vercel.app/. On that actual URL, started an open workout, saved 8 reps at 10 kg, reloaded with the same saved set and rest timer, finished, and saw 80 kg·reps in progress. No app-origin console errors were observed; the browser extension emitted its own metadata errors. Final review added explicit accessible dialog names with useId/aria-labelledby; lint/build/typecheck passed for that change. New source tree aa10db9f94b6b513236f6e1d4dce0cb2601c0d49 corresponds to GitHub commit 1af1c6475c8045b82d4ff314f45647d7505e42d7.
+Synthetic sessions, a reusable routine, a bodyweight record and non-default preferences are created through the UI. Export observes a real download event, saves and parses versioned JSON. Import clicks the actual file input, observes the browser's native file-chooser event and selects that JSON. Merge leaves existing IDs/preferences intact without duplicates; replacement stays unchanged until Confirm replacement and then restores all supported records/preferences. A second export compares those fields exactly. Malformed JSON, unsupported version and competing-active imports preserve existing records/preferences. Optional error phrase receipts can change independently and are excluded from record equality. This is an automated browser chooser, not a human-operated desktop OS dialog.
 
-Final dialog fix verified on the actual final Vercel preview: role=dialog, accessible name “Choose your open workout”, visible=true. Lint, production build and standalone TypeScript pass after the fix.
+## Visual/accessibility limits
 
-## Verified production release
-Production URL: https://jimbro.rayhanson.tech/
+Representative browser widths are 320, 390, 768 and 1440 CSS pixels; these are viewport emulations, not physical phones/tablets. Keyboard automation checks named dialogs, initial focus, Tab containment, Escape and restored trigger focus. Axe checks report individual incomplete/manual nodes in the retained JSON; zero reported violations is not accessibility certification. Jim's normal/gallery/screenshots, 120 sampled frame transforms, representative start/intermediate/end atlas and actual-size 16/32/48px icons were visually inspected. Sampling is not a proof for every infinitesimal frame. Pose changes are discrete, with independent part motion, rather than interpolating incompatible skeletons.
 
-Deployment `dpl_3jdY4N82GAeYj4rrMiCrmcZVM9vz` is READY with target production, exact application commit `1af1c6475c8045b82d4ff314f45647d7505e42d7`. Immutable host: https://jimbro-k1c4yf78t-rayhanson.vercel.app. Domain alias is attached without alias errors. Main and the separate LeaveBy deployment were not changed. Documentation-only commits after this source do not change the deployed application.
+Unavailable: real iPhone/Android software keyboards/safe-area behavior, real VoiceOver/TalkBack output, human audible-output assessment, OS notification prompts, physical suspension/lock/reboot delivery and human peer usability. Notification-denied fallback is tested with a deterministic browser stub. Browser clocks and phrase randomness are controlled; document-hidden behavior is simulated. No human participant, real-device or screen-reader pass is claimed. Closed/background/locked alarms and offline launch remain unsupported guarantees. The prepared peer script is unchanged in its truthfulness.
 
-Actual production-browser smoke in a disposable profile: start an empty workout without deadline; save 8 reps at 12 kg; reload and recover set/rest; finish; Progress shows one session and 96 kg·reps. Direct History, Settings, all twelve gallery poses and preserved `/leaveby` load. Final preview verified the accessible workout-choice dialog name. Physical devices and real peer/screen-reader tests remain pending. Backup domain/native transactions pass, but file chooser/download UI round-trip is not claimed.
+## Final compiled-source browser results
+
+All 20 journeys passed independently in Chromium, Firefox and WebKit (60 completed journeys). Each engine ran six axe scans with zero reported violations; individual incomplete/manual flags are retained in browser JSON and are not claimed resolved by automation. The final tests use actual download and native file-chooser events, controlled clocks and seeded phrase randomness, and include active-plan controls, rest start/pause/resume/extend/skip, all five measurement types and repeated finish activation. No page exceptions, console errors or application-origin HTTP failures were recorded in these final runs. Successful cache revalidation (304) is accepted. Local compiled URL: http://127.0.0.1:3103; source files are fingerprinted in evidence. Hosted identities are recorded separately.

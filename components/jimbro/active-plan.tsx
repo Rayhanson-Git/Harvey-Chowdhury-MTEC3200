@@ -43,24 +43,20 @@ export function ActivePlan({
                   className={`${inputStyle} mt-1 w-full rounded-lg border px-2`}
                   disabled={busy}
                   value={e.exerciseId}
-                  onChange={(ev) =>
-                    change(session.id, session.revision, (s) => ({
+                  onChange={(ev) => {
+                    const exerciseId = ev.currentTarget.value;
+                    void change(session.id, session.revision, (s) => ({
                       ...s,
                       plan: s.plan!.map((x, j) =>
                         j === i
                           ? {
-                              ...planned(
-                                ev.target.value,
-                                e.sets,
-                                e.reps,
-                                e.rest,
-                              ),
+                              ...planned(exerciseId, e.sets, e.reps, e.rest),
                               id: e.id,
                             }
                           : x,
                       ),
-                    }))
-                  }
+                    }));
+                  }}
                 >
                   {exercises.map((x) => (
                     <option value={x.id} key={x.id}>
@@ -156,12 +152,14 @@ export function ActivePlan({
               className={`${inputStyle} mt-2 w-full rounded-xl border px-2`}
               disabled={busy}
               onChange={(e) => {
-                if (e.target.value)
+                // The controlled dropdown resets before the IDB callback runs.
+                const exerciseId = e.currentTarget.value;
+                if (exerciseId)
                   void change(session.id, session.revision, (s) => ({
                     ...s,
                     plan: [
                       ...(s.plan || []),
-                      { ...planned(e.target.value), id: makeId() },
+                      { ...planned(exerciseId), id: makeId() },
                     ],
                   }));
               }}

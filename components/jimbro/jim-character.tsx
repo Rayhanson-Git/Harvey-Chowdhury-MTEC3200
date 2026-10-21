@@ -100,39 +100,39 @@ export function JimCharacter({
       </defs>
       <style>{`
       .jim-rig { display:block; overflow:visible; isolation:isolate; }
-      .jim-rig * { transform-box:fill-box; }
-      .jim-rig .jim-body { transform-origin:50% 95%; }
-      .jim-rig .jim-head { transform-origin:50% 78%; }
-      .jim-rig .jim-eyelids { transform-origin:center; }
+      .jim-rig g { transform-box:view-box; transform-origin:0px 0px; }
+      .jim-rig .jim-body { transform-origin:150px 300px; }
+      .jim-rig .jim-head { transform-origin:151px 155px; }
+      .jim-rig .jim-eyelids { transform-origin:151px 124px; }
       .jim-rig .jim-confetti { opacity:0; }
       .jim-rig[data-pose="complete"] .jim-confetti,
       .jim-rig[data-pose="progress"] .jim-confetti { opacity:1; }
       .jim-rig[data-motion="on"] .jim-body { animation:jim-breathe 4.6s ease-in-out infinite; }
       .jim-rig[data-motion="on"] .jim-eyelids { animation:jim-blink 6.7s infinite; }
-      .jim-rig[data-motion="on"][data-pose="greeting"] .jim-right-forearm { transform-origin:25% 30%; animation:jim-wave .6s ease-in-out 4 alternate; }
+      .jim-rig[data-motion="on"][data-pose="greeting"] .jim-right-forearm { animation:jim-wave .6s ease-in-out 4 alternate; }
       .jim-rig[data-motion="on"][data-pose="set"] .jim-head { animation:jim-nod .65s ease-in-out 2; }
-      .jim-rig[data-motion="on"][data-pose="set"] .jim-thumb { animation:jim-thumb .65s ease-out 2; transform-origin:50% 90%; }
+      .jim-rig[data-motion="on"][data-pose="set"] .jim-thumb { animation:jim-thumb .65s ease-out 2; transform-origin:0px 0px; }
       .jim-rig[data-motion="on"][data-pose="rest"] .jim-body { animation:jim-breathe 3.4s ease-in-out infinite; }
       .jim-rig[data-motion="on"][data-pose="rest"] .jim-breath { animation:jim-exhale 3.4s ease-out infinite; }
       .jim-rig[data-motion="on"][data-pose="progress"] .jim-left-forearm,
-      .jim-rig[data-motion="on"][data-pose="ready"] .jim-left-forearm { transform-origin:75% 30%; animation:jim-flex .85s ease-in-out 2; }
+      .jim-rig[data-motion="on"][data-pose="ready"] .jim-left-forearm { animation:jim-flex .85s ease-in-out 2; }
       .jim-rig[data-motion="on"][data-pose="warning"] .jim-pupils { animation:jim-glance 2s ease-in-out 2; }
-      .jim-rig[data-motion="on"][data-pose="warning"] .jim-clock-hand { animation:jim-clock 2s linear infinite; transform-origin:center; }
+      .jim-rig[data-motion="on"][data-pose="warning"] .jim-clock-hand { animation:jim-clock 2s linear infinite; transform-origin:0px 0px; }
       .jim-rig[data-motion="on"][data-pose="departure"] .jim-right-forearm,
-      .jim-rig[data-motion="on"][data-pose="preparation"] .jim-right-forearm { transform-origin:25% 30%; animation:jim-point .85s ease-in-out 3; }
+      .jim-rig[data-motion="on"][data-pose="preparation"] .jim-right-forearm { animation:jim-point .85s ease-in-out 3; }
       .jim-rig[data-motion="on"][data-pose="complete"] .jim-body { animation:jim-cheer .8s ease-in-out 3; }
       .jim-rig[data-motion="on"][data-pose="complete"] .jim-confetti,
-      .jim-rig[data-motion="on"][data-pose="progress"] .jim-confetti { animation:jim-spark 1.1s ease-in-out 3; transform-origin:center; }
+      .jim-rig[data-motion="on"][data-pose="progress"] .jim-confetti { animation:jim-spark 1.1s ease-in-out 3; transform-origin:150px 160px; }
       @keyframes jim-breathe { 0%,100%{transform:scaleY(1)} 50%{transform:scaleY(1.018)} }
       @keyframes jim-blink { 0%,42%,45%,100%{transform:scaleY(1)} 43%,44%{transform:scaleY(.08)} }
       @keyframes jim-wave { from{transform:rotate(-13deg)} to{transform:rotate(14deg)} }
       @keyframes jim-nod { 0%,100%{transform:rotate(0)} 45%{transform:rotate(7deg) translateY(3px)} }
-      @keyframes jim-thumb { 0%,100%{transform:translateY(0)} 45%{transform:translateY(-5px) rotate(-5deg)} }
+      @keyframes jim-thumb { 0%,100%{transform:rotate(0)} 45%{transform:rotate(-7deg)} }
       @keyframes jim-exhale { 0%,30%,100%{opacity:0;transform:translateX(0)} 60%{opacity:.75;transform:translateX(7px)} }
       @keyframes jim-flex { 0%,100%{transform:rotate(0)} 50%{transform:rotate(-12deg)} }
       @keyframes jim-glance { 0%,100%{transform:translateX(0)} 40%,75%{transform:translateX(7px)} }
       @keyframes jim-clock { from{transform:rotate(0)} to{transform:rotate(360deg)} }
-      @keyframes jim-point { 0%,100%{transform:translateX(0)} 50%{transform:translateX(7px)} }
+      @keyframes jim-point { 0%,100%{transform:rotate(0)} 50%{transform:rotate(-9deg)} }
       @keyframes jim-cheer { 0%,100%{transform:translateY(0) rotate(0)} 40%{transform:translateY(-9px) rotate(-3deg)} 70%{transform:translateY(-4px) rotate(3deg)} }
       @keyframes jim-spark { 0%,100%{transform:scale(.9);opacity:.5} 50%{transform:scale(1.08);opacity:1} }
       @media(prefers-reduced-motion:reduce) { .jim-rig *, .jim-rig[data-motion="on"] * { animation:none!important; } }
@@ -176,61 +176,89 @@ export function JimCharacter({
           />
           <path d="M91 306h34m47 0h33" stroke="#b7c3b3" strokeWidth="3" />
         </g>
-        <g transform={`translate(100 160) rotate(${leftAngle})`}>
-          <g className="jim-left-upper">
-            <path
-              d="M5 0C-2-13-19-16-30-4c-10 11-15 30-8 42 8 13 24 13 32 1L8 19"
-              fill={`url(#${id}-arm)`}
-            />
-            <path
-              d="M-30 10c8-3 17 1 19 8"
-              fill="none"
-              stroke="#b5e47b"
-              strokeWidth="3"
-            />
-          </g>
-          <g className="jim-left-forearm">
-            <path
-              d="M-39 29c-8-3-20 3-20 14l1 21c1 12 22 16 28 4l10-23"
-              fill={`url(#${id}-arm)`}
-            />
-            <path
-              d="M-58 63c-11-3-16 9-10 16l13 10c7 5 21 0 21-9V67"
-              fill="#8acb51"
-            />
-            <path d="m-61 77 7 5m-2-11 7 6" strokeWidth="2" />
+        <g className="jim-left-shoulder" transform="translate(100 160)">
+          <g className="jim-left-arm" transform={`rotate(${leftAngle})`}>
+            <circle cx="0" cy="8" r="13" fill={`url(#${id}-arm)`} />
+            <g className="jim-left-upper">
+              <path
+                d="M5 0C-2-13-19-16-30-4c-10 11-15 30-8 42 8 13 24 13 32 1L8 19"
+                fill={`url(#${id}-arm)`}
+              />
+              <path
+                d="M-30 10c8-3 17 1 19 8"
+                fill="none"
+                stroke="#b5e47b"
+                strokeWidth="3"
+              />
+            </g>
+            <g className="jim-left-elbow" transform="translate(-33 35)">
+              <g className="jim-left-forearm">
+                <g transform="translate(33 -35)">
+                  <circle cx="-33" cy="35" r="11" fill={`url(#${id}-arm)`} />
+                  <path
+                    d="M-39 29c-8-3-20 3-20 14l1 21c1 12 22 16 28 4l10-23"
+                    fill={`url(#${id}-arm)`}
+                  />
+                  <path
+                    d="M-58 63c-11-3-16 9-10 16l13 10c7 5 21 0 21-9V67"
+                    fill="#8acb51"
+                  />
+                  <path d="m-61 77 7 5m-2-11 7 6" strokeWidth="2" />
+                </g>
+              </g>
+            </g>
           </g>
         </g>
-        <g transform={`translate(201 160) rotate(${rightAngle})`}>
-          <g className="jim-right-upper">
-            <path
-              d="M-5 0C2-13 19-16 30-4c10 11 15 30 8 42-8 13-24 13-32 1L-8 19"
-              fill={`url(#${id}-arm)`}
-            />
-            <path
-              d="M30 10c-8-3-17 1-19 8"
-              fill="none"
-              stroke="#b5e47b"
-              strokeWidth="3"
-            />
-          </g>
-          <g className="jim-right-forearm">
-            <path
-              d="M39 29c8-3 20 3 20 14l-1 21c-1 12-22 16-28 4L20 45"
-              fill={`url(#${id}-arm)`}
-            />
-            {point ? (
+        <g className="jim-right-shoulder" transform="translate(201 160)">
+          <g className="jim-right-arm" transform={`rotate(${rightAngle})`}>
+            <circle cx="0" cy="8" r="13" fill={`url(#${id}-arm)`} />
+            <g className="jim-right-upper">
               <path
-                d="M36 66c-4 7-1 18 8 20h21c7 0 8-10 1-11h-9l19-3c8-2 6-12-1-11l-25 3-2-9c-2-8-12-5-10 2z"
-                fill="#8acb51"
+                d="M-5 0C2-13 19-16 30-4c10 11 15 30 8 42-8 13-24 13-32 1L-8 19"
+                fill={`url(#${id}-arm)`}
               />
-            ) : (
               <path
-                d="M58 63c11-3 16 9 10 16L55 89c-7 5-21 0-21-9V67"
-                fill="#8acb51"
+                d="M30 10c-8-3-17 1-19 8"
+                fill="none"
+                stroke="#b5e47b"
+                strokeWidth="3"
               />
-            )}
-            {!point && <path d="m61 77-7 5m2-11-7 6" strokeWidth="2" />}
+            </g>
+            <g className="jim-right-elbow" transform="translate(33 35)">
+              <g className="jim-right-forearm">
+                <g transform="translate(-33 -35)">
+                  <circle cx="33" cy="35" r="11" fill={`url(#${id}-arm)`} />
+                  <path
+                    d="M39 29c8-3 20 3 20 14l-1 21c-1 12-22 16-28 4L20 45"
+                    fill={`url(#${id}-arm)`}
+                  />
+                  {pose === "set" ? (
+                    <g transform="translate(34 63) scale(.72)">
+                      <g className="jim-thumb">
+                        <path
+                          d="M0 0h15v23H0zm15 2 6-12c2-5 9-3 8 2l-1 8h10c5 0 6 4 5 8l-4 12c-1 4-5 5-9 5H15z"
+                          fill="#b2e47a"
+                          strokeWidth="3"
+                        />
+                      </g>
+                    </g>
+                  ) : point ? (
+                    <path
+                      d="M36 66c-4 7-1 18 8 20h21c7 0 8-10 1-11h-9l19-3c8-2 6-12-1-11l-25 3-2-9c-2-8-12-5-10 2z"
+                      fill="#8acb51"
+                    />
+                  ) : (
+                    <path
+                      d="M58 63c11-3 16 9 10 16L55 89c-7 5-21 0-21-9V67"
+                      fill="#8acb51"
+                    />
+                  )}
+                  {!point && pose !== "set" && (
+                    <path d="m61 77-7 5m2-11-7 6" strokeWidth="2" />
+                  )}
+                </g>
+              </g>
+            </g>
           </g>
         </g>
         <path
@@ -391,17 +419,8 @@ export function JimCharacter({
           stroke="#20292a"
           strokeWidth="2"
         />
-        {pose === "set" && (
-          <g className="jim-thumb" transform="translate(210 183)">
-            <path
-              d="M0 0h15v23H0zm15 2 6-12c2-5 9-3 8 2l-1 8h10c5 0 6 4 5 8l-4 12c-1 4-5 5-9 5H15z"
-              fill="#b2e47a"
-              strokeWidth="3"
-            />
-          </g>
-        )}
         {pose === "warning" && (
-          <g transform="translate(229 212)">
+          <g className="jim-prop" transform="translate(229 212)">
             <circle r="21" fill="#f5e9ce" stroke="#dba477" strokeWidth="3" />
             <path
               d="M0-15v3m15 3-3 1M0 15v-3m-15-3 3-1"
@@ -423,7 +442,12 @@ export function JimCharacter({
           </g>
         )}
         {pose === "preparation" && (
-          <g transform="translate(232 216)" stroke="#e0b9a4" strokeWidth="3">
+          <g
+            className="jim-prop"
+            transform="translate(232 216)"
+            stroke="#e0b9a4"
+            strokeWidth="3"
+          >
             <path
               d="M-10-14 0-19l10 5 10 16-11 5-4-6v22h-24V1l-4 6-11-5Z"
               fill="#50434c"
@@ -432,13 +456,23 @@ export function JimCharacter({
           </g>
         )}
         {pose === "departure" && (
-          <g transform="translate(237 226)" stroke="#f7a2ad" strokeWidth="4">
+          <g
+            className="jim-prop"
+            transform="translate(237 226)"
+            stroke="#f7a2ad"
+            strokeWidth="4"
+          >
             <path d="M-13-19h15v36h-15z" fill="#392a31" />
             <path d="M-4 0h27m-8-8 8 8-8 8" fill="none" />
           </g>
         )}
         {pose === "recovery" && (
-          <g transform="translate(238 226)" stroke="#abcfa1" strokeWidth="3">
+          <g
+            className="jim-prop"
+            transform="translate(238 226)"
+            stroke="#abcfa1"
+            strokeWidth="3"
+          >
             <path d="M-13-17h20l-3 35h-14z" fill="#3c6351" />
             <path d="M-13-10h18M-3-19l7-12" fill="none" />
           </g>

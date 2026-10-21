@@ -53,13 +53,16 @@ export function exerciseProgress(
         (x) =>
           x.exerciseId === exerciseId &&
           (x.kind || "external") === kind &&
-          (kind === "timed" || kind === "distance" || x.reps === reps),
+          (kind === "timed" ||
+            kind === "distance" ||
+            kind === "bodyweight" ||
+            x.reps === reps),
       );
       if (!sets.length) return [];
       return [
         {
           date: s.workoutDate,
-          value: Math.max(
+          value: (kind === "assisted" ? Math.min : Math.max)(
             ...sets.map((x) =>
               kind === "timed"
                 ? x.seconds || 0

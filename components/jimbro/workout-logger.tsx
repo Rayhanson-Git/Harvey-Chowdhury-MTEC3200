@@ -14,6 +14,7 @@ import type {
   Preferences,
 } from "@/lib/jimbro/types";
 import { defaultPreferences } from "@/lib/jimbro/types";
+import { AppDialog } from "./app-dialog";
 import { buttonStyle, inputStyle, secondaryStyle } from "./schedule-editor";
 export type ChangeSession = (
   id: string,
@@ -43,34 +44,39 @@ export function WorkoutLogger({
     ),
     [query, setQuery] = useState(""),
     [category, setCategory] = useState("All"),
-    [reps, setReps] = useState("8"),
+    [reps, setReps] = useState(String(session.plan?.[0]?.reps || 8)),
     [load, setLoad] = useState("0"),
     [unit, setUnit] = useState<Unit>(preferences.unit),
     [kind, setKind] = useState<SetKind>(session.plan?.[0]?.kind || "external"),
     [measure, setMeasure] = useState("60"),
     [notes, setNotes] = useState(""),
+    [removing, setRemoving] = useState<CompletedSet | null>(null),
     [editing, setEditing] = useState<CompletedSet | null>(null),
     [revision, setRevision] = useState(session.revision),
     [error, setError] = useState(""),
     [message, setMessage] = useState("");
   const selected = exercises.find((e) => e.id === exerciseId),
-    previous = previousSet(exerciseId, history, session.id);
+    previous = previousSet(exerciseId, history, session.id, kind);
   const filtered = exercises.filter(
     (e) =>
       (category === "All" || e.category === category) &&
-      `${e.name} ${e.equipment}`.toLowerCase().includes(query.toLowerCase()),
+      `${e.name} ${e.equipment} ${(e.aliases || []).join(" ")}`
+        .toLowerCase()
+        .includes(query.toLowerCase()),
   );
   function pick(id: string) {
     setExercise(id);
     const e = exercises.find((e) => e.id === id);
     setKind(
       session.plan?.find((e) => e.exerciseId === id)?.kind ||
+        e?.kind ||
         (["Body weight", "Pull-up bar", "Parallel bars"].includes(
           e?.equipment || "",
         )
           ? "bodyweight"
           : "external"),
     );
+    setReps(String(session.plan?.find((x) => x.exerciseId === id)?.reps || 8));
     setMessage("");
   }
   function edit(s: CompletedSet) {
@@ -416,12 +422,7 @@ export function WorkoutLogger({
               <Button
                 className={secondaryStyle}
                 disabled={busy}
-                onClick={() =>
-                  change(session.id, session.revision, (c) => ({
-                    ...c,
-                    sets: c.sets.filter((x) => x.id !== s.id),
-                  }))
-                }
+                onClick={() => setRemoving(s)}
               >
                 Remove
               </Button>
@@ -429,6 +430,37 @@ export function WorkoutLogger({
           </li>
         ))}
       </ol>
+      {removing ? (
+        <AppDialog
+          title="Remove this completed set?"
+          onClose={() => setRemoving(null)}
+        >
+          <p className="text-sm">
+            {removing.exerciseName}: this removes the saved set from your
+            workout and progress.
+          </p>
+          <Button
+            className={`${buttonStyle} mt-5`}
+            disabled={busy}
+            onClick={async () => {
+              if (
+                await change(session.id, session.revision, (c) => ({
+                  ...c,
+                  sets: c.sets.filter((x) => x.id !== removing.id),
+                }))
+              ) {
+                if (editing?.id === removing.id) {
+                  setEditing(null);
+                  pending.current = null;
+                }
+                setRemoving(null);
+              }
+            }}
+          >
+            Confirm remove set
+          </Button>
+        </AppDialog>
+      ) : null}
     </div>
   );
 }

@@ -23,6 +23,7 @@ import {
   personalBest,
   routineFromSession,
   validateRoutine,
+  previousSet,
 } from "../lib/jimbro/routines.ts";
 import {
   validateBackup,
@@ -35,6 +36,7 @@ import {
   selectPhrase,
   chooseMascot,
 } from "../lib/jimbro/personality.ts";
+import { exercises, categories } from "../lib/jimbro/catalog.ts";
 import { phraseCatalog } from "../lib/jimbro/phrases.ts";
 import {
   exerciseProgress,
@@ -339,4 +341,95 @@ test("no eligible phrase is a safe silent result", () => {
     () => 0,
   );
   assert.equal(r.text, null);
+});
+
+test("previous performance respects measure type and never treats assistance as external load", () => {
+  const s = {
+    ...fresh(),
+    sets: [
+      set(),
+      set({ id: "assisted", kind: "assisted", completedAt: now + 2000 }),
+      set({
+        id: "timed",
+        kind: "timed",
+        reps: 0,
+        load: 0,
+        seconds: 60,
+        completedAt: now + 3000,
+      }),
+    ],
+  };
+  assert.equal(previousSet("bench-press", [s], "other", "external").id, "a");
+  assert.equal(
+    previousSet("bench-press", [s], "other", "assisted").id,
+    "assisted",
+  );
+  assert.equal(
+    previousSet("bench-press", [s], "other", "bodyweight"),
+    undefined,
+  );
+});
+
+test("bodyweight progress compares repetitions freely; assistance uses lower comparable assistance", () => {
+  const s = {
+    ...fresh(),
+    sets: [
+      set({ kind: "bodyweight", reps: 20, load: 0 }),
+      set({ id: "b", kind: "assisted", load: 40 }),
+      set({ id: "c", kind: "assisted", load: 25 }),
+    ],
+  };
+  assert.equal(
+    exerciseProgress([s], "bench-press", "bodyweight", 8, "kg")[0].value,
+    20,
+  );
+  assert.equal(
+    exerciseProgress([s], "bench-press", "assisted", 8, "kg")[0].value,
+    25,
+  );
+});
+
+test("singleton and empty phrase pools remain safe across cooldown and exhaustion", () => {
+  const one = phraseCatalog.find(
+    (p) => p.event === "set" && p.tone === "quiet" && !p.flirtatious,
+  );
+  let memory = emptyMemory();
+  for (let i = 0; i < 4; i++) {
+    const r = selectPhrase(
+      "set",
+      `single-${i}`,
+      { tone: "quiet", flirtation: false, saved: true },
+      memory,
+      100000 + i * 13000,
+      () => 0,
+      [one],
+    );
+    assert.equal(r.id, one.id);
+    memory = r.memory;
+  }
+  assert.equal(
+    selectPhrase("set", "empty", context, memory, 999999, () => 0, []).text,
+    null,
+  );
+});
+test("catalog includes the original muscle-group scope and useful timing/distance defaults", () => {
+  for (const group of [
+    "Chest",
+    "Back",
+    "Shoulders",
+    "Biceps",
+    "Triceps",
+    "Forearms",
+    "Legs",
+    "Glutes",
+    "Core/Abs",
+    "Full body",
+    "Cardio",
+  ])
+    assert.ok(categories.includes(group));
+  assert.equal(exercises.find((e) => e.id === "plank").kind, "timed");
+  assert.equal(
+    exercises.find((e) => e.id === "treadmill-run").kind,
+    "distance",
+  );
 });
