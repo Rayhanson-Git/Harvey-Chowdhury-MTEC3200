@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en"><meta charset="utf-8"><title>JimBro native storage tests</title><style>body{background:#080808;color:#eee;font:16px system-ui;max-width:900px;margin:40px auto;padding:20px}pre{white-space:pre-wrap;line-height:1.8}h1{color:#fb7185}</style><h1>JimBro native IndexedDB tests</h1><p>Fixtures on an isolated localhost origin. This does not render the Next.js interface.</p><pre id="results">Running…</pre><script type="module">
+import { databaseName, loadSnapshot, startSession, updateSession, putBodyWeight, claimAlert, acknowledgeAlert } from '/lib/jimbro/storage.ts';
+import { makeSchedule, deadlines, phaseAt } from '/lib/jimbro/schedule.ts';
+import { newSession, saveSet } from '/lib/jimbro/session.ts';
+const output = document.querySelector('#results');
+if (location.origin !== 'http://127.0.0.1:4876') throw new Error('Run this fixture only on its isolated test origin: http://127.0.0.1:4876');
+let results = [];
+function check(value, message = 'Assertion failed') { if (!value) throw new Error(message); }
+async function rejects(task) { try { await task(); } catch { return; } throw new Error('Expected rejection'); }
+async function test(name, run) { try { await run(); results.push({name,pass:true}); } catch(error) { results.push({name,pass:false,error:String(error)}); } output.textContent = results.map(r => `${r.pass ? 'PASS' : 'FAIL'} ${r.name}${r.error ? ': '+r.error : ''}`).join('\n'); }
+function clearDatabase() { return new Promise((resolve,reject)=>{ const r=indexedDB.deleteDatabase(databaseName); r.onsuccess=resolve;r.onerror=reject;r.onblocked=()=>reject(new Error('Test database blocked')); }); }
+function raw(change,version=1) { return new Promise((resolve,reject)=>{const r=indexedDB.open(databaseName,version);r.onerror=()=>reject(r.error);r.onsuccess=()=>{const db=r.result;const tx=db.transaction(['sessions','meta'],'readwrite');change(tx);tx.oncomplete=()=>{db.close();resolve()};tx.onabort=()=>{db.close();reject(tx.error)}};}); }
+const now = Date.parse('2030-01-01T14:00Z');
+const schedule = makeSchedule({date:'2030-01-02',time:'10:00',preparation:'30',commute:'60',buffer:'15'},'America/New_York',now).schedule;
+const entry = {id:'set-1',exerciseId:'bench-press',exerciseName:'Bench press',reps:8,load:135,unit:'lb',completedAt:now};
+if (new URL(location.href).searchParams.has('resume')) {
+  results = JSON.parse(sessionStorage.getItem('jimbro-test-results'));
+  await test('real document reload restores session, sets, body weight and fixed deadlines',async()=>{
+    const s=await loadSnapshot();check(s.active?.id==='reload');check(s.active.sets.length===1);check(s.weights.length===1);check(deadlines(s.active.schedule).stop===deadlines(schedule).stop);check(phaseAt(s.active,deadlines(schedule).departure+1).key==='departure');
+  });
+} else {
+  await clearDatabase();
+  await test('empty database restores an empty snapshot',async()=>{const s=await loadSnapshot();check(!s.active&&s.sessions.length===0&&s.weights.length===0)});
+  await test('simultaneous starts through independent connections create only one active session',async()=>{const [a,b]=await Promise.all([startSession(newSession('one',schedule,'Push',now)),startSession(newSession('two',schedule,'Pull',now))]);check(a.id===b.id);const s=await loadSnapshot();check(s.sessions.length===1&&s.active.id===a.id)});
+  let active=(await loadSnapshot()).active;
+  await test('saving and retrying one completed set is idempotent',async()=>{active=await updateSession(active.id,active.revision,s=>saveSet(s,entry));active=await updateSession(active.id,active.revision,s=>saveSet(s,entry));check((await loadSnapshot()).active.sets.length===1)});
+  await test('competing revisions reject stale writes without losing the winning edit',async()=>{const revision=active.revision;const r=await Promise.allSettled([updateSession(active.id,revision,s=>({...s,label:'Winner A'})),updateSession(active.id,revision,s=>({...s,label:'Winner B'}))]);check(r.filter(x=>x.status==='fulfilled').length===1);check(r.filter(x=>x.status==='rejected').length===1);active=(await loadSnapshot()).active;check(active.sets.length===1&&active.revision===revision+1)});
+  await test('set correction/removal keep the same session and schedule',async()=>{const before=active.schedule.commitment;active=await updateSession(active.id,active.revision,s=>saveSet(s,{...entry,reps:10}));check(active.sets.length===1&&active.sets[0].reps===10);active=await updateSession(active.id,active.revision,s=>({...s,sets:[]}));check(active.sets.length===0&&active.schedule.commitment===before)});
+  await test('schedule editing preserves completed work and advances schedule revision',async()=>{active=await updateSession(active.id,active.revision,s=>saveSet(s,entry));active=await updateSession(active.id,active.revision,s=>({...s,schedule:{...s.schedule,input:{...s.schedule.input,commute:'75'},revision:s.schedule.revision+1}}));check(active.sets.length===1&&active.schedule.revision===2&&deadlines(active.schedule).stop===deadlines(schedule).stop-900000)});
+  await test('alert receipts deduplicate concurrent foreground claims',async()=>{const r=await Promise.all([claimAlert(active,'stop'),claimAlert(active,'stop')]);check(r.filter(Boolean).length===1);await acknowledgeAlert(active,'stop');check(await claimAlert(active,'stop')===false)});
+  await test('new schedule revision can claim one updated phase alert',async()=>{active=await updateSession(active.id,active.revision,s=>({...s,schedule:{...s.schedule,revision:s.schedule.revision+1}}));check(await claimAlert(active,'stop'));check(!await claimAlert(active,'stop'))});
+  await test('injected storage-write failure rolls back the transaction',async()=>{const original=IDBObjectStore.prototype.put;const revision=active.revision;IDBObjectStore.prototype.put=function(){throw new DOMException('Injected quota failure','QuotaExceededError')};try{await rejects(()=>updateSession(active.id,revision,s=>({...s,label:'Must not persist'})))}finally{IDBObjectStore.prototype.put=original}const s=(await loadSnapshot()).active;check(s.revision===revision&&s.label!=='Must not persist')});
+  await test('exercise finish keeps the active pointer and departure guidance',async()=>{active=await updateSession(active.id,active.revision,s=>({...s,actual:{workoutEndedAt:now}}));check((await loadSnapshot()).active.id===active.id);check(phaseAt(active,deadlines(active.schedule).departure).key==='departure')});
+  await test('completion clears active pointer, keeps history and disables stale alert claims',async()=>{active=await updateSession(active.id,active.revision,s=>({...s,status:'completed'}));const s=await loadSnapshot();check(!s.active&&s.sessions.length===1&&s.sessions[0].sets.length===1);check(!await claimAlert(active,'departure'))});
+  await test('duplicate session ID failure rolls back its active-pointer write',async()=>{await rejects(()=>startSession(newSession(active.id,schedule,'Duplicate',now)));check(!(await loadSnapshot()).active)});
+  await test('a cancelled session retains its completed sets',async()=>{let s=await startSession(newSession('cancel',schedule,'Legs',now));s=await updateSession(s.id,s.revision,x=>saveSet(x,entry));await updateSession(s.id,s.revision,x=>({...x,status:'cancelled'}));const saved=await loadSnapshot();check(!saved.active&&saved.sessions.find(x=>x.id==='cancel').sets.length===1)});
+  await test('dated body weight persists with original units and retry ID',async()=>{const w={id:'w1',date:'2030-01-01',value:170,unit:'lb',recordedAt:now};await putBodyWeight(w);await putBodyWeight(w);check((await loadSnapshot()).weights.length===1);await rejects(async()=>putBodyWeight({...w,value:0}));check((await loadSnapshot()).weights[0].unit==='lb')});
+  await test('corrupt saved record is rejected and left in place',async()=>{const record=(await loadSnapshot()).sessions[0];await raw(tx=>tx.objectStore('sessions').put({...record,schemaVersion:999}));await rejects(()=>loadSnapshot());await raw(tx=>tx.objectStore('sessions').put(record));check((await loadSnapshot()).sessions.length===2)});
+  await test('missing browser storage fails explicitly rather than silently using memory',async()=>{const descriptor=Object.getOwnPropertyDescriptor(window,'indexedDB');Object.defineProperty(window,'indexedDB',{value:undefined,configurable:true});try{await rejects(()=>loadSnapshot())}finally{if(descriptor)Object.defineProperty(window,'indexedDB',descriptor);else delete window.indexedDB}check((await loadSnapshot()).weights.length===1)});
+  await test('newer database schema fails without deleting data',async()=>{await raw(()=>{},2);await rejects(()=>loadSnapshot())});
+  await clearDatabase();
+  let s=await startSession(newSession('reload',schedule,'Push',now));await updateSession(s.id,s.revision,x=>saveSet(x,entry));await putBodyWeight({id:'w1',date:'2030-01-01',value:170,unit:'lb',recordedAt:now});
+  sessionStorage.setItem('jimbro-test-results',JSON.stringify(results));location.href='/?resume=1';
+}
+if (new URL(location.href).searchParams.has('resume')) {
+  const report={suite:'Native browser IndexedDB',passed:results.filter(x=>x.pass).length,failed:results.filter(x=>!x.pass).length,results};
+  output.textContent=results.map(r=>`${r.pass?'PASS':'FAIL'} ${r.name}${r.error?': '+r.error:''}`).join('\n')+`\n\n${report.passed} passed; ${report.failed} failed`;
+  document.title=`JimBro storage: ${report.passed} passed, ${report.failed} failed`;
+  await fetch('/result',{method:'POST',body:JSON.stringify(report)});
+}
+</script></html>

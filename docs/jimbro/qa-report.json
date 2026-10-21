@@ -1,0 +1,130 @@
+{
+  "passed": 27,
+  "failed": 0,
+  "nativePassed": 18,
+  "results": [
+    {
+      "name": "initial schedule and keyboard-accessible validation",
+      "pass": true
+    },
+    {
+      "name": "invalid duration preserves other plan inputs",
+      "pass": true
+    },
+    {
+      "name": "start enters logger with one persistent session and dock",
+      "pass": true
+    },
+    {
+      "name": "completed set is saved and navigation retains an unfinished draft",
+      "pass": true
+    },
+    {
+      "name": "categorized exercise search and second completed set",
+      "pass": true
+    },
+    {
+      "name": "desktop dock and session controls never overlap workout content",
+      "pass": true
+    },
+    {
+      "name": "set correction and removal retain schedule and session",
+      "pass": true
+    },
+    {
+      "name": "schedule editing preserves recorded work and recalculates absolute deadlines",
+      "pass": true
+    },
+    {
+      "name": "body-weight records persist with explicit mixed units",
+      "pass": true
+    },
+    {
+      "name": "reload restores the same active workout and history",
+      "pass": true
+    },
+    {
+      "name": "second browser tab resumes the same active session",
+      "pass": true
+    },
+    {
+      "name": "history correction view has unique field IDs",
+      "pass": true
+    },
+    {
+      "name": "320px logger and expanded plan fit without horizontal overflow",
+      "pass": true
+    },
+    {
+      "name": "narrow short viewport keeps focused set input clear of countdown",
+      "pass": true
+    },
+    {
+      "name": "early exercise finish keeps departure guidance and optional audio",
+      "pass": true
+    },
+    {
+      "name": "return after missed deadlines shows current phase instead of replay",
+      "pass": true
+    },
+    {
+      "name": "actual arrival and explicit completion retain history and clear active pointer",
+      "pass": true
+    },
+    {
+      "name": "new session does not inherit stale alerts and cancellation stays distinct",
+      "pass": true
+    },
+    {
+      "name": "DST gap is rejected and repeated time requires occurrence selection",
+      "pass": true
+    },
+    {
+      "name": "original LeaveBy route still calculates and edits correctly",
+      "pass": true
+    },
+    {
+      "name": "failed set save retains input and retry persists exactly once",
+      "pass": true
+    },
+    {
+      "name": "unavailable storage blocks a new session with a visible recovery path",
+      "pass": true
+    },
+    {
+      "name": "midnight dates and zero-duration boundaries render correctly",
+      "pass": true
+    },
+    {
+      "name": "timezone change preserves the saved deadline and requires edit confirmation",
+      "pass": true
+    },
+    {
+      "name": "blocked audio retains a visible phase fallback",
+      "pass": true
+    },
+    {
+      "name": "native IndexedDB transaction and real-reload fixture",
+      "pass": true
+    },
+    {
+      "name": "no application console or hydration errors",
+      "pass": true
+    }
+  ],
+  "accessibility": [
+    {
+      "name": "history",
+      "violations": []
+    },
+    {
+      "name": "mobile logger",
+      "violations": []
+    },
+    {
+      "name": "mobile plan",
+      "violations": []
+    }
+  ],
+  "errors": []
+}

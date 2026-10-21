@@ -1,4 +1,52 @@
-# LeaveBy progress
+# JimBro completion and release — October 21, 2026
+
+The user explicitly authorized finishing the application, committing it to GitHub and deploying it. Work continues on `revamp/foundation`; main and original coursework remain preserved. This supersedes the prior Milestone 1-only restriction for the current task; the dated foundation records below remain unchanged.
+
+Completed the unified persistent session, absolute scheduling, completed-set logger, docked countdown, preparation/departure guidance, foreground alerts, exercise catalog, workout history and body-weight records. Fixed desktop countdown overlap by assigning a dedicated column; added short-viewport input/keyboard focus and blocked-audio regression checks. No application dependency versions or lockfile changed.
+
+Current checks in an isolated Vercel sandbox: existing tests **8/8**, core tests **18/18**, production browser assertions **27/27**, native IndexedDB cases **18/18** nested in the browser suite. Lint, production build and TypeScript after Next type generation all passed. Three axe scans found zero violations. Physical-device/screen-reader/audio evaluation and peer feedback remain human checks; no such results are claimed.
+
+Release is being published from the verified branch. See [current implementation and verification](docs/jimbro/IMPLEMENTATION.md) for evidence, changed files and reproduction. Final commit and deployed URL will be reported after GitHub and Vercel confirm success.
+
+---
+
+# JimBro Milestone 1 — completion follow-up
+
+Updated October 21, 2026 (UTC). `revamp/foundation`; unchanged HEAD `4af9f2bc004bb1a0f1d8649991bf41cea649e90c`.
+
+Foundation inventory, versioned requirements, architecture, acceptance checklist and branch instructions are complete. Original coursework and main are preserved. A previous continuation exceeded the explicit Milestone 1 restriction by implementing features and restoring dependencies; generic requests to complete the plan did not expand that scope. AGENTS.md now restores the original boundary. Existing uncommitted implementation is preserved and documented separately, not counted as a Milestone 1 deliverable.
+
+Fresh checks in the user-approved isolated Vercel sandbox: existing tests **8/8**, JimBro core **18/18**, production browser checks **24/24**, nested native IndexedDB fixture **18/18**. Lint, TypeScript and production build passed. Three axe scans found zero violations. Tested source matches this checkout. The sandbox is stopped; no deployment was created. No application dependency versions or lockfile changed; locked dependency restore and temporary QA tooling ran in the verification sandbox. No commit or push occurred.
+
+See [changed files, actual results and remaining observations](docs/jimbro/IMPLEMENTATION.md). Physical mobile keyboard/touch, screen-reader/audio and operating-system suspension checks remain. Screenshot review found desktop dock overlap with upper guidance; fixing it requires separately authorized implementation work. Automated success is not full product acceptance or peer evaluation.
+
+The dated foundation/LeaveBy records below retain their original results. Their blocked verification statements are historical; current-tree results above supersede those blockers.
+
+---
+
+# JimBro branch progress — Milestone 1
+
+October 20, 2026 (America/New_York). Work branch: `revamp/foundation`. Verified baseline and unchanged HEAD: `4af9f2bc004bb1a0f1d8649991bf41cea649e90c`.
+
+| Work | Status | Evidence |
+| --- | --- | --- |
+| Recover the approved checkout and inspect existing changes | Completed | Original local course checkout was clean and left untouched; connector confirmed remote baseline and branch; recovered checkout was clean before edits |
+| Preserve and inventory original coursework | Completed | [Inventory](docs/jimbro/v1/INVENTORY.md) and [77-file manifest](docs/jimbro/v1/baseline-files.csv); original PRD, source, tests, assets, templates and dependency files unchanged |
+| Version JimBro requirements and decisions | Completed | [v1 index](docs/jimbro/v1/README.md), [PRD](docs/jimbro/v1/PRD.md), [architecture](docs/jimbro/v1/ARCHITECTURE.md), [acceptance checklist](docs/jimbro/v1/ACCEPTANCE.md) |
+| Update branch instructions and progress | Completed | AGENTS.md and this section; original LeaveBy progress retained below |
+| Run standard existing tests, lint and build | Blocked | Each command attempted, exit 127: missing `tsc`, `eslint`, `next`; no installed dependencies and no install authorized |
+| Supplemental existing calculation-suite run | Completed | Node built-in TypeScript stripping plus unchanged test suite: 8 passed, 0 failed; no type checking, lint or build implied |
+| Final documentation/preservation review | Completed | Baseline manifest, relative links, diff scope and whitespace checked; only two existing tracked documentation files changed; index unchanged |
+
+Milestone 1 documentation is complete, with standard verification blocked. [Actual results and reproduction commands](docs/jimbro/v1/VERIFICATION.md) are separate from historical passes below. No new feature, dependency installation, commit, push, deployment or production change occurred. All future JimBro product scenarios remain pending.
+
+JimBro plans one persistent session with an absolute-timestamp schedule, a docked countdown, logging after each completed set, preparation/departure guidance and foreground alerts. IndexedDB is proposed; current application behavior remains the original in-memory LeaveBy planner. Accounts, cloud sync and background push are deferred.
+
+Source gaps: no GymLog implementation in this baseline and no detailed new peer observations in the pending peer sheet. The user's unification direction is recorded without inventing either source. Further implementation remains outside this milestone. Local checkout recovery and shallow-history limits are recorded in the inventory; existing local/remote main branches were not moved.
+
+---
+
+# LeaveBy progress — preserved baseline history
 
 Updated October 20, 2026 (America/New_York).
 

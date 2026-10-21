@@ -1,4 +1,12 @@
-# LeaveBy
+# JimBro — current development branch
+
+On `revamp/foundation`, `/` now contains JimBro: a shared workout session with scheduling, logging, a docked countdown, local IndexedDB storage, phase guidance, history and body-weight records. The original LeaveBy screen is preserved at `/leaveby`.
+
+Read [implementation and actual verification](docs/jimbro/IMPLEMENTATION.md). The unified app is implemented and authorized for release from `revamp/foundation`. Existing tests (8), core tests (18), production browser checks (27) and native storage cases (18, nested in the browser suite) pass; lint, TypeScript and production build pass. Original coursework and main are preserved. Accounts, cloud sync and background push remain deferred.
+
+The following LeaveBy documentation describes the original course baseline, including its historical verification. It does not report fresh JimBro build or browser results. Original specification and coursework remain intact.
+
+# LeaveBy — original coursework
 MTEC 3200 · Product Design & Prototyping · Fall 2026
 Harvey Chowdhury · Instructor: Dora Do
 
