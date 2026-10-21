@@ -20,7 +20,7 @@ jobs:
       - name: Check out the exact verification source
         uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
         with:
-          ref: ${{ github.sha }}
+          ref: a6d646eeaf4f4c2e1af7cf525774eee226f3bb5a
           persist-credentials: false
       - name: Use Node 24
         uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
@@ -47,6 +47,11 @@ jobs:
           npm run lint
           npm run build
           npx tsc --noEmit
+      - name: Exercise the actual final preview URL
+        env:
+          JIMBRO_URL: https://jimbro-m3befnj78-rayhanson.vercel.app
+          JIMBRO_EVIDENCE: /tmp/jimbro-final-preview-evidence
+        run: npm run test:browser
       - name: Exercise 20 production journeys in disposable browser contexts
         run: npm run test:browser
       - name: Verify production mascot joints and motion
@@ -57,6 +62,10 @@ jobs:
           const fs = require('node:fs'), assert = require('node:assert/strict');
           const root = process.env.JIMBRO_EVIDENCE;
           const browser = JSON.parse(fs.readFileSync(root + '/browser-chromium.json'));
+          const preview = JSON.parse(fs.readFileSync('/tmp/jimbro-final-preview-evidence/browser-chromium.json'));
+          assert.equal(preview.checks.length,20);
+          assert.ok(preview.checks.every(x=>x.status==='Verified'));
+          assert.deepEqual(preview.errors,[]);
           const mascot = JSON.parse(fs.readFileSync(root + '/mascot.json'));
           assert.equal(browser.checks.length, 20);
           assert.ok(browser.checks.every(x => x.status === 'Verified'));
@@ -66,7 +75,7 @@ jobs:
           assert.equal(mascot.poses.reduce((n,p) => n + p.frames.length, 0), 120);
           assert.equal(mascot.transitions, 144);
           assert.ok(mascot.motionOff && mascot.systemReducedMotion && mascot.simulatedHiddenPage);
-          const result = {verificationSource:process.env.GITHUB_SHA,url:process.env.JIMBRO_URL,journeys:20,axeScans:browser.accessibility.length,reportedViolations:0,frames:120,transitions:144,errors:browser.errors,finishedAt:new Date().toISOString()};
+          const result = {verificationSource:'a6d646eeaf4f4c2e1af7cf525774eee226f3bb5a',url:process.env.JIMBRO_URL,previewJourneys:20,previewURL:'https://jimbro-m3befnj78-rayhanson.vercel.app',journeys:20,axeScans:browser.accessibility.length,reportedViolations:0,frames:120,transitions:144,errors:browser.errors,finishedAt:new Date().toISOString()};
           fs.writeFileSync(root + '/production-summary.json', JSON.stringify(result,null,2));
           fs.appendFileSync(process.env.GITHUB_STEP_SUMMARY, 'Production verification\n\n```json\n' + JSON.stringify(result,null,2) + '\n```\n');
           console.log(JSON.stringify(result));
@@ -75,10 +84,11 @@ jobs:
         if: always()
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
         with:
-          name: jimbro-production-verification
+          name: jimbro-production-verification-${{ github.run_attempt }}
           retention-days: 7
           if-no-files-found: warn
           path: |
+            /tmp/jimbro-final-preview-evidence/browser-chromium.json
             /tmp/jimbro-production-evidence/browser-chromium.json
             /tmp/jimbro-production-evidence/mascot.json
             /tmp/jimbro-production-evidence/production-summary.json
