@@ -1,33 +1,32 @@
-
 > leaveby@0.1.0 test:web
 > node --experimental-strip-types --test tests/web-release.test.mjs
 
-(node:37535) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/rayhanson/Documents/ChatGPT/MTEC3200%20Product%20Design%20and%20Prototyping/JimBro/lib/jimbro/session.ts is not specified and it doesn't parse as CommonJS.
+(node:3229) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///home/runner/work/Harvey-Chowdhury-MTEC3200/Harvey-Chowdhury-MTEC3200/lib/jimbro/session.ts is not specified and it doesn't parse as CommonJS.
 Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
-To eliminate this warning, add "type": "module" to /Users/rayhanson/Documents/ChatGPT/MTEC3200 Product Design and Prototyping/JimBro/package.json.
+To eliminate this warning, add "type": "module" to /home/runner/work/Harvey-Chowdhury-MTEC3200/Harvey-Chowdhury-MTEC3200/package.json.
 (Use `node --trace-warnings ...` to show where the warning was created)
-✔ all seven starter routines validate and estimate a duration range (1.325125ms)
-✔ routine snapshots never mutate when the reusable template is edited (3.870625ms)
-✔ v1 migration preserves ID revision all completed work and timestamps (1.200542ms)
-✔ kg/lb round trips and mixed-unit comparison are equivalent (0.084542ms)
-✔ rest pause recovery leaves departure and phase boundaries unchanged (0.235334ms)
-✔ elapsed pause behavior excludes pauses and ignores departure countdown (0.130375ms)
-✔ unplanned workouts have no alerts and do not fake a departure (0.100667ms)
-✔ personal best needs a comparable earlier result, excludes baseline/bodyweight/assistance (0.157792ms)
-✔ timed distance and assisted records validate without invented weight volume (0.152709ms)
-✔ progress normalizes units, filters comparable measures, recomputes edits/deletions (0.369166ms)
-✔ captured workout local day survives device timezone changes and midnight finish (0.115291ms)
-✔ backup validates complete records and malformed/duplicate/incompatible imports fail before writes (1.106ms)
-✔ preferences validate booleans tones units and warning bounds (0.055708ms)
-✔ all phrases have unique IDs and 100 supplied seed records (0.098875ms)
-✔ phrase truth and tone/flirt filters hold over exhaustion (1.623875ms)
-✔ shuffle bag excludes immediate repeat and persists bounded history (2.917458ms)
-✔ event dedup and cooldown suppress ordinary chatter; deadlines outrank celebrations (0.134959ms)
-✔ no eligible phrase is a safe silent result (0.045167ms)
-✔ previous performance respects measure type and never treats assistance as external load (0.19375ms)
-✔ bodyweight progress compares repetitions freely; assistance uses lower comparable assistance (0.108708ms)
-✔ singleton and empty phrase pools remain safe across cooldown and exhaustion (0.0795ms)
-✔ catalog includes the original muscle-group scope and useful timing/distance defaults (0.046958ms)
+✔ all seven starter routines validate and estimate a duration range (1.684723ms)
+✔ routine snapshots never mutate when the reusable template is edited (4.351078ms)
+✔ v1 migration preserves ID revision all completed work and timestamps (2.013076ms)
+✔ kg/lb round trips and mixed-unit comparison are equivalent (0.236571ms)
+✔ rest pause recovery leaves departure and phase boundaries unchanged (0.558602ms)
+✔ elapsed pause behavior excludes pauses and ignores departure countdown (0.3698ms)
+✔ unplanned workouts have no alerts and do not fake a departure (0.354251ms)
+✔ personal best needs a comparable earlier result, excludes baseline/bodyweight/assistance (0.495685ms)
+✔ timed distance and assisted records validate without invented weight volume (0.469365ms)
+✔ progress normalizes units, filters comparable measures, recomputes edits/deletions (0.949722ms)
+✔ captured workout local day survives device timezone changes and midnight finish (0.544897ms)
+✔ backup validates complete records and malformed/duplicate/incompatible imports fail before writes (3.662823ms)
+✔ preferences validate booleans tones units and warning bounds (0.181239ms)
+✔ all phrases have unique IDs and 100 supplied seed records (0.254194ms)
+✔ phrase truth and tone/flirt filters hold over exhaustion (4.602476ms)
+✔ shuffle bag excludes immediate repeat and persists bounded history (7.964309ms)
+✔ event dedup and cooldown suppress ordinary chatter; deadlines outrank celebrations (0.334664ms)
+✔ no eligible phrase is a safe silent result (0.170688ms)
+✔ previous performance respects measure type and never treats assistance as external load (0.563571ms)
+✔ bodyweight progress compares repetitions freely; assistance uses lower comparable assistance (0.274422ms)
+✔ singleton and empty phrase pools remain safe across cooldown and exhaustion (0.227734ms)
+✔ catalog includes the original muscle-group scope and useful timing/distance defaults (0.195946ms)
 ℹ tests 22
 ℹ suites 0
 ℹ pass 22
@@ -35,4 +34,4 @@ To eliminate this warning, add "type": "module" to /Users/rayhanson/Documents/Ch
 ℹ cancelled 0
 ℹ skipped 0
 ℹ todo 0
-ℹ duration_ms 207.771667
+ℹ duration_ms 204.670064

@@ -1,15 +1,37 @@
-# JimBro repair release — October 21, 2026
+# JimBro web release — October 21, 2026
 
-Target: existing Rayhanson team `team_McLOi8RvhigiilQftObY7ZJ9`, project `jimbro` / `prj_5dLMR9qmoPZn1H4YtQ5zO1c708IF`, domain https://jimbro.rayhanson.tech. Repository `Rayhanson-Git/Harvey-Chowdhury-MTEC3200`, release branch `release/jimbro-web`. Starting release head `a02322b`; original production application `1af1c647`. Main remains `4271e8465b131a368610bb02c79b896377dadaa5`. Branch listing reported no protected release branch; no protection or deployment configuration was changed.
+Released and verified on the existing JimBro project. Physical-device, screen-reader and human peer checks remain explicitly unverified.
 
-Current release contains the joint-rig repair, production brand package, asynchronous active-plan selection repair, comparable-record/progress corrections, safer backup import and deletion, and cross-browser modal focus fixes. Full details and limitations: WEB-VERIFICATION.md. Initial release records are archived under `history/`.
+| Identity | Verified value |
+|---|---|
+| Production | https://jimbro.rayhanson.tech/ |
+| Application source | `a6d646eeaf4f4c2e1af7cf525774eee226f3bb5a` |
+| Production deployment | `dpl_GsG16BR7FNsTNkELNZjuAx4gcg2T`, READY, target production |
+| Immutable production host | https://jimbro-jvh33j0q0-rayhanson.vercel.app |
+| Tested final preview | https://jimbro-m3befnj78-rayhanson.vercel.app |
+| Preview deployment | `dpl_AAsJ74r4GjRkQzPCpSqVHABpuZP9`, READY, same application source |
+| Project / team | `jimbro` / `prj_5dLMR9qmoPZn1H4YtQ5zO1c708IF` / Rayhanson |
+| Final verification | [GitHub run 39656940318](https://github.com/Rayhanson-Git/Harvey-Chowdhury-MTEC3200/actions/runs/39656940318), job 119419599259, all steps succeeded |
+| Workflow source | `eb17c66ae6a0aa6c5b03dfd5919309f8b212d22d`; checks out the exact application commit above |
 
-## Release gates
+The production aliases include jimbro.rayhanson.tech, jimbro-umber.vercel.app and jimbro-rayhanson.vercel.app, with no alias error. Main remains `4271e8465b131a368610bb02c79b896377dadaa5`. LeaveBy remains on its original production deployment `dpl_kr2tAGnsRcQB5kS2pcTBstDvoA2A`; original /leaveby, PRD, research, interviews, templates, designs, presentation and frozen v1 plans were preserved. No domain, protection or unrelated project configuration changed.
 
-Fresh 8+18+22 domain tests, clean lint/type checks, production build, isolated native storage and sampled animation checks. Final compiled source passed 20/20 browser journeys in Chromium, Firefox and WebKit (60 total), with six zero-violation axe scans per engine and no recorded console/HTTP errors. Preview/production identities remain pending until observed.
+## Changes
 
-## Rollback and durability
+Repaired Jim's shoulder/elbow/wrist hierarchy while retaining independent motion in all twelve states. Synchronized editable master/share derivatives and integrated the original wordmark/lockup/icon family. Fixed asynchronous active-plan add/replace selection, comparable previous performance, bodyweight/assistance charts, import policy defaults/error placement, saved-set removal confirmation and cross-browser modal focus. Added eleven-group exercise coverage, aliases and timed/distance defaults. No runtime backend, paid application service, account or native work.
 
-Database remains v2; no repair migration or destructive reset is introduced. Never deploy the old v1 reader against newer data, delete/recreate IndexedDB, or rewrite snapshots to force compatibility. Prefer a forward patch on this branch retaining current v2 validation, new catalog IDs and comparable measure semantics. Before any recovery operation, export a version-2 backup from the affected origin. Test restore in a disposable profile. A UI rollback must keep the current storage adapter/catalog and prove export/import and new-session reads; a Vercel artifact alone is not proof of schema compatibility.
+## Release evidence
 
-The separate LeaveBy deployment and main are preserved. Deploy only this selected source to the existing JimBro project; no new domains, unrelated project changes, paid service, runtime backend or native app. Preview is tested before production, then production is smoke-tested again. Final deployment/source evidence follows below.
+Final clean Node 24 cloud gates: 8 original + 18 core + 22 expanded domain tests, lint, production build and standalone TypeScript. The actual final preview and production each passed all 20 browser journeys, including downloaded JSON and native file-chooser restore, invalid import protection, recovery, timers, presets, active-plan controls and history/progress corrections. Production also passed twelve poses / 120 sampled frames / 144 discrete state changes and motion overrides. Six axe scans per hosted journey suite reported zero violations; incomplete/manual flags remain qualifications.
+
+Earlier compiled runtime coverage passed 20 journeys in each of Chromium, Firefox and WebKit. Native IndexedDB fixture passed 15 cases. The cloud job verifies every runtime-file fingerprint against that compiled source before proceeding; test/documentation follow-ups do not silently substitute changed application files. Final result: `evidence/2026-10-21-repair/production-summary.json`.
+
+The first combined local command missed a stale exact-24 catalog assertion after expansion to 31 exercises. That 17/18 failure is preserved, explicitly corrected, and superseded by actual 18/18 cloud output. The local host later disconnected; fail-fast cloud verification completed the final checks. The original preview promotion endpoint returned 422, so production was built through the normal existing-project deployment operation from the explicitly selected verified source. No preview-artifact promotion is falsely claimed.
+
+Scoped Vercel error/fatal log query for the final deployment returned no matching logs. These client-local static routes do not send workout data to server logs.
+
+## Rollback and remaining work
+
+IndexedDB stays at v2 with the supported v1 migration; no repair data rewrite/reset. Never roll back to a v1 reader or delete newer storage to force old code to load. Prefer a forward patch retaining current validators, catalog IDs and measure semantics. Export a v2 backup first and verify restore in a disposable profile before any recovery.
+
+Remaining manual checks: real phones/software keyboards/safe areas, real VoiceOver/TalkBack, audible alerts/OS notification prompts and physical suspension/lock/reboot behavior, plus real peer usability. No reliable background/closed/locked alarm or offline-launch guarantee. No participants or physical-device passes invented. Local checkout resynchronization/temporary-runner cleanup is pending the disconnected host's return; see HANDOFF.md. The canonical final code and records are on release/jimbro-web.

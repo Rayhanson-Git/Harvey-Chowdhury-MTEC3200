@@ -25,7 +25,7 @@ Commands and detailed results are retained in `evidence/2026-10-21-repair/`.
 | Check | Current outcome |
 |---|---|
 | `npm test` | 8/8 |
-| `npm run test:jimbro` | Initial expanded-catalog result was 17/18; stale catalog-size assertion repaired, clean cloud rerun pending |
+| `npm run test:jimbro` | 18/18 in the final fail-fast cloud run; initial 17/18 stale-assertion failure retained below |
 | `npm run test:web` | 22/22; comparable measures, singleton/empty phrase pools and library scope regressions included |
 | `npm run lint` | Passed, zero warnings |
 | `npx tsc --noEmit` | Passed |
@@ -34,7 +34,7 @@ Commands and detailed results are retained in `evidence/2026-10-21-repair/`.
 | `npm run test:mascot` | 12 poses × 10 times = 120 frames; 144 discrete state changes; joint matrices/torso containment/alpha connectivity; 48/96/240/600px |
 | Motion overrides | Explicit off, OS reduced-motion emulation and simulated document hiding suppress decorative tracks |
 | Full compiled browser suite | 20/20 on final compiled production source in each of Chromium, Firefox and WebKit; no recorded console/HTTP errors |
-| Hosted preview and production | Exact identities/results recorded in WEB-RELEASE.md after deployment |
+| Hosted preview and production | Verified on exact final source: 20/20 actual-preview and 20/20 production journeys; production mascot suite passed |
 
 Native fixture: `node tests/prepare-native-qa.mjs`, open `/qa-native/index.html`, run isolated checks. Generated `public/qa-native` is removed before production build. No fixture is deployed. Existing schema remains v2; original v1 data migrates in place.
 
@@ -56,4 +56,12 @@ All 20 journeys passed independently in Chromium, Firefox and WebKit (60 complet
 
 ## Correction to the initial local summary
 
-The combined local command did not stop on the legacy catalog-size failure. Its retained core log records 17/18, not the originally summarized 18/18. The cloud runner exposed this mismatch. The stale exact-24 assertion is replaced by original minimum coverage and uniqueness across all current IDs; the expanded category requirements remain independently tested. The initial failure is preserved as `core-tests-initial-failure.txt`; current source must pass a fail-fast CI job before the release is called verified. Production currently serves application ca0f836; this repair changes tests/workflow only, and the job verifies runtime-file fingerprints before running all checks.
+The combined local command did not stop on the legacy catalog-size failure. Its retained core log records 17/18, not the originally summarized 18/18. The cloud runner exposed this mismatch. The stale exact-24 assertion is replaced by original minimum coverage and uniqueness across all current IDs; the expanded category requirements remain independently tested. The initial failure is preserved as `core-tests-initial-failure.txt`; current source subsequently passed the final fail-fast CI job before the release was called verified. Final production serves a6d646eeaf4f4c2e1af7cf525774eee226f3bb5a. The stale assertion is repaired, runtime-file fingerprints match the compiled application, and final clean CI results supersede the failed local core result.
+
+## Final hosted verification — completed
+
+Exact application source `a6d646eeaf4f4c2e1af7cf525774eee226f3bb5a`. Final preview https://jimbro-m3befnj78-rayhanson.vercel.app and production https://jimbro.rayhanson.tech each passed 20/20 actual-URL browser journeys. Production mascot suite passed 120 sampled frames, 144 discrete transitions, all sizes and explicit/system/hidden-page motion checks. Final cloud run [39656940318](https://github.com/Rayhanson-Git/Harvey-Chowdhury-MTEC3200/actions/runs/39656940318), workflow eb17c66, job 119419599259 succeeded in every gate, including 8+18+22 tests, lint, build and TypeScript. Its source checkout is pinned to the deployed application commit. Actual summary completed at 2026-10-21T18:56:36.362Z.
+
+Production browser output recorded no page/console/HTTP errors; six axe scans reported zero violations, with incomplete/manual-review qualifications retained in report artifacts. The final preview suite also passed its six scans. No browser-profile user data or real workout history was used. Synthetic records remain isolated to disposable contexts.
+
+Reports and sample images are available in the run's `jimbro-production-verification-1` artifact until October 28, 2026; the actual command result extracts and summary are preserved permanently here. Production deployment and alias/source identity were independently checked through Vercel, and the separate LeaveBy deployment/main SHA were unchanged. See WEB-RELEASE.md for exact identities.

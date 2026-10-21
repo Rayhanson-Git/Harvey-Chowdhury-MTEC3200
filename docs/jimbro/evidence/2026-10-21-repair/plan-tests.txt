@@ -1,15 +1,14 @@
-
 > leaveby@0.1.0 test
 > tsc lib/plan-input.ts --outDir .test-build --module commonjs --target es2020 --skipLibCheck --strict && node --test tests/plan.test.mjs
 
-✔ reference example deducts each duration and buffer once (1.688042ms)
-✔ edited commute changes action times while preserving arrival and source values (0.161166ms)
-✔ midnight example crosses to the previous calendar date (0.089666ms)
-✔ explicit zero durations are valid (0.107875ms)
-✔ passed workout stop retains a valid future commitment and warns (0.064292ms)
-✔ blank, negative, fractional, nonnumeric and excessive inputs produce no plan (0.1135ms)
-✔ missing, invalid or expired commitment is rejected on every calculation (0.079041ms)
-✔ nonexistent local time at the spring daylight-saving transition is rejected (0.041875ms)
+✔ reference example deducts each duration and buffer once (1.895897ms)
+✔ edited commute changes action times while preserving arrival and source values (3.999241ms)
+✔ midnight example crosses to the previous calendar date (0.295582ms)
+✔ explicit zero durations are valid (0.188271ms)
+✔ passed workout stop retains a valid future commitment and warns (0.248424ms)
+✔ blank, negative, fractional, nonnumeric and excessive inputs produce no plan (0.342449ms)
+✔ missing, invalid or expired commitment is rejected on every calculation (0.259855ms)
+✔ nonexistent local time at the spring daylight-saving transition is rejected (0.181488ms)
 ℹ tests 8
 ℹ suites 0
 ℹ pass 8
@@ -17,4 +16,4 @@
 ℹ cancelled 0
 ℹ skipped 0
 ℹ todo 0
-ℹ duration_ms 126.307542
+ℹ duration_ms 68.361977

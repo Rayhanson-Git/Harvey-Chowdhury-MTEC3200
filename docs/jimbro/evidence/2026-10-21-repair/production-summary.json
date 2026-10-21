@@ -1,0 +1,13 @@
+{
+  "verificationSource": "a6d646eeaf4f4c2e1af7cf525774eee226f3bb5a",
+  "url": "https://jimbro.rayhanson.tech",
+  "previewJourneys": 20,
+  "previewURL": "https://jimbro-m3befnj78-rayhanson.vercel.app",
+  "journeys": 20,
+  "axeScans": 6,
+  "reportedViolations": 0,
+  "frames": 120,
+  "transitions": 144,
+  "errors": [],
+  "finishedAt": "2026-10-21T18:56:36.362Z"
+}

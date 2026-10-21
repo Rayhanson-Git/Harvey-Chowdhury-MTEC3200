@@ -1,13 +1,27 @@
-# JimBro repair handoff — October 21, 2026
+# JimBro release handoff — October 21, 2026
 
-Work on `release/jimbro-web`. Remote release starting head a02322b; production originally served application 1af1c647. Existing Vercel project/team/domain verified; preserve main (4271e846) and the separate LeaveBy deployment. Historical v1 plans and original coursework remain unchanged; first-release handoff/verification/release records are archived under `history/`.
+The web release is deployed and automated-browser verified. Canonical branch: `release/jimbro-web`; production application source: `a6d646eeaf4f4c2e1af7cf525774eee226f3bb5a`; https://jimbro.rayhanson.tech. Final deployment `dpl_GsG16BR7FNsTNkELNZjuAx4gcg2T`, READY with the intended aliases. Final preview https://jimbro-m3befnj78-rayhanson.vercel.app uses the same source. Full release identity: WEB-RELEASE.md.
 
-Implemented repairs: explicit shoulder/elbow SVG coordinate hierarchy, attached wrist/thumb and rotational pointing; synchronized canonical master/social derivatives; original vector wordmark/lockup/icon variants integrated into navigation/metadata/manifest; active-plan add/replace capture selected IDs before asynchronous persistence; comparable previous sets; correct bodyweight/assistance charts; import policy reset and in-modal errors; saved-set confirmation; explicit focus wrap/restore including WebKit.
+## Implemented and verified
 
-No new application dependencies. Native IndexedDB remains v2 with existing supported v1 migration; IDs, snapshots and original stored data are preserved. The library has 31 common exercises across eleven muscle groups with local aliases and timed/distance defaults. Runtime AI/accounts/sync/payments/social/nutrition/wearables/native remain deferred.
+- Attached shoulder/elbow/wrist rig, rotational pointing and wrist-attached thumb; independent motion retained in twelve states. Runtime is canonical; build:brand regenerates editable master/share derivatives.
+- Integrated original path-based wordmark/lockup/app marks, light/dark/mono variants, 16/32/48 favicon, home-screen icons, manifest and sharing artwork. Inventory: BRAND-ASSETS.md.
+- Active-plan add/replace captures selected IDs before asynchronous IDB mutations; previous-set measures compare correctly; bodyweight repetitions and lower assistance charts corrected.
+- Fresh imports default to Merge, destructive replacement is explicit, import errors stay inside the modal, saved-set deletion confirms, and keyboard/pointer focus works across the tested engines.
+- Runtime remains local-first IndexedDB v2; original v1 migration, stable IDs, snapshots and transactional conflict behavior retained. No new application dependency or backend.
 
-Current source and deployed identities: WEB-RELEASE.md. Actual commands/checks/limitations: WEB-VERIFICATION.md and `evidence/2026-10-21-repair/`. Acceptance statuses: WEB-CHECKLIST.md. Brand inventory and regeneration: BRAND-ASSETS.md / `npm run build:brand`. Browser regression: `npm run test:browser`; independent rig samples: `npm run test:mascot`, using external QA tooling and disposable contexts. Do not run old schema-v1 browser fixtures as current acceptance.
+Current evidence: WEB-VERIFICATION.md, WEB-CHECKLIST.md and evidence/2026-10-21-repair. Final fail-fast cloud run [39656940318](https://github.com/Rayhanson-Git/Harvey-Chowdhury-MTEC3200/actions/runs/39656940318) passed 8+18+22 tests, lint, type checks, build, 20 actual-preview and 20 production journeys, then 120 mascot samples/144 transitions. Original native storage fixture: 15/15. Compiled identical runtime: 20 journeys each in Chromium/Firefox/WebKit; six axe scans per engine, zero reported violations with manual flags.
 
-Remaining after release: physical phone/keyboard/safe-area checks, real screen-reader/audible/OS notification behavior and real peer usability. PEER-TEST.md supplies tasks without fabricated participants. No reliable background/closed/locked alarm or offline launch claim. Next native-readiness step is to collect those real-device/peer findings and define notification/storage requirements; do not start native implementation or select a framework yet.
+An initial combined local command missed an outdated exact-24 catalog assertion. Its 17/18 failure is archived; the assertion was corrected to minimum coverage plus uniqueness and the final cloud core suite passed 18/18. Do not reuse the erroneous initial all-pass summary. No human peer or physical-device results were invented.
 
-If resuming before deployment completion, inspect the final release record and git status; never assume pending labels are verification or reuse stale test outcomes after changing source.
+## Resume safely
+
+The local host connection disconnected after the original application source ca0f836 was synchronized and while release-record drafts were being updated. Final test correction, workflow and documentation were published through the connected GitHub account afterward. Last-verified local runtime files match the final app by fingerprint, but its old core test and documentation may be stale. On reconnect, inspect git status, preserve/compare local document/evidence drafts, then synchronize the canonical release branch without a hard reset or discarding unrelated work. Inspect any remaining task-owned Next/browser processes on ports 3100–3103 before cleaning them up; the transport outage prevented confirmed local cleanup.
+
+The release-specific workflow `.github/workflows/verify-jimbro-production.yml` uses standard public-repository Ubuntu runners, pinned actions, read-only repository permission, no persisted checkout credentials and isolated temporary QA dependencies. It is pinned to the released source and actual preview/production URLs. Update those deliberately for a future release. Reports contain synthetic data only; downloadable artifacts have seven-day retention, while key summaries/test output here persist.
+
+## Remaining manual work and native readiness
+
+Physical iPhone/Android keyboards/safe areas, VoiceOver/TalkBack output, audible/OS notification and suspension/lock behavior, and real peer usability remain unverified. PEER-TEST.md supplies tasks without fabricated participants. No guaranteed offline launch or closed/background alarm.
+
+Next sensible step: run real-device and peer sessions, record findings, and define native notification/storage requirements before choosing a wrapper, Expo/React Native or platform-native implementation. Do not start native development. Accounts/sync/payments/social/nutrition/wearables/runtime AI remain deferred. Preserve main 4271e846, LeaveBy deployment dpl_kr2tAGnsRcQB5kS2pcTBstDvoA2A, original coursework and frozen v1 records.

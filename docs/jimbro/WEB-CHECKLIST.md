@@ -29,10 +29,12 @@ This run starts at release branch `a02322b` (production application `1af1c647`).
 | Local phrases/truth/tone/flirt/cooldown/dedup/exhaustion | Implemented | Verified: domain catalog and selection tests; bounded history |
 | Optional Jim/motion/quiet settings and hidden-page cleanup | Implemented | Verified: preferences and overrides, simulated document-hidden cleanup and phrase tests |
 | Routes, responsive screens, keyboard focus/dialogs, axe | Implemented | Verified: 320/390/768/1440 widths, dialog keyboard/focus, six axe scans × three engines; incomplete/manual nodes retained |
-| Preview URL test and exact-source production release | Implemented | Local gates Verified; preview/production deployment pending |
+| Preview URL test and exact-source production release | Implemented | Verified: exact final source a6d646e; final immutable preview and production each 20/20, hosted mascot checks and alias/source identity confirmed |
 | Physical phones, real software keyboards, screen-reader output | Implemented | Blocked: physical device/assistive-technology test session unavailable |
 | OS permission prompts, audible output, locked/background delivery | Implemented | Blocked: no human OS/device session; foreground behavior only; background guarantee explicitly excluded |
 | Human peer usability | Implemented script | Blocked: real participants unavailable; no fabricated feedback |
 | Native app/accounts/cloud/payments/social/nutrition/wearables/runtime AI | Explicitly deferred | Explicitly deferred by product scope |
 
 No unresolved reproduced product defect may be labeled Verified. The final verification and release records identify tested source, commands, browser engines, artifacts and remaining manual limitations.
+
+Final authority: fail-fast cloud run 39656940318 on source a6d646e passed all 48 domain tests, lint, build, type checks, 20 final-preview and 20 production journeys plus 120 joint samples/144 transitions. Initial exact-24 catalog test failure is preserved and corrected; it is not counted as a pass. Local checkout resynchronization and task-runner cleanup are Blocked by the disconnected host, while GitHub/Vercel contain the final release. Physical-device, assistive-technology and human peer rows remain Blocked rather than silently marked Verified.

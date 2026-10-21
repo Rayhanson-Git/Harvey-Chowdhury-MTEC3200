@@ -1,1 +1,33 @@
-Initial expanded-catalog result was 17/18. See core-tests-initial-failure.txt for the original failure. The stale assertion is repaired; fail-fast cloud release verification is pending.
+> leaveby@0.1.0 test:jimbro
+> node --experimental-strip-types --test tests/jimbro.test.mjs
+
+(node:3204) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///home/runner/work/Harvey-Chowdhury-MTEC3200/Harvey-Chowdhury-MTEC3200/lib/jimbro/schedule.ts is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /home/runner/work/Harvey-Chowdhury-MTEC3200/Harvey-Chowdhury-MTEC3200/package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ reference absolute timestamps reserve the buffer once (1.348025ms)
+✔ edited commute shifts stop and departure, preserving arrival and input (1.048025ms)
+✔ midnight calculations keep the prior date (0.940715ms)
+✔ zero durations coincide and choose the most urgent boundary (1.107336ms)
+✔ schedule rejects invalid inputs without mutating them (2.713613ms)
+✔ spring gap is rejected; repeated fall time requires an explicit occurrence (1.544341ms)
+✔ a non-hour DST change is resolved without assuming a 60-minute shift (0.577327ms)
+✔ absolute deadlines do not move when the device timezone changes (5.155708ms)
+✔ phases use exact boundaries and resuming skips stale phases (0.444861ms)
+✔ early workout finish retains departure, while actual actions change guidance (0.528556ms)
+✔ alert selection consolidates missed deadlines and stops after session closure (0.349181ms)
+✔ countdown never goes negative and wall clock jumps recompute it (0.228286ms)
+✔ set retries deduplicate and corrections preserve the exercise-name snapshot (4.026532ms)
+✔ set validation rejects invalid repetitions, loads and units (1.665327ms)
+✔ history counts actual completed work rather than starts or cancelled work (0.312793ms)
+✔ body weight requires a valid date, positive finite value and explicit unit (0.591613ms)
+✔ saved records reject corruption or unsupported schema without a reset (1.967431ms)
+✔ exercise catalog IDs are unique and source information is explicit (0.26275ms)
+ℹ tests 18
+ℹ suites 0
+ℹ pass 18
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 175.273589

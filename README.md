@@ -21,6 +21,8 @@ Brand sources and integrated variants: [asset inventory](docs/jimbro/BRAND-ASSET
 
 Read [architecture/data and migration](docs/jimbro/WEB-ARCHITECTURE.md), [design system](docs/jimbro/DESIGN-SYSTEM.md), [Jim source/provenance](docs/jimbro/JIM-ART.md), [phrase content](docs/jimbro/PHRASES.md), [actual verification](docs/jimbro/WEB-VERIFICATION.md), [handoff](docs/jimbro/HANDOFF.md), [peer-test script](docs/jimbro/PEER-TEST.md) and [future native evaluation](docs/jimbro/NATIVE-READINESS.md).
 
+The final released source is `a6d646e`. [Actual preview/production verification](https://github.com/Rayhanson-Git/Harvey-Chowdhury-MTEC3200/actions/runs/39656940318) passed all release gates; the release-specific GitHub workflow provides a fail-fast remote runner without application dependencies or credentials in the app. Browser emulation does not establish physical-device, screen-reader or human peer usability. Current evidence and local-host resumption details are in the linked records.
+
 ## Data and timing limits
 
 Data lives on this device/browser and origin. Clearing site data can remove it. Export JSON from Settings for your own backup; another device will not synchronize automatically. v1 IndexedDB records migrate in place to v2; no cross-origin GymLog migration is claimed. Keep the app visible for alerts. Background, lock-screen and closed-app delivery, offline launch and a trusted server clock are not guaranteed. Sound and notifications require understandable user actions. A deadline never marks a workout completed or records departure.
