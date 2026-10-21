@@ -1,0 +1,77 @@
+name: Verify JimBro production
+on:
+  push:
+    branches: [release/jimbro-web]
+    paths: [.github/workflows/verify-jimbro-production.yml]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  production:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    env:
+      JIMBRO_URL: https://jimbro.rayhanson.tech
+      JIMBRO_QA_MODULES: /tmp/jimbro-qa-tools
+      JIMBRO_EVIDENCE: /tmp/jimbro-production-evidence
+    steps:
+      - name: Check out the exact deployed application source
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          ref: ca0f836493f1c3ea3acc7ea685fd9a4bfc08e692
+          persist-credentials: false
+      - name: Use Node 24
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: '24'
+      - name: Install locked application and isolated QA tooling
+        run: |
+          npm ci
+          npm install --prefix "$JIMBRO_QA_MODULES" --no-audit --no-fund playwright@1.64.1 @axe-core/playwright@4.14.0
+          "$JIMBRO_QA_MODULES/node_modules/.bin/playwright" install --with-deps chromium
+      - name: Verify domain tests and lint
+        run: |
+          npm test
+          npm run test:jimbro
+          npm run test:web
+          npm run lint
+      - name: Exercise 20 production journeys in disposable browser contexts
+        run: npm run test:browser
+      - name: Verify production mascot joints and motion
+        run: npm run test:mascot
+      - name: Assert all journey, accessibility and joint checks passed
+        run: |
+          node <<'JS'
+          const fs = require('node:fs'), assert = require('node:assert/strict');
+          const root = process.env.JIMBRO_EVIDENCE;
+          const browser = JSON.parse(fs.readFileSync(root + '/browser-chromium.json'));
+          const mascot = JSON.parse(fs.readFileSync(root + '/mascot.json'));
+          assert.equal(browser.checks.length, 20);
+          assert.ok(browser.checks.every(x => x.status === 'Verified'));
+          assert.deepEqual(browser.errors, []);
+          assert.ok(browser.accessibility.every(x => x.violations.length === 0));
+          assert.equal(mascot.poses.length, 12);
+          assert.equal(mascot.poses.reduce((n,p) => n + p.frames.length, 0), 120);
+          assert.equal(mascot.transitions, 144);
+          assert.ok(mascot.motionOff && mascot.systemReducedMotion && mascot.simulatedHiddenPage);
+          const result = {source:'ca0f836493f1c3ea3acc7ea685fd9a4bfc08e692',url:process.env.JIMBRO_URL,journeys:20,axeScans:browser.accessibility.length,reportedViolations:0,frames:120,transitions:144,errors:browser.errors,finishedAt:new Date().toISOString()};
+          fs.writeFileSync(root + '/production-summary.json', JSON.stringify(result,null,2));
+          fs.appendFileSync(process.env.GITHUB_STEP_SUMMARY, 'Production verification\n\n```json\n' + JSON.stringify(result,null,2) + '\n```\n');
+          console.log(JSON.stringify(result));
+          JS
+      - name: Preserve synthetic verification reports
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: jimbro-production-verification
+          retention-days: 7
+          if-no-files-found: warn
+          path: |
+            /tmp/jimbro-production-evidence/browser-chromium.json
+            /tmp/jimbro-production-evidence/mascot.json
+            /tmp/jimbro-production-evidence/production-summary.json
+            /tmp/jimbro-production-evidence/jim-ready-0.png
+            /tmp/jimbro-production-evidence/jim-ready-425.png
+            /tmp/jimbro-production-evidence/jim-ready-2400.png
