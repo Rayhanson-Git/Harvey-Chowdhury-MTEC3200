@@ -14,3 +14,16 @@ Git integration is shared with a separate LeaveBy project, so keep main unchange
 
 ## Remaining observations
 Real peer usability, physical mobile keyboard/touch, actual screen-reader/audible-output and OS notification/background behavior remain unverified. The peer script and native-readiness note are provided. Browser-local storage is not a backup or sync service; closed/locked/background alarms and offline launch are not guaranteed. No native development started.
+
+## Verified source and preview
+
+Final application source: GitHub `1af1c6475c8045b82d4ff314f45647d7505e42d7`, branch `release/jimbro-web`, tree `aa10db9f94b6b513236f6e1d4dce0cb2601c0d49`. Local tested tree is identical. Command-line push lacked credentials, so the connected GitHub app created the identical tree and commits; no credentials were copied. Original main stays `4271e8465b131a368610bb02c79b896377dadaa5`. Final lint, production build, standalone TypeScript and diff checks passed.
+
+Final preview `dpl_EgaHX9ZcxFqvBqVpGzo42Rw5xJ5T` reached READY at https://jimbro-2dnnlsgyh-rayhanson.vercel.app/. The named “Choose your open workout” dialog was browser-verified there. The prior identical application core was smoke-tested at https://jimbro-rnn7ivcml-rayhanson.vercel.app/ for set save, reload, finish and real progress (80 kg·reps).
+
+## Verified production release
+Production URL: https://jimbro.rayhanson.tech/
+
+Deployment `dpl_3jdY4N82GAeYj4rrMiCrmcZVM9vz` is READY with target production, exact application commit `1af1c6475c8045b82d4ff314f45647d7505e42d7`. Immutable host: https://jimbro-k1c4yf78t-rayhanson.vercel.app. Domain alias is attached without alias errors. Main and the separate LeaveBy deployment were not changed. Documentation-only commits after this source do not change the deployed application.
+
+Actual production-browser smoke in a disposable profile: start an empty workout without deadline; save 8 reps at 12 kg; reload and recover set/rest; finish; Progress shows one session and 96 kg·reps. Direct History, Settings, all twelve gallery poses and preserved `/leaveby` load. Final preview verified the accessible workout-choice dialog name. Physical devices and real peer/screen-reader tests remain pending. Backup domain/native transactions pass, but file chooser/download UI round-trip is not claimed.

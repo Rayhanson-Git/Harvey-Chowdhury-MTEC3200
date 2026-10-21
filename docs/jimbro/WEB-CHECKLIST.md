@@ -15,7 +15,7 @@
 | Actual animations/state priority/dedup/cooldowns | Implemented | Twelve rendered states; 12 distinct named animation tracks observed running; motion-off has zero tracks; priority/dedup domain tests |
 | Local contextual phrase bank/tone/flirtation/repetition | Implemented | 248 phrases; all 100 supplied seeds; truth-filter/exhaustion/recent/cooldown tests; settings UI save verified |
 | Loading/empty/error/recovery/mobile/keyboard/dialogs | Implemented | Browser desktop and 320/768 viewport frames; native dialog focus/Escape; no overflow on inspected logger; screen-reader/physical keyboard testing pending |
-| App title/icons/social metadata | Implemented | Built routes, local PNG/SVG/ICO assets; production asset smoke pending |
+| App title/icons/social metadata | Implemented | Built routes, local PNG/SVG/ICO assets; production interface and twelve mascot assets rendered |
 | Documentation/provenance/handoff/native readiness/peer script | Implemented | README and docs/jimbro current WEB-* records; real peer results pending |
-| F preview and production on intended project | Pending | Must append actual deployment IDs/commits and smoke results before calling released |
+| F preview and production on intended project | Released | Source 1af1c647, production dpl_3jdY4N82GAeYj4rrMiCrmcZVM9vz READY; browser save/reload/finish/progress and direct-route smoke passed |
 | Native/accounts/cloud/payments/social/nutrition/wearables/runtime AI | Explicitly deferred | No native framework, new backend or paid application dependency added |

@@ -29,3 +29,14 @@ Additional browser recovery check: edited an active open workout into a future c
 Accessibility: fresh-style workout axe scan reported zero violations (WCAG 2A/2AA/2.1AA tags); `aria-prohibited-attr` and some contrast checks remained marked incomplete/manual review by axe. This is not accessibility certification. The initial stale-style contrast failures were reproduced before restarting the dev compiler; the production CSS contained the correct token utilities.
 Settings axe scan: zero violations and zero incomplete checks on the inspected desktop screen. Fresh automated tests remain 8 original + 18 existing core + 18 expanded domain cases; generated third-party axe code is temporary and excluded from final source/lint/deployment.
 Progress axe scan: zero violations; color-contrast had incomplete/manual-review nodes. Three inspected screens therefore have zero reported automated violations, not a claim of full accessibility. Generated QA pages and the temporary axe bundle were moved out of public/ before final build; only reproducible test source is retained.
+
+Hosted preview smoke: GitHub source b6c0703 (tree dcb6eef717b18a609869f3e658d3600b21c55854) reached READY at https://jimbro-rnn7ivcml-rayhanson.vercel.app/. On that actual URL, started an open workout, saved 8 reps at 10 kg, reloaded with the same saved set and rest timer, finished, and saw 80 kg·reps in progress. No app-origin console errors were observed; the browser extension emitted its own metadata errors. Final review added explicit accessible dialog names with useId/aria-labelledby; lint/build/typecheck passed for that change. New source tree aa10db9f94b6b513236f6e1d4dce0cb2601c0d49 corresponds to GitHub commit 1af1c6475c8045b82d4ff314f45647d7505e42d7.
+
+Final dialog fix verified on the actual final Vercel preview: role=dialog, accessible name “Choose your open workout”, visible=true. Lint, production build and standalone TypeScript pass after the fix.
+
+## Verified production release
+Production URL: https://jimbro.rayhanson.tech/
+
+Deployment `dpl_3jdY4N82GAeYj4rrMiCrmcZVM9vz` is READY with target production, exact application commit `1af1c6475c8045b82d4ff314f45647d7505e42d7`. Immutable host: https://jimbro-k1c4yf78t-rayhanson.vercel.app. Domain alias is attached without alias errors. Main and the separate LeaveBy deployment were not changed. Documentation-only commits after this source do not change the deployed application.
+
+Actual production-browser smoke in a disposable profile: start an empty workout without deadline; save 8 reps at 12 kg; reload and recover set/rest; finish; Progress shows one session and 96 kg·reps. Direct History, Settings, all twelve gallery poses and preserved `/leaveby` load. Final preview verified the accessible workout-choice dialog name. Physical devices and real peer/screen-reader tests remain pending. Backup domain/native transactions pass, but file chooser/download UI round-trip is not claimed.
