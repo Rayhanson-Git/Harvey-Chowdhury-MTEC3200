@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useRef, type ReactNode } from "react";
+import { useEffect, useId, useRef, type ReactNode } from "react";
 export function AppDialog({
   title,
   children,
@@ -9,6 +9,7 @@ export function AppDialog({
   children: ReactNode;
   onClose: () => void;
 }) {
+  const titleId = useId();
   const ref = useRef<HTMLDialogElement>(null);
   useEffect(() => {
     const focus = document.activeElement as HTMLElement;
@@ -20,6 +21,7 @@ export function AppDialog({
   return (
     <dialog
       ref={ref}
+      aria-labelledby={titleId}
       onCancel={(e) => {
         e.preventDefault();
         onClose();
@@ -27,7 +29,7 @@ export function AppDialog({
       className="fixed inset-0 m-auto max-h-[85dvh] w-[calc(100%-2rem)] max-w-2xl overflow-auto rounded-3xl border border-white/20 bg-[#151619] p-5 text-white shadow-2xl backdrop:bg-black/80 sm:p-8"
     >
       <header className="mb-6 flex items-start justify-between gap-3">
-        <h2 className="text-xl font-semibold">{title}</h2>
+        <h2 id={titleId} className="text-xl font-semibold">{title}</h2>
         <button
           autoFocus
           aria-label="Close dialog"
