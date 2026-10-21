@@ -6,7 +6,7 @@
   "sandbox": {
     "provider": "Vercel",
     "session": "sbx_rRZsmj6v9az8cpV9CX4HOOMwCAoN",
-    "status": "running during release verification; stop after deployment checks",
+    "status": "stopped after verification",
     "public_app_ports": []
   },
   "environment": {
@@ -277,11 +277,25 @@
     "Human peer usability study",
     "Real OS suspension/background delivery is not guaranteed"
   ],
-  "release_state": "Verified source, publication authorized; final release details recorded separately",
+  "release_state": "Published source, production READY, live browser verification passed",
   "source_base_commit": "4af9f2bc004bb1a0f1d8649991bf41cea649e90c",
   "publication_at_verification_snapshot": {
     "committed": false,
     "pushed": false,
     "deployed": false
+  },
+  "release": {
+    "source_commit": "bfa7c562aacafdb925540642dffc8be372ef0569",
+    "branch": "revamp/foundation",
+    "deployment_id": "dpl_D54XwUhqEQzn3tGrg4s82SMrhMXa",
+    "project_id": "prj_5dLMR9qmoPZn1H4YtQ5zO1c708IF",
+    "url": "https://jimbro-rayhanson.vercel.app",
+    "state": "READY",
+    "target": "production",
+    "live_browser_passed": 27,
+    "live_browser_failed": 0,
+    "live_runner_exit": 0,
+    "local_live_reports_identical": true,
+    "runtime_error_fatal_logs": 0
   }
 }

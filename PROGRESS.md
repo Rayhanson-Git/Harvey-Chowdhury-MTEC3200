@@ -6,7 +6,7 @@ Completed the unified persistent session, absolute scheduling, completed-set log
 
 Current checks in an isolated Vercel sandbox: existing tests **8/8**, core tests **18/18**, production browser assertions **27/27**, native IndexedDB cases **18/18** nested in the browser suite. Lint, production build and TypeScript after Next type generation all passed. Three axe scans found zero violations. Physical-device/screen-reader/audio evaluation and peer feedback remain human checks; no such results are claimed.
 
-Release is being published from the verified branch. See [current implementation and verification](docs/jimbro/IMPLEMENTATION.md) for evidence, changed files and reproduction. Final commit and deployed URL will be reported after GitHub and Vercel confirm success.
+Released source commit `bfa7c562aacafdb925540642dffc8be372ef0569` on GitHub. JimBro production is READY at [https://jimbro-rayhanson.vercel.app](https://jimbro-rayhanson.vercel.app); the full 27-case browser suite also passed against that public URL. Main and the original LeaveBy production deployment are unchanged. The verification sandbox is stopped after evidence collection. [Release details](docs/jimbro/RELEASE.md), [implementation, changed files and reproduction](docs/jimbro/IMPLEMENTATION.md).
 
 ---
 

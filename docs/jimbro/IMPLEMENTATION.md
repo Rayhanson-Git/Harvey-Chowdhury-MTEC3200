@@ -4,7 +4,7 @@ Updated October 21, 2026 (UTC). Branch `revamp/foundation`; baseline `4af9f2bc00
 
 The user explicitly authorized finishing JimBro, committing it to GitHub and deploying it. This expands the earlier Milestone 1-only task. Implementation, verification and release now proceed on `revamp/foundation`; main, the original coursework and the seven frozen v1 foundation records remain preserved. The initial continuation's scope error remains in dated progress history and is not retroactively presented as Milestone 1 work.
 
-The current app combines LeaveBy scheduling and post-set workout logging in one persistent session. Release publication and post-deployment results are recorded separately in `RELEASE.md` once confirmed. The baseline SHA above identifies the implementation's starting point, not the final release commit.
+The current app combines LeaveBy scheduling and post-set workout logging in one persistent session. Release publication and post-deployment results are recorded in the [release record](RELEASE.md). The baseline SHA above identifies the implementation's starting point, not the final release commit.
 
 ## Preserved implementation
 
@@ -21,7 +21,7 @@ GymLog source was unavailable in the baseline; this is not a verified source mer
 
 ## Actual verification
 
-After the initial source transfer was rejected, the user explicitly approved exporting the reduced application/test/build bundle to the connected Vercel sandbox. The isolated sandbox restored locked app dependencies and installed temporary browser QA tooling outside the app. It exposed no public app ports, created no deployment, and will be stopped after live deployment checks. No application dependency versions or lockfile changed. Earlier host registry/localhost restrictions were not bypassed through the local browser.
+After the initial source transfer was rejected, the user explicitly approved exporting the reduced application/test/build bundle to the connected Vercel sandbox. The isolated sandbox restored locked app dependencies and installed temporary browser QA tooling outside the app. It exposed no public app ports, created no deployment, and is now **stopped** after live deployment checks. No application dependency versions or lockfile changed. Earlier host registry/localhost restrictions were not bypassed through the local browser.
 
 Environment: Node 24.21.0, npm 11.19.0, Next 16.4, Playwright 1.64.1, Chromium 156.0.8078.4, axe 4.14.0. Test clocks deliberately use 2030 dates.
 
@@ -82,4 +82,4 @@ New paths:
 - `tests/jimbro.test.mjs`, `jimbro-browser.mjs`, `serve-storage.mjs`, `storage-browser.html`: existing supplemental verification.
 - `docs/jimbro/IMPLEMENTATION.md`, `verification-upload-manifest.json`, `verification-results.json`, `RELEASE.md`, `qa-report.json`, `qa-desktop.webp`, `qa-mobile.webp`: scope/evidence records. Upload manifest describes the initial approved bundle; verification metadata identifies final tested source after fixes/test additions.
 
-Publication is performed from the verified tree. Final commit, deployment state, URL and live smoke checks belong in the release record. Original LeaveBy production hosting is preserved in its existing Vercel project; JimBro uses its own project.
+Published source commit `bfa7c562aacafdb925540642dffc8be372ef0569` is READY in production, and all 27 browser checks also pass against its public URL. See the release record for URLs and evidence. Original LeaveBy production hosting is preserved in its existing Vercel project; JimBro uses its own project.
