@@ -1,0 +1,58 @@
+
+> leaveby@0.1.0 test:jimbro
+> node --experimental-strip-types --test tests/jimbro.test.mjs
+
+(node:37513) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/rayhanson/Documents/ChatGPT/MTEC3200%20Product%20Design%20and%20Prototyping/JimBro/lib/jimbro/schedule.ts is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /Users/rayhanson/Documents/ChatGPT/MTEC3200 Product Design and Prototyping/JimBro/package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ reference absolute timestamps reserve the buffer once (1.112667ms)
+✔ edited commute shifts stop and departure, preserving arrival and input (0.7995ms)
+✔ midnight calculations keep the prior date (0.771458ms)
+✔ zero durations coincide and choose the most urgent boundary (0.392416ms)
+✔ schedule rejects invalid inputs without mutating them (2.04425ms)
+✔ spring gap is rejected; repeated fall time requires an explicit occurrence (1.123ms)
+✔ a non-hour DST change is resolved without assuming a 60-minute shift (0.771917ms)
+✔ absolute deadlines do not move when the device timezone changes (0.956459ms)
+✔ phases use exact boundaries and resuming skips stale phases (0.420959ms)
+✔ early workout finish retains departure, while actual actions change guidance (0.56175ms)
+✔ alert selection consolidates missed deadlines and stops after session closure (0.191959ms)
+✔ countdown never goes negative and wall clock jumps recompute it (0.093625ms)
+✔ set retries deduplicate and corrections preserve the exercise-name snapshot (0.195917ms)
+✔ set validation rejects invalid repetitions, loads and units (0.491292ms)
+✔ history counts actual completed work rather than starts or cancelled work (0.103041ms)
+✔ body weight requires a valid date, positive finite value and explicit unit (0.280209ms)
+✔ saved records reject corruption or unsupported schema without a reset (0.63325ms)
+✖ exercise catalog IDs are unique and source information is explicit (0.790542ms)
+ℹ tests 18
+ℹ suites 0
+ℹ pass 17
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 247.226916
+
+✖ failing tests:
+
+test at tests/jimbro.test.mjs:113:1
+✖ exercise catalog IDs are unique and source information is explicit (0.790542ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  31 !== 24
+  
+      at TestContext.<anonymous> (file:///Users/rayhanson/Documents/ChatGPT/MTEC3200%20Product%20Design%20and%20Prototyping/JimBro/tests/jimbro.test.mjs:114:10)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+      at Test.postRun (node:internal/test_runner/test:1330:19)
+      at Test.run (node:internal/test_runner/test:1258:12)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 31,
+    expected: 24,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }

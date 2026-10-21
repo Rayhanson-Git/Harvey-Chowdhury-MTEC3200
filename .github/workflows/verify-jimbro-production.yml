@@ -17,26 +17,36 @@ jobs:
       JIMBRO_QA_MODULES: /tmp/jimbro-qa-tools
       JIMBRO_EVIDENCE: /tmp/jimbro-production-evidence
     steps:
-      - name: Check out the exact deployed application source
+      - name: Check out the exact verification source
         uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
         with:
-          ref: ca0f836493f1c3ea3acc7ea685fd9a4bfc08e692
+          ref: ${{ github.sha }}
           persist-credentials: false
       - name: Use Node 24
         uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
         with:
           node-version: '24'
+      - name: Confirm runtime files match the deployed verified application
+        run: |
+          node <<'JS'
+          const fs=require('node:fs'),crypto=require('node:crypto'),assert=require('node:assert/strict');
+          const fingerprint=JSON.parse(fs.readFileSync('docs/jimbro/evidence/2026-10-21-repair/source-fingerprint.json'));
+          for(const [path,hash] of Object.entries(fingerprint.files)) assert.equal(crypto.createHash('sha256').update(fs.readFileSync(path)).digest('hex'),hash,path);
+          console.log('All runtime source files match the verified production application.');
+          JS
       - name: Install locked application and isolated QA tooling
         run: |
           npm ci
           npm install --prefix "$JIMBRO_QA_MODULES" --no-audit --no-fund playwright@1.64.1 @axe-core/playwright@4.14.0
           "$JIMBRO_QA_MODULES/node_modules/.bin/playwright" install --with-deps chromium
-      - name: Verify domain tests and lint
+      - name: Verify all domain tests, lint, type checks and production build
         run: |
           npm test
           npm run test:jimbro
           npm run test:web
           npm run lint
+          npm run build
+          npx tsc --noEmit
       - name: Exercise 20 production journeys in disposable browser contexts
         run: npm run test:browser
       - name: Verify production mascot joints and motion
@@ -56,7 +66,7 @@ jobs:
           assert.equal(mascot.poses.reduce((n,p) => n + p.frames.length, 0), 120);
           assert.equal(mascot.transitions, 144);
           assert.ok(mascot.motionOff && mascot.systemReducedMotion && mascot.simulatedHiddenPage);
-          const result = {source:'ca0f836493f1c3ea3acc7ea685fd9a4bfc08e692',url:process.env.JIMBRO_URL,journeys:20,axeScans:browser.accessibility.length,reportedViolations:0,frames:120,transitions:144,errors:browser.errors,finishedAt:new Date().toISOString()};
+          const result = {verificationSource:process.env.GITHUB_SHA,url:process.env.JIMBRO_URL,journeys:20,axeScans:browser.accessibility.length,reportedViolations:0,frames:120,transitions:144,errors:browser.errors,finishedAt:new Date().toISOString()};
           fs.writeFileSync(root + '/production-summary.json', JSON.stringify(result,null,2));
           fs.appendFileSync(process.env.GITHUB_STEP_SUMMARY, 'Production verification\n\n```json\n' + JSON.stringify(result,null,2) + '\n```\n');
           console.log(JSON.stringify(result));

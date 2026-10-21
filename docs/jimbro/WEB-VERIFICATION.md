@@ -25,7 +25,7 @@ Commands and detailed results are retained in `evidence/2026-10-21-repair/`.
 | Check | Current outcome |
 |---|---|
 | `npm test` | 8/8 |
-| `npm run test:jimbro` | 18/18 |
+| `npm run test:jimbro` | Initial expanded-catalog result was 17/18; stale catalog-size assertion repaired, clean cloud rerun pending |
 | `npm run test:web` | 22/22; comparable measures, singleton/empty phrase pools and library scope regressions included |
 | `npm run lint` | Passed, zero warnings |
 | `npx tsc --noEmit` | Passed |
@@ -53,3 +53,7 @@ Unavailable: real iPhone/Android software keyboards/safe-area behavior, real Voi
 ## Final compiled-source browser results
 
 All 20 journeys passed independently in Chromium, Firefox and WebKit (60 completed journeys). Each engine ran six axe scans with zero reported violations; individual incomplete/manual flags are retained in browser JSON and are not claimed resolved by automation. The final tests use actual download and native file-chooser events, controlled clocks and seeded phrase randomness, and include active-plan controls, rest start/pause/resume/extend/skip, all five measurement types and repeated finish activation. No page exceptions, console errors or application-origin HTTP failures were recorded in these final runs. Successful cache revalidation (304) is accepted. Local compiled URL: http://127.0.0.1:3103; source files are fingerprinted in evidence. Hosted identities are recorded separately.
+
+## Correction to the initial local summary
+
+The combined local command did not stop on the legacy catalog-size failure. Its retained core log records 17/18, not the originally summarized 18/18. The cloud runner exposed this mismatch. The stale exact-24 assertion is replaced by original minimum coverage and uniqueness across all current IDs; the expanded category requirements remain independently tested. The initial failure is preserved as `core-tests-initial-failure.txt`; current source must pass a fail-fast CI job before the release is called verified. Production currently serves application ca0f836; this repair changes tests/workflow only, and the job verifies runtime-file fingerprints before running all checks.

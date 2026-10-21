@@ -111,6 +111,6 @@ test("saved records reject corruption or unsupported schema without a reset", ()
   for (const value of [null, {}, { ...session(), schemaVersion: 3 }, { ...session(), revision: 0 }, { ...session(), sets: [set, set] }, { ...session(), schedule: { ...schedule, commitment: NaN } }]) assert.throws(() => assertSession(value));
 });
 test("exercise catalog IDs are unique and source information is explicit", () => {
-  assert.equal(exercises.length, 24); assert.equal(new Set(exercises.map((x) => x.id)).size, 24);
+  assert.ok(exercises.length >= 24); assert.equal(new Set(exercises.map((x) => x.id)).size, exercises.length);
   for (const e of exercises) assert.ok(e.name && e.category && e.equipment && e.source);
 });
