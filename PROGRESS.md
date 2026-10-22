@@ -100,3 +100,7 @@ Released source a6d646eeaf4f4c2e1af7cf525774eee226f3bb5a to the intended jimbro 
 ## October 21, 2026 — host recovery and completion
 
 Preserved all pre-disconnect drafts in a named Git stash, fast-forwarded the release checkout to canonical c13e755, and confirmed all 78 runtime fingerprints match production. No old verification servers/processes remained. Fresh local 8+18+22 tests and lint passed; duplicate ignored Next type files required a preserved-cache clean rebuild, after which build and standalone type checking passed. Fresh production acceptance passed 20/20 and six axe scans without reported violations/errors, plus 120 mascot frames/144 transitions. Updated HANDOFF, WEB-RELEASE, WEB-VERIFICATION and WEB-CHECKLIST; recovery evidence is retained separately. No application source or deployment changed. Real-device/assistive/OS/peer sessions remain precisely documented manual limitations.
+
+## October 21, 2026 — appearance and page purposes
+
+Added saved Light/Dark/System appearance in Settings, scoped semantic tokens throughout JimBro, matching navigation logos, first-paint cache with blocked-storage fallback and live system/cross-tab updates. Added concise Today (planning) and Workout (logging) descriptions and readable calendar accessible names. Existing v2 data/backups remain compatible; no dependency, native or LeaveBy redesign. Local 49 domain tests, lint/type/build, three-engine theme and workout browser checks passed. See THEME-VERIFICATION.md for exact evidence and hosted release follow-up.

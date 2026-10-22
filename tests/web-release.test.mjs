@@ -31,6 +31,7 @@ import {
   validatePreferences,
 } from "../lib/jimbro/storage.ts";
 import { defaultPreferences } from "../lib/jimbro/types.ts";
+import { isThemePreference } from "../lib/jimbro/theme.ts";
 import {
   emptyMemory,
   selectPhrase,
@@ -80,6 +81,24 @@ const context = {
   personalBest: true,
   saved: true,
 };
+
+test("theme preferences accept legacy records and reject invalid imported choices", () => {
+  const legacy = { ...defaultPreferences };
+  delete legacy.theme;
+  assert.doesNotThrow(() => validatePreferences(legacy));
+  for (const theme of ["light", "dark", "system"]) {
+    assert.equal(isThemePreference(theme), true);
+    const backup = makeBackup({ active: null, sessions: [], weights: [], preferences: { ...legacy, theme } });
+    assert.equal(validateBackup(backup).preferences.theme, theme);
+  }
+  for (const theme of ["auto", "", null, 0, {}, "<script>"]) {
+    assert.equal(isThemePreference(theme), false);
+    assert.throws(() => validatePreferences({ ...legacy, theme }), /Invalid preferences/);
+  }
+  const oldBackup = makeBackup({ active: null, sessions: [], weights: [], preferences: legacy });
+  assert.doesNotThrow(() => validateBackup(oldBackup));
+  assert.equal(oldBackup.preferences.theme, undefined);
+});
 test("all seven starter routines validate and estimate a duration range", () => {
   assert.equal(starterRoutines.length, 7);
   for (const r of starterRoutines) {

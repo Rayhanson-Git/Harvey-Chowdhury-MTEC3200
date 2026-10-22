@@ -4,6 +4,12 @@
 
 Plan your available training time, choose or edit a routine, log completed work, review your progress and protect your departure time. This local-first web release combines LeaveBy with the GymLog logging concept. It includes seven editable starters, custom routines, independent rest/elapsed timers, interruption recovery, calendar/history editing and repeat, comparable progress charts, JSON import/export, and original animated Jim with 248 contextual local phrases.
 
+## What each tab does
+
+**Today** is the planning view: enter the next commitment, preparation, travel and buffer, then choose a routine. **Workout** is the active training view: log/correct completed sets, manage rest and finish the session. Starting from Today opens Workout automatically. Both views share one session and its deadlines; switching tabs never pauses departure time. History holds saved sessions; Progress compares recorded training; Settings controls appearance, Jim, alerts and backups.
+
+In **Settings → Appearance → Color theme**, choose **Light**, **Dark** or **System preference**. System follows the device and updates while JimBro is open. The choice is saved in this browser and included in JSON backups. Original LeaveBy keeps its existing system-based appearance.
+
 ## Run and verify
 
 Node 24 recommended. `npm ci`, then `npm run dev`. No API key, account, paid service or backend is required.

@@ -96,6 +96,7 @@ export type Routine = {
 };
 export type RestTimer = { endsAt: number; pausedMs?: number };
 export type Preferences = {
+  theme?: "light" | "dark" | "system";
   unit: Unit;
   tone: "quiet" | "encouraging" | "playful" | "unhinged";
   flirtation: boolean;
@@ -106,6 +107,7 @@ export type Preferences = {
   nearMinutes: number;
 };
 export const defaultPreferences: Preferences = {
+  theme: "system",
   unit: "kg",
   tone: "encouraging",
   flirtation: false,

@@ -150,10 +150,10 @@ export function WorkoutLogger({
   return (
     <div className="space-y-5">
       <div className="flex items-center justify-between gap-3">
-        <p className="text-sm text-neutral-400">
+        <p className="text-sm text-jim-muted">
           {session.sets.length} completed sets
         </p>
-        <span className="rounded-full border border-white/15 px-3 py-1 text-xs">
+        <span className="rounded-full border border-jim-border px-3 py-1 text-xs">
           {session.label}
         </span>
       </div>
@@ -191,16 +191,16 @@ export function WorkoutLogger({
             key={e.id}
             aria-pressed={exerciseId === e.id}
             onClick={() => pick(e.id)}
-            className={`min-h-14 rounded-xl border p-3 text-left ${exerciseId === e.id ? "border-rose-400 bg-rose-500/10" : "border-white/10 hover:bg-white/5"}`}
+            className={`min-h-14 rounded-xl border p-3 text-left ${exerciseId === e.id ? "border-jim-accent bg-rose-500/10" : "border-jim-border-soft hover:bg-jim-hover"}`}
           >
             <span className="block text-sm">{e.name}</span>
-            <small className="text-neutral-400">
+            <small className="text-jim-muted">
               {e.category} · {e.equipment}
             </small>
           </button>
         ))}
         {!filtered.length ? (
-          <p className="py-3 text-sm text-neutral-400">
+          <p className="py-3 text-sm text-jim-muted">
             No matches. Try another name or muscle group.
           </p>
         ) : null}
@@ -209,16 +209,16 @@ export function WorkoutLogger({
         ref={form}
         onSubmit={submit}
         noValidate
-        className="space-y-4 rounded-2xl border border-white/15 bg-black/30 p-4"
+        className="space-y-4 rounded-2xl border border-jim-border bg-jim-inset p-4"
       >
         <h3 className="text-lg font-semibold">
           {editing ? "Correct set" : "Log completed set"}
-          <span className="mt-1 block text-sm font-normal text-neutral-400">
+          <span className="mt-1 block text-sm font-normal text-jim-muted">
             {selected?.name || editing?.exerciseName}
           </span>
         </h3>
         {previous ? (
-          <div className="rounded-xl bg-white/5 p-3 text-sm">
+          <div className="rounded-xl bg-jim-hover p-3 text-sm">
             <p>
               Last time:{" "}
               {previous.kind === "timed"
@@ -255,7 +255,7 @@ export function WorkoutLogger({
             </Button>
           </div>
         ) : (
-          <p className="text-xs text-neutral-400">
+          <p className="text-xs text-jim-muted">
             No previous comparable entry for this exercise yet.
           </p>
         )}
@@ -344,11 +344,11 @@ export function WorkoutLogger({
           />
         </label>
         {error ? (
-          <p role="alert" className="text-sm text-rose-300">
+          <p role="alert" className="text-sm text-jim-accent">
             {error}
           </p>
         ) : null}
-        <p role="status" className="text-sm text-lime-200">
+        <p role="status" className="text-sm text-jim-positive">
           {message}
         </p>
         {editing && revision !== session.revision ? (
@@ -390,13 +390,13 @@ export function WorkoutLogger({
         {session.sets.map((s, i) => (
           <li
             key={s.id}
-            className="flex flex-wrap justify-between gap-3 border-t border-white/10 pt-3"
+            className="flex flex-wrap justify-between gap-3 border-t border-jim-border-soft pt-3"
           >
             <div>
               <p className="text-sm">
                 {i + 1}. {s.exerciseName}
               </p>
-              <p className="mt-1 text-xs text-neutral-400">
+              <p className="mt-1 text-xs text-jim-muted">
                 {s.kind === "timed"
                   ? `${s.seconds}s`
                   : s.kind === "distance"
@@ -406,7 +406,7 @@ export function WorkoutLogger({
                       : `${s.reps} reps × ${s.load} ${s.unit}${s.kind === "assisted" ? " assistance" : ""}`}
               </p>
               {s.notes ? (
-                <p className="mt-1 max-w-sm text-xs text-neutral-400">
+                <p className="mt-1 max-w-sm text-xs text-jim-muted">
                   {s.notes}
                 </p>
               ) : null}

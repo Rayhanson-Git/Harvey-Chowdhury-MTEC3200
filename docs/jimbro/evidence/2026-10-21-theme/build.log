@@ -1,0 +1,133 @@
+
+> leaveby@0.1.0 test
+> tsc lib/plan-input.ts --outDir .test-build --module commonjs --target es2020 --skipLibCheck --strict && node --test tests/plan.test.mjs
+
+✔ reference example deducts each duration and buffer once (1.285417ms)
+✔ edited commute changes action times while preserving arrival and source values (0.115791ms)
+✔ midnight example crosses to the previous calendar date (0.068625ms)
+✔ explicit zero durations are valid (0.051666ms)
+✔ passed workout stop retains a valid future commitment and warns (0.058125ms)
+✔ blank, negative, fractional, nonnumeric and excessive inputs produce no plan (0.1075ms)
+✔ missing, invalid or expired commitment is rejected on every calculation (0.0685ms)
+✔ nonexistent local time at the spring daylight-saving transition is rejected (0.040292ms)
+ℹ tests 8
+ℹ suites 0
+ℹ pass 8
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 74.61
+
+> leaveby@0.1.0 test:jimbro
+> node --experimental-strip-types --test tests/jimbro.test.mjs
+
+(node:2753) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/rayhanson/Documents/ChatGPT/MTEC3200%20Product%20Design%20and%20Prototyping/JimBro/lib/jimbro/schedule.ts is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /Users/rayhanson/Documents/ChatGPT/MTEC3200 Product Design and Prototyping/JimBro/package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ reference absolute timestamps reserve the buffer once (0.667792ms)
+✔ edited commute shifts stop and departure, preserving arrival and input (0.282ms)
+✔ midnight calculations keep the prior date (0.370958ms)
+✔ zero durations coincide and choose the most urgent boundary (0.303666ms)
+✔ schedule rejects invalid inputs without mutating them (1.19025ms)
+✔ spring gap is rejected; repeated fall time requires an explicit occurrence (0.47375ms)
+✔ a non-hour DST change is resolved without assuming a 60-minute shift (0.637917ms)
+✔ absolute deadlines do not move when the device timezone changes (0.949125ms)
+✔ phases use exact boundaries and resuming skips stale phases (0.132125ms)
+✔ early workout finish retains departure, while actual actions change guidance (0.181041ms)
+✔ alert selection consolidates missed deadlines and stops after session closure (0.077416ms)
+✔ countdown never goes negative and wall clock jumps recompute it (0.06725ms)
+✔ set retries deduplicate and corrections preserve the exercise-name snapshot (0.149209ms)
+✔ set validation rejects invalid repetitions, loads and units (0.364917ms)
+✔ history counts actual completed work rather than starts or cancelled work (0.064708ms)
+✔ body weight requires a valid date, positive finite value and explicit unit (0.226083ms)
+✔ saved records reject corruption or unsupported schema without a reset (0.58575ms)
+✔ exercise catalog IDs are unique and source information is explicit (0.051666ms)
+ℹ tests 18
+ℹ suites 0
+ℹ pass 18
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 135.133875
+
+> leaveby@0.1.0 test:web
+> node --experimental-strip-types --test tests/web-release.test.mjs
+
+(node:2770) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/rayhanson/Documents/ChatGPT/MTEC3200%20Product%20Design%20and%20Prototyping/JimBro/lib/jimbro/session.ts is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /Users/rayhanson/Documents/ChatGPT/MTEC3200 Product Design and Prototyping/JimBro/package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ theme preferences accept legacy records and reject invalid imported choices (0.944167ms)
+✔ all seven starter routines validate and estimate a duration range (0.158708ms)
+✔ routine snapshots never mutate when the reusable template is edited (2.921167ms)
+✔ v1 migration preserves ID revision all completed work and timestamps (0.946667ms)
+✔ kg/lb round trips and mixed-unit comparison are equivalent (0.072125ms)
+✔ rest pause recovery leaves departure and phase boundaries unchanged (0.147042ms)
+✔ elapsed pause behavior excludes pauses and ignores departure countdown (0.087333ms)
+✔ unplanned workouts have no alerts and do not fake a departure (0.088417ms)
+✔ personal best needs a comparable earlier result, excludes baseline/bodyweight/assistance (0.148667ms)
+✔ timed distance and assisted records validate without invented weight volume (0.128583ms)
+✔ progress normalizes units, filters comparable measures, recomputes edits/deletions (0.337833ms)
+✔ captured workout local day survives device timezone changes and midnight finish (0.107833ms)
+✔ backup validates complete records and malformed/duplicate/incompatible imports fail before writes (0.892084ms)
+✔ preferences validate booleans tones units and warning bounds (0.049084ms)
+✔ all phrases have unique IDs and 100 supplied seed records (0.094959ms)
+✔ phrase truth and tone/flirt filters hold over exhaustion (1.567958ms)
+✔ shuffle bag excludes immediate repeat and persists bounded history (2.463833ms)
+✔ event dedup and cooldown suppress ordinary chatter; deadlines outrank celebrations (0.068667ms)
+✔ no eligible phrase is a safe silent result (0.03125ms)
+✔ previous performance respects measure type and never treats assistance as external load (0.106125ms)
+✔ bodyweight progress compares repetitions freely; assistance uses lower comparable assistance (0.065042ms)
+✔ singleton and empty phrase pools remain safe across cooldown and exhaustion (0.059458ms)
+✔ catalog includes the original muscle-group scope and useful timing/distance defaults (0.037542ms)
+ℹ tests 23
+ℹ suites 0
+ℹ pass 23
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 151.43775
+
+> leaveby@0.1.0 lint
+> eslint
+
+
+> leaveby@0.1.0 build
+> next build
+
+▲ Next.js 16.4.0 (Turbopack)
+✓ Running next.config.ts took 63ms
+- Cache Components enabled
+- Partial Prefetching enabled
+
+  Creating an optimized production build ...
+✓ Compiled successfully in 713ms
+  Running TypeScript ...
+  Finished TypeScript in 1377ms ...
+  Collecting page data using 9 workers ...
+  Generating static pages using 9 workers (0/12) ...
+  Generating static pages using 9 workers (3/12) 
+  Generating static pages using 9 workers (6/12) 
+  Generating static pages using 9 workers (9/12) 
+✓ Generating static pages using 9 workers (12/12) in 184ms
+  Finalizing page optimization ...
+
+Route (app)
+┌ ○ /
+├ ○ /_not-found
+├ ○ /history
+├ ○ /jim-gallery
+├ ○ /leaveby
+├ ○ /manifest.webmanifest
+├ ○ /progress
+├ ○ /settings
+├ ○ /today
+└ ○ /workout
+
+
+○  (Static)  prerendered as static content
+

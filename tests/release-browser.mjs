@@ -27,6 +27,7 @@ const browser = await { chromium, firefox, webkit }[engine].launch({
 });
 const context = await browser.newContext({
   viewport: { width: 1440, height: 1000 },
+  colorScheme: process.env.JIMBRO_COLOR_SCHEME || "light",
   timezoneId: "America/New_York",
   acceptDownloads: true,
 });

@@ -25,16 +25,16 @@ export function JimGallery() {
     return () => document.removeEventListener("visibilitychange", handler);
   }, []);
   return (
-    <main className="min-h-screen bg-jim-background px-5 py-10 text-white [color-scheme:dark]">
+    <main className="jim-theme min-h-screen bg-jim-background px-5 py-10 text-jim-text">
       <div className="mx-auto max-w-6xl">
         <a
           href="/settings"
-          className="inline-flex min-h-11 items-center text-sm text-lime-200 underline"
+          className="inline-flex min-h-11 items-center text-sm text-jim-positive underline"
         >
           ← Return to JimBro
         </a>
         <h1 className="mt-5 text-4xl font-semibold">Jim, in motion.</h1>
-        <p className="mt-3 max-w-xl text-sm leading-6 text-neutral-400">
+        <p className="mt-3 max-w-xl text-sm leading-6 text-jim-muted">
           Production rig gallery. Every state uses the same aligned artwork.
           Your system’s reduced-motion setting overrides animation.
         </p>
@@ -47,7 +47,7 @@ export function JimGallery() {
           Play animations
         </label>
         <button
-          className="mb-6 min-h-11 rounded-xl border border-white/20 px-4"
+          className="mb-6 min-h-11 rounded-xl border border-jim-border-strong px-4"
           onClick={() => setVersion((v) => v + 1)}
         >
           Replay states
@@ -56,7 +56,7 @@ export function JimGallery() {
           {poses.map((pose) => (
             <section
               key={`${pose}-${version}`}
-              className="rounded-3xl border border-white/10 p-5"
+              className="rounded-3xl border border-jim-border-soft p-5"
             >
               <div className="mx-auto max-w-[200px]">
                 <JimCharacter pose={pose} motion={motion && visible} />

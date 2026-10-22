@@ -44,7 +44,7 @@ export function RoutineLibrary({
   return (
     <div className="space-y-5">
       <div className="flex flex-wrap items-center justify-between gap-3">
-        <p className="max-w-md text-sm leading-6 text-neutral-400">
+        <p className="max-w-md text-sm leading-6 text-jim-muted">
           General-purpose starting points. Review the exercises, recovery time
           and fit before you start.
         </p>
@@ -70,17 +70,17 @@ export function RoutineLibrary({
           return (
             <div
               key={r.id}
-              className="rounded-2xl border border-white/10 bg-white/[.025] p-5"
+              className="rounded-2xl border border-jim-border-soft bg-jim-subtle p-5"
             >
-              <p className="text-[10px] font-semibold uppercase tracking-widest text-lime-300">
+              <p className="text-[10px] font-semibold uppercase tracking-widest text-jim-positive">
                 {r.starter ? "Jim’s starter" : "Your routine"}
               </p>
               <h3 className="mt-2 text-lg font-semibold">{r.name}</h3>
-              <p className="mt-2 text-sm text-neutral-400">
+              <p className="mt-2 text-sm text-jim-muted">
                 {r.exercises.length} exercises · about {range[0]}–{range[1]} min
               </p>
               {available !== undefined && range[1] > available ? (
-                <p className="mt-2 text-xs text-amber-200">
+                <p className="mt-2 text-xs text-jim-warning">
                   May exceed your available {Math.max(0, Math.floor(available))}{" "}
                   min
                 </p>
@@ -133,17 +133,17 @@ export function RoutineLibrary({
       </Button>
       {preview ? (
         <AppDialog title={preview.name} onClose={() => setPreview(null)}>
-          <p className="mb-5 text-sm text-neutral-400">
+          <p className="mb-5 text-sm text-jim-muted">
             Estimated {durationRange(preview.exercises).join("–")} minutes,
             including rest and transitions. Your pace may vary.
           </p>
           <ol className="space-y-3">
             {preview.exercises.map((e, i) => (
-              <li key={e.id} className="rounded-xl border border-white/10 p-3">
+              <li key={e.id} className="rounded-xl border border-jim-border-soft p-3">
                 <b>
                   {i + 1}. {e.name}
                 </b>
-                <p className="mt-1 text-sm text-neutral-400">
+                <p className="mt-1 text-sm text-jim-muted">
                   {e.sets} sets · {e.reps} reps · {e.rest}s rest
                 </p>
               </li>
@@ -151,7 +151,7 @@ export function RoutineLibrary({
           </ol>
           {available !== undefined &&
           durationRange(preview.exercises)[1] > available ? (
-            <div className="my-5 rounded-xl border border-amber-300/30 p-4 text-sm text-amber-100">
+            <div className="my-5 rounded-xl border border-jim-warning/30 p-4 text-sm text-jim-warning">
               <p>
                 This may not fit. Choose 20-minute essentials, edit optional
                 sets, or explicitly keep this plan. Preserve safe form and
@@ -207,13 +207,13 @@ export function RoutineLibrary({
               onChange={(e) => setEdit({ ...edit, name: e.target.value })}
             />
           </label>
-          <p className="my-4 text-xs text-neutral-400">
+          <p className="my-4 text-xs text-jim-muted">
             Editing a routine does not change a workout already saved or in
             progress.
           </p>
           <ol className="space-y-4">
             {edit.exercises.map((e, i) => (
-              <li key={e.id} className="rounded-xl border border-white/10 p-3">
+              <li key={e.id} className="rounded-xl border border-jim-border-soft p-3">
                 <label className="text-sm">
                   Exercise {i + 1}
                   <select
@@ -341,7 +341,7 @@ export function RoutineLibrary({
               className={`${inputStyle} w-full rounded-xl border px-3`}
             />
             {error ? (
-              <p role="alert" className="text-sm text-rose-300">
+              <p role="alert" className="text-sm text-jim-accent">
                 {error}
               </p>
             ) : null}
@@ -389,7 +389,7 @@ export function RoutineLibrary({
           title="Delete this routine?"
           onClose={() => setConfirm(null)}
         >
-          <p className="text-sm text-neutral-300">
+          <p className="text-sm text-jim-secondary">
             {confirm.name} will be removed. Historical workouts remain.
           </p>
           <Button

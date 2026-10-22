@@ -19,11 +19,11 @@ export function ActivePlan({
   const [open, setOpen] = useState(false);
   const plan = session.plan || [];
   return (
-    <section className="mb-6 rounded-2xl border border-white/10 p-4">
+    <section className="mb-6 rounded-2xl border border-jim-border-soft p-4">
       <div className="flex items-center justify-between gap-3">
         <div>
           <h3 className="font-semibold">Your workout plan</h3>
-          <p className="mt-1 text-xs text-neutral-400">
+          <p className="mt-1 text-xs text-jim-muted">
             {plan.length
               ? `${plan.length} exercises · estimated ${durationRange(plan).join("–")} min`
               : "Open workout. Add exercises as you train."}
@@ -36,7 +36,7 @@ export function ActivePlan({
       {open ? (
         <div className="mt-4 space-y-4">
           {plan.map((e, i) => (
-            <div key={e.id} className="space-y-2 border-t border-white/10 pt-3">
+            <div key={e.id} className="space-y-2 border-t border-jim-border-soft pt-3">
               <label className="block text-sm">
                 Exercise {i + 1}
                 <select
@@ -65,7 +65,7 @@ export function ActivePlan({
                   ))}
                 </select>
               </label>
-              <p className="text-xs text-neutral-400">
+              <p className="text-xs text-jim-muted">
                 {
                   session.sets.filter((s) => s.exerciseId === e.exerciseId)
                     .length
@@ -172,7 +172,7 @@ export function ActivePlan({
               ))}
             </select>
           </label>
-          <p className="text-xs text-neutral-400">
+          <p className="text-xs text-jim-muted">
             Changes affect planned work only. Completed sets stay recorded.
           </p>
         </div>

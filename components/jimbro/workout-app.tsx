@@ -56,6 +56,7 @@ import { BodyWeightTracker } from "./body-weight-tracker";
 import { JimCharacter } from "./jim-character";
 import { useJim } from "./use-jim";
 import { AppDialog } from "./app-dialog";
+import { applyThemePreference } from "@/lib/jimbro/theme";
 const tabs = [
   { id: "today", label: "Today", icon: CalendarDays },
   { id: "workout", label: "Workout", icon: Dumbbell },
@@ -92,6 +93,9 @@ export function WorkoutApp({ initialView = "today" }: { initialView?: View }) {
     prefs = snapshot.preferences || defaultPreferences,
     jim = useJim(),
     welcomed = useRef(false);
+  useEffect(() => {
+    if (store.ready) applyThemePreference(prefs.theme ?? "system");
+  }, [store.ready, prefs.theme]);
   const previous = snapshot.sessions.filter(
     (s) => s.status !== "cancelled" && s.sets.length && s.id !== active?.id,
   );
@@ -230,16 +234,16 @@ export function WorkoutApp({ initialView = "today" }: { initialView?: View }) {
         if (trigger && !trigger.disabled)
           trigger.focus({ preventScroll: true });
       }}
-      className="min-h-screen bg-jim-background font-sans text-[#f4f3ef] [color-scheme:dark] [&_button]:focus-visible:outline-2 [&_button]:focus-visible:outline-offset-4 [&_button]:focus-visible:outline-lime-200 [&_input]:scroll-mt-28 [&_input]:focus-visible:outline-lime-200 [&_select]:focus-visible:outline-lime-200"
+      className="jim-theme min-h-screen bg-jim-background font-sans text-jim-text [&_button]:focus-visible:outline-2 [&_button]:focus-visible:outline-offset-4 [&_button]:focus-visible:outline-jim-focus [&_input]:scroll-mt-28 [&_input]:focus-visible:outline-jim-focus [&_select]:focus-visible:outline-jim-focus"
     >
       <a
         href="#main-content"
-        className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-50 focus:bg-black focus:p-4"
+        className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-50 focus:bg-jim-input focus:p-4"
       >
         Skip to main content
       </a>
       <div className="mx-auto max-w-[1440px] md:grid md:grid-cols-[180px_minmax(0,1fr)] lg:grid-cols-[220px_minmax(0,1fr)]">
-        <aside className="border-b border-white/10 bg-[#101114] px-4 py-4 md:sticky md:top-0 md:h-screen md:border-r md:border-b-0 md:px-6 md:py-10">
+        <aside className="border-b border-jim-border-soft bg-jim-sidebar px-4 py-4 md:sticky md:top-0 md:h-screen md:border-r md:border-b-0 md:px-6 md:py-10">
           <Link
             prefetch={false}
             href="/"
@@ -252,10 +256,18 @@ export function WorkoutApp({ initialView = "today" }: { initialView?: View }) {
               alt="JimBro"
               width="160"
               height="33"
-              className="h-auto w-40"
+              className="jim-brand-dark h-auto w-40"
+            />
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/brand/lockup-light.svg"
+              alt="JimBro"
+              width="160"
+              height="33"
+              className="jim-brand-light h-auto w-40"
             />
           </Link>
-          <p className="mt-3 hidden text-[10px] uppercase tracking-[.2em] text-neutral-400 md:block">
+          <p className="mt-3 hidden text-[10px] uppercase tracking-[.2em] text-jim-muted md:block">
             Time well lifted
           </p>
           <nav
@@ -267,14 +279,14 @@ export function WorkoutApp({ initialView = "today" }: { initialView?: View }) {
                 key={t.id}
                 onClick={() => navigate(t.id)}
                 aria-current={view === t.id ? "page" : undefined}
-                className={`flex min-h-14 min-w-0 flex-col items-center justify-center gap-1 rounded-xl px-1 text-[10px] transition-colors md:min-h-12 md:flex-row md:justify-start md:gap-3 md:px-3 md:text-sm ${view === t.id ? "bg-rose-600/15 font-semibold text-rose-200" : "text-neutral-400 hover:bg-white/5 hover:text-white"}`}
+                className={`flex min-h-14 min-w-0 flex-col items-center justify-center gap-1 rounded-xl px-1 text-[10px] transition-colors md:min-h-12 md:flex-row md:justify-start md:gap-3 md:px-3 md:text-sm ${view === t.id ? "bg-rose-600/15 font-semibold text-jim-accent" : "text-jim-muted hover:bg-jim-hover hover:text-jim-text"}`}
               >
                 <t.icon size={18} />
                 {t.label}
               </button>
             ))}
           </nav>
-          <div className="mt-auto hidden pt-20 text-xs leading-6 text-neutral-400 md:block">
+          <div className="mt-auto hidden pt-20 text-xs leading-6 text-jim-muted md:block">
             <p>
               One workout.
               <br />
@@ -293,7 +305,7 @@ export function WorkoutApp({ initialView = "today" }: { initialView?: View }) {
         <div className="min-w-0 px-4 py-7 sm:px-8 lg:px-10 lg:py-10">
           <header className="mb-7 flex items-start justify-between gap-4">
             <div>
-              <p className="mb-3 text-[10px] font-semibold uppercase tracking-[.24em] text-neutral-400">
+              <p className="mb-3 text-[10px] font-semibold uppercase tracking-[.24em] text-jim-muted">
                 {view === "today"
                   ? "Your day, with room to train"
                   : `JimBro / ${view}`}
@@ -301,15 +313,22 @@ export function WorkoutApp({ initialView = "today" }: { initialView?: View }) {
               <h1 className="max-w-2xl text-3xl font-semibold leading-tight tracking-tight sm:text-4xl lg:text-[44px]">
                 {title}
               </h1>
+              {view === "today" || view === "workout" ? (
+                <p className="mt-3 max-w-xl text-sm leading-6 text-jim-muted">
+                  {view === "today"
+                    ? "Today is for planning: set your available time and choose a routine. Start it to move to Workout."
+                    : "Workout is for training: log completed sets, manage rest, and finish your session. Your departure timer keeps running."}
+                </p>
+              ) : null}
             </div>
-            <span className="hidden rounded-full border border-white/15 px-3 py-2 text-[10px] uppercase tracking-widest text-neutral-400 sm:inline-flex">
+            <span className="hidden rounded-full border border-jim-border px-3 py-2 text-[10px] uppercase tracking-widest text-jim-muted sm:inline-flex">
               Local first
             </span>
           </header>
           {active ? (
-            <div className="sticky top-0 z-20 -mx-1 mb-4 flex items-center justify-between gap-3 rounded-2xl border border-white/20 bg-jim-raised p-3 shadow-xl xl:hidden">
+            <div className="sticky top-0 z-20 -mx-1 mb-4 flex items-center justify-between gap-3 rounded-2xl border border-jim-border-strong bg-jim-raised p-3 shadow-xl xl:hidden">
               <div>
-                <p className="text-[10px] uppercase tracking-wider text-neutral-400">
+                <p className="text-[10px] uppercase tracking-wider text-jim-muted">
                   {active.withoutDeadline
                     ? "Elapsed training"
                     : phaseAt(active, now).label}
@@ -323,7 +342,7 @@ export function WorkoutApp({ initialView = "today" }: { initialView?: View }) {
                 </p>
               </div>
               <button
-                className="min-h-11 rounded-xl border border-white/20 px-3 text-xs"
+                className="min-h-11 rounded-xl border border-jim-border-strong px-3 text-xs"
                 onClick={() =>
                   document
                     .querySelector('[aria-label="Workout timers"]')
@@ -335,20 +354,20 @@ export function WorkoutApp({ initialView = "today" }: { initialView?: View }) {
             </div>
           ) : null}
           {!active && prefs.showJim && jim.text ? (
-            <div className="mb-5 flex items-center gap-4 rounded-2xl border border-lime-300/20 bg-[#171e14] p-3">
+            <div className="mb-5 flex items-center gap-4 rounded-2xl border border-jim-positive/20 bg-jim-positive-panel p-3">
               <div className="w-24 shrink-0">
                 <JimCharacter
                   pose={jim.pose}
                   motion={prefs.motion && jim.visible}
                 />
               </div>
-              <p className="text-sm leading-6 text-neutral-200">{jim.text}</p>
+              <p className="text-sm leading-6 text-jim-secondary">{jim.text}</p>
             </div>
           ) : null}
           {store.error ? (
             <div
               role="alert"
-              className="mb-5 rounded-2xl border border-amber-300/40 bg-amber-300/5 p-5 text-sm text-amber-100"
+              className="mb-5 rounded-2xl border border-jim-warning/40 bg-jim-warning/5 p-5 text-sm text-jim-warning"
             >
               <p>{store.error}</p>
               <p className="mt-2 text-xs">
@@ -371,7 +390,7 @@ export function WorkoutApp({ initialView = "today" }: { initialView?: View }) {
           ) ? (
             <div
               role="alert"
-              className="mb-5 flex flex-wrap items-center justify-between gap-3 rounded-2xl border border-rose-400/40 bg-rose-400/10 p-4"
+              className="mb-5 flex flex-wrap items-center justify-between gap-3 rounded-2xl border border-jim-accent/40 bg-rose-400/10 p-4"
             >
               <p className="max-w-xl text-sm">{store.alert.message}</p>
               <Button
@@ -398,11 +417,11 @@ export function WorkoutApp({ initialView = "today" }: { initialView?: View }) {
               className="min-w-0 outline-none"
             >
               {store.loading ? (
-                <p role="status" className="py-20 text-neutral-400">
+                <p role="status" className="py-20 text-jim-muted">
                   Restoring your saved workout…
                 </p>
               ) : !store.ready ? (
-                <p className="py-12 text-sm text-neutral-300">
+                <p className="py-12 text-sm text-jim-secondary">
                   Browser storage is required to save your workouts. Check
                   storage settings, then retry above.
                 </p>
@@ -419,7 +438,7 @@ export function WorkoutApp({ initialView = "today" }: { initialView?: View }) {
                           }
                           eyebrow="Pick up where you left off"
                         >
-                          <p className="mb-5 text-sm text-neutral-400">
+                          <p className="mb-5 text-sm text-jim-muted">
                             {active.label} · {active.sets.length} recorded sets
                           </p>
                           <Button
@@ -481,7 +500,7 @@ export function WorkoutApp({ initialView = "today" }: { initialView?: View }) {
                           ) : null}
                         </SectionCard>
                         <div className="space-y-5">
-                          <section className="overflow-hidden rounded-3xl border border-lime-300/15 bg-[#171e14] p-6">
+                          <section className="overflow-hidden rounded-3xl border border-jim-positive/20 bg-jim-positive-panel p-6">
                             {prefs.showJim ? (
                               <div className="mx-auto max-w-[240px]">
                                 <JimCharacter
@@ -493,24 +512,24 @@ export function WorkoutApp({ initialView = "today" }: { initialView?: View }) {
                               </div>
                             ) : (
                               <Clock3
-                                className="mb-6 text-lime-200"
+                                className="mb-6 text-jim-positive"
                                 size={40}
                               />
                             )}
-                            <p className="text-[10px] uppercase tracking-[.2em] text-lime-300">
+                            <p className="text-[10px] uppercase tracking-[.2em] text-jim-positive">
                               Meet Jim. Your timekeeper with arms.
                             </p>
                             <h2 className="mt-3 text-2xl font-semibold leading-tight">
                               A little structure.
                               <br />A lot of character.
                             </h2>
-                            <p className="mt-3 text-sm leading-6 text-neutral-400">
+                            <p className="mt-3 text-sm leading-6 text-jim-muted">
                               Plan your window, record your effort, and make the
                               rest of your day. No guilt about a shorter
                               session.
                             </p>
                           </section>
-                          <section className="rounded-3xl border border-white/10 p-6">
+                          <section className="rounded-3xl border border-jim-border-soft p-6">
                             <p className="text-3xl font-semibold">
                               {snapshot.sessions
                                 .filter(
@@ -522,7 +541,7 @@ export function WorkoutApp({ initialView = "today" }: { initialView?: View }) {
                                 .length.toString()
                                 .padStart(2, "0")}
                             </p>
-                            <p className="mt-2 text-sm text-neutral-400">
+                            <p className="mt-2 text-sm text-jim-muted">
                               workouts in your story
                             </p>
                             <Button
@@ -566,7 +585,7 @@ export function WorkoutApp({ initialView = "today" }: { initialView?: View }) {
                                 : "Your workout summary"
                             }
                           >
-                            <p className="text-sm leading-6 text-neutral-300">
+                            <p className="text-sm leading-6 text-jim-secondary">
                               {active.sets.length} completed sets ·{" "}
                               {Math.round(elapsed(active, now) / 60000)}{" "}
                               minutes.{" "}
@@ -613,7 +632,7 @@ export function WorkoutApp({ initialView = "today" }: { initialView?: View }) {
                               });
                             }}
                           />
-                          <div className="mt-6 flex flex-wrap gap-3 border-t border-white/10 pt-5">
+                          <div className="mt-6 flex flex-wrap gap-3 border-t border-jim-border-soft pt-5">
                             {!active.actual.workoutEndedAt ? (
                               <Button
                                 disabled={busy}
@@ -655,7 +674,7 @@ export function WorkoutApp({ initialView = "today" }: { initialView?: View }) {
                         title="Start with the time you have."
                         eyebrow="No active workout"
                       >
-                        <p className="mb-5 text-sm text-neutral-400">
+                        <p className="mb-5 text-sm text-jim-muted">
                           Plan your next commitment, or choose an open workout.
                         </p>
                         <Button
@@ -755,14 +774,14 @@ export function WorkoutApp({ initialView = "today" }: { initialView?: View }) {
                   onPlan={() => navigate("today")}
                 />
                 {prefs.showJim ? (
-                  <section className="rounded-3xl border border-white/10 p-4">
+                  <section className="rounded-3xl border border-jim-border-soft p-4">
                     <div className="mx-auto max-w-[180px]">
                       <JimCharacter
                         pose={jim.pose}
                         motion={prefs.motion && jim.visible}
                       />
                     </div>
-                    <p className="min-h-12 text-center text-sm leading-6 text-neutral-300">
+                    <p className="min-h-12 text-center text-sm leading-6 text-jim-secondary">
                       {jim.text || "Your sets. Your pace. I’ve got the clock."}
                     </p>
                   </section>
@@ -771,7 +790,7 @@ export function WorkoutApp({ initialView = "today" }: { initialView?: View }) {
             ) : null}
           </div>
 
-          <footer className="mt-10 flex flex-wrap justify-between gap-3 border-t border-white/10 pt-5 text-[11px] leading-6 text-neutral-400">
+          <footer className="mt-10 flex flex-wrap justify-between gap-3 border-t border-jim-border-soft pt-5 text-[11px] leading-6 text-jim-muted">
             <p>Saved on this browser · Export in Settings for backup.</p>
             <Link
               prefetch={false}
@@ -792,13 +811,13 @@ export function WorkoutApp({ initialView = "today" }: { initialView?: View }) {
           }
           onClose={() => setDraft(null)}
         >
-          <p className="mb-5 text-sm text-neutral-300">
+          <p className="mb-5 text-sm text-jim-secondary">
             {draft.withoutDeadline
               ? "No deadline. Choose a routine and take the time you need."
               : `About ${Math.max(0, Math.floor((deadlines(draft.schedule).stop - now) / 60000))} minutes available. A duration estimate includes suggested rest and transitions.`}
           </p>
           {repeat ? (
-            <div className="mb-5 rounded-xl border border-lime-300/30 p-4">
+            <div className="mb-5 rounded-xl border border-jim-positive/30 p-4">
               <p className="mb-3 text-sm">Selected: {repeat.name}</p>
               <Button
                 className={buttonStyle}
@@ -812,7 +831,7 @@ export function WorkoutApp({ initialView = "today" }: { initialView?: View }) {
                   ? " anyway"
                   : ""}
               </Button>
-              <p className="mt-2 text-xs text-neutral-400">
+              <p className="mt-2 text-xs text-jim-muted">
                 Estimated {durationRange(repeat.exercises).join("–")} minutes.{" "}
                 {!draft.withoutDeadline &&
                 durationRange(repeat.exercises)[1] >
@@ -840,7 +859,7 @@ export function WorkoutApp({ initialView = "today" }: { initialView?: View }) {
       {repeat && !draft && !active ? (
         <div
           role="status"
-          className="fixed bottom-4 left-4 right-4 z-30 mx-auto flex max-w-lg items-center justify-between gap-3 rounded-2xl border border-lime-200/30 bg-[#192014] p-4 text-sm"
+          className="fixed bottom-4 left-4 right-4 z-30 mx-auto flex max-w-lg items-center justify-between gap-3 rounded-2xl border border-jim-positive/30 bg-jim-positive-panel p-4 text-sm"
         >
           <p>{repeat.name} selected. Set your time window above.</p>
           <button
@@ -857,7 +876,7 @@ export function WorkoutApp({ initialView = "today" }: { initialView?: View }) {
           title="Finish and keep your work"
           onClose={() => setFinish(false)}
         >
-          <p className="text-sm text-neutral-300">
+          <p className="text-sm text-jim-secondary">
             {active.sets.length} completed sets will remain in your log.{" "}
             {active.withoutDeadline ? "" : "Departure reminders stay active."}
           </p>
@@ -919,7 +938,7 @@ export function WorkoutApp({ initialView = "today" }: { initialView?: View }) {
             setDiscard(false);
           }}
         >
-          <p className="text-sm leading-6 text-neutral-300">
+          <p className="text-sm leading-6 text-jim-secondary">
             {discard
               ? "The session is marked discarded; recorded work remains recoverable in history and is excluded from progress."
               : "Your workout stays in history. This stops departure reminders and does not record an actual departure."}

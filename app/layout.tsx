@@ -1,5 +1,7 @@
 // Source: Next.js create-next-app scaffold; adapted for LeaveBy. https://nextjs.org/docs/app
 import type { Metadata } from "next";
+import { ThemeListener } from "@/components/jimbro/theme-listener";
+import { themeBootstrap } from "@/lib/jimbro/theme";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -25,8 +27,14 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html lang="en" className="h-full antialiased">
-      <body className="min-h-full flex flex-col">{children}</body>
+    <html lang="en" className="h-full antialiased" suppressHydrationWarning>
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: themeBootstrap }} />
+      </head>
+      <body className="min-h-full flex flex-col">
+        <ThemeListener />
+        {children}
+      </body>
     </html>
   );
 }

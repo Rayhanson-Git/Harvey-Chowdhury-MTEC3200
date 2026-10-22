@@ -22,11 +22,11 @@ const fields = [
   { key: "buffer", label: "Buffer (minutes)", type: "text" },
 ] as const;
 export const inputStyle =
-  "h-12 border-white/20 bg-black text-white placeholder:text-neutral-400 focus-visible:ring-rose-400";
+  "h-12 border-jim-border-strong bg-jim-input text-jim-text placeholder:text-jim-muted focus-visible:ring-jim-focus";
 export const buttonStyle =
-  "min-h-12 bg-rose-600 text-white hover:bg-rose-700 focus-visible:ring-rose-400";
+  "min-h-12 bg-rose-600 text-white hover:bg-rose-700 focus-visible:ring-jim-focus";
 export const secondaryStyle =
-  "min-h-11 border border-white/20 bg-black text-white hover:bg-neutral-800 focus-visible:ring-rose-400";
+  "min-h-11 border border-jim-border-strong bg-jim-input text-jim-text hover:bg-jim-hover focus-visible:ring-jim-focus";
 
 export function ScheduleEditor({
   session,
@@ -116,10 +116,10 @@ export function ScheduleEditor({
   return (
     <div className="space-y-6">
       {session && !session.withoutDeadline ? (
-        <dl className="grid gap-3 rounded-2xl border border-white/10 p-4 text-sm sm:grid-cols-2">
+        <dl className="grid gap-3 rounded-2xl border border-jim-border-soft p-4 text-sm sm:grid-cols-2">
           {Object.entries(deadlines(session.schedule)).map(([key, at]) => (
             <div key={key}>
-              <dt className="capitalize text-neutral-400">
+              <dt className="capitalize text-jim-muted">
                 {key === "stop" ? "Stop workout" : key}
               </dt>
               <dd className="mt-1 font-medium">
@@ -129,7 +129,7 @@ export function ScheduleEditor({
           ))}
         </dl>
       ) : (
-        <p className="text-sm leading-6 text-neutral-400">
+        <p className="text-sm leading-6 text-jim-muted">
           Work backward from what’s next. We’ll reserve your preparation,
           commute and buffer, then keep your stop time in sight.
         </p>
@@ -200,7 +200,7 @@ export function ScheduleEditor({
                 className={inputStyle}
               />
               {errors[key] ? (
-                <p id={`${key}-error`} className="mt-2 text-sm text-rose-300">
+                <p id={`${key}-error`} className="mt-2 text-sm text-jim-accent">
                   {errors[key]}
                 </p>
               ) : null}
@@ -208,7 +208,7 @@ export function ScheduleEditor({
           ))}
         </div>
         {options.length > 1 ? (
-          <fieldset className="space-y-2 rounded-xl border border-amber-400/40 p-4">
+          <fieldset className="space-y-2 rounded-xl border border-jim-warning/40 p-4">
             <legend className="px-1 text-sm">
               This time happens twice. Choose one.
             </legend>
@@ -228,12 +228,12 @@ export function ScheduleEditor({
             ))}
           </fieldset>
         ) : null}
-        <p className="text-xs leading-5 text-neutral-400">
+        <p className="text-xs leading-5 text-jim-muted">
           Plan timezone: {timezone}. Times use your estimates, not live travel
           data.
         </p>
         {changedZone ? (
-          <div className="space-y-3 rounded-xl border border-amber-400/30 p-4 text-sm">
+          <div className="space-y-3 rounded-xl border border-jim-warning/30 p-4 text-sm">
             <p>
               Your device timezone is now {deviceZone}. The saved deadline has
               not moved.
@@ -260,7 +260,7 @@ export function ScheduleEditor({
           </div>
         ) : null}
         {session && expected !== session.revision ? (
-          <div className="space-y-2 text-sm text-amber-200">
+          <div className="space-y-2 text-sm text-jim-warning">
             <p>
               Saved data changed while you were editing. Your input is still
               here.
@@ -275,7 +275,7 @@ export function ScheduleEditor({
           </div>
         ) : null}
         {candidate ? (
-          <div className="rounded-xl border border-lime-300/20 bg-lime-300/5 p-4 text-sm leading-6">
+          <div className="rounded-xl border border-jim-positive/20 bg-jim-positive/5 p-4 text-sm leading-6">
             <p>
               You have about{" "}
               {Math.max(
@@ -290,12 +290,12 @@ export function ScheduleEditor({
               {formatMoment(deadlines(candidate).departure, timezone)}.
             </p>
             {deadlines(candidate).stop <= now ? (
-              <p className="text-amber-200">
+              <p className="text-jim-warning">
                 Workout cutoff has passed. Review your plan before starting.
               </p>
             ) : null}
             {session ? (
-              <p className="mt-2 text-neutral-300">
+              <p className="mt-2 text-jim-secondary">
                 Saving replaces only your schedule. Your chosen workout and
                 completed sets stay as they are.
               </p>
@@ -309,7 +309,7 @@ export function ScheduleEditor({
         >
           {busy ? "Saving…" : session ? "Save updated plan" : "Review workouts"}
         </Button>
-        <p className="text-xs leading-5 text-neutral-400">
+        <p className="text-xs leading-5 text-jim-muted">
           Saved on this browser. Alerts work while the app is open and visible;
           keep another alarm for anything critical.
         </p>

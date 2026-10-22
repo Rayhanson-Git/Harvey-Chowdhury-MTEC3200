@@ -45,3 +45,5 @@ JimBro release layout: SessionCountdown occupies a dedicated sticky desktop colu
 Retained shadcn/ui Button and Input; no new application dependency or shadcn component added. Product components: SectionCard, AppDialog (native modal semantics/focus), RoutineLibrary/editor/preview, ActivePlan, WorkoutLogger, TimerDock, HistoryPanel, ProgressPanel/DataChart, SettingsPanel, JimCharacter/JimGallery. Shared appearance is documented in `docs/jimbro/DESIGN-SYSTEM.md`. Data, phrase and mascot controllers remain separate from the UI.
 
 Repair update: AppDialog has explicit Tab wrapping, Escape cleanup and restored trigger focus (including WebKit pointer activation); saved-set removal uses a named confirmation dialog. Selected brand lockup replaces the generic dumbbell badge. All primitives/dependencies remain unchanged.
+
+Appearance update: SettingsPanel adds a native labeled Color theme select and explanatory text. `theme-listener.tsx` synchronizes the optional pre-paint cache between tabs; shared `jim-*` tokens theme existing components, including DataChart and AppDialog. No component package or runtime dependency was added.

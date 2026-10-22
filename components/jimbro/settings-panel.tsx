@@ -52,6 +52,28 @@ export function SettingsPanel({
   }
   return (
     <div className="space-y-7">
+      <section className="space-y-4 border-b border-jim-border-soft pb-6">
+        <h3 className="font-semibold">Appearance</h3>
+        <label className="block text-sm">
+          Color theme
+          <select
+            className={`${inputStyle} mt-2 w-full rounded-xl border px-3`}
+            value={preferences.theme ?? "system"}
+            disabled={busy}
+            aria-describedby="theme-help"
+            onChange={(e) => save({ theme: e.target.value as Preferences["theme"] })}
+          >
+            <option value="light">Light</option>
+            <option value="dark">Dark</option>
+            <option value="system">System preference</option>
+          </select>
+        </label>
+        <p id="theme-help" className="text-xs leading-5 text-jim-muted">
+          System preference follows your device’s light or dark appearance,
+          including changes while JimBro is open. Your choice is saved on this
+          browser and included in backups.
+        </p>
+      </section>
       <section className="space-y-4">
         <h3 className="font-semibold">Your training preferences</h3>
         <label className="block text-sm">
@@ -66,7 +88,7 @@ export function SettingsPanel({
             <option>lb</option>
           </select>
         </label>
-        <p className="text-xs text-neutral-400">
+        <p className="text-xs text-jim-muted">
           Changing display units converts values. Original measurements retain
           their original units.
         </p>
@@ -100,7 +122,7 @@ export function SettingsPanel({
           </select>
         </label>
       </section>
-      <section className="space-y-3 border-t border-white/10 pt-6">
+      <section className="space-y-3 border-t border-jim-border-soft pt-6">
         <h3 className="font-semibold">Jim’s personality</h3>
         <label className="block text-sm">
           Banter level
@@ -135,18 +157,18 @@ export function SettingsPanel({
             {label}
           </label>
         ))}
-        <p className="text-xs text-neutral-400">
+        <p className="text-xs text-jim-muted">
           Your system’s reduced-motion setting also applies. Timing information
           is always visible, with or without Jim.
         </p>
         <a
           href="/jim-gallery"
-          className="inline-flex min-h-11 items-center text-sm text-lime-200 underline"
+          className="inline-flex min-h-11 items-center text-sm text-jim-positive underline"
         >
           Explore Jim’s animation gallery
         </a>
       </section>
-      <section className="space-y-3 border-t border-white/10 pt-6">
+      <section className="space-y-3 border-t border-jim-border-soft pt-6">
         <h3 className="font-semibold">Alerts</h3>
         <Button
           className={secondaryStyle}
@@ -156,7 +178,7 @@ export function SettingsPanel({
         >
           {sound ? "Mute alert sound" : "Enable and test alert sound"}
         </Button>
-        <p role="status" className="text-xs text-neutral-300">
+        <p role="status" className="text-xs text-jim-secondary">
           {soundMessage || "Sound starts muted on each visit."}
         </p>
         <Button
@@ -184,18 +206,18 @@ export function SettingsPanel({
         >
           Enable browser notifications
         </Button>
-        <p role="status" className="text-xs text-neutral-300">
+        <p role="status" className="text-xs text-jim-secondary">
           {notification}
         </p>
-        <p className="text-xs leading-5 text-neutral-400">
+        <p className="text-xs leading-5 text-jim-muted">
           Keep JimBro open and visible for cues. Browsers can suspend timers,
           sound and notifications when backgrounded, locked or closed. Use a
           separate reliable alarm for critical commitments.
         </p>
       </section>
-      <section className="space-y-4 border-t border-white/10 pt-6">
+      <section className="space-y-4 border-t border-jim-border-soft pt-6">
         <h3 className="font-semibold">Your data, your device</h3>
-        <p className="text-sm leading-6 text-neutral-300">
+        <p className="text-sm leading-6 text-jim-secondary">
           Workout history lives in this browser on this device. Clearing site
           data can remove it. There are no accounts, cloud backups or automatic
           device synchronization. Export a backup regularly.
@@ -208,7 +230,7 @@ export function SettingsPanel({
           <input
             type="file"
             accept="application/json,.json"
-            className="mt-3 block w-full text-sm file:mr-3 file:min-h-11 file:rounded-lg file:border file:border-white/20 file:bg-black file:px-3 file:text-white"
+            className="mt-3 block w-full text-sm file:mr-3 file:min-h-11 file:rounded-lg file:border file:border-jim-border-strong file:bg-jim-input file:px-3 file:text-jim-text"
             onChange={async (e) => {
               setError("");
               setMessage("");
@@ -231,10 +253,10 @@ export function SettingsPanel({
             }}
           />
         </label>
-        <p role="alert" className="text-sm text-rose-300">
+        <p role="alert" className="text-sm text-jim-accent">
           {backup ? "" : error}
         </p>
-        <p role="status" className="text-sm text-lime-200">
+        <p role="status" className="text-sm text-jim-positive">
           {message}
         </p>
       </section>
@@ -266,13 +288,13 @@ export function SettingsPanel({
               Replace: remove current records and restore this backup.
             </label>
           </fieldset>
-          <p className="mb-4 text-xs text-amber-200">
+          <p className="mb-4 text-xs text-jim-warning">
             {mode === "replace"
               ? "This replaces all current workout records, routines and preferences. Export a backup first."
               : "Competing active sessions block the entire import; finish your current workout first. No duplicate IDs are added."}
           </p>
           {error ? (
-            <p role="alert" className="mb-4 text-sm text-rose-300">
+            <p role="alert" className="mb-4 text-sm text-jim-accent">
               {error}
             </p>
           ) : null}

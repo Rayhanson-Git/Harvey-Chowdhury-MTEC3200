@@ -10,4 +10,10 @@ Motion is an inexpensive SVG/CSS rig with small transforms and opacity. No compe
 
 First visit, no matches, empty history/progress, loading, save failures, blocked storage, conflict/retry, interrupted session, overdue deadline, import failure/success and disabled saving states have explicit messages. Errors preserve form input while persisted completed work remains in IndexedDB. Human usability validation is still pending.
 
-The selected navigation identity is `/brand/lockup-dark.svg`; production color/light/mono variants, compact icons and spacing rules are in BRAND-ASSETS.md. AppDialog explicitly wraps keyboard focus and restores its invoking control after unmount. JimBro captures pointer-click button focus before opening a modal to support WebKit's different default button-focus behavior; original LeaveBy components are unchanged.
+The navigation selects `/brand/lockup-dark.svg` or `/brand/lockup-light.svg` for the resolved appearance; production color/light/mono variants, compact icons and spacing rules are in BRAND-ASSETS.md. AppDialog explicitly wraps keyboard focus and restores its invoking control after unmount. JimBro captures pointer-click button focus before opening a modal to support WebKit's different default button-focus behavior; original LeaveBy components are unchanged.
+
+## Light, dark and system appearance
+
+Settings exposes a labeled native select with Light, Dark and System preference. New/legacy records default to System. Scoped semantic `jim-*` Tailwind tokens use CSS `light-dark()` under the product surface’s color scheme. Light surfaces use off-white #f5f5f2, white cards, #171b20 text, #59616d muted text, #b3163c crimson text and #335d18 green; dark surfaces retain charcoal and cucumber-green. Inputs, modal dialogs, alerts, charts, calendar markers, focus outlines and navigation logos follow the same choice. Character artwork remains original. LeaveBy’s palette is outside this scope.
+
+Today/Workout headings now explain planning versus logging. Calendar accessible names include the visible day number and a readable month/year, improving speech-control matching.

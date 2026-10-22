@@ -61,21 +61,21 @@ export function BodyWeightTracker({
     previous = converted[1];
   return (
     <div className="space-y-6">
-      <p className="text-sm leading-6 text-neutral-400">
+      <p className="text-sm leading-6 text-jim-muted">
         Your body weight, separate from what you lift. Every measurement keeps
         its date and original unit.
       </p>
       {latest ? (
-        <div className="rounded-2xl bg-black p-5">
-          <p className="text-xs uppercase tracking-widest text-neutral-400">
+        <div className="rounded-2xl bg-jim-input p-5">
+          <p className="text-xs uppercase tracking-widest text-jim-muted">
             Latest · {latest.date}
           </p>
           <p className="mt-2 text-4xl font-semibold">
             {Number(latest.display.toFixed(2))}{" "}
-            <span className="text-xl text-neutral-400">{unit}</span>
+            <span className="text-xl text-jim-muted">{unit}</span>
           </p>
           {previous ? (
-            <p className="mt-2 text-sm text-neutral-400">
+            <p className="mt-2 text-sm text-jim-muted">
               {latest.display - previous.display >= 0 ? "+" : ""}
               {(latest.display - previous.display).toFixed(2)} {unit} from
               previous record
@@ -142,7 +142,7 @@ export function BodyWeightTracker({
           </div>
         </div>
         {error ? (
-          <p role="alert" className="text-sm text-rose-300">
+          <p role="alert" className="text-sm text-jim-accent">
             {error}
           </p>
         ) : null}
@@ -156,18 +156,18 @@ export function BodyWeightTracker({
       {weights.length ? (
         <div className="overflow-x-auto">
           <table className="w-full text-left text-sm">
-            <caption className="mb-3 text-left text-neutral-400">
+            <caption className="mb-3 text-left text-jim-muted">
               Measurements · original units
             </caption>
             <thead>
-              <tr className="border-b border-white/10">
+              <tr className="border-b border-jim-border-soft">
                 <th className="py-3 font-medium">Date</th>
                 <th className="py-3 text-right font-medium">Body weight</th>
               </tr>
             </thead>
             <tbody>
               {weights.map((w) => (
-                <tr key={w.id} className="border-b border-white/10">
+                <tr key={w.id} className="border-b border-jim-border-soft">
                   <td className="py-3">{w.date}</td>
                   <td className="py-3 text-right">
                     {w.value} {w.unit}
@@ -178,7 +178,7 @@ export function BodyWeightTracker({
           </table>
         </div>
       ) : (
-        <p className="text-sm text-neutral-400">No measurements yet.</p>
+        <p className="text-sm text-jim-muted">No measurements yet.</p>
       )}
     </div>
   );

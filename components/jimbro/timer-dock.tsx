@@ -30,31 +30,31 @@ export function TimerDock({
     rest = restRemaining(session.rest, now);
   return (
     <aside
-      className="space-y-4 rounded-3xl border border-white/15 bg-jim-raised p-5"
+      className="space-y-4 rounded-3xl border border-jim-border bg-jim-raised p-5"
       aria-label="Workout timers"
     >
       <div>
-        <div className="flex justify-between gap-2 text-xs uppercase tracking-widest text-neutral-400">
+        <div className="flex justify-between gap-2 text-xs uppercase tracking-widest text-jim-muted">
           <span>{session.withoutDeadline ? "Open workout" : phase.label}</span>
-          <span className="text-rose-300">Live</span>
+          <span className="text-jim-accent">Live</span>
         </div>
         <p className="mt-2 font-mono text-3xl font-semibold tabular-nums">
           {session.withoutDeadline
             ? clockText(elapsed(session, now))
             : clockText(phase.deadline - now)}
         </p>
-        <p role="status" className="mt-2 text-sm text-rose-200">
+        <p role="status" className="mt-2 text-sm text-jim-accent">
           {phase.title}
         </p>
         {!session.withoutDeadline ? (
           <>
-            <p className="mt-2 text-xs leading-5 text-neutral-400">
+            <p className="mt-2 text-xs leading-5 text-jim-muted">
               Cutoff {formatMoment(d.stop, session.schedule.timezone)}
               <br />
               Leave {formatMoment(d.departure, session.schedule.timezone)}
             </p>
             {now > d.stop && !session.actual.workoutEndedAt ? (
-              <p className="mt-2 text-xs text-amber-200">
+              <p className="mt-2 text-xs text-jim-warning">
                 Workout cutoff reached. Keep completed work and begin preparing.
               </p>
             ) : null}
@@ -67,8 +67,8 @@ export function TimerDock({
           </>
         ) : null}
       </div>
-      <div className="border-t border-white/10 pt-3">
-        <p className="text-xs text-neutral-400">
+      <div className="border-t border-jim-border-soft pt-3">
+        <p className="text-xs text-jim-muted">
           Elapsed training · excludes pauses
         </p>
         <p className="mt-1 font-mono text-lg">
@@ -93,15 +93,15 @@ export function TimerDock({
             {session.pausedAt ? "Resume elapsed time" : "Pause elapsed time"}
           </Button>
         ) : null}
-        <p className="mt-2 text-xs text-neutral-400">
+        <p className="mt-2 text-xs text-jim-muted">
           {session.withoutDeadline
             ? "Elapsed time can pause. There is no departure deadline."
             : "Your departure deadline always keeps running."}
         </p>
       </div>
       {preferences.restEnabled ? (
-        <div className="border-t border-white/10 pt-3">
-          <p className="text-xs text-neutral-400">
+        <div className="border-t border-jim-border-soft pt-3">
+          <p className="text-xs text-jim-muted">
             Set rest ·{" "}
             {session.rest?.pausedMs !== undefined
               ? "paused"

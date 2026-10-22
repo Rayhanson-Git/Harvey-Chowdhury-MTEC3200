@@ -23,7 +23,7 @@ export function DataChart({
     max = Math.max(1, ...rows.map((r) => r.value));
   return (
     <div>
-      <p id={id} className="mb-4 text-sm text-neutral-300">
+      <p id={id} className="mb-4 text-sm text-jim-secondary">
         {label}
       </p>
       {rows.length ? (
@@ -42,17 +42,17 @@ export function DataChart({
                   x2="585"
                   y1={20 + i * 60}
                   y2={20 + i * 60}
-                  stroke="#383a3f"
+                  stroke="var(--jim-chart-grid)"
                   strokeDasharray="4 4"
                 />
-                <text x="0" y={24 + i * 60} fill="#b8bac1" fontSize="12">
+                <text x="0" y={24 + i * 60} fill="var(--jim-muted)" fontSize="12">
                   {(max * (1 - i / 2)).toFixed(0)}
                 </text>
               </g>
             ))}
             <polyline
               fill="none"
-              stroke="#c1e88b"
+              stroke="var(--jim-positive)"
               strokeWidth="3"
               points={rows
                 .map(
@@ -69,17 +69,17 @@ export function DataChart({
                 }
                 cy={140 - (r.value / max) * 120}
                 r="4"
-                fill="#c1e88b"
+                fill="var(--jim-positive)"
               />
             ))}
-            <text x="45" y="175" fill="#b8bac1" fontSize="12">
+            <text x="45" y="175" fill="var(--jim-muted)" fontSize="12">
               {rows[0].date}
             </text>
-            <text x="585" y="175" textAnchor="end" fill="#b8bac1" fontSize="12">
+            <text x="585" y="175" textAnchor="end" fill="var(--jim-muted)" fontSize="12">
               {rows.length > 1 ? rows.at(-1)!.date : ""}
             </text>
           </svg>
-          <p className="mt-3 text-xs text-neutral-400">
+          <p className="mt-3 text-xs text-jim-muted">
             {rows.length} recorded{" "}
             {rows.length === 1
               ? "point; more records are needed for a trend."
@@ -100,7 +100,7 @@ export function DataChart({
                 </thead>
                 <tbody>
                   {rows.map((r, i) => (
-                    <tr key={i} className="border-t border-white/10">
+                    <tr key={i} className="border-t border-jim-border-soft">
                       <td className="py-2">{r.date}</td>
                       <td className="text-right">
                         {Number(r.value.toFixed(2))}
@@ -113,7 +113,7 @@ export function DataChart({
           </details>
         </>
       ) : (
-        <p className="rounded-xl border border-dashed border-white/15 p-5 text-sm text-neutral-400">
+        <p className="rounded-xl border border-dashed border-jim-border p-5 text-sm text-jim-muted">
           No comparable recorded data in this period yet.
         </p>
       )}
@@ -160,15 +160,15 @@ export function ProgressPanel({
         </select>
       </label>
       <div className="grid grid-cols-2 gap-3">
-        <div className="rounded-2xl border border-white/10 p-5">
+        <div className="rounded-2xl border border-jim-border-soft p-5">
           <p className="text-3xl font-semibold">
             {new Set(records.map((s) => s.workoutDate)).size}
           </p>
-          <p className="mt-1 text-sm text-neutral-400">workout days</p>
+          <p className="mt-1 text-sm text-jim-muted">workout days</p>
         </div>
-        <div className="rounded-2xl border border-white/10 p-5">
+        <div className="rounded-2xl border border-jim-border-soft p-5">
           <p className="text-3xl font-semibold">{records.length}</p>
-          <p className="mt-1 text-sm text-neutral-400">sessions</p>
+          <p className="mt-1 text-sm text-jim-muted">sessions</p>
         </div>
       </div>
       <DataChart
@@ -176,13 +176,13 @@ export function ProgressPanel({
         label="Sessions per recorded week (Monday start)"
         unit="Sessions"
       />
-      <p className="text-xs text-neutral-400">
+      <p className="text-xs text-jim-muted">
         Weeks without workouts have zero sessions. Recorded weeks:{" "}
         {weeks.map((w) => `${w.date}: ${w.days} workout days`).join("; ") ||
           "none"}
         .
       </p>
-      <section className="space-y-4 rounded-2xl border border-white/10 p-5">
+      <section className="space-y-4 rounded-2xl border border-jim-border-soft p-5">
         <h3 className="font-semibold">Compare the same movement</h3>
         <label className="block text-sm">
           Exercise
@@ -240,18 +240,18 @@ export function ProgressPanel({
                   : unit
           }
         />
-        <p className="text-xs leading-5 text-neutral-400">
+        <p className="text-xs leading-5 text-jim-muted">
           Load records compare the same exercise, movement type and repetition
           count. Assistance is shown separately; more assistance is not treated
           as a strength record. Personal best means a greater external load at
           the same reps than an earlier valid set; a first entry is a baseline.
         </p>
       </section>
-      <p className="text-sm text-neutral-300">
+      <p className="text-sm text-jim-secondary">
         External-load volume: {Number(externalVolume(records, unit).toFixed(1))}{" "}
         {unit}·reps
       </p>
-      <p className="text-xs leading-5 text-neutral-400">
+      <p className="text-xs leading-5 text-jim-muted">
         Volume sums external load × repetitions only. It excludes bodyweight,
         assistance, timed and distance sets, and does not measure universal
         strength or exercise quality.

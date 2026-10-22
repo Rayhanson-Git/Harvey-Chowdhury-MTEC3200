@@ -364,6 +364,7 @@ export function acknowledgeAlert(
 export function validatePreferences(p: Preferences) {
   if (
     !p ||
+    (p.theme !== undefined && !["light", "dark", "system"].includes(p.theme)) ||
     !["kg", "lb"].includes(p.unit) ||
     !["quiet", "encouraging", "playful", "unhinged"].includes(p.tone) ||
     !["flirtation", "showJim", "motion", "autoRest", "restEnabled"].every(

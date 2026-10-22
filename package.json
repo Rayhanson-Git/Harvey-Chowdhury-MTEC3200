@@ -12,7 +12,8 @@
     "test:web": "node --experimental-strip-types --test tests/web-release.test.mjs",
     "build:brand": "node scripts/build-brand.mjs",
     "test:browser": "node tests/release-browser.mjs",
-    "test:mascot": "node tests/mascot-browser.mjs"
+    "test:mascot": "node tests/mascot-browser.mjs",
+    "test:theme": "node tests/theme-browser.mjs"
   },
   "dependencies": {
     "class-variance-authority": "^0.7.1",

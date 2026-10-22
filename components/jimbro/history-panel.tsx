@@ -51,7 +51,7 @@ export function HistoryPanel({
   });
   return (
     <div className="space-y-6">
-      <section className="rounded-2xl border border-white/10 p-4">
+      <section className="rounded-2xl border border-jim-border-soft p-4">
         <div className="mb-4 flex items-center justify-between gap-2">
           <Button
             aria-label="Previous month"
@@ -78,7 +78,7 @@ export function HistoryPanel({
             →
           </Button>
         </div>
-        <div className="grid grid-cols-7 text-center text-xs text-neutral-400">
+        <div className="grid grid-cols-7 text-center text-xs text-jim-muted">
           {["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"].map((x) => (
             <span key={x} className="py-2">
               {x}
@@ -97,22 +97,22 @@ export function HistoryPanel({
               <button
                 key={key}
                 onClick={() => setDay(day === key ? "" : key)}
-                aria-label={`${key}, ${count} workouts`}
+                aria-label={`${date.getDate()} ${date.toLocaleDateString("en-US", { month: "long", year: "numeric" })}, ${count} ${count === 1 ? "workout" : "workouts"}`}
                 aria-pressed={day === key}
-                className={`relative min-h-11 rounded-lg border text-sm ${day === key ? "border-rose-400 bg-rose-500/20" : "border-transparent"} ${date.getMonth() !== month.getMonth() ? "text-neutral-400" : "text-neutral-200"}`}
+                className={`relative min-h-11 rounded-lg border text-sm ${day === key ? "border-jim-accent bg-rose-500/20" : "border-transparent"} ${date.getMonth() !== month.getMonth() ? "text-jim-muted" : "text-jim-secondary"}`}
               >
                 {date.getDate()}
                 {count ? (
                   <span
                     aria-hidden
-                    className="absolute bottom-1 left-1/2 h-1 w-1 -translate-x-1/2 rounded-full bg-lime-300"
+                    className="absolute bottom-1 left-1/2 h-1 w-1 -translate-x-1/2 rounded-full bg-jim-positive"
                   />
                 ) : null}
               </button>
             );
           })}
         </div>
-        <p className="mt-4 text-xs leading-5 text-neutral-400">
+        <p className="mt-4 text-xs leading-5 text-jim-muted">
           Each session stays on its recorded start date in its captured
           timezone, even when you travel or finish after midnight.
         </p>
@@ -132,14 +132,14 @@ export function HistoryPanel({
                 setSelected(s.id);
                 setMessage("");
               }}
-              className="flex w-full items-center justify-between gap-4 rounded-2xl border border-white/10 bg-white/[.025] p-5 text-left hover:border-white/30"
+              className="flex w-full items-center justify-between gap-4 rounded-2xl border border-jim-border-soft bg-jim-subtle p-5 text-left hover:border-jim-muted"
             >
               <div>
-                <p className="text-xs text-neutral-400">
+                <p className="text-xs text-jim-muted">
                   {s.workoutDate} · {s.workoutTimezone}
                 </p>
                 <h3 className="mt-1 font-semibold">{s.label}</h3>
-                <p className="mt-2 text-xs text-neutral-400">
+                <p className="mt-2 text-xs text-jim-muted">
                   {s.sets.length} completed sets ·{" "}
                   {Math.round(
                     elapsed(s, s.actual.workoutEndedAt || s.updatedAt) / 60000,
@@ -152,15 +152,15 @@ export function HistoryPanel({
                       : "Completed"}
                 </p>
               </div>
-              <span aria-hidden className="text-neutral-400">
+              <span aria-hidden className="text-jim-muted">
                 ↗
               </span>
             </button>
           ))}
         {!records.filter((s) => !day || s.workoutDate === day).length ? (
-          <div className="rounded-2xl border border-dashed border-white/15 p-8 text-center">
+          <div className="rounded-2xl border border-dashed border-jim-border p-8 text-center">
             <h3 className="font-medium">Your work will live here.</h3>
-            <p className="mt-2 text-sm text-neutral-400">
+            <p className="mt-2 text-sm text-jim-muted">
               Finish a workout to see its exercises, sets and notes.
             </p>
           </div>
@@ -174,7 +174,7 @@ export function HistoryPanel({
             setDeleting(false);
           }}
         >
-          <p className="mb-4 text-xs text-neutral-400">
+          <p className="mb-4 text-xs text-jim-muted">
             {detail.workoutDate} · {detail.sets.length} completed sets ·{" "}
             {Math.round(
               elapsed(
@@ -241,7 +241,7 @@ export function HistoryPanel({
               }}
             />
           </label>
-          <p role="status" className="my-3 text-sm text-lime-200">
+          <p role="status" className="my-3 text-sm text-jim-positive">
             {message}
           </p>
           <WorkoutLogger
@@ -252,7 +252,7 @@ export function HistoryPanel({
             preferences={{ ...preferences, autoRest: false }}
           />
           {deleting ? (
-            <div className="mt-5 rounded-xl border border-rose-400/40 p-4">
+            <div className="mt-5 rounded-xl border border-jim-accent/40 p-4">
               <p className="text-sm">
                 Delete this workout permanently? Its sets will also be removed
                 from progress. Export a backup first if needed.

@@ -66,7 +66,7 @@ export function AppDialog({
         e.preventDefault();
         onClose();
       }}
-      className="fixed inset-0 m-auto max-h-[85dvh] w-[calc(100%-2rem)] max-w-2xl overflow-auto rounded-3xl border border-white/20 bg-[#151619] p-5 text-white shadow-2xl backdrop:bg-black/80 sm:p-8"
+      className="fixed inset-0 m-auto max-h-[85dvh] w-[calc(100%-2rem)] max-w-2xl overflow-auto rounded-3xl border border-jim-border-strong bg-jim-raised p-5 text-jim-text shadow-2xl backdrop:bg-black/80 sm:p-8"
     >
       <header className="mb-6 flex items-start justify-between gap-3">
         <h2 id={titleId} className="text-xl font-semibold">
@@ -75,7 +75,7 @@ export function AppDialog({
         <button
           aria-label="Close dialog"
           onClick={onClose}
-          className="min-h-11 min-w-11 rounded-xl border border-white/20"
+          className="min-h-11 min-w-11 rounded-xl border border-jim-border-strong"
         >
           ✕
         </button>
