@@ -1,5 +1,7 @@
 # Project evaluation
 
+This record covers the original LeaveBy project. See the [JimBro project reflection](jimbro/reflection.md) for the subsequent unified web application.
+
 October 20, 2026. This evaluation records decisions and evidence from the repository. It is not a transcript of a student's personal reflection.
 
 ## What the project established

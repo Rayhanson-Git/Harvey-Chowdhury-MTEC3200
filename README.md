@@ -1,6 +1,6 @@
 # JimBro — time well lifted
 
-[Open JimBro](https://jimbro.rayhanson.tech) · [Animation gallery](https://jimbro.rayhanson.tech/jim-gallery) · [Current release record](docs/jimbro/WEB-RELEASE.md)
+[Open JimBro](https://jimbro.rayhanson.tech) · [Animation gallery](https://jimbro.rayhanson.tech/jim-gallery) · [Current release record](docs/jimbro/WEB-RELEASE.md) · [Project reflection](docs/jimbro/reflection.md)
 
 Plan your available training time, choose or edit a routine, log completed work, review your progress and protect your departure time. This local-first web release combines LeaveBy with the GymLog logging concept. It includes seven editable starters, custom routines, independent rest/elapsed timers, interruption recovery, calendar/history editing and repeat, comparable progress charts, JSON import/export, and original animated Jim with 248 contextual local phrases.
 
@@ -27,7 +27,7 @@ Brand sources and integrated variants: [asset inventory](docs/jimbro/BRAND-ASSET
 
 Read [architecture/data and migration](docs/jimbro/WEB-ARCHITECTURE.md), [design system](docs/jimbro/DESIGN-SYSTEM.md), [Jim source/provenance](docs/jimbro/JIM-ART.md), [phrase content](docs/jimbro/PHRASES.md), [actual verification](docs/jimbro/WEB-VERIFICATION.md), [handoff](docs/jimbro/HANDOFF.md), [peer-test script](docs/jimbro/PEER-TEST.md) and [future native evaluation](docs/jimbro/NATIVE-READINESS.md).
 
-The final released source is `a6d646e`. [Actual preview/production verification](https://github.com/Rayhanson-Git/Harvey-Chowdhury-MTEC3200/actions/runs/39656940318) passed all release gates; the release-specific GitHub workflow provides a fail-fast remote runner without application dependencies or credentials in the app. Browser emulation does not establish physical-device, screen-reader or human peer usability. Current evidence and local-host resumption details are in the linked records.
+The current application source is `3de6ec1`. Preview and production verification for the appearance release passed 20 workout and seven theme journeys each; see [current verification](docs/jimbro/THEME-VERIFICATION.md). The pinned GitHub workflow and its earlier run document the original repair release. Browser emulation does not establish physical-device, screen-reader or human peer usability.
 
 ## Data and timing limits
 

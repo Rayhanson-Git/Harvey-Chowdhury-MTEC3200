@@ -108,3 +108,7 @@ Added saved Light/Dark/System appearance in Settings, scoped semantic tokens thr
 ## October 26, 2026 — appearance release completed
 
 Released source 3de6ec13bc87172a326b099cd517708573174e8a to the intended jimbro project and domain. Preview and production each passed 7 theme and 20 workout journeys, with 20 axe scans, no reported violations and no recorded browser errors. Updated release, verification, checklist and handoff records; retained exact hosted reports. Main and LeaveBy production preserved. Light/Dark/System is available at Settings → Appearance → Color theme. Physical-device and human-test limitations remain explicit.
+
+## October 27, 2026 — JimBro reflection
+
+Added docs/jimbro/reflection.md covering the product evolution, reported feedback, design decisions, implementation challenges, verified outcomes and remaining evaluation. Linked it from README and the original LeaveBy reflection, preserving that historical record. Corrected README’s stale release-source reference. Checked Markdown links and whitespace; no application code changed.
