@@ -1,0 +1,145 @@
+{
+  "base": "https://jimbro.rayhanson.tech",
+  "engine": "chromium",
+  "checks": [
+    {
+      "name": "System default follows live OS changes; explicit themes override OS",
+      "status": "Verified"
+    },
+    {
+      "name": "Saved choice synchronizes to another tab and the gallery",
+      "status": "Verified"
+    },
+    {
+      "name": "Light/dark routes, dialogs, logos and 320px layout pass accessibility checks",
+      "status": "Verified"
+    },
+    {
+      "name": "Actual file backup restores theme; merge and invalid/legacy imports preserve policy",
+      "status": "Verified"
+    },
+    {
+      "name": "Failed preference writes keep the selected theme and honest error",
+      "status": "Verified"
+    },
+    {
+      "name": "Blocked optional localStorage cache still allows persisted themes",
+      "status": "Verified"
+    },
+    {
+      "name": "Cached explicit choice applies before hydration; original LeaveBy palette is unchanged",
+      "status": "Verified"
+    }
+  ],
+  "accessibility": [
+    {
+      "name": "light /today",
+      "violations": [],
+      "incomplete": []
+    },
+    {
+      "name": "light /workout",
+      "violations": [],
+      "incomplete": []
+    },
+    {
+      "name": "light /history",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "impact": "serious"
+        },
+        {
+          "id": "label-content-name-mismatch",
+          "impact": "serious"
+        }
+      ]
+    },
+    {
+      "name": "light /progress",
+      "violations": [],
+      "incomplete": []
+    },
+    {
+      "name": "light /settings",
+      "violations": [],
+      "incomplete": []
+    },
+    {
+      "name": "light /jim-gallery",
+      "violations": [],
+      "incomplete": []
+    },
+    {
+      "name": "light import dialog",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "impact": "serious"
+        },
+        {
+          "id": "label-content-name-mismatch",
+          "impact": "serious"
+        }
+      ]
+    },
+    {
+      "name": "dark /today",
+      "violations": [],
+      "incomplete": []
+    },
+    {
+      "name": "dark /workout",
+      "violations": [],
+      "incomplete": []
+    },
+    {
+      "name": "dark /history",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "impact": "serious"
+        },
+        {
+          "id": "label-content-name-mismatch",
+          "impact": "serious"
+        }
+      ]
+    },
+    {
+      "name": "dark /progress",
+      "violations": [],
+      "incomplete": []
+    },
+    {
+      "name": "dark /settings",
+      "violations": [],
+      "incomplete": []
+    },
+    {
+      "name": "dark /jim-gallery",
+      "violations": [],
+      "incomplete": []
+    },
+    {
+      "name": "dark import dialog",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "impact": "serious"
+        },
+        {
+          "id": "label-content-name-mismatch",
+          "impact": "serious"
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "startedAt": "2026-10-27T02:33:33.557Z",
+  "finishedAt": "2026-10-27T02:33:41.976Z"
+}

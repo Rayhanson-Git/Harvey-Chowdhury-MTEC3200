@@ -1,4 +1,8 @@
-# JimBro repair verification — October 21, 2026
+# JimBro verification
+
+Current appearance-release evidence: [THEME-VERIFICATION.md](THEME-VERIFICATION.md), application 3de6ec1. Actual preview/production each passed 7 theme and 20 workout journeys plus 20 axe scans. The original repair evidence below remains labeled by its source/date.
+
+## Repair verification — October 21, 2026
 
 Current repair starts from release branch `a02322bba563513c23770ed8d9b7441c03e8693e`, whose application source `1af1c647` was serving production. Original source and actual deployed Vercel project/domain were verified before edits. Prior release records are preserved under `history/2026-10-21-initial-*`; their pending checks are historical, not this run's status.
 

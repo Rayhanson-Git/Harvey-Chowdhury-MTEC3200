@@ -1,6 +1,6 @@
 # JimBro release handoff — October 21, 2026
 
-The web release is deployed and automated-browser verified. Canonical branch: `release/jimbro-web`; production application source: `a6d646eeaf4f4c2e1af7cf525774eee226f3bb5a`; https://jimbro.rayhanson.tech. Final deployment `dpl_GsG16BR7FNsTNkELNZjuAx4gcg2T`, READY with the intended aliases. Final preview https://jimbro-m3befnj78-rayhanson.vercel.app uses the same source. Full release identity: WEB-RELEASE.md.
+The current application source is `3de6ec13bc87172a326b099cd517708573174e8a`, deployed to https://jimbro.rayhanson.tech on October 26, 2026. Deployment `dpl_GL3rsHbCF9qWzeuMmmnwrq7wDFBz` is READY with the intended domain. Light/Dark/System appearance is saved in existing v2 preferences and backups. Today describes planning; Workout describes logging the same session. Current evidence: THEME-VERIFICATION.md and evidence/2026-10-26-theme-release. Actual preview and production each passed 7 theme + 20 workout journeys, 20 axe scans with zero reported violations and no recorded errors. The earlier repair source a6d646e and its cloud run below remain historical evidence for that release. The pinned original workflow is historical; use test:theme and test:browser against the intended URL for current theme verification.
 
 ## Implemented and verified
 

@@ -19,3 +19,9 @@ Evidence: `evidence/2026-10-21-theme/`; runtime fingerprints identify the compil
 ## Compatibility
 
 The database and backup stay v2. Theme is optional so existing records/backups are supported. Workouts, IDs and historical snapshots are unchanged. Prefer a forward patch for rollback; older v2 code can read workouts but saving old preferences may drop the new appearance choice. Native, OS alert, physical-phone and human peer limits from the previous release remain.
+
+## Hosted release — October 26, 2026
+
+Released exact application source `3de6ec13bc87172a326b099cd517708573174e8a`. Preview `dpl_CL6L1oDgDUNvwGpWq35go99R5rFr` at https://jimbro-2tomz3fd4-rayhanson.vercel.app passed 7 theme journeys, 20 workout journeys and 20 axe scans before release. Production `dpl_GL3rsHbCF9qWzeuMmmnwrq7wDFBz`, https://jimbro-5kjl9oxzb-rayhanson.vercel.app, reached READY and aliases https://jimbro.rayhanson.tech with no alias error. The actual production URL then passed the same 7+20 journeys and 20 scans, with zero reported violations or page/console/application-HTTP errors. Incomplete/manual nodes remain recorded. Reports and identity: `evidence/2026-10-26-theme-release/`.
+
+The normal existing-project production build used the explicitly verified Git source. Main remains 4271e846; LeaveBy remains READY on dpl_kr2tAGnsRcQB5kS2pcTBstDvoA2A. The application runtime has not changed since the three-engine local verification. No old local server remained on port 3110. The previous pinned GitHub workflow records the original repair release, not this theme release; these fresh local and hosted reports are the current theme evidence.

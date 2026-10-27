@@ -104,3 +104,7 @@ Preserved all pre-disconnect drafts in a named Git stash, fast-forwarded the rel
 ## October 21, 2026 — appearance and page purposes
 
 Added saved Light/Dark/System appearance in Settings, scoped semantic tokens throughout JimBro, matching navigation logos, first-paint cache with blocked-storage fallback and live system/cross-tab updates. Added concise Today (planning) and Workout (logging) descriptions and readable calendar accessible names. Existing v2 data/backups remain compatible; no dependency, native or LeaveBy redesign. Local 49 domain tests, lint/type/build, three-engine theme and workout browser checks passed. See THEME-VERIFICATION.md for exact evidence and hosted release follow-up.
+
+## October 26, 2026 — appearance release completed
+
+Released source 3de6ec13bc87172a326b099cd517708573174e8a to the intended jimbro project and domain. Preview and production each passed 7 theme and 20 workout journeys, with 20 axe scans, no reported violations and no recorded browser errors. Updated release, verification, checklist and handoff records; retained exact hosted reports. Main and LeaveBy production preserved. Light/Dark/System is available at Settings → Appearance → Color theme. Physical-device and human-test limitations remain explicit.

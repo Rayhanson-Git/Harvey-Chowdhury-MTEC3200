@@ -1,0 +1,27 @@
+{
+  "source": "3de6ec13bc87172a326b099cd517708573174e8a",
+  "productionURL": "https://jimbro.rayhanson.tech",
+  "productionDeployment": "dpl_GL3rsHbCF9qWzeuMmmnwrq7wDFBz",
+  "productionHost": "https://jimbro-5kjl9oxzb-rayhanson.vercel.app",
+  "previewURL": "https://jimbro-2tomz3fd4-rayhanson.vercel.app",
+  "previewDeployment": "dpl_CL6L1oDgDUNvwGpWq35go99R5rFr",
+  "state": "READY",
+  "aliasError": null,
+  "preview": {
+    "themeJourneys": 7,
+    "workoutJourneys": 20,
+    "axeScans": 20,
+    "reportedViolations": 0,
+    "errors": []
+  },
+  "production": {
+    "themeJourneys": 7,
+    "workoutJourneys": 20,
+    "axeScans": 20,
+    "reportedViolations": 0,
+    "errors": []
+  },
+  "leaveByPreserved": "dpl_kr2tAGnsRcQB5kS2pcTBstDvoA2A",
+  "remoteMainPreserved": "4271e8465b131a368610bb02c79b896377dadaa5",
+  "limits": "Automated disposable Chromium profiles and viewport emulation; physical devices, screen readers, OS alerts and real peers remain unverified."
+}

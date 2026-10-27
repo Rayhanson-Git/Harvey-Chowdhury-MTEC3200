@@ -1,4 +1,10 @@
-# JimBro web release — October 21, 2026
+# JimBro web release
+
+## Current appearance release — October 26, 2026
+
+Production: https://jimbro.rayhanson.tech. Application source `3de6ec13bc87172a326b099cd517708573174e8a`; production deployment `dpl_GL3rsHbCF9qWzeuMmmnwrq7wDFBz`, READY with no alias error. Added saved Light/Dark/System appearance, shared surface/chart/logo themes, clear Today/Workout descriptions and readable calendar labels. Actual preview and production each passed 7 theme + 20 workout journeys and 20 axe scans with zero reported violations and no recorded browser errors. Local three-engine checks and all 49 domain tests/lint/build/types passed. Existing v2 backups accept missing theme; no data migration/reset. See THEME-VERIFICATION.md and evidence/2026-10-26-theme-release. Original main, LeaveBy deployment and manual-device limitations are preserved.
+
+## Original repair release — October 21, 2026
 
 Released and verified on the existing JimBro project. Physical-device, screen-reader and human peer checks remain explicitly unverified.
 

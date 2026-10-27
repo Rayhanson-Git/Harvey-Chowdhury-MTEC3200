@@ -4,6 +4,7 @@ This run starts at release branch `a02322b` (production application `1af1c647`).
 
 | Acceptance area | Implementation status | Verification status / current evidence |
 |---|---|---|
+| Light/Dark/System appearance, persisted choice, live system updates | Implemented | Verified: three-engine theme tests, actual preview/production 7 theme + 20 workout journeys each; see THEME-VERIFICATION.md |
 | Correct repo, release branch, production project/domain | Implemented | Verified: remote and Vercel source identity inspected |
 | Original main, coursework and separate LeaveBy preservation | Implemented | Verified: original route, PRD, coursework directories and frozen v1 files unchanged from a02322b |
 | Jim shoulder/elbow hierarchy and wrist attachment | Implemented | Verified: explicit joint matrices + silhouette connectivity at 120 rendered samples |
