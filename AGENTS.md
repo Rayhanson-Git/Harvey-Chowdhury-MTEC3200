@@ -8,78 +8,52 @@ This block is written and re-added by `next dev` — verify at `node_modules/nex
 
 <!-- END:nextjs-agent-rules -->
 
-# Project Instructions
+# JimBro — contributor and agent instructions
 
-Read this file before every task.
+This branch is the **JimBro application** on `revamp/foundation`. Do not confuse it with the shared repository's original MTEC 3200 `main` branch or the archived Project 1 documents.
 
-## Current authorization — JimBro completion and release
+## Read before changing code
 
-The user explicitly authorized: “Complete it, finish it, commit it to git hub and deploy.” Finish and verify the JimBro v1 implementation, fix discovered issues, commit and push on `revamp/foundation`, and deploy JimBro. Preserve main, the original coursework and all existing work. Restoring locked dependencies and temporary verification tooling is authorized as necessary; do not add application dependencies without need. The Milestone 1 restrictions below are historical and do not block this explicit expansion. Keep the seven v1 foundation records intact; record current implementation, actual checks and deployment evidence separately. Continue through verification and release without stopping after each screen. Accounts, cloud sync and background push remain deferred.
+1. [Active JimBro PRD](PRD.md) and [README](README.md).
+2. [JimBro architecture](docs/jimbro/v1/ARCHITECTURE.md) and [acceptance plan](docs/jimbro/v1/ACCEPTANCE.md). Those v1 files describe their October 20 planning snapshot; compare against the [implemented product](docs/jimbro/IMPLEMENTATION.md).
+3. [Release evidence](docs/jimbro/RELEASE.md) and [current progress](PROGRESS.md).
+4. Relevant tests, code and prior decisions before making changes.
 
-## JimBro branch scope — completed Milestone 1
+## Branch and preservation rules
 
-- Work on `revamp/foundation`. Preserve `main` and the original coursework.
-- Verified starting commit: `4af9f2bc004bb1a0f1d8649991bf41cea649e90c`.
-- Read this file and the entire root `PRD.md` before work. Root `PRD.md` remains the original LeaveBy specification; do not rewrite it as JimBro.
-- JimBro planning lives in [`docs/jimbro/v1/`](docs/jimbro/v1/README.md). Read its PRD, architecture decisions and acceptance checklist before future JimBro work. These documents describe a target, not implemented behavior.
-- Milestone 1 allows inventory, preservation, requirements, architecture, acceptance criteria, branch instructions, progress updates and existing verification only. Do not implement features, install dependencies (including shadcn/ui), commit, push or deploy in this milestone. This restriction overrides broader workflow suggestions below and in the original PRD.
-- Keep research, interviews, designs, instructor templates, presentation assets, attribution and historical verification intact. Use the baseline manifest to verify preservation. Only `AGENTS.md` and `PROGRESS.md` are approved updates to existing tracked files in this milestone.
-- At the Milestone 1 baseline, data remained one in-memory LeaveBy plan. Persistent sessions, IndexedDB, a docked countdown and foreground alerts are target decisions in the frozen v1 plan. Existing uncommitted implementation is recorded separately; it has not shipped.
-- Inspect staged, unstaged and untracked changes before edits; preserve existing work. Record actual command results and blockers separately from historical passes in `PROGRESS.md` and the versioned verification record.
+- Work on `revamp/foundation` unless explicitly directed otherwise. Do not change, overwrite, merge, or force-push `main` as part of JimBro upgrades.
+- JimBro lives at `/`; the original prototype remains at `/leaveby` for historical comparison and regression coverage. Preserve the old route and underlying calculation behavior unless specifically asked to change them.
+- Original research, interviews, presentation files, designs, templates, and archived PRD are historical evidence, not current JimBro marketing or feature requirements. Don't alter their findings or invent new peer feedback.
+- No automated process may claim manual device or user testing occurred without real evidence.
+- Check for uncommitted changes and overlapping work before edits. Never commit credentials or `.env` files.
 
-## About This Project
+## Technology and implementation
 
-JimBro combines LeaveBy scheduling and logging after completed sets. `/` is JimBro; `/leaveby` preserves the original planner. Read `docs/jimbro/v1/PRD.md` for the target and `docs/jimbro/IMPLEMENTATION.md` for actual implementation/verification. Root `PRD.md` remains the historical LeaveBy course specification.
+- Next.js App Router, React, TypeScript, Tailwind CSS, shadcn/ui; native browser IndexedDB.
+- Current product: scheduled workout session, completed-set logging, countdown, phase guidance, exercise catalog, workout history and body-weight records.
+- Prefer the existing `components/jimbro/` and `lib/jimbro/` modules. Use accessible labels, keyboard interactions, responsive layouts and clear error recovery.
+- Treat planned deadlines and actual confirmations as separate data. Compute remaining time against absolute timestamps; never promise background notification delivery.
+- Accounts, cloud sync, data import/export, background push and external API integration are not existing capabilities.
+- Do not change dependencies or add features absent from the PRD without an explicit reason and matching specification update. Keep lockfile consistent with `package.json`.
 
-## Stack
+## Test and release workflow
 
-- Next.js (App Router), React
-- Tailwind CSS
-- shadcn/ui (new-york, neutral; manually configured)
-- Data: JimBro uses native IndexedDB for one active session and local history. The original LeaveBy route retains its in-memory behavior.
-- APIs: none
+```bash
+npm ci
+npm test
+npm run test:jimbro
+npm run lint
+npm run build
+```
 
-## Commands
+The JimBro core suite requires Node.js 22.18+ for native TypeScript stripping. Browser QA needs separate tooling; follow [verification instructions](docs/jimbro/IMPLEMENTATION.md) and distinguish it from the standard local commands.
 
-- Run: `npm run dev`
-- Build: `npm run build`
-- Lint: `npm run lint`
-- Existing acceptance tests: `npm test`
-- JimBro core runtime tests: `npm run test:jimbro` (Node 22.18+)
-- Native browser storage fixture: `node tests/serve-storage.mjs` on isolated `http://127.0.0.1:4876`
+Document *which checks actually ran*, their results, and blockers. Verify the selected Git branch and deployed commit before saying a release is live. Vercel's `jimbro` project is separate from the original project; a GitHub commit alone is not proof of deployment. Update `PROGRESS.md` after substantial changes.
 
-## Code Style
+## Historical records
 
-- Use TypeScript.
-- One component per file.
-- Put reusable components in `components/`.
-- Use Tailwind classes. No separate CSS files. Prefer Tailwind's spacing utilities over arbitrary pixel values for spacing and sizing; reserve arbitrary values for custom typography or layout geometry that has no suitable utility.
-- Use clear, descriptive names.
-- Put sections into their own component, so that code is easy to read from a top-level and put them inside `components/`.
+- [Original Project 1 PRD](docs/archive/LeaveBy-PRD.md)
+- [Pre-rebrand progress and release history](docs/archive/PROGRESS-2026-10-21.md)
+- [Versioned JimBro planning snapshot](docs/jimbro/v1/README.md)
 
-## Rules
-
-- Don't add dependencies without asking. Components from shadcn/ui are the exception.
-- Use components from shadcn/ui before building new ones.
-- Add shadcn/ui components as needed. List each one in `docs/components.md`.
-- Build one screen at a time.
-- Read `PRD.md` before adding any feature. Don't add features that aren't in it.
-- Don't change working screens unless asked.
-- Never commit `.env.local` or API keys.
-- Update `PROGRESS.md` after each task.
-
-## How to Talk to Me
-
-- I am a student with limited coding knowledge. Explain things to me knowing my level.
-- Keep explanations short.
-- Tell me which files you touched.
-- Stop after each task so I can test it manually.
-
-## Project references and skills
-
-- Read `Design/README.md` and `Design/LeaveBy_Wireframes.png` before screen work. Existing research stays in `research/`; design assets stay in `Design/`.
-- Use `.github/skills/build-screen/SKILL.md` for a screen and `.github/skills/verify-plan/SKILL.md` for calculation and validation changes.
-- Keep original instructor templates in `templates/` unchanged.
-- Use local date/time and full dates for calculations, not time strings alone. Deduct buffer once. Show dates for previous-day results.
-- Keep user-facing errors beside fields and preserve inputs. Use visible labels, keyboard focus, and text feedback.
-- Explain changes and validation without claiming that Harvey manually tested or understood something unless he confirms it.
+The archived material explains how JimBro evolved; it does not override the active specification.

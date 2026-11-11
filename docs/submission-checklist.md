@@ -10,7 +10,7 @@ Updated October 20, 2026. This is the current coverage index; earlier audit find
 | Synthesis | [Affinity map](../research/affinity_map.md), [insights](../research/insight_statements.md), [persona](../research/persona.md), [POV / HMW](../research/point_of_view.md), original [Class 4 synthesis](../research/synthesis.md). |
 | Wireframes and user flow | [Figma wireframes](https://www.figma.com/design/o5HfqhQTqwBFK8nFTEWvx2), original [PNG/PDF references](../Design/README.md). Figma conversion completed October 20. |
 | Design rationale | [Norman concepts and decisions](../Design/rationale.md). |
-| Functional specification | [PRD](../PRD.md), [MVP](../Specs/MVP.md). |
+| Functional specification | [PRD](archive/LeaveBy-PRD.md), [MVP](../Specs/MVP.md). |
 | Working deployment | [LeaveBy](https://leaveby.rayhanson.tech). [Verification](verification.md) records current checks and limits. |
 | Prompting and process | [Prompting log](prompting-log.md), [build history](build-log.md), [evaluation](reflection.md), Git history. Actual workflow recorded; the brief's named-tool wording is not silently substituted. |
 | Presentation materials | [Slide deck and demo guide](../Presentation/README.md). |

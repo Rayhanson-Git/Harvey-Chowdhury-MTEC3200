@@ -1,4 +1,4 @@
-// Source: Next.js create-next-app scaffold; adapted for LeaveBy. https://nextjs.org/docs/app
+// Source: Next.js create-next-app scaffold; adapted for JimBro. https://nextjs.org/docs/app
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
@@ -14,8 +14,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "LeaveBy — Transition planner",
-  description: "Plan when to stop your workout and leave for your next commitment.",
+  title: "JimBro — Workout planning and tracking",
+  description: "Plan workouts, log completed sets, and stay on schedule with JimBro.",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {

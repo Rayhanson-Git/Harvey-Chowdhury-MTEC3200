@@ -13,7 +13,7 @@ Updated October 20, 2026. The original interview records are dated September 19.
 | User model | [Behavioral persona](persona.md) |
 | Framing | [POV and How Might We](point_of_view.md) |
 | Original synthesis and direction | [Class 4 synthesis](synthesis.md) |
-| Design and specification | [Wireframe flow](../Design/README.md), [rationale](../Design/rationale.md), [MVP](../Specs/MVP.md), [PRD](../PRD.md) |
+| Design and specification | [Wireframe flow](../Design/README.md), [rationale](../Design/rationale.md), [MVP](../Specs/MVP.md), [PRD](../docs/archive/LeaveBy-PRD.md) |
 
 Each interview includes context, answers, strongest observations, supporting/challenging evidence and a follow-up question. Each record identifies the participant as outside the immediate friend group.
 
