@@ -10,7 +10,8 @@ This folder documents the **current web product** on `release/jimbro-web`; the G
 | [DESIGN-SYSTEM](DESIGN-SYSTEM.md) | Visual design, controls and responsive behavior |
 | [BRAND-ASSETS](BRAND-ASSETS.md) | Jim mark/wordmark, favicon and derivative generation |
 | [JIM-ART](JIM-ART.md) and [PHRASES](PHRASES.md) | Character rig, personality and content |
-| [WEB-RELEASE](WEB-RELEASE.md) | October 21 repair and October 26 appearance releases |
+| [Current verification](REBRAND-VERIFICATION-2026-11-10.md) | November 10 branding-release tests and production identity |
+| [WEB-RELEASE](WEB-RELEASE.md) | Dated October and November release records |
 | [WEB-VERIFICATION](WEB-VERIFICATION.md) | Domain, browser, motion and data checks |
 | [THEME-VERIFICATION](THEME-VERIFICATION.md) | Light/Dark/System compatibility and hosted QA |
 | [HANDOFF](HANDOFF.md) | Reproduction, historical context and release cautions |
@@ -20,4 +21,4 @@ This folder documents the **current web product** on `release/jimbro-web`; the G
 | [Active progress](../../PROGRESS.md) | Follow-up work and status |
 | [Historical Project 1 PRD](../archive/LeaveBy-PRD.md) | Original time-planning assignment, not current JimBro requirements |
 
-The October 20 v1 documents in [v1/](v1/README.md) and October 21 early release materials are historical snapshots. Their planned or "not yet implemented" descriptions must not override the current v2 architecture and verified October 26 release.
+The October 20 v1 documents in [v1/](v1/README.md) and October 21 early release materials are historical snapshots. Their planned or "not yet implemented" descriptions must not override the current v2 architecture and the verified November 10 branding release.

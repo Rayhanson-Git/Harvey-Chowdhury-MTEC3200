@@ -1,5 +1,15 @@
 # JimBro web release
 
+## Branding and repository-identity refresh — November 10, 2026
+
+Current application source: [`f616d278ef9275f7ef4e6679dfb3172a40b32da4`](https://github.com/Rayhanson-Git/Harvey-Chowdhury-MTEC3200/commit/f616d278ef9275f7ef4e6679dfb3172a40b32da4), on `release/jimbro-web`. Vercel production deployment **`dpl_DHXHgNJWcB8frS5SHaUEPLzVxFoQ` reached READY** with matching source SHA and no alias error. The updated README/PRD/agent guidance and package naming now identify JimBro; the legacy course files were archived and the `/leaveby` route kept, without changing the app's IndexedDB v2 semantics.
+
+Fresh Node 24 checks: **8+18+23 = 49/49 passing domain tests**, lint, build and TypeScript. Chromium browser verification passed **20 workout + 7 theme journeys** against both a disposable built app and the deployed Vercel production alias; each environment produced **20 axe scans with no reported violations**, no recorded browser errors, and a passing 12-pose / 120-frame / 144-transition mascot suite. [Detailed verification, commands, and limitations](REBRAND-VERIFICATION-2026-11-10.md).
+
+The custom domain `jimbro.rayhanson.tech` returned a Cloudflare challenge to automated HTTP requests; the Vercel production alias `jimbro-rayhanson.vercel.app` returned HTTP 200 and passed the browser journeys. This does not establish an issue for regular visitors or justify disabling Cloudflare protection. The original course `main` and earlier JimBro branches were not merged. PR #2 was closed without merging.
+
+### Older dated releases
+
 ## Current appearance release — October 26, 2026
 
 Production: https://jimbro.rayhanson.tech. Application source `3de6ec13bc87172a326b099cd517708573174e8a`; production deployment `dpl_GL3rsHbCF9qWzeuMmmnwrq7wDFBz`, READY with no alias error. Added saved Light/Dark/System appearance, shared surface/chart/logo themes, clear Today/Workout descriptions and readable calendar labels. Actual preview and production each passed 7 theme + 20 workout journeys and 20 axe scans with zero reported violations and no recorded browser errors. Local three-engine checks and all 49 domain tests/lint/build/types passed. Existing v2 backups accept missing theme; no data migration/reset. See THEME-VERIFICATION.md and evidence/2026-10-26-theme-release. Original main, LeaveBy deployment and manual-device limitations are preserved.

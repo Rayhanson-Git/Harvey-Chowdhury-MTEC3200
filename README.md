@@ -79,7 +79,7 @@ Accounts, subscriptions, live AI coaching, nutrition, social features, device sy
 
 ## Verification status
 
-The **October 26, 2026** hosted appearance release is the last documented production verification in this branch: eight original calculation tests, 18 core tests, 23 web domain tests, lint, build and type checks, plus seven theme and 20 workout browser journeys on both preview and production. Automated accessibility scans reported zero violations in those runs, with explicit manual-review limitations. These are **dated results**, not a claim of new test passes or a new deployment after subsequent commits. See [theme verification](docs/jimbro/THEME-VERIFICATION.md).
+The **November 10, 2026** branding refresh was freshly tested at source commit `f616d278`: **49/49 domain tests**, lint, build and TypeScript passed, plus **20 workout + seven appearance browser journeys** and **20 axe scans with zero reported violations** on both an isolated build and the Vercel production alias. Jim's 12 poses, 120 frames and 144 transitions were also checked in each environment. See the [current verification record](docs/jimbro/REBRAND-VERIFICATION-2026-11-10.md) for exact commands, provenance and the separate custom-domain challenge caveat.
 
 Real-device, screen-reader, audible-alert, suspended-browser and human peer usability testing remains outstanding.
 
