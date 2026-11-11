@@ -13,7 +13,7 @@ JimBro is a working title for one gym companion combining LeaveBy scheduling wit
 | [Acceptance checklist](ACCEPTANCE.md) | Milestone 1 gates and separate future product scenarios |
 | [Verification](VERIFICATION.md) | Actual checks from this task, including blocked commands |
 
-The [root LeaveBy PRD](../../../PRD.md), [MVP](../../../Specs/MVP.md), [course submission checklist](../../submission-checklist.md) and original evidence keep their historical meaning. JimBro expands their product scope on this branch; it does not retroactively change the assignment or claim new instructor approval, research findings or peer-test results.
+The [original Project 1 PRD](../../archive/LeaveBy-PRD.md), [MVP](../../../Specs/MVP.md), [course submission checklist](../../submission-checklist.md) and original evidence keep their historical meaning. JimBro expands their product scope on this branch; it does not retroactively change the assignment or claim new instructor approval, research findings or peer-test results.
 
 ## Version policy
 

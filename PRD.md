@@ -1,164 +1,84 @@
-# LeaveBy — Product Requirements Document
+# JimBro — Product Requirements Document
 
-Harvey Chowdhury · MTEC 3200 · Project 1: Everyday Tool  
-October 6, 2026
+**Active web product specification · November 10, 2026 · `release/jimbro-web`**
 
-## Project Overview
+JimBro is a local-first workout and schedule companion with personalized routines, real completed-set tracking, session history, progress charts, body-weight records and departure guidance. This specification replaces the earlier Project 1 PRD **for the JimBro release branch only**. Historical requirements are preserved at [docs/archive/LeaveBy-PRD.md](docs/archive/LeaveBy-PRD.md); `main` is not changed.
 
-LeaveBy is a lightweight transition planner for someone who works out before a fixed class or work commitment. The user enters the commitment date and start time, preparation time, commute time, and a buffer. LeaveBy works backward to show when to stop the workout and when to leave.
+## Problem and intended user
 
-The first version handles one upcoming commitment at a time. It makes a timing decision easier; it does not track workouts or predict transit delays.
+A student or working adult may want to exercise before another commitment but still needs to prepare and travel. Planning with one tool and logging workouts with another fragments attention and state. JimBro offers one flow from **planning → active workout → transitions → review**, or an open workout without a scheduled deadline.
 
-### Problem and research basis
+Early interviews and course research support the original scheduling problem; they do not establish demand for every expanded feature or prove that JimBro reduces lateness. User testing of the complete product remains an open validation step.
 
-Small, unpredictable delays can consume the limited gap between a workout and the next commitment. Showering, changing, and commuting still need to happen, so people rush, cut activities, or risk arriving late.
+## Primary user journey
 
-The research folder identifies the gym-to-school transition as a narrow, recurring problem. The synthesis selects a planner that works backward from a fixed deadline and protects preparation, commute, and buffer time.
+1. On **Today**, enter a commitment and preparation/travel/buffer estimates or choose an unscheduled workout.
+2. Choose, adjust or create a workout routine, then start the active session.
+3. On **Workout**, record actual completed sets; use independent rest and elapsed timers.
+4. When scheduled, a persistent deadline and phase guidance continue across tabs and page reloads. Workout-stop, departure and actual user actions stay distinct.
+5. On **History**, review calendar entries and session details, edit mistakes, or reuse a session.
+6. On **Progress**, view comparable recorded measurements and body weight.
+7. On **Settings**, manage appearance, Jim's preferences, alerts and versioned JSON backup import/export.
 
-The supplied interview records add three perspectives:
+Today and Workout are **different responsibilities for the same active session**, not duplicate daily trackers.
 
-- Chris describes gym and transit delays stacking together. He already uses a workout hard stop and packs his bag beforehand.
-- Selina describes variable preparation time and pressure from a fixed work start. She uses an alarm as a warning to stop starting new exercises.
-- David usually has a short, predictable commute and more buffer. His experience shows that the transition is not equally stressful for everyone.
+## Implemented acceptance scope
 
-These records support the design direction, but they do not establish that this app reduces lateness. That remains an assumption to test.
-
-### Scope
-
-#### Goals
-
-- Turn a future commitment and three duration estimates into clear action times.
-- Distinguish stopping the workout from leaving the gym.
-- Explain the calculation through a visible breakdown.
-- Preserve inputs when editing and recalculate correctly.
-- Handle invalid inputs and already-passed stop times clearly.
-
-#### Outside this MVP
-
-- Exercise programs, sets, reps, calories, and nutrition tracking.
-- Live transit information, automatic delay detection, and calendar syncing.
-- Accounts, cloud storage, social features, and multiple users.
-- Push notifications, smartwatch alerts, and automatic workout shortening.
-- Saved routines, live countdowns, transition checklists, and planned-versus-actual departure comparisons. These remain possible later features, not build requirements.
-
-## Target users
-
-The primary user is a student or working person who exercises before a fixed commitment and must fit preparation and travel into a limited window.
-
-They need to answer: “When should I stop working out, and when should I leave?” They should be able to understand the result quickly and change an estimate without entering the entire plan again.
-
-## Skills Required
-
-- **Next.js (required):** app framework, using React and the App Router.
-- **Vercel (required):** host and share the working app for review and testing.
-- **React and TypeScript:** reusable form/result components and typed plan data.
-- **Tailwind CSS:** responsive styling consistent with the wireframes.
-- **Component library:** shadcn/ui, configured in step 3; add components as each screen is built.
-- **Local date/time calculations and form validation:** calculate milestones and explain invalid inputs.
-- **Git and GitHub:** save working checkpoints and maintain project documentation.
-
-No API, API key, database, authentication, or cloud storage is needed for this MVP. The Next.js app is installed at the repository root with the component library, input validation, calculated results and editing. The app is deployed at https://leaveby.rayhanson.tech. Current checks are recorded in docs/verification.md; peer usability testing remains pending.
-
-Proposed first-build data behavior: retain one plan in browser memory while moving between the form and results. Reloading starts a new plan. Saving routines across visits remains outside the MVP. Only the commitment date/time and three duration estimates are required; result times are derived.
-
-## Key Features
-
-### Milestone 1 — Enter and validate a transition plan
-
-**Deliverable:** the first wireframe screen, with commitment date/time, preparation, commute, and buffer inputs, and a **Calculate times** action.
-
-| Input | Meaning | Validation |
+| ID | Requirement | Current behavior documented in the October 2026 release |
 | --- | --- | --- |
-| Commitment date | Local date of the next class or work commitment | Required, valid date |
-| Commitment start | Local start time on that date | Required; combined date/time must be in the future |
-| Get ready (minutes) | Showering, changing, and other tasks before departure | Required, nonnegative whole number |
-| Commute (minutes) | Estimated travel time to the commitment | Required, nonnegative whole number |
-| Buffer (minutes) | Extra time reserved before the commitment | Required, nonnegative whole number |
+| JB-01 | One active session with clear lifecycle and local recovery | Native IndexedDB v2 active pointer; transactional conflict safeguards |
+| JB-02 | Schedule a fixed commitment or choose an open workout | Validated inputs, captured timezone, optional no-deadline mode |
+| JB-03 | Keep cutoff, leave and arrival times correct | Absolute epoch deadlines with DST gap/repeated-time handling |
+| JB-04 | Provide routines and a completed-set logger | Seven editable starter routines, custom plans, actual recorded measures |
+| JB-05 | Keep workout timers distinct from the deadline | Rest/elapsed controls do not move the scheduled stop/departure |
+| JB-06 | Make saved work recoverable and correctable | Session/history corrections, stable IDs and clear failed-write behavior |
+| JB-07 | Show meaningful history and comparable progress | Calendar entries, repeats, measurement-specific charts, body-weight series |
+| JB-08 | Include a controllable animated mascot | Original Jim rig, local phrase selection, tone/motion preferences |
+| JB-09 | Offer data backup and migration | JSON export/import with merge/replace confirmation, v1→v2 DB migration |
+| JB-10 | Support persistent appearance preferences | Light, Dark and System; stored across tabs/reloads and in backups |
+| JB-11 | Support accessible and responsive interactions | Documented 320–1440px automated checks; manual-device/accessibility validation still pending |
+| JB-12 | State alert limitations accurately | Foreground best-effort notices and opt-in sound, without closed-app guarantees |
 
-Blank duration fields are not treated as zero. An explicitly entered zero is valid. Negative, fractional, nonnumeric, and unrepresentable values must not produce results.
+Refer to [WEB-ARCHITECTURE](docs/jimbro/WEB-ARCHITECTURE.md), [WEB-VERIFICATION](docs/jimbro/WEB-VERIFICATION.md), [THEME-VERIFICATION](docs/jimbro/THEME-VERIFICATION.md) and the [release record](docs/jimbro/WEB-RELEASE.md) for exact implemented behavior and dated evidence.
 
+## Scheduling contract
 
-Use visible labels and keep entered values when an error occurs. Show an error beside each relevant input. Reject a commitment at or before the current time and ask for a future date and time.
+Given commitment epoch timestamp `C` and estimated buffer `B`, commute `T`, preparation `P` in minutes:
 
-**Validation:** a user can complete all fields by keyboard or touch. Missing values, negative durations, fractional durations, and past commitments show clear errors. Explicit zero durations are accepted. Compare the form with the supplied wireframe before moving on.
+```text
+arrival = C - B * 60_000
+departure = arrival - T * 60_000
+workout_stop = departure - P * 60_000
+```
 
-### Milestone 2 — Calculate and display the plan
+Buffer is subtracted exactly once. Use absolute timestamps and a captured time zone. Explicit zero durations are valid; blank, fractional, negative and invalid date entries are rejected. An overdue milestone does not automatically mark a workout finished, pause a rest timer, or record that a person left. An open workout has no meaningful departure deadline.
 
-**Deliverable:** the results screen, with **Stop workout** most prominent, then **Leave by**, the duration breakdown, target arrival, commitment date/time, and **Edit plan**.
+## Session and data requirements
 
-Calculate in this order:
+- **Database:** IndexedDB `jimbro`, version 2, with backward-compatible migration of supported version 1 records.
+- **Integrity:** transactional writes, stable set/session IDs, revisions to reject stale updates and visible recovery paths.
+- **Data boundaries:** routine templates, copied active-session plans and completed sets remain independent; editing a template does not rewrite historic workouts.
+- **Measures:** external load, assistance, body-weight, time and distance are separate types. Charts and comparable-history calculations must not silently mix them. Body-weight entries store their original unit.
+- **Backup:** versioned JSON export/import from Settings. A new import defaults to Merge; Replace requires explicit confirmation. Invalid/conflicting input must not partially replace records.
+- **Appearance:** persisted Light/Dark/System preference with live system response, included in backward-compatible v2 backups.
+- **Privacy:** workout data stays in the current browser profile/origin. It is not automatically synchronized, backed up remotely or sent to a workout API.
 
+## Product character and design
 
-1. Target arrival = commitment start − buffer.
-2. Leave by = target arrival − commute.
-3. Stop workout = leave by − preparation.
+Jim's character animations and phrases complement essential information but must never be required to complete a workout. Respect user motion controls and reduced-motion preferences. Important deadlines and errors get priority over decorative speech; local phrases must not fabricate exercise performance. The design system supports light and dark palettes with legible forms, controls, charts and calendar labels.
 
-Subtract the buffer only once. Use the commitment's full local date and time, rather than time-of-day strings alone. Show the date when a result falls on a different day from the commitment.
+## Exclusions and restrictions
 
-#### Reference example
+No authenticated accounts, paid backend, automatic cloud sync, nutrition features, social network, smart wearable integration, AI-generated coaching, fully offline installation guarantee, or native iOS/Android application is shipped. Background/lock-screen alerts and a trusted server clock are not guaranteed. Historical GymLog data from another browser origin is not claimed migrated.
 
-| Item | Initial plan | After editing commute |
-| --- | --- | --- |
-| Commitment | 10:00 AM | 10:00 AM |
-| Preparation | 30 minutes | 30 minutes |
-| Commute | 60 minutes | 75 minutes |
-| Buffer | 15 minutes | 15 minutes |
-| Stop workout | 8:15 AM | 8:00 AM |
-| Leave by | 8:45 AM | 8:30 AM |
-| Target arrival | 9:45 AM | 9:45 AM |
+Never downgrade an existing v2 database to a v1 reader or clear user data to "fix" a failed migration. Export and validate a backup before any risky recovery.
 
-The October 6 date in the wireframe is an interface example, not a live default or the class meeting time. Use a future date when testing this example.
+## Validation and delivery
 
-Display **Times use your estimates** so the result is not mistaken for a live transit prediction.
+Use the current code on `release/jimbro-web` with tests `npm test`, `npm run test:jimbro`, `npm run test:web`, lint, build and TypeScript; run the optional browser, mascot and theme acceptance suites as documented. Historic passes must be attributed to their **dated commit and deployment** rather than used as blanket evidence for later commits.
 
-If the commitment is still in the future but the workout stop time has passed, keep the calculated times visible and show: **Your workout stop time has passed. Stop now and review your plan.**
+The October 26 production release passed the documented theme and workout journeys and automated scans. Real-device keyboards, VoiceOver/TalkBack, OS/locked-screen alert behavior, and peer usability remain unverified. Any subsequent release must record its own results and deployment identity.
 
-**Validation:** verify the reference example above. For a 12:30 AM commitment with 30 minutes preparation, 60 minutes commute, and 15 minutes buffer, display target arrival at 12:15 AM, departure at 11:15 PM on the previous date, and workout stop at 10:45 PM on the previous date. Show the earlier date explicitly. Verify that zero preparation makes stop and departure equal and that buffer is deducted only once.
+## Academic history
 
-### Milestone 3 — Edit and recalculate
-
-**Deliverable:** the adjustment state, prefilled with all existing values, and a **Recalculate** action returning to the results.
-
-Validate again on recalculation, including whether the commitment is still in the future. Invalid edits preserve the user's inputs and do not produce a new result. The input and adjustment states may reuse one form component; separate URLs are not required.
-
-**Validation:** changing commute from 60 to 75 minutes moves stop from 8:15 AM to 8:00 AM and departure from 8:45 AM to 8:30 AM. Target arrival remains 9:45 AM. All other inputs remain unchanged.
-
-### Milestone 4 — Review, deploy, and prepare for peer testing
-
-**Deliverable:** a working Next.js app on Vercel with the complete flow: enter a plan → read the times → edit → recalculate.
-
-Build and review one screen at a time. Test every input, button, and link; check keyboard focus, readable contrast, and phone-width layout. Use text rather than color alone for errors and results. Have Harvey review each screen against the wireframes and commit working checkpoints.
-
-Ask a participant to enter a future plan, explain the two action times, and increase the commute estimate. Record confusion, help needed, and changes to make. These tests are planned; no completed app testing or reduction in lateness is claimed.
-
-**Validation:** the deployed URL loads, the full flow works on desktop and phone widths, and the calculation/validation cases in milestones 1–3 pass. Record actual findings after peer testing.
-
-Class 6 says there is no class next week and to continue building for testing at the next class. No exact deadline or meeting date is inferred here.
-
-### Research and design references
-
-All current files in `research/`:
-
-- [Interview questions](research/interview_questions.md)
-- [Problem statement](research/problem_statement.md)
-- [Synthesis and chosen direction](research/synthesis.md)
-- [What / How / Why](research/what_how_why.md)
-
-Supporting project materials:
-
-- [MVP definition](Specs/MVP.md)
-- [Design flow and states](Design/README.md)
-- [Clean wireframes](Design/LeaveBy_Wireframes.png)
-- [Rough sketches](Design/LeaveBy_Rough_Sketches.png)
-- [Chris interview record](interviews/Chris_2026-09-19.md)
-- [David interview record](interviews/David_2026-09-19.md)
-- [Selina interview record](interviews/Selina_2026-09-19.md)
-- [Class 6 in Notion](https://app.notion.com/p/9713d2939d2f825c9ee28126d1031619)
-
-## Open questions
-
-- Component-library decision: use shadcn/ui for the first build.
-- Is session-only data sufficient for the first version? This is the proposed behavior; saved routines remain outside scope.
-- Can users estimate preparation and commute durations well enough for a useful plan?
-- Do users clearly distinguish **Stop workout** from **Leave by**, and does the chosen buffer help them plan earlier?
-- How should an ambiguous daylight-saving time be explained if the date/time controls permit one? The MVP uses device-local time, with no cross-time-zone planning.
+Preserve the [Project 1 original PRD](docs/archive/LeaveBy-PRD.md), research, interviews, designs, templates and presentation materials unchanged as evidence. The original solo assignment and JimBro's subsequent product expansion are not interchangeable, and this document does not assert new instructor approval.

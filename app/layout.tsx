@@ -1,4 +1,4 @@
-// Source: Next.js create-next-app scaffold; adapted for LeaveBy. https://nextjs.org/docs/app
+// Source: Next.js create-next-app scaffold; adapted for JimBro. https://nextjs.org/docs/app
 import type { Metadata } from "next";
 import { ThemeListener } from "@/components/jimbro/theme-listener";
 import { themeBootstrap } from "@/lib/jimbro/theme";

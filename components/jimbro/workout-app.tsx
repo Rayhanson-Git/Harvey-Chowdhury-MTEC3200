@@ -8,7 +8,6 @@ import {
   History,
   TrendingUp,
   Settings,
-  ArrowUpRight,
   Clock3,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -292,14 +291,6 @@ export function WorkoutApp({ initialView = "today" }: { initialView?: View }) {
               <br />
               The rest of your day.
             </p>
-            <Link
-              prefetch={false}
-              href="/leaveby"
-              className="mt-4 inline-flex min-h-11 items-center gap-1 underline"
-            >
-              Original LeaveBy
-              <ArrowUpRight size={12} />
-            </Link>
           </div>
         </aside>
         <div className="min-w-0 px-4 py-7 sm:px-8 lg:px-10 lg:py-10">
@@ -792,13 +783,6 @@ export function WorkoutApp({ initialView = "today" }: { initialView?: View }) {
 
           <footer className="mt-10 flex flex-wrap justify-between gap-3 border-t border-jim-border-soft pt-5 text-[11px] leading-6 text-jim-muted">
             <p>Saved on this browser · Export in Settings for backup.</p>
-            <Link
-              prefetch={false}
-              href="/leaveby"
-              className="inline-flex min-h-11 items-center underline"
-            >
-              Original LeaveBy ↗
-            </Link>
           </footer>
         </div>
       </div>

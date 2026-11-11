@@ -1,18 +1,47 @@
-# JimBro — time well lifted
+# JimBro — Time well lifted
 
-[Open JimBro](https://jimbro.rayhanson.tech) · [Animation gallery](https://jimbro.rayhanson.tech/jim-gallery) · [Current release record](docs/jimbro/WEB-RELEASE.md) · [Project reflection](docs/jimbro/reflection.md)
+**Plan smarter. Train better. Make time for the rest of your day.**
 
-Plan your available training time, choose or edit a routine, log completed work, review your progress and protect your departure time. This local-first web release combines LeaveBy with the GymLog logging concept. It includes seven editable starters, custom routines, independent rest/elapsed timers, interruption recovery, calendar/history editing and repeat, comparable progress charts, JSON import/export, and original animated Jim with 248 contextual local phrases.
+[**Open JimBro**](https://jimbro.rayhanson.tech) · [App gallery](https://jimbro.rayhanson.tech/jim-gallery) · [Product specification](PRD.md) · [Release verification](docs/jimbro/WEB-RELEASE.md) · [Project reflection](docs/jimbro/reflection.md)
 
-## What each tab does
+JimBro is a local-first, responsive workout companion. It keeps **planning, active training, workout history, progress, and departure guidance in one connected experience**—whether you have a fixed commitment afterward or want an open-ended workout.
 
-**Today** is the planning view: enter the next commitment, preparation, travel and buffer, then choose a routine. **Workout** is the active training view: log/correct completed sets, manage rest and finish the session. Starting from Today opens Workout automatically. Both views share one session and its deadlines; switching tabs never pauses departure time. History holds saved sessions; Progress compares recorded training; Settings controls appearance, Jim, alerts and backups.
+**Canonical JimBro source branch: `release/jimbro-web`.** Its live Vercel project is `jimbro`. The GitHub repository is shared with the MTEC 3200 course submission on `main`; this is a separate product **branch and deployment**, not an independently named GitHub repository.
 
-In **Settings → Appearance → Color theme**, choose **Light**, **Dark** or **System preference**. System follows the device and updates while JimBro is open. The choice is saved in this browser and included in JSON backups. Original LeaveBy keeps its existing system-based appearance.
+## The five main views
 
-## Run and verify
+| View | What it does |
+| --- | --- |
+| **Today** | Plan a scheduled or open workout, estimate available time, choose or adjust a routine |
+| **Workout** | Follow the active session, record and correct sets, and use independent rest/elapsed timers |
+| **History** | Browse calendar sessions, edit past entries, and reuse completed work |
+| **Progress** | Compare compatible training measures and view body-weight history with readable charts |
+| **Settings** | Choose Light/Dark/System theme, adjust Jim and alerts, and export/import JSON backups |
 
-Node 24 recommended. `npm ci`, then `npm run dev`. No API key, account, paid service or backend is required.
+Today and Workout deliberately serve different stages of **the same workout**: Today plans; Workout tracks completed work. Changing views never resets the stored deadline or the current session.
+
+## What is implemented
+
+- **Smart time planning:** commitment date/time, preparation, travel and buffer; calculated cutoff, departure and target arrival. Open-ended workouts work without a deadline.
+- **Workout routines:** seven editable starter routines plus custom routines, with editable exercise order and planned sets.
+- **Training log:** record actual completed sets, loads and measurements, correct mistakes, and review prior comparable performance.
+- **History and progress:** calendar entries, session detail and repeat, comparable progress views, body-weight tracking and measurement-specific charts.
+- **Jim the mascot:** an original animated character with selectable tone, motion preferences and a curated local phrase library.
+- **Local-first data:** transactional IndexedDB v2, cross-tab recovery, versioned JSON backup export/import and supported migration from earlier v1 browser data.
+- **Appearance:** Light, Dark or System preference; the choice persists in browser records and backup files. UI surfaces, charts and branding adapt.
+
+The app has no runtime AI, no user account and no paid backend.
+
+## Running and checking the project
+
+Node.js 24 is recommended. From the repository root:
+
+```sh
+npm ci
+npm run dev
+```
+
+Open `http://localhost:3000`.
 
 ```sh
 npm test
@@ -23,73 +52,39 @@ npm run build
 npx tsc --noEmit
 ```
 
-Brand sources and integrated variants: [asset inventory](docs/jimbro/BRAND-ASSETS.md). Regenerate with `npm run build:brand`. Browser acceptance and animation sampling use `npm run test:browser` / `npm run test:mascot` with Playwright and axe installed in an isolated QA directory; see the verification record for exact commands and current results.
+Browser, mascot, and theme acceptance suites use isolated Playwright/axe QA dependencies, not application dependencies. See [verification instructions](docs/jimbro/WEB-VERIFICATION.md) and [theme evidence](docs/jimbro/THEME-VERIFICATION.md) before claiming browser checks passed.
 
-Read [architecture/data and migration](docs/jimbro/WEB-ARCHITECTURE.md), [design system](docs/jimbro/DESIGN-SYSTEM.md), [Jim source/provenance](docs/jimbro/JIM-ART.md), [phrase content](docs/jimbro/PHRASES.md), [actual verification](docs/jimbro/WEB-VERIFICATION.md), [handoff](docs/jimbro/HANDOFF.md), [peer-test script](docs/jimbro/PEER-TEST.md) and [future native evaluation](docs/jimbro/NATIVE-READINESS.md).
+## Architecture, documentation and assets
 
-The current application source is `3de6ec1`. Preview and production verification for the appearance release passed 20 workout and seven theme journeys each; see [current verification](docs/jimbro/THEME-VERIFICATION.md). The pinned GitHub workflow and its earlier run document the original repair release. Browser emulation does not establish physical-device, screen-reader or human peer usability.
-
-## Data and timing limits
-
-Data lives on this device/browser and origin. Clearing site data can remove it. Export JSON from Settings for your own backup; another device will not synchronize automatically. v1 IndexedDB records migrate in place to v2; no cross-origin GymLog migration is claimed. Keep the app visible for alerts. Background, lock-screen and closed-app delivery, offline launch and a trusted server clock are not guaranteed. Sound and notifications require understandable user actions. A deadline never marks a workout completed or records departure.
-
-Routes: `/` and `/today`, `/workout`, `/history` (session detail via `?session=ID`), `/progress`, `/settings`, `/jim-gallery`; original planner preserved at `/leaveby`. Native apps, accounts/sync, payments, nutrition, social features, wearable integration and runtime AI remain deferred.
-
-The documents below preserve the historical course submission; their older release/verification claims describe that baseline rather than the current web release.
-
-# LeaveBy — original coursework
-MTEC 3200 · Product Design & Prototyping · Fall 2026
-Harvey Chowdhury · Instructor: Dora Do
-
-LeaveBy works backward from a fixed class or work commitment to show when to stop a workout and leave. One plan combines preparation, commute and buffer estimates.
-
-[Open LeaveBy](https://leaveby.rayhanson.tech) · [Submission checklist](docs/submission-checklist.md) · [Presentation](Presentation/README.md)
-
-## Project materials
-
-| Area | Materials |
+| Source | Purpose |
 | --- | --- |
-| Research | [Research index](research/README.md), [method](research/research_plan.md), [routine observations](research/routine_audit.md), [interview questions](research/interview_questions.md), [three interview records](interviews/) |
-| Synthesis | [Affinity map](research/affinity_map.md), [insights](research/insight_statements.md), [persona](research/persona.md), [POV and HMW](research/point_of_view.md), [original synthesis](research/synthesis.md) |
-| Design | [User flow and original wireframes](Design/README.md), [editable Figma wireframes](https://www.figma.com/design/o5HfqhQTqwBFK8nFTEWvx2), [design rationale](Design/rationale.md) |
-| Specification | [PRD](PRD.md), [MVP scope](Specs/MVP.md) |
-| Process | [Prompting log](docs/prompting-log.md), [build history](docs/build-log.md), [project evaluation](docs/reflection.md) |
-| Testing | [Current verification](docs/verification.md), [manual checklist](docs/manual-check.md), [peer feedback sheet](docs/peer-feedback.md) |
-| Presentation | [PPTX and PDF](Presentation/README.md), [code-defense guide](Presentation/code-defense.md) |
+| [`PRD.md`](PRD.md) | Current JimBro scope and acceptance boundaries |
+| [`docs/jimbro/`](docs/jimbro/README.md) | Current documentation index |
+| [`docs/jimbro/WEB-ARCHITECTURE.md`](docs/jimbro/WEB-ARCHITECTURE.md) | Storage v2, migration, timing and progress rules |
+| [`docs/jimbro/DESIGN-SYSTEM.md`](docs/jimbro/DESIGN-SYSTEM.md) | UI and responsive guidance |
+| [`docs/jimbro/BRAND-ASSETS.md`](docs/jimbro/BRAND-ASSETS.md) | Original JimBro visual identity and asset generation |
+| [`docs/jimbro/PHRASES.md`](docs/jimbro/PHRASES.md) | Local mascot phrase guidelines |
+| [`docs/jimbro/WEB-RELEASE.md`](docs/jimbro/WEB-RELEASE.md) | Dated production evidence |
+| [`docs/jimbro/HANDOFF.md`](docs/jimbro/HANDOFF.md) | Implementation history and operational cautions |
+| [`docs/jimbro/NATIVE-READINESS.md`](docs/jimbro/NATIVE-READINESS.md) | Future native-app evaluation only |
+| [`PROGRESS.md`](PROGRESS.md) | Current branch tracking |
 
-## Run and verify
+App routes: `/`, `/today`, `/workout`, `/history` (detail with `?session=ID`), `/progress`, `/settings`, and `/jim-gallery`.
 
-Use Node.js 20.9 or newer. From the repository root:
+## Storage and notification limits
 
-```bash
-npm ci
-npm run dev
-```
+Data lives in the current site origin and browser profile. **Use Settings → Export** to keep an offline JSON backup; clearing browser storage can delete records. There is no automatic cross-device sync. Foreground alerts and enabled sounds are best effort; background, locked-screen and closed-app reminders are **not guaranteed**. Offline launch, a trusted server clock, live transit predictions and native notifications are not guaranteed. Recording a deadline does not prove a workout ended or a user departed.
 
-Open http://localhost:3000 or the forwarded port in Codespaces.
+Accounts, subscriptions, live AI coaching, nutrition, social features, device synchronization, wearables and native apps remain outside the shipped web scope.
 
-```bash
-npm test
-npm run lint
-npm run build
-```
+## Verification status
 
-The app uses Next.js, React, TypeScript, Tailwind CSS and shadcn/ui. No API key or database is required.
+The **October 26, 2026** hosted appearance release is the last documented production verification in this branch: eight original calculation tests, 18 core tests, 23 web domain tests, lint, build and type checks, plus seven theme and 20 workout browser journeys on both preview and production. Automated accessibility scans reported zero violations in those runs, with explicit manual-review limitations. These are **dated results**, not a claim of new test passes or a new deployment after subsequent commits. See [theme verification](docs/jimbro/THEME-VERIFICATION.md).
 
-## Behavior and limits
+Real-device, screen-reader, audible-alert, suspended-browser and human peer usability testing remains outstanding.
 
-Enter a future commitment and nonnegative whole-minute durations. Arrival equals commitment minus buffer. Departure subtracts commute, then workout stop subtracts preparation. Edit plan preserves the five inputs.
+## Project lineage
 
-The plan stays in memory until reload. There are no accounts, live transit predictions, notifications or saved routines. The interface uses device-local time.
+JimBro evolved from the course's narrower workout-to-commitment time-planning prototype. Historical Project 1 evidence is deliberately retained for attribution and audit, including the [archived PRD](docs/archive/LeaveBy-PRD.md), [research](research/README.md), [course submission checklist](docs/submission-checklist.md) and the unchanged legacy route `/leaveby`. **Those materials describe the earlier assignment, not the current JimBro product.**
 
-## Current status
-
-The core app is deployed with HTTPS. Automated acceptance tests, lint and production build pass. Hosted browser results and their limits are recorded in the verification document. Research and presentation materials are linked above. Separate research artifacts organized after the build retain their actual documentation dates.
-
-Peer feedback is pending. Presentation delivery and demonstrated code understanding remain student activities. The submission checklist records course-specific qualifications.
-
-## Repository organization
-
-Application code lives in app/, components/ and lib/. Course materials live in research/, interviews/, Design/, Specs/ and Presentation/. Instructor templates remain in templates/. Read AGENTS.md and PRD.md before feature changes.
-
-This personal course repository can continue to hold LeaveBy. Project 2 is a separate pair assignment with shared-repository requirements; it has not been implemented here.
+MTEC 3200 · Product Design & Prototyping · Fall 2026.

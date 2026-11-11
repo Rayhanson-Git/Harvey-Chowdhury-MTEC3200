@@ -6,7 +6,7 @@ Version 1.0 · October 20, 2026 · Working title: JimBro
 
 This version records the user's approved direction: combine LeaveBy scheduling and GymLog's logging after a completed set in one application. Only Milestone 1 is authorized now: preserve and inventory coursework, document requirements and architecture, prepare acceptance criteria, update instructions/progress and run existing checks. All product behavior below is a future target, not delivered functionality or permission to begin implementation.
 
-The [root PRD](../../../PRD.md) remains the original LeaveBy course specification. Its exclusions of exercise tracking, countdowns and persistence describe that original MVP. This JimBro version deliberately expands those areas on `revamp/foundation`; it does not overwrite the course record. Research supports the transition problem; demand for the expanded product remains a hypothesis. GymLog source and detailed new peer observations are unavailable; see [inventory](INVENTORY.md).
+The [archived Project 1 PRD](../../archive/LeaveBy-PRD.md) records the original LeaveBy course specification. Its exclusions of exercise tracking, countdowns and persistence describe that original MVP. This JimBro version deliberately expands those areas on `revamp/foundation`; it does not overwrite the course record. Research supports the transition problem; demand for the expanded product remains a hypothesis. GymLog source and detailed new peer observations are unavailable; see [inventory](INVENTORY.md).
 
 ## Problem and unified experience
 
